@@ -13,24 +13,26 @@
             --bg-header: rgba(11, 15, 25, 0.95);
             --text-primary: #ffffff;
             --text-secondary: #94a3b8;
-            --border-color: rgba(255, 255, 255, 0.1);
+            --border-color: rgba(255, 255, 255, 0.12);
             --accent-color: #6366f1;
             --accent-glow: rgba(99, 102, 241, 0.2);
             --wsp-color: #25d366;
-            --card-hover: rgba(255, 255, 255, 0.05);
-            --rocket-orange: #ff5722;
+            --card-hover: rgba(255, 255, 255, 0.08);
+            --input-bg: #0b0f19;
         }
 
+        /* Estilos optimizados para Modo Claro / Luz */
         [data-theme="light"] {
-            --bg-primary: #f8fafc;
+            --bg-primary: #f1f5f9;
             --bg-secondary: #ffffff;
-            --bg-card: #f1f5f9;
+            --bg-card: #f8fafc;
             --bg-header: rgba(255, 255, 255, 0.95);
             --text-primary: #0f172a;
-            --text-secondary: #64748b;
-            --border-color: rgba(0, 0, 0, 0.1);
-            --accent-glow: rgba(99, 102, 241, 0.1);
-            --card-hover: rgba(0, 0, 0, 0.03);
+            --text-secondary: #475569;
+            --border-color: #cbd5e1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --card-hover: #e2e8f0;
+            --input-bg: #f8fafc;
         }
 
         * {
@@ -101,6 +103,7 @@
             font-weight: 800;
             font-size: 1.2rem;
             cursor: pointer;
+            color: var(--text-primary);
             letter-spacing: 1px;
         }
 
@@ -171,7 +174,7 @@
             padding: 10px 12px 10px 38px;
             border-radius: 8px;
             border: 1px solid var(--border-color);
-            background-color: var(--bg-primary);
+            background-color: var(--input-bg);
             color: var(--text-primary);
             outline: none;
             font-size: 0.95rem;
@@ -203,6 +206,7 @@
             border-radius: 8px;
             font-size: 0.95rem;
             cursor: pointer;
+            font-weight: 600;
         }
 
         .menu-link:hover {
@@ -243,6 +247,7 @@
             text-decoration: none;
             font-size: 0.88rem;
             border-radius: 6px;
+            font-weight: 500;
         }
 
         .submenu li a:hover {
@@ -259,9 +264,9 @@
             margin-right: auto;
         }
 
-        /* Hero Banner Modificado con Imagen de Fondo y Tamaño Agrandado */
+        /* Hero Banner con fondo 'BEBE 2.jpg' */
         .hero-banner {
-            background: linear-gradient(rgba(11, 15, 25, 0.75), rgba(11, 15, 25, 0.75)), url('BEBE 1.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(11, 15, 25, 0.75), rgba(11, 15, 25, 0.75)), url('BEBE 2.jpg') center/cover no-repeat;
             border: 1px solid var(--border-color);
             border-radius: 20px;
             padding: 65px 30px;
@@ -272,7 +277,8 @@
             align-items: center;
             text-align: center;
             margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            color: #ffffff;
         }
 
         .hero-title {
@@ -280,14 +286,15 @@
             font-weight: 900;
             letter-spacing: 3px;
             margin-bottom: 15px;
-            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+            color: #ffffff;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
         }
 
         .badge-confidential {
             display: inline-block;
             background: rgba(239, 68, 68, 0.25);
-            color: #ef4444;
-            border: 1px solid rgba(239, 68, 68, 0.4);
+            color: #ff6b6b;
+            border: 1px solid rgba(239, 68, 68, 0.5);
             padding: 8px 20px;
             border-radius: 50px;
             font-size: 0.9rem;
@@ -305,8 +312,9 @@
         }
 
         .info-pill {
-            background: rgba(30, 41, 59, 0.85);
-            border: 1px solid var(--border-color);
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
             padding: 10px 18px;
             border-radius: 12px;
             font-size: 0.9rem;
@@ -317,21 +325,24 @@
             backdrop-filter: blur(5px);
         }
 
-        /* Image Diagram Container */
+        /* Contenedor del Diagrama con Fondo 'BEBE 1.jpg' */
         .diagram-container {
-            background: var(--bg-secondary);
+            background: linear-gradient(rgba(11, 15, 25, 0.82), rgba(11, 15, 25, 0.82)), url('BEBE 1.jpg') center/cover no-repeat;
             border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 30px 20px;
+            border-radius: 20px;
+            padding: 40px 20px;
             margin-bottom: 40px;
             text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .diagram-title {
             font-size: 1.4rem;
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 25px;
-            color: var(--text-primary);
+            color: #ffffff;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .diagram-img-wrapper {
@@ -344,15 +355,15 @@
         .diagram-img-wrapper img {
             max-width: 100%;
             height: auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+            border-radius: 14px;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.5);
         }
 
-        /* Section Trabajos Universitarios */
+        /* Sección Trabajos Universitarios */
         .academic-section {
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
+            border-radius: 20px;
             padding: 40px 20px;
             margin-bottom: 40px;
         }
@@ -363,9 +374,10 @@
         }
 
         .academic-header h2 {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 800;
             margin-bottom: 10px;
+            color: var(--text-primary);
         }
 
         .academic-header p {
@@ -383,14 +395,14 @@
         .uni-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            padding: 15px;
-            border-radius: 12px;
+            padding: 18px 15px;
+            border-radius: 14px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 10px;
-            transition: transform 0.2s;
+            transition: transform 0.2s, border-color 0.2s;
         }
 
         .uni-card:hover {
@@ -399,10 +411,10 @@
         }
 
         .uni-badge {
-            width: 45px;
-            height: 45px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
-            background: var(--bg-primary);
+            background: var(--bg-secondary);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -414,6 +426,7 @@
         .uni-name {
             font-size: 0.9rem;
             font-weight: 700;
+            color: var(--text-primary);
         }
 
         /* Grid de Servicios */
@@ -426,6 +439,7 @@
             margin: 20px 0 20px;
             padding-bottom: 10px;
             border-bottom: 2px solid var(--border-color);
+            color: var(--text-primary);
         }
 
         .grid {
@@ -437,7 +451,7 @@
         .card {
             background-color: var(--bg-secondary);
             border: 1px solid var(--border-color);
-            border-radius: 14px;
+            border-radius: 16px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
@@ -474,6 +488,7 @@
             font-size: 1.1rem;
             font-weight: 700;
             margin-bottom: 8px;
+            color: var(--text-primary);
         }
 
         .card-desc {
@@ -492,8 +507,8 @@
             background-color: var(--wsp-color);
             color: #ffffff;
             text-decoration: none;
-            padding: 10px;
-            border-radius: 8px;
+            padding: 11px;
+            border-radius: 10px;
             font-weight: 700;
             font-size: 0.9rem;
         }
@@ -515,7 +530,7 @@
             <span>🚀 ROCKET</span>
         </div>
         <div class="header-actions">
-            <button class="icon-btn" id="themeToggle" title="Cambiar Tema" onclick="toggleTheme()">
+            <button class="icon-btn" id="themeToggle" title="Cambiar Modo Claro/Oscuro" onclick="toggleTheme()">
                 <i class="fa-regular fa-moon" id="themeIcon"></i>
             </button>
             <button class="icon-btn" onclick="toggleSidebar()" title="Menú">
@@ -543,7 +558,7 @@
                 </a>
             </li>
 
-            <!-- Desplegable OSINT Completo -->
+            <!-- Desplegable OSINT -->
             <li class="menu-item">
                 <div class="menu-link" onclick="toggleSubmenu('osintMenu', 'osintArrow')">
                     <div class="menu-link-left">
@@ -556,7 +571,7 @@
                 <ul class="submenu" id="osintMenu">
                     <li><a href="#" onclick="showCategory('RENIEC')"><i class="fa-solid fa-id-card"></i> RENIEC (Fotos / Huellas / DNI)</a></li>
                     <li><a href="#" onclick="showCategory('SUNAT')"><i class="fa-solid fa-receipt"></i> SUNAT (Consulta RUC / Empresas)</a></li>
-                    <li><a href="#" onclick="showCategory('PODER JUDICIAL')"><i class="fa-solid fa-scale-balanced"></i> PODER JUDICIAL (Demandas / Procesos)</a></li>
+                    <li><a href="#" onclick="showCategory('PODER JUDICIAL')"><i class="fa-solid fa-scale-balanced"></i> PODER JUDICIAL (Demandas)</a></li>
                     <li><a href="#" onclick="showCategory('MIGRACIONES')"><i class="fa-solid fa-passport"></i> MIGRACIONES (Pasaporte / Salidas)</a></li>
                     <li><a href="#" onclick="showCategory('OSIPTEL')"><i class="fa-solid fa-tower-cell"></i> OSIPTEL (Búsqueda por Teléfono)</a></li>
                     <li><a href="#" onclick="showCategory('FISCALÍA')"><i class="fa-solid fa-gavel"></i> FISCALÍA (Carpetas Fiscales)</a></li>
@@ -607,7 +622,7 @@
 
     <!-- Contenido Principal -->
     <main id="mainContainer">
-        <!-- Banner Principal Agrandado con Imagen de Fondo -->
+        <!-- Banner Principal (Fondo BEBE 2.jpg) -->
         <div class="hero-banner">
             <h1 class="hero-title">🚀 ROCKET</h1>
             <div class="badge-confidential">🔒 100% CONFIDENCIAL Y DISCRETO</div>
@@ -618,8 +633,9 @@
             </div>
         </div>
 
-        <!-- Secciones de Inicio -->
+        <!-- Vista de Inicio -->
         <div id="homeView">
+            <!-- Sección Diagrama OSINT (Fondo BEBE 1.jpg) -->
             <div class="diagram-container">
                 <h2 class="diagram-title">RED DE CONSULTAS E INTEGRACIÓN OSINT</h2>
                 <div class="diagram-img-wrapper">
@@ -627,7 +643,7 @@
                 </div>
             </div>
 
-            <!-- Sección Trabajos Universitarios y Colegios -->
+            <!-- Sección Trabajos Universitarios -->
             <div class="academic-section">
                 <div class="academic-header">
                     <h2>🎓 TRABAJOS UNIVERSITARIOS DE TODAS LAS UNIVERSIDADES Y COLEGIOS DEL PERÚ</h2>
@@ -927,7 +943,7 @@
     </main>
 
     <script>
-        // Quitar pantalla de carga al terminar de cargar la web
+        // Ocultar pantalla de carga
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
             loader.style.opacity = '0';
@@ -936,7 +952,7 @@
             }, 500);
         });
 
-        // Alternar Menú Lateral (Sidebar)
+        // Alternar Menú Lateral
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             const overlay = document.getElementById('overlay');
@@ -953,7 +969,7 @@
             arrow.classList.toggle('fa-chevron-down');
         }
 
-        // Mostrar Inicio
+        // Vista Inicio
         function showHome() {
             document.getElementById('homeView').classList.remove('hidden');
             document.getElementById('servicesView').classList.add('hidden');
@@ -984,7 +1000,7 @@
             }
         }
 
-        // Filtrar Menú en el Buscador
+        // Buscador
         function filterMenu() {
             const input = document.getElementById('searchInput').value.toUpperCase();
             const items = document.querySelectorAll('#menuList .menu-item');
@@ -999,7 +1015,7 @@
             });
         }
 
-        // Modo Oscuro / Claro
+        // Cambio de Modo Claro / Oscuro
         function toggleTheme() {
             const html = document.documentElement;
             const icon = document.getElementById('themeIcon');
