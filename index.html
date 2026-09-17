@@ -13,15 +13,17 @@
             --bg-header: rgba(11, 15, 25, 0.95);
             --text-primary: #ffffff;
             --text-secondary: #94a3b8;
-            --border-color: rgba(255, 255, 255, 0.12);
+            --border-color: rgba(255, 255, 255, 0.15);
             --accent-color: #6366f1;
-            --accent-glow: rgba(99, 102, 241, 0.2);
+            --accent-glow: rgba(99, 102, 241, 0.35);
             --wsp-color: #25d366;
-            --card-hover: rgba(255, 255, 255, 0.08);
-            --input-bg: #0b0f19;
+            --card-hover: rgba(255, 255, 255, 0.12);
+            --input-bg: rgba(11, 15, 25, 0.7);
+            --glass-bg: rgba(21, 28, 44, 0.82);
+            --glass-border: rgba(255, 255, 255, 0.18);
         }
 
-        /* Estilos optimizados para Modo Claro / Luz */
+        /* Ajustes para Modo Claro */
         [data-theme="light"] {
             --bg-primary: #f1f5f9;
             --bg-secondary: #ffffff;
@@ -30,9 +32,11 @@
             --text-primary: #0f172a;
             --text-secondary: #475569;
             --border-color: #cbd5e1;
-            --accent-glow: rgba(99, 102, 241, 0.15);
+            --accent-glow: rgba(99, 102, 241, 0.25);
             --card-hover: #e2e8f0;
-            --input-bg: #f8fafc;
+            --input-bg: rgba(255, 255, 255, 0.9);
+            --glass-bg: rgba(255, 255, 255, 0.88);
+            --glass-border: rgba(0, 0, 0, 0.12);
         }
 
         * {
@@ -49,7 +53,7 @@
             min-height: 100vh;
         }
 
-        /* Loader */
+        /* Pantalla de Carga */
         #loader {
             position: fixed;
             top: 0;
@@ -130,19 +134,24 @@
             background-color: var(--card-hover);
         }
 
-        /* Sidebar Navigation */
+        /* MENÚ LATERAL CON FONDO 'casa 1.jpg' */
         .sidebar {
             position: fixed;
             top: 60px;
-            left: -320px;
-            width: 300px;
+            left: -330px;
+            width: 320px;
             height: calc(100vh - 60px);
-            background-color: var(--bg-secondary);
+            background: linear-gradient(rgba(11, 15, 25, 0.88), rgba(11, 15, 25, 0.92)), url('casa 1.jpg') center/cover no-repeat;
             border-right: 1px solid var(--border-color);
             overflow-y: auto;
-            transition: left 0.3s ease;
+            transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 999;
             padding: 20px 15px;
+            box-shadow: 5px 0 25px rgba(0,0,0,0.5);
+        }
+
+        [data-theme="light"] .sidebar {
+            background: linear-gradient(rgba(241, 245, 249, 0.88), rgba(241, 245, 249, 0.93)), url('casa 1.jpg') center/cover no-repeat;
         }
 
         .sidebar.active {
@@ -155,7 +164,8 @@
             left: 0;
             width: 100%;
             height: calc(100vh - 60px);
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(3px);
             display: none;
             z-index: 998;
         }
@@ -164,53 +174,73 @@
             display: block;
         }
 
+        /* Buscador del Menú */
         .search-box {
             position: relative;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .search-box input {
             width: 100%;
-            padding: 10px 12px 10px 38px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            background-color: var(--input-bg);
+            padding: 12px 12px 12px 42px;
+            border-radius: 14px;
+            border: 1px solid var(--glass-border);
+            background-color: var(--glass-bg);
+            backdrop-filter: blur(10px);
             color: var(--text-primary);
             outline: none;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .search-box input:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 12px var(--accent-glow);
         }
 
         .search-box i {
             position: absolute;
-            left: 12px;
+            left: 15px;
             top: 50%;
             transform: translateY(-50%);
-            color: var(--text-secondary);
+            color: var(--accent-color);
         }
 
         .menu-list {
             list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
+        /* OPCIONES TIPO CUADRITOS ELEGANTES */
         .menu-item {
-            margin-bottom: 4px;
+            border-radius: 14px;
         }
 
         .menu-link {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 12px 14px;
+            padding: 14px 16px;
             color: var(--text-primary);
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 14px;
             font-size: 0.95rem;
             cursor: pointer;
-            font-weight: 600;
+            font-weight: 700;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+            transition: all 0.25s ease;
         }
 
         .menu-link:hover {
-            background-color: var(--card-hover);
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+            box-shadow: 0 6px 18px var(--accent-glow);
+            background: var(--card-hover);
         }
 
         .menu-link-left {
@@ -220,42 +250,62 @@
         }
 
         .menu-link-left i {
-            width: 20px;
+            width: 22px;
             text-align: center;
             color: var(--accent-color);
+            font-size: 1.1rem;
         }
 
+        /* Submenú Desplegable con Minicuadritos */
         .submenu {
             list-style: none;
-            padding-left: 15px;
+            padding: 10px;
             display: none;
-            margin-top: 4px;
-            border-left: 2px solid var(--border-color);
-            margin-left: 15px;
+            margin-top: 8px;
+            background: rgba(11, 15, 25, 0.65);
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            backdrop-filter: blur(12px);
+        }
+
+        [data-theme="light"] .submenu {
+            background: rgba(255, 255, 255, 0.75);
         }
 
         .submenu.open {
-            display: block;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
         .submenu li a {
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 8px 10px;
-            color: var(--text-secondary);
+            padding: 10px 12px;
+            color: var(--text-primary);
             text-decoration: none;
             font-size: 0.88rem;
-            border-radius: 6px;
-            font-weight: 500;
+            border-radius: 10px;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.2s ease;
+        }
+
+        [data-theme="light"] .submenu li a {
+            background: rgba(0, 0, 0, 0.03);
+            border-color: rgba(0, 0, 0, 0.06);
         }
 
         .submenu li a:hover {
-            color: var(--text-primary);
-            background-color: var(--card-hover);
+            color: var(--accent-color);
+            background: var(--card-hover);
+            border-color: var(--accent-color);
+            transform: translateX(4px);
         }
 
-        /* Content Area */
+        /* Contenido Principal */
         main {
             margin-top: 60px;
             padding: 40px 20px;
@@ -264,9 +314,9 @@
             margin-right: auto;
         }
 
-        /* Hero Banner con fondo 'BEBE 2.jpg' */
+        /* Banner Principal (Fondo bebe 2.jpg) */
         .hero-banner {
-            background: linear-gradient(rgba(11, 15, 25, 0.75), rgba(11, 15, 25, 0.75)), url('BEBE 2.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(11, 15, 25, 0.78), rgba(11, 15, 25, 0.78)), url('bebe 2.jpg') center/cover no-repeat;
             border: 1px solid var(--border-color);
             border-radius: 20px;
             padding: 65px 30px;
@@ -292,7 +342,7 @@
 
         .badge-confidential {
             display: inline-block;
-            background: rgba(239, 68, 68, 0.25);
+            background: rgba(239, 68, 68, 0.3);
             color: #ff6b6b;
             border: 1px solid rgba(239, 68, 68, 0.5);
             padding: 8px 20px;
@@ -300,7 +350,7 @@
             font-size: 0.9rem;
             font-weight: 700;
             margin-bottom: 20px;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(6px);
         }
 
         .info-bar {
@@ -312,8 +362,8 @@
         }
 
         .info-pill {
-            background: rgba(15, 23, 42, 0.85);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(15, 23, 42, 0.88);
+            border: 1px solid rgba(255, 255, 255, 0.25);
             color: #ffffff;
             padding: 10px 18px;
             border-radius: 12px;
@@ -322,7 +372,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(6px);
         }
 
         /* Contenedor del Diagrama con Fondo 'BEBE 1.jpg' */
@@ -541,7 +591,7 @@
 
     <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
 
-    <!-- Menú Lateral -->
+    <!-- MENÚ LATERAL CON CUADRITOS Y FONDO casa 1.jpg -->
     <aside class="sidebar" id="sidebar">
         <div class="search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -558,7 +608,7 @@
                 </a>
             </li>
 
-            <!-- Desplegable OSINT -->
+            <!-- Desplegable OSINT en Cuadrito -->
             <li class="menu-item">
                 <div class="menu-link" onclick="toggleSubmenu('osintMenu', 'osintArrow')">
                     <div class="menu-link-left">
@@ -588,7 +638,7 @@
                 </ul>
             </li>
 
-            <!-- Operaciones -->
+            <!-- Bloqueos -->
             <li class="menu-item">
                 <a href="#" class="menu-link" onclick="showCategory('Bloqueo')">
                     <div class="menu-link-left">
@@ -622,7 +672,7 @@
 
     <!-- Contenido Principal -->
     <main id="mainContainer">
-        <!-- Banner Principal (Fondo BEBE 2.jpg) -->
+        <!-- Hero Banner con fondo 'bebe 2.jpg' -->
         <div class="hero-banner">
             <h1 class="hero-title">🚀 ROCKET</h1>
             <div class="badge-confidential">🔒 100% CONFIDENCIAL Y DISCRETO</div>
@@ -635,7 +685,7 @@
 
         <!-- Vista de Inicio -->
         <div id="homeView">
-            <!-- Sección Diagrama OSINT (Fondo BEBE 1.jpg) -->
+            <!-- Diagrama OSINT con fondo 'BEBE 1.jpg' -->
             <div class="diagram-container">
                 <h2 class="diagram-title">RED DE CONSULTAS E INTEGRACIÓN OSINT</h2>
                 <div class="diagram-img-wrapper">
@@ -943,7 +993,7 @@
     </main>
 
     <script>
-        // Ocultar pantalla de carga
+        // Ocultar Loader al cargar la página
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
             loader.style.opacity = '0';
@@ -969,7 +1019,7 @@
             arrow.classList.toggle('fa-chevron-down');
         }
 
-        // Vista Inicio
+        // Mostrar Vista Inicio
         function showHome() {
             document.getElementById('homeView').classList.remove('hidden');
             document.getElementById('servicesView').classList.add('hidden');
@@ -1015,7 +1065,7 @@
             });
         }
 
-        // Cambio de Modo Claro / Oscuro
+        // Cambio Modo Claro / Oscuro
         function toggleTheme() {
             const html = document.documentElement;
             const icon = document.getElementById('themeIcon');
