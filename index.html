@@ -335,7 +335,7 @@
             letter-spacing: 0.3px;
         }
 
-        /* SECCIÓN DE PORTADAS DE SERVICIOS EN INICIO (FOTO 2 ESTILO FOTO 1) */
+        /* SECCIÓN DE PORTADAS DE SERVICIOS EN INICIO CON IMAGEN DE FONDO (oño 1.jpg) */
         .main-services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -344,7 +344,7 @@
         }
 
         .service-cover-card {
-            background: var(--bg-secondary);
+            background: linear-gradient(rgba(11, 15, 25, 0.78), rgba(11, 15, 25, 0.88)), url('oño 1.jpg') center/cover no-repeat;
             border: 1px solid var(--border-color);
             border-radius: 16px;
             padding: 22px 18px;
@@ -358,18 +358,23 @@
             transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
         }
 
+        [data-theme="light"] .service-cover-card {
+            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(241, 245, 249, 0.92)), url('oño 1.jpg') center/cover no-repeat;
+        }
+
         .service-cover-card:hover {
             transform: translateY(-5px);
             border-color: var(--accent-color);
-            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.25);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
         }
 
         .service-cover-icon {
             width: 58px;
             height: 58px;
             border-radius: 14px;
-            background: rgba(99, 102, 241, 0.12);
-            border: 1px solid rgba(99, 102, 241, 0.3);
+            background: rgba(99, 102, 241, 0.2);
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            backdrop-filter: blur(5px);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -453,7 +458,7 @@
             color: #6366f1;
         }
 
-        /* BARRAS EXCLUSIVAS DE TRABAJOS (DESDE S/ 8.00 + TIEMPO Y DIFICULTAD) */
+        /* BARRAS EXCLUSIVAS DE TRABAJOS */
         .trabajos-info-container {
             margin-bottom: 25px;
             text-align: center;
@@ -865,7 +870,7 @@
         <!-- 1. VISTA DE INICIO -->
         <div id="homeView" class="view-section">
 
-            <!-- PORTADAS DE SERVICIOS PRINCIPALES (SEGUNDA FOTO ESTILO PRIMERA FOTO) -->
+            <!-- PORTADAS DE SERVICIOS PRINCIPALES (CON FONDO oño 1.jpg) -->
             <div class="category-header" style="margin-top: 0;">
                 <i class="fa-solid fa-cubes"></i>
                 <span>Nuestros Servicios Principales</span>
@@ -913,7 +918,7 @@
                 </div>
             </div>
 
-            <!-- UNIVERSIDADES (FOTO 1) -->
+            <!-- UNIVERSIDADES -->
             <div class="academic-section">
                 <div class="academic-header">
                     <h2>🎓 TRABAJOS UNIVERSITARIOS DE TODAS LAS UNIVERSIDADES Y COLEGIOS DEL PERÚ</h2>
@@ -937,7 +942,7 @@
             </div>
         </div>
 
-        <!-- 2. VISTA DE SERVICIOS / OSINT (PLACAS EXCLUSIVAS S/ 2.00) -->
+        <!-- 2. VISTA DE SERVICIOS / OSINT -->
         <div id="servicesView" class="view-section hidden">
             
             <div class="osint-info-container">
@@ -975,7 +980,7 @@
             </div>
         </div>
 
-        <!-- 3. VISTA DE TRABAJOS UNIVERSITARIOS Y ESCOLARES (SIN S/ 2.00, DESDE S/ 8.00 + TIEMPO Y DIFICULTAD) -->
+        <!-- 3. VISTA DE TRABAJOS UNIVERSITARIOS Y ESCOLARES -->
         <div id="trabajosView" class="view-section hidden">
             
             <div class="trabajos-info-container">
@@ -985,7 +990,7 @@
                 <div class="info-bar">
                     <div class="info-pill"><i class="fa-solid fa-layer-group"></i> El costo varía según la dificultad del tema</div>
                     <div class="info-pill"><i class="fa-solid fa-stopwatch"></i> El precio depende del tiempo límite de entrega</div>
-                    <div class="info-pill"><i class="fa-solid fa-user-shield"></i> Entrega 100% Confidencial y Punctual</div>
+                    <div class="info-pill"><i class="fa-solid fa-user-shield"></i> Entrega 100% Confidencial y Puntual</div>
                 </div>
             </div>
 
@@ -1053,7 +1058,7 @@
             </div>
         </div>
 
-        <!-- 4. VISTA DE DESARROLLO WEB (PLANES S/ 5.00 A S/ 45.00) -->
+        <!-- 4. VISTA DE DESARROLLO WEB -->
         <div id="webDevView" class="view-section hidden">
             <div class="category-header">
                 <i class="fa-solid fa-laptop-code"></i>
@@ -1094,7 +1099,7 @@
                     <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Plan%20Basico%20de%20S/%2015" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Solicitar Plan S/ 15</a>
                 </div>
 
-                <!-- PLAN 3: S/ 25.00 (DESTACADO) -->
+                <!-- PLAN 3: S/ 25.00 -->
                 <div class="pricing-card featured">
                     <span class="badge-popular">MÁS SOLICITADO</span>
                     <div>
