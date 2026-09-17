@@ -548,6 +548,14 @@
             gap: 10px;
             font-weight: 700;
             font-size: 0.9rem;
+            cursor: pointer;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .uni-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-color);
+            box-shadow: 0 6px 18px rgba(99, 102, 241, 0.25);
         }
 
         .uni-badge {
@@ -928,26 +936,57 @@
                 </div>
             </div>
 
-            <!-- UNIVERSIDADES (CON TODOS LOS LOGOS ACTUALIZADOS) -->
+            <!-- UNIVERSIDADES (INTERACTIVAS) -->
             <div class="academic-section">
                 <div class="academic-header">
                     <h2>🎓 TRABAJOS UNIVERSITARIOS DE TODAS LAS UNIVERSIDADES Y COLEGIOS DEL PERÚ</h2>
-                    <p style="color: var(--text-secondary); margin-top: 6px;">Atención rápida y confidencial para alumnos de todas las instituciones.</p>
+                    <p style="color: var(--text-secondary); margin-top: 6px;">Haz clic en tu universidad para cotizar tus trabajos académicos al instante.</p>
                 </div>
 
                 <div class="uni-grid">
-                    <div class="uni-card"><div class="uni-badge"><img src="san marcos.jpg" alt="UNMSM"></div><div>UNMSM</div></div>
-                    <div class="uni-card"><div class="uni-badge"><img src="UNI.png" alt="UNI"></div><div>UNI</div></div>
-                    <div class="uni-card"><div class="uni-badge"><img src="PUCP.webp" alt="PUCP"></div><div>PUCP</div></div>
-                    <div class="uni-card"><div class="uni-badge"><img src="U. lima.png" alt="U. DE LIMA"></div><div>U. DE LIMA</div></div>
-                    <div class="uni-card"><div class="uni-badge"><img src="utp.jpg" alt="UTP"></div><div>UTP</div></div>
-                    <div class="uni-card"><div class="uni-badge"><img src="ucv.png" alt="UCV"></div><div>UCV</div></div>
-                    <div class="uni-card"><div class="uni-badge"><img src="upch.jpg" alt="UPCH"></div><div>UPCH</div></div>
-                    <div class="uni-card"><div class="uni-badge"><img src="cientifica del sur.png" alt="CIENTÍFICA DEL SUR"></div><div>CIENTÍFICA DEL SUR</div></div>
-                    <div class="uni-card"><div class="uni-badge"><img src="upc.png" alt="UPC"></div><div>UPC</div></div>
-                    <div class="uni-card"><div class="uni-badge"><img src="umsp.jpg" alt="USMP"></div><div>USMP</div></div>
-                    <div class="uni-card"><div class="uni-badge"><img src="upn.png" alt="UPN"></div><div>UPN</div></div>
-                    <div class="uni-card"><div class="uni-badge"><i class="fa-solid fa-school"></i></div><div>COLEGIOS DEL PERÚ</div></div>
+                    <div class="uni-card" onclick="openUniQuote('UNMSM')"><div class="uni-badge"><img src="san marcos.jpg" alt="UNMSM"></div><div>UNMSM</div></div>
+                    <div class="uni-card" onclick="openUniQuote('UNI')"><div class="uni-badge"><img src="UNI.png" alt="UNI"></div><div>UNI</div></div>
+                    <div class="uni-card" onclick="openUniQuote('PUCP')"><div class="uni-badge"><img src="PUCP.webp" alt="PUCP"></div><div>PUCP</div></div>
+                    <div class="uni-card" onclick="openUniQuote('U. DE LIMA')"><div class="uni-badge"><img src="U. lima.png" alt="U. DE LIMA"></div><div>U. DE LIMA</div></div>
+                    <div class="uni-card" onclick="openUniQuote('UTP')"><div class="uni-badge"><img src="utp.jpg" alt="UTP"></div><div>UTP</div></div>
+                    <div class="uni-card" onclick="openUniQuote('UCV')"><div class="uni-badge"><img src="ucv.png" alt="UCV"></div><div>UCV</div></div>
+                    <div class="uni-card" onclick="openUniQuote('UPCH')"><div class="uni-badge"><img src="upch.jpg" alt="UPCH"></div><div>UPCH</div></div>
+                    <div class="uni-card" onclick="openUniQuote('CIENTÍFICA DEL SUR')"><div class="uni-badge"><img src="cientifica del sur.png" alt="CIENTÍFICA DEL SUR"></div><div>CIENTÍFICA DEL SUR</div></div>
+                    <div class="uni-card" onclick="openUniQuote('UPC')"><div class="uni-badge"><img src="upc.png" alt="UPC"></div><div>UPC</div></div>
+                    <div class="uni-card" onclick="openUniQuote('USMP')"><div class="uni-badge"><img src="umsp.jpg" alt="USMP"></div><div>USMP</div></div>
+                    <div class="uni-card" onclick="openUniQuote('UPN')"><div class="uni-badge"><img src="upn.png" alt="UPN"></div><div>UPN</div></div>
+                    <div class="uni-card" onclick="openUniQuote('COLEGIOS DEL PERÚ')"><div class="uni-badge"><i class="fa-solid fa-school"></i></div><div>COLEGIOS DEL PERÚ</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VISTA DE COTIZACIÓN PERSONALIZADA POR UNIVERSIDAD -->
+        <div id="uniQuoteView" class="view-section hidden">
+            <div class="category-header">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span id="selectedUniTitle">Trabajos Universitarios</span>
+            </div>
+
+            <div class="academic-section" style="text-align: center; padding: 40px 20px;">
+                <div style="font-size: 3rem; margin-bottom: 12px;">📚</div>
+                <h2 style="font-size: 1.7rem; color: var(--text-primary); margin-bottom: 10px;">
+                    ¡Hacemos tus trabajos de <span id="selectedUniName" style="color: var(--accent-color);">tu Universidad</span>!
+                </h2>
+                <p style="color: var(--text-secondary); max-width: 580px; margin: 0 auto 20px; font-size: 0.95rem; line-height: 1.5;">
+                    Cuéntanos qué necesitas (tarea, guía de laboratorio, ensayo, monografía o presentación PPT) y te cotizamos al instante. Entrega 100% puntual y confidencial.
+                </p>
+
+                <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(37, 211, 102, 0.15); color: #25d366; border: 1px solid rgba(37, 211, 102, 0.4); padding: 9px 22px; border-radius: 50px; font-size: 1rem; font-weight: 800; margin-bottom: 25px;">
+                    <i class="fa-solid fa-tag"></i> Precio Base: Desde S/ 7.00
+                </div>
+
+                <div style="max-width: 420px; margin: 0 auto;">
+                    <a id="uniWspBtn" href="#" target="_blank" class="btn-wsp" style="padding: 14px; font-size: 1rem; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);">
+                        <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i> Cotizar por WhatsApp
+                    </a>
+                    <button onclick="showView('homeView')" style="margin-top: 15px; background: none; border: none; color: var(--text-secondary); cursor: pointer; font-size: 0.88rem; text-decoration: underline; display: block; width: 100%;">
+                        <i class="fa-solid fa-arrow-left"></i> Volver al inicio
+                    </button>
                 </div>
             </div>
         </div>
@@ -1273,7 +1312,19 @@
                 }
             });
         }
+
+        // Función para cotización personalizada según la universidad seleccionada
+        function openUniQuote(uniName) {
+            document.getElementById('selectedUniTitle').textContent = 'Atención Especial: ' + uniName;
+            document.getElementById('selectedUniName').textContent = uniName;
+            
+            // Genera mensaje listo para enviar a WhatsApp
+            const message = encodeURIComponent(`Hola, soy estudiante de ${uniName}. Deseo cotizar un trabajo académico (Precio base S/ 7.00). Adjunto los detalles:`);
+            document.getElementById('uniWspBtn').href = `https://wa.me/51931309889?text=${message}`;
+            
+            // Cambia a la vista de cotización
+            showView('uniQuoteView');
+        }
     </script>
 </body>
 </html>
-
