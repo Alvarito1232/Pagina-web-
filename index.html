@@ -52,7 +52,6 @@
             min-height: 100vh;
         }
 
-        /* Loader */
         #loader {
             position: fixed;
             top: 0;
@@ -82,7 +81,6 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Header Bar */
         header {
             position: fixed;
             top: 0;
@@ -133,7 +131,6 @@
             background-color: var(--card-hover);
         }
 
-        /* Sidebar con 'casa 1.jpg' */
         .sidebar {
             position: fixed;
             top: 60px;
@@ -173,7 +170,6 @@
             display: block;
         }
 
-        /* Buscador del Menú */
         .search-box {
             position: relative;
             margin-bottom: 22px;
@@ -267,7 +263,6 @@
             color: var(--wsp-color);
         }
 
-        /* Submenú */
         .submenu {
             list-style: none;
             padding: 10px;
@@ -311,7 +306,6 @@
             transform: translateX(4px);
         }
 
-        /* Contenido Principal */
         main {
             margin-top: 60px;
             padding: 40px 20px;
@@ -320,20 +314,33 @@
             margin-right: auto;
         }
 
-        /* BANNER INICIO (SOLO ROCKET BONITO) */
+        /* PORTADA DE ENTRADA CON IMAGEN FORMAL Y LOGO COHETE */
         .hero-banner-clean {
-            background: linear-gradient(rgba(11, 15, 25, 0.78), rgba(11, 15, 25, 0.78)), url('bebe 2.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(11, 15, 25, 0.75), rgba(11, 15, 25, 0.85)), url('bebe 2.jpg') center/cover no-repeat;
             border: 1px solid var(--border-color);
             border-radius: 20px;
-            padding: 60px 30px;
+            padding: 70px 30px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             color: #ffffff;
+        }
+
+        .hero-logo-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .rocket-emoji {
+            font-size: clamp(2.8rem, 7vw, 4.2rem);
+            filter: drop-shadow(0 0 15px rgba(99, 102, 241, 0.6));
         }
 
         .hero-title-clean {
@@ -341,18 +348,17 @@
             font-weight: 900;
             letter-spacing: 4px;
             color: #ffffff;
-            text-shadow: 0 4px 20px rgba(99, 102, 241, 0.6), 0 4px 10px rgba(0, 0, 0, 0.9);
+            text-shadow: 0 4px 25px rgba(255, 255, 255, 0.25), 0 4px 10px rgba(0, 0, 0, 0.9);
         }
 
         .hero-subtitle-clean {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.85);
-            margin-top: 10px;
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.9);
             font-weight: 600;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
-        /* BADGES OSINT (SOLO APARECEN DENTRO DE SERVICIOS OSINT) */
+        /* INSIGNIAS SOLO VISIBLES DENTRO DE LOS SERVICIOS DEL MENÚ */
         .osint-info-container {
             margin-bottom: 30px;
             text-align: center;
@@ -397,7 +403,6 @@
             color: var(--accent-color);
         }
 
-        /* Diagrama OSINT */
         .diagram-container {
             background: linear-gradient(rgba(11, 15, 25, 0.82), rgba(11, 15, 25, 0.82)), url('BEBE 1.jpg') center/cover no-repeat;
             border: 1px solid var(--border-color);
@@ -424,7 +429,6 @@
             box-shadow: 0 6px 25px rgba(0,0,0,0.5);
         }
 
-        /* Trabajos Universitarios */
         .academic-section {
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
@@ -476,7 +480,6 @@
             border: 1px solid var(--border-color);
         }
 
-        /* Grids y Tarjetas */
         .category-header {
             display: flex;
             align-items: center;
@@ -580,7 +583,6 @@
             transform: scale(1.01);
         }
 
-        /* Planes Web */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
@@ -662,7 +664,6 @@
             color: var(--wsp-color);
         }
 
-        /* Banner Emprendimiento */
         .promo-banner {
             background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(236, 72, 153, 0.2)), var(--bg-secondary);
             border: 2px dashed var(--accent-color);
@@ -694,13 +695,11 @@
 </head>
 <body>
 
-    <!-- Loader -->
     <div id="loader">
         <div class="spinner"></div>
         <p style="margin-top: 15px; color: var(--text-secondary);">Cargando ROCKET...</p>
     </div>
 
-    <!-- Header Bar -->
     <header>
         <div class="brand-logo" onclick="showView('homeView')">
             <span>🚀 ROCKET</span>
@@ -717,7 +716,6 @@
 
     <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
 
-    <!-- MENÚ LATERAL CON 'casa 1.jpg' -->
     <aside class="sidebar" id="sidebar">
         <div class="search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -734,7 +732,6 @@
                 </a>
             </li>
 
-            <!-- Desplegable OSINT -->
             <li class="menu-item">
                 <div class="menu-link" onclick="toggleSubmenu('osintMenu', 'osintArrow')">
                     <div class="menu-link-left">
@@ -764,7 +761,6 @@
                 </ul>
             </li>
 
-            <!-- Bloqueos -->
             <li class="menu-item">
                 <a href="#" class="menu-link" onclick="showCategory('Bloqueo')">
                     <div class="menu-link-left">
@@ -774,7 +770,6 @@
                 </a>
             </li>
 
-            <!-- Números Virtuales -->
             <li class="menu-item">
                 <a href="#" class="menu-link" onclick="showCategory('VIRTUALES')">
                     <div class="menu-link-left">
@@ -784,7 +779,6 @@
                 </a>
             </li>
 
-            <!-- Trabajos Universitarios -->
             <li class="menu-item">
                 <a href="#" class="menu-link" onclick="showCategory('Trabajos')">
                     <div class="menu-link-left">
@@ -794,7 +788,6 @@
                 </a>
             </li>
 
-            <!-- Detalles y Regalos -->
             <li class="menu-item">
                 <a href="#" class="menu-link" onclick="showView('detallesView')">
                     <div class="menu-link-left">
@@ -804,7 +797,6 @@
                 </a>
             </li>
 
-            <!-- Emprendimientos Universitarios -->
             <li class="menu-item">
                 <a href="#" class="menu-link" onclick="showView('emprendimientoView')">
                     <div class="menu-link-left">
@@ -814,7 +806,6 @@
                 </a>
             </li>
 
-            <!-- Crea tu Página Web -->
             <li class="menu-item">
                 <a href="#" class="menu-link" onclick="showView('webDevView')">
                     <div class="menu-link-left">
@@ -824,7 +815,6 @@
                 </a>
             </li>
 
-            <!-- Contáctanos -->
             <li class="menu-item" style="margin-top: 15px;">
                 <a href="https://wa.me/51931309889?text=Hola,%20deseo%20mayor%20informaci%C3%B3n" target="_blank" class="menu-link menu-link-highlight">
                     <div class="menu-link-left">
@@ -837,13 +827,15 @@
         </ul>
     </aside>
 
-    <!-- Contenido Principal -->
     <main id="mainContainer">
 
-        <!-- 1. VISTA INICIO (SOLO MUESTRA ROCKET LIMPIO Y BONITO) -->
+        <!-- VISTA INICIO CON LA IMAGEN Y PRESENCIA FORMAL -->
         <div id="homeView" class="view-section">
             <div class="hero-banner-clean">
-                <h1 class="hero-title-clean">🚀 ROCKET</h1>
+                <div class="hero-logo-wrapper">
+                    <span class="rocket-emoji">🚀</span>
+                    <h1 class="hero-title-clean">ROCKET</h1>
+                </div>
                 <p class="hero-subtitle-clean">Plataforma Integral de Servicios Digitales y Soluciones</p>
             </div>
 
@@ -877,9 +869,8 @@
             </div>
         </div>
 
-        <!-- 2. VISTA SERVICIOS OSINT / OPERACIONES (AQUÍ SÍ APARECEN LAS INSIGNIAS Y REQUISITOS) -->
+        <!-- VISTA SERVICIOS CON DISTINTIVOS -->
         <div id="servicesView" class="view-section hidden">
-            <!-- INSIGNIAS Y BADGES SOLO VISIBLES EN ESTA SECCIÓN -->
             <div class="osint-info-container">
                 <div class="badge-confidential">🔒 100% CONFIDENCIAL Y DISCRETO</div>
                 <div class="info-bar">
@@ -917,7 +908,6 @@
             </div>
         </div>
 
-        <!-- 3. DETALLES Y REGALOS GITHUB -->
         <div id="detallesView" class="view-section hidden">
             <div class="category-header">
                 <i class="fa-solid fa-gift"></i>
@@ -976,11 +966,10 @@
             </div>
         </div>
 
-        <!-- 4. EMPRENDIMIENTOS UNIVERSITARIOS -->
         <div id="emprendimientoView" class="view-section hidden">
             <div class="promo-banner">
                 <h3>🛍️ VITRINA EMPRENDEDORA UNIVERSITARIA</h3>
-                <p>¿Tienes un emprendimiento en la universidad? Vende postres, accesorios, ropa, maquillaje o servicios y **promociónate en ROCKET** para llegar a cientos de estudiantes de tu campus.</p>
+                <p>¿Tienes un emprendimiento en la universidad? Vende postres, accesorios, ropa, maquillaje o servicios y promociónate en ROCKET para llegar a cientos de estudiantes de tu campus.</p>
                 <a href="https://wa.me/51931309889?text=Hola,%20tengo%20un%20emprendimiento%20universitario%20y%20quiero%20promocionarme%20en%20tu%20p%C3%A1gina" target="_blank" class="btn-wsp" style="display: inline-flex; width: auto; padding: 12px 25px;"><i class="fa-brands fa-whatsapp"></i> ¡Publica tu Negocio Aquí!</a>
             </div>
 
@@ -1034,7 +1023,6 @@
             </div>
         </div>
 
-        <!-- 5. CREA TU PÁGINA WEB -->
         <div id="webDevView" class="view-section hidden">
             <div class="category-header">
                 <i class="fa-solid fa-laptop-code"></i>
@@ -1082,7 +1070,7 @@
                         <div class="plan-price">S/ 30.00 <span>/ servicio completo</span></div>
                         <ul class="plan-features">
                             <li><i class="fa-solid fa-check"></i> Todo lo del Plan Pro Catálogo</li>
-                            <li><i class="fa-solid fa-check"></i> <strong>Actualizaciones cada semana</strong></li>
+                            <li><i class="fa-solid fa-check"></i> Actualizaciones cada semana</li>
                             <li><i class="fa-solid fa-check"></i> Mantenimiento continuo de tu web</li>
                             <li><i class="fa-solid fa-check"></i> Cambio de fotos, precios y texto</li>
                             <li><i class="fa-solid fa-check"></i> Asistencia técnica prioritaria 24/7</li>
@@ -1096,20 +1084,17 @@
     </main>
 
     <script>
-        // Ocultar Loader
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
             loader.style.opacity = '0';
             setTimeout(() => { loader.style.visibility = 'hidden'; }, 500);
         });
 
-        // Alternar Sidebar
         function toggleSidebar() {
             document.getElementById('sidebar').classList.toggle('active');
             document.getElementById('overlay').classList.toggle('active');
         }
 
-        // Submenús
         function toggleSubmenu(id, arrowId) {
             document.getElementById(id).classList.toggle('open');
             const arrow = document.getElementById(arrowId);
@@ -1117,7 +1102,6 @@
             arrow.classList.toggle('fa-chevron-down');
         }
 
-        // Mostrar Vistas
         function showView(viewId) {
             const views = document.querySelectorAll('.view-section');
             views.forEach(v => v.classList.add('hidden'));
@@ -1131,7 +1115,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Mostrar Categorías OSINT / Servicios
         function showCategory(category) {
             showView('servicesView');
             document.getElementById('categoryTitle').textContent = category;
@@ -1146,7 +1129,6 @@
             });
         }
 
-        // Buscador del Menú
         function filterMenu() {
             const input = document.getElementById('searchInput').value.toUpperCase();
             const items = document.querySelectorAll('#menuList .menu-item');
@@ -1157,7 +1139,6 @@
             });
         }
 
-        // Modo Claro / Oscuro
         function toggleTheme() {
             const html = document.documentElement;
             const icon = document.getElementById('themeIcon');
