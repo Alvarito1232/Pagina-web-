@@ -3,29 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROCKET - Sitio Oficial</title>
+    <title>ROCKET - Servicios de Inteligencia y Seguridad Empresarial</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --bg-primary: #0b0f19;
             --bg-secondary: #151c2c;
+            --bg-card: #1e293b;
             --bg-header: rgba(11, 15, 25, 0.95);
             --text-primary: #ffffff;
             --text-secondary: #94a3b8;
             --border-color: rgba(255, 255, 255, 0.1);
             --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.2);
             --wsp-color: #25d366;
+            --badge-bg: rgba(37, 211, 102, 0.15);
             --card-hover: rgba(255, 255, 255, 0.05);
         }
 
         [data-theme="light"] {
             --bg-primary: #f8fafc;
             --bg-secondary: #ffffff;
+            --bg-card: #f1f5f9;
             --bg-header: rgba(255, 255, 255, 0.95);
             --text-primary: #0f172a;
             --text-secondary: #64748b;
             --border-color: rgba(0, 0, 0, 0.1);
-            --card-hover: rgba(0, 0, 0, 0.02);
+            --accent-glow: rgba(99, 102, 241, 0.1);
+            --card-hover: rgba(0, 0, 0, 0.03);
         }
 
         * {
@@ -42,7 +47,7 @@
             min-height: 100vh;
         }
 
-        /* Loading Spinner Screen */
+        /* Loading Screen */
         #loader {
             position: fixed;
             top: 0;
@@ -93,9 +98,10 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            font-weight: 700;
+            font-weight: 800;
             font-size: 1.2rem;
             cursor: pointer;
+            letter-spacing: 1px;
         }
 
         .brand-logo img {
@@ -125,7 +131,7 @@
             background-color: var(--card-hover);
         }
 
-        /* Sidebar Navigation Drawer */
+        /* Sidebar Navigation */
         .sidebar {
             position: fixed;
             top: 60px;
@@ -159,7 +165,6 @@
             display: block;
         }
 
-        /* Search Input */
         .search-box {
             position: relative;
             margin-bottom: 20px;
@@ -184,7 +189,6 @@
             color: var(--text-secondary);
         }
 
-        /* Menu Items & Accordions */
         .menu-list {
             list-style: none;
         }
@@ -248,81 +252,180 @@
             background-color: var(--card-hover);
         }
 
-        /* Main Content Container */
+        /* Main Content & Home Section */
         main {
             margin-top: 60px;
             padding: 40px 20px;
-            max-width: 1100px;
+            max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        .hero {
+        .hero-banner {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(15, 23, 42, 0.4) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px 20px;
             text-align: center;
-            padding: 40px 0;
+            margin-bottom: 40px;
         }
 
-        .hero h1 {
-            font-size: 2.2rem;
+        .hero-title {
+            font-size: 1.8rem;
+            font-weight: 800;
             margin-bottom: 10px;
         }
 
-        .hero p {
-            color: var(--text-secondary);
+        .badge-confidential {
+            display: inline-block;
+            background: rgba(239, 68, 68, 0.15);
+            color: #ef4444;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
         }
 
+        .info-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .info-pill {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Category Headings */
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .category-header i {
+            color: var(--accent-color);
+        }
+
+        /* Grid & Cards */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 20px;
-            margin-top: 30px;
         }
 
         .card {
             background-color: var(--bg-secondary);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 20px;
+            border-radius: 14px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-color);
+        }
+
+        /* Image Placeholder Ready */
+        .card-img-placeholder {
+            width: 100%;
+            height: 160px;
+            background-color: var(--bg-card);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-img-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none; /* Se activa al poner src válido */
+        }
+
+        .card-body {
+            padding: 18px;
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
-        .card h3 {
-            margin-bottom: 10px;
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-primary);
         }
 
-        .card p {
+        .card-desc {
             color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 15px;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            margin-bottom: 18px;
         }
 
         .btn-wsp {
-            display: block;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
             background-color: var(--wsp-color);
             color: #ffffff;
             text-decoration: none;
             padding: 10px;
             border-radius: 8px;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-wsp:hover {
+            opacity: 0.9;
         }
     </style>
 </head>
 <body>
 
-    <!-- Pantalla de carga -->
+    <!-- Pantalla de Carga -->
     <div id="loader">
         <div class="spinner"></div>
         <p style="margin-top: 15px; color: var(--text-secondary);">Cargando ROCKET...</p>
     </div>
 
-    <!-- Encabezado -->
+    <!-- Header Navigation -->
     <header>
-        <div class="brand-logo" onclick="toggleSidebar()">
+        <div class="brand-logo" onclick="showHome()">
             <img src="logo.png" alt="Logo" onerror="this.style.display='none'">
-            <span>ROCKET</span>
+            <span>🚀 ROCKET</span>
         </div>
         <div class="header-actions">
             <button class="icon-btn" id="themeToggle" title="Cambiar Tema">
@@ -334,21 +437,18 @@
         </div>
     </header>
 
-    <!-- Overlay y Menú Lateral (Sidebar) -->
+    <!-- Overlay & Sidebar Drawer -->
     <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
 
     <aside class="sidebar" id="sidebar">
-        <!-- Buscador -->
         <div class="search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" id="searchInput" onkeyup="filterMenu()" placeholder="Buscar...">
+            <input type="text" id="searchInput" onkeyup="filterMenu()" placeholder="Buscar servicio...">
         </div>
 
-        <!-- Lista de Opciones -->
         <ul class="menu-list" id="menuList">
-
             <li class="menu-item">
-                <a href="#" class="menu-link" onclick="selectService('Home')">
+                <a href="#" class="menu-link" onclick="showHome()">
                     <div class="menu-link-left">
                         <i class="fa-solid fa-house"></i>
                         <span>Home</span>
@@ -357,7 +457,7 @@
             </li>
 
             <li class="menu-item">
-                <a href="#" class="menu-link" onclick="selectService('Teléfonos')">
+                <a href="#" class="menu-link" onclick="filterBySidebar('Teléfono')">
                     <div class="menu-link-left">
                         <i class="fa-solid fa-phone"></i>
                         <span>Teléfonos</span>
@@ -366,7 +466,7 @@
             </li>
 
             <li class="menu-item">
-                <a href="#" class="menu-link" onclick="selectService('Sunarp')">
+                <a href="#" class="menu-link" onclick="filterBySidebar('Sunarp')">
                     <div class="menu-link-left">
                         <i class="fa-solid fa-building"></i>
                         <span>Sunarp</span>
@@ -374,7 +474,7 @@
                 </a>
             </li>
 
-            <!-- Desplegable Reniec -->
+            <!-- Reniec Dropdown -->
             <li class="menu-item">
                 <div class="menu-link" onclick="toggleSubmenu('reniecMenu', 'reniecArrow')">
                     <div class="menu-link-left">
@@ -384,15 +484,13 @@
                     <i class="fa-solid fa-chevron-down" id="reniecArrow"></i>
                 </div>
                 <ul class="submenu" id="reniecMenu">
-                    <li><a href="#" onclick="selectService('Ficha Reniec')">Ficha Reniec</a></li>
-                    <li><a href="#" onclick="selectService('Búsqueda por nombres')">Búsqueda por nombres</a></li>
-                    <li><a href="#" onclick="selectService('DNI Virtual')">DNI Virtual</a></li>
-                    <li><a href="#" onclick="selectService('Árbol genealógico')">Árbol genealógico</a></li>
-                    <li><a href="#" onclick="selectService('Reconocimiento facial')">Reconocimiento facial</a></li>
+                    <li><a href="#" onclick="filterBySidebar('RENIEC')">Foto de DNI / Huellas</a></li>
+                    <li><a href="#" onclick="filterBySidebar('RENIEC')">DNI Virtual</a></li>
+                    <li><a href="#" onclick="filterBySidebar('FAMILIA')">Árbol Genealógico</a></li>
                 </ul>
             </li>
 
-            <!-- Desplegable Justicia -->
+            <!-- Justicia Dropdown -->
             <li class="menu-item">
                 <div class="menu-link" onclick="toggleSubmenu('justiciaMenu', 'justiciaArrow')">
                     <div class="menu-link-left">
@@ -402,16 +500,14 @@
                     <i class="fa-solid fa-chevron-down" id="justiciaArrow"></i>
                 </div>
                 <ul class="submenu" id="justiciaMenu">
-                    <li><a href="#" onclick="selectService('Denuncias Policiales')">Denuncias Policiales</a></li>
-                    <li><a href="#" onclick="selectService('Carpeta Fiscal')">Carpeta Fiscal</a></li>
-                    <li><a href="#" onclick="selectService('Antecedentes')">Antecedentes</a></li>
-                    <li><a href="#" onclick="selectService('Requisitorias')">Requisitorias</a></li>
-                    <li><a href="#" onclick="selectService('Policia')">Policia</a></li>
+                    <li><a href="#" onclick="filterBySidebar('ANTECEDENTES')">Denuncias Policiales</a></li>
+                    <li><a href="#" onclick="filterBySidebar('ANTECEDENTES')">Carpetas Fiscales</a></li>
+                    <li><a href="#" onclick="filterBySidebar('ANTECEDENTES')">Requisitorias (RQ)</a></li>
                 </ul>
             </li>
 
             <li class="menu-item">
-                <a href="#" class="menu-link" onclick="selectService('Sentinel')">
+                <a href="#" class="menu-link" onclick="filterBySidebar('FINANCIERO')">
                     <div class="menu-link-left">
                         <i class="fa-solid fa-shield-halved"></i>
                         <span>Sentinel</span>
@@ -420,97 +516,338 @@
             </li>
 
             <li class="menu-item">
-                <a href="#" class="menu-link" onclick="selectService('Vehículo')">
+                <a href="#" class="menu-link" onclick="filterBySidebar('Bloqueo')">
                     <div class="menu-link-left">
-                        <i class="fa-solid fa-car"></i>
-                        <span>Vehículo</span>
+                        <i class="fa-solid fa-ban"></i>
+                        <span>Bloqueos</span>
                     </div>
                 </a>
             </li>
 
             <li class="menu-item">
-                <a href="#" class="menu-link" onclick="selectService('Síguelo Plus')">
+                <a href="#" class="menu-link" onclick="filterBySidebar('NÚMEROS VIRTUALES')">
                     <div class="menu-link-left">
-                        <i class="fa-solid fa-car-side"></i>
-                        <span>Síguelo Plus</span>
+                        <i class="fa-solid fa-sim-card"></i>
+                        <span>Números Virtuales</span>
                     </div>
                 </a>
             </li>
-
-            <li class="menu-item">
-                <a href="#" class="menu-link" onclick="selectService('Actas')">
-                    <div class="menu-link-left">
-                        <i class="fa-solid fa-file-lines"></i>
-                        <span>Actas</span>
-                    </div>
-                </a>
-            </li>
-
-            <li class="menu-item">
-                <a href="#" class="menu-link" onclick="selectService('Doxing')">
-                    <div class="menu-link-left">
-                        <i class="fa-solid fa-chart-simple"></i>
-                        <span>Doxing</span>
-                    </div>
-                </a>
-            </li>
-
-            <li class="menu-item">
-                <a href="#" class="menu-link" onclick="selectService('Persona Plus')">
-                    <div class="menu-link-left">
-                        <i class="fa-solid fa-user-gear"></i>
-                        <span>Persona Plus</span>
-                    </div>
-                </a>
-            </li>
-
-            <li class="menu-item">
-                <a href="#" class="menu-link" onclick="selectService('Sunat')">
-                    <div class="menu-link-left">
-                        <i class="fa-solid fa-file-invoice"></i>
-                        <span>Sunat</span>
-                    </div>
-                </a>
-            </li>
-
         </ul>
     </aside>
 
-    <!-- Contenido principal -->
-    <main>
-        <section class="hero">
-            <h1 id="selectedTitle">Panel de Consultas ROCKET</h1>
-            <p>Selecciona una opción del menú lateral para solicitar el servicio por WhatsApp.</p>
-        </section>
+    <!-- Main Content -->
+    <main id="mainContainer">
+
+        <!-- Banner Principal Home -->
+        <div class="hero-banner">
+            <h1 class="hero-title">🚀 ROCKET — SERVICIOS DE INTELIGENCIA Y SEGURIDAD EMPRESARIAL</h1>
+            <div class="badge-confidential">🔒 100% CONFIDENCIAL Y DISCRETO</div>
+            
+            <div class="info-bar">
+                <div class="info-pill"><i class="fa-solid fa-tag"></i> Precio: Desde S/ 2.00</div>
+                <div class="info-pill"><i class="fa-solid fa-bolt"></i> Atención Rápida</div>
+                <div class="info-pill"><i class="fa-solid fa-mobile-screen"></i> Requisitos: Solo el número de celular</div>
+            </div>
+        </div>
+
+        <!-- CATEGORÍA 1 -->
+        <div class="category-header">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Verificación de Datos y Registros Civiles</span>
+        </div>
 
         <div class="grid">
             <div class="card">
-                <div>
-                    <h3 id="cardTitle">Consulta General</h3>
-                    <p id="cardDesc">Haz clic en cualquier item del menú lateral para pedir detalles directos de la consulta.</p>
+                <div class="card-img-placeholder">
+                    <i class="fa-solid fa-id-card fa-2x"></i>
+                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
+                    <img src="reniec.jpg" alt="Reniec" onerror="this.style.display='none'">
                 </div>
-                <a href="https://wa.me/51900000000?text=Hola,%20deseo%20información" target="_blank" id="wspBtn" class="btn-wsp">Solicitar por WhatsApp</a>
+                <div class="card-body">
+                    <div>
+                        <div class="card-title">RENIEC</div>
+                        <div class="card-desc">Foto de DNI | Firma y huellas | DNI virtual azul, amarillo y electrónico.</div>
+                    </div>
+                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20RENIEC" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-placeholder">
+                    <i class="fa-solid fa-file-shield fa-2x"></i>
+                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
+                    <img src="antecedentes.jpg" alt="Antecedentes" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="card-title">ANTECEDENTES</div>
+                        <div class="card-desc">Denuncias policiales | Requisitorias (RQ) | Carpetas fiscales | Detenidos / Sentenciados.</div>
+                    </div>
+                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20ANTECEDENTES" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-placeholder">
+                    <i class="fa-solid fa-award fa-2x"></i>
+                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
+                    <img src="certificados.jpg" alt="Certificados" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="card-title">CERTIFICADOS</div>
+                        <div class="card-desc">Certificados Policiales, Judiciales y Penales oficiales.</div>
+                    </div>
+                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20CERTIFICADOS" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-placeholder">
+                    <i class="fa-solid fa-file-lines fa-2x"></i>
+                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
+                    <img src="actas.jpg" alt="Actas" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="card-title">ACTAS</div>
+                        <div class="card-desc">Búsqueda y emisión de Actas de Nacimiento | Matrimonio | Defunción.</div>
+                    </div>
+                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20ACTAS" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-placeholder">
+                    <i class="fa-solid fa-users-rectangle fa-2x"></i>
+                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
+                    <img src="familia.jpg" alt="Familia" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="card-title">FAMILIA</div>
+                        <div class="card-desc">Árbol genealógico completo | Fotos e integrantes vinculados del hogar.</div>
+                    </div>
+                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20FAMILIA" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-placeholder">
+                    <i class="fa-solid fa-mobile-retro fa-2x"></i>
+                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
+                    <img src="telefono.jpg" alt="Teléfono" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="card-title">TELÉFONO</div>
+                        <div class="card-desc">Búsqueda de titular en tiempo real (Movistar, Claro, Entel, Bitel).</div>
+                    </div>
+                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20TELEFONO" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-placeholder">
+                    <i class="fa-solid fa-chart-line fa-2x"></i>
+                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
+                    <img src="financiero.jpg" alt="Financiero" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="card-title">FINANCIERO</div>
+                        <div class="card-desc">Trabajos y sueldos | Reportes financieros | Consulta REC | Historial de consumos.</div>
+                    </div>
+                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20FINANCIERO" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                </div>
             </div>
         </div>
+
+        <!-- CATEGORÍA 2 -->
+        <div class="category-header">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Soluciones Operativas y Seguridad Avanzada</span>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-img-placeholder">
+                    <i class="fa-solid fa-lock fa-2x"></i>
+                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
+                    <img src="bloqueo-linea.jpg" alt="Bloqueo Linea" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="card-title">Bloqueo de Línea + IMEI</div>
+                        <div class="card-desc">Bloqueo efectivo para Android / iOS en cualquier operador.</div>
+                    </div>
+                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20Bloqueo%20de%20Linea%20%2B%20IMEI" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-placeholder">
+                    <i class="fa-solid fa-phone-slash fa-2x"></i>
+                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
+                    <img src="bloqueo-llamada.jpg" alt="Operaciones Bloqueo" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="card-title">Operaciones de Bloqueo Específicas</div>
+                        <div class="card-desc">Instantáneo, anónimo y verificable mediante llamada directa.</div>
+                    </div>
+                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20Operaciones%20de%20bloqueo" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-placeholder">
+                    <i class="fa-solid fa-user-secret fa-2x"></i>
+                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
+                    <img src="doxeo.jpg" alt="Doxeo" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="card-title">Doxeo</div>
+                        <div class="card-desc">Búsqueda avanzada e informe perfilado de datos vinculados.</div>
+                    </div>
+                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20de%20Doxeo" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-placeholder">
+                    <i class="fa-solid fa-gavel fa-2x"></i>
+                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
+                    <img src="denuncias.jpg" alt="Denuncias" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="card-title">Denuncias Judiciales al Sistema</div>
+                        <div class="card-desc">Registro y verificación en el sistema oficial de denuncias.</div>
+                    </div>
+                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20Denuncias%20Judiciales" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-placeholder">
+                    <i class="fa-solid fa-list-check fa-2x"></i>
+                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
+                    <img src="registro-entel.jpg" alt="Registro Entel" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="card-title">Registro de Llamadas (Entel)</div>
+                        <div class="card-desc">Historial detallado de registros de llamadas entrantes/salientes.</div>
+                    </div>
+                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20Registro%20de%20llamadas%20Entel" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-placeholder">
+                    <i class="fa-solid fa-hashtag fa-2x"></i>
+                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
+                    <img src="redes.jpg" alt="Seguidores" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="card-title">Seguidores, Likes y Vistas</div>
+                        <div class="card-desc">Crecimiento e interacción garantizada para tus redes sociales.</div>
+                    </div>
+                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20Seguidores/Likes/Vistas" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-placeholder">
+                    <i class="fa-solid fa-notes-medical fa-2x"></i>
+                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
+                    <img src="medico.jpg" alt="Descanso Medico" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="card-title">Descanso / Receta Médica</div>
+                        <div class="card-desc">Gestión y emisión de descansos y recetas médicas.</div>
+                    </div>
+                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20Descanso%20o%20Receta%20Medica" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-placeholder">
+                    <i class="fa-solid fa-building-columns fa-2x"></i>
+                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
+                    <img src="banca.jpg" alt="Bloqueo Banca" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="card-title">Bloqueo de Banca Móvil</div>
+                        <div class="card-desc">Soporte preventivo de bloqueo para BBVA, Interbank, BCP y Scotiabank.</div>
+                    </div>
+                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20Bloqueo%20de%20Banca%20Movil" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-placeholder">
+                    <i class="fa-solid fa-wallet fa-2x"></i>
+                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
+                    <img src="billeteras.jpg" alt="Bloqueo Billeteras" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="card-title">Bloqueo de Billeteras Digitales</div>
+                        <div class="card-desc">Protección y bloqueo en Yape, Plin, Agora y Bim.</div>
+                    </div>
+                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20Bloqueo%20de%20Billeteras%20Digitales" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CATEGORÍA 3 -->
+        <div class="category-header">
+            <i class="fa-solid fa-sim-card"></i>
+            <span>Números Virtuales</span>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-img-placeholder">
+                    <i class="fa-solid fa-globe fa-2x"></i>
+                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
+                    <img src="virtual.jpg" alt="Números Virtuales" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="card-title">📱 NÚMEROS VIRTUALES</div>
+                        <div class="card-desc">Activación inmediata para WhatsApp y cualquier red social de cualquier país.</div>
+                    </div>
+                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20un%20Numero%20Virtual" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <script>
-        // Ocultar pantalla de carga
+        // Ocultar Pantalla de Carga
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
             setTimeout(() => {
                 loader.style.opacity = '0';
                 setTimeout(() => loader.style.display = 'none', 500);
-            }, 500);
+            }, 400);
         });
 
-        // Alternar menú lateral (Sidebar)
+        // Alternar Menú Sidebar
         function toggleSidebar() {
             document.getElementById('sidebar').classList.toggle('active');
             document.getElementById('overlay').classList.toggle('active');
         }
 
-        // Alternar submenús (Reniec / Justicia)
+        // Submenús desplegables
         function toggleSubmenu(menuId, arrowId) {
             const menu = document.getElementById(menuId);
             const arrow = document.getElementById(arrowId);
@@ -534,7 +871,7 @@
             }
         });
 
-        // Filtrar opciones del menú con el buscador
+        // Filtrar elementos del Menú Lateral
         function filterMenu() {
             const input = document.getElementById('searchInput').value.toLowerCase();
             const items = document.querySelectorAll('.menu-item');
@@ -549,16 +886,23 @@
             });
         }
 
-        // Selección de servicio desde el menú
-        function selectService(serviceName) {
-            document.getElementById('selectedTitle').innerText = serviceName;
-            document.getElementById('cardTitle').innerText = 'Servicio: ' + serviceName;
-            document.getElementById('cardDesc').innerText = 'Haz tu pedido directo para la consulta de ' + serviceName + '.';
-            
-            const message = encodeURIComponent('Hola, quisiera solicitar el servicio de: ' + serviceName);
-            document.getElementById('wspBtn').href = 'https://wa.me/51900000000?text=' + message;
-            
+        // Función para volver al Home
+        function showHome() {
+            window.location.reload();
+        }
+
+        // Filtrar tarjetas por búsqueda desde la barra lateral
+        function filterBySidebar(query) {
             toggleSidebar();
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const title = card.querySelector('.card-title').innerText.toLowerCase();
+                const desc = card.querySelector('.card-desc').innerText.toLowerCase();
+                if (title.includes(query.toLowerCase()) || desc.includes(query.toLowerCase())) {
+                    card.style.display = 'flex';
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
         }
     </script>
 </body>
