@@ -17,7 +17,6 @@
             --accent-color: #6366f1;
             --accent-glow: rgba(99, 102, 241, 0.2);
             --wsp-color: #25d366;
-            --badge-bg: rgba(37, 211, 102, 0.15);
             --card-hover: rgba(255, 255, 255, 0.05);
         }
 
@@ -47,7 +46,7 @@
             min-height: 100vh;
         }
 
-        /* Loading Screen */
+        /* Loader */
         #loader {
             position: fixed;
             top: 0;
@@ -104,10 +103,6 @@
             letter-spacing: 1px;
         }
 
-        .brand-logo img {
-            height: 32px;
-        }
-
         .header-actions {
             display: flex;
             align-items: center;
@@ -135,8 +130,8 @@
         .sidebar {
             position: fixed;
             top: 60px;
-            left: -300px;
-            width: 280px;
+            left: -320px;
+            width: 300px;
             height: calc(100vh - 60px);
             background-color: var(--bg-secondary);
             border-right: 1px solid var(--border-color);
@@ -216,30 +211,33 @@
         .menu-link-left {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 12px;
         }
 
         .menu-link-left i {
             width: 20px;
             text-align: center;
-            color: var(--text-secondary);
+            color: var(--accent-color);
         }
 
+        /* Submenús */
         .submenu {
             list-style: none;
-            padding-left: 38px;
+            padding-left: 20px;
             display: none;
             margin-top: 4px;
             border-left: 2px solid var(--border-color);
-            margin-left: 20px;
+            margin-left: 15px;
         }
 
         .submenu.open {
             display: block;
         }
 
-        .submenu li a {
-            display: block;
+        .submenu li a, .submenu li .menu-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             padding: 8px 12px;
             color: var(--text-secondary);
             text-decoration: none;
@@ -247,12 +245,18 @@
             border-radius: 6px;
         }
 
-        .submenu li a:hover {
+        .submenu li a:hover, .submenu li .menu-link:hover {
             color: var(--text-primary);
             background-color: var(--card-hover);
         }
 
-        /* Main Content & Home Section */
+        .submenu .submenu {
+            margin-left: 10px;
+            padding-left: 12px;
+            border-left: 1px dashed var(--border-color);
+        }
+
+        /* Content Area */
         main {
             margin-top: 60px;
             padding: 40px 20px;
@@ -308,7 +312,6 @@
             gap: 8px;
         }
 
-        /* Category Headings */
         .category-header {
             display: flex;
             align-items: center;
@@ -324,7 +327,6 @@
             color: var(--accent-color);
         }
 
-        /* Grid & Cards */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -347,7 +349,6 @@
             border-color: var(--accent-color);
         }
 
-        /* Image Placeholder Ready */
         .card-img-placeholder {
             width: 100%;
             height: 160px;
@@ -359,14 +360,13 @@
             color: var(--text-secondary);
             border-bottom: 1px solid var(--border-color);
             position: relative;
-            overflow: hidden;
         }
 
         .card-img-placeholder img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: none; /* Se activa al poner src válido */
+            display: none;
         }
 
         .card-body {
@@ -381,7 +381,6 @@
             font-size: 1.1rem;
             font-weight: 700;
             margin-bottom: 8px;
-            color: var(--text-primary);
         }
 
         .card-desc {
@@ -404,27 +403,18 @@
             border-radius: 8px;
             font-weight: 700;
             font-size: 0.9rem;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-wsp:hover {
-            opacity: 0.9;
         }
     </style>
 </head>
 <body>
 
-    <!-- Pantalla de Carga -->
     <div id="loader">
         <div class="spinner"></div>
         <p style="margin-top: 15px; color: var(--text-secondary);">Cargando ROCKET...</p>
     </div>
 
-    <!-- Header Navigation -->
     <header>
         <div class="brand-logo" onclick="showHome()">
-            <img src="logo.png" alt="Logo" onerror="this.style.display='none'">
             <span>🚀 ROCKET</span>
         </div>
         <div class="header-actions">
@@ -437,9 +427,9 @@
         </div>
     </header>
 
-    <!-- Overlay & Sidebar Drawer -->
     <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
 
+    <!-- Menú Lateral -->
     <aside class="sidebar" id="sidebar">
         <div class="search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -447,6 +437,7 @@
         </div>
 
         <ul class="menu-list" id="menuList">
+            <!-- Home -->
             <li class="menu-item">
                 <a href="#" class="menu-link" onclick="showHome()">
                     <div class="menu-link-left">
@@ -456,65 +447,65 @@
                 </a>
             </li>
 
+            <!-- Desplegable Servicios de OSINT -->
             <li class="menu-item">
-                <a href="#" class="menu-link" onclick="filterBySidebar('Teléfono')">
+                <div class="menu-link" onclick="toggleSubmenu('osintMenu', 'osintArrow')">
                     <div class="menu-link-left">
-                        <i class="fa-solid fa-phone"></i>
-                        <span>Teléfonos</span>
+                        <i class="fa-solid fa-user-secret"></i>
+                        <span>Servicios de OSINT</span>
                     </div>
-                </a>
-            </li>
-
-            <li class="menu-item">
-                <a href="#" class="menu-link" onclick="filterBySidebar('Sunarp')">
-                    <div class="menu-link-left">
-                        <i class="fa-solid fa-building"></i>
-                        <span>Sunarp</span>
-                    </div>
-                </a>
-            </li>
-
-            <!-- Reniec Dropdown -->
-            <li class="menu-item">
-                <div class="menu-link" onclick="toggleSubmenu('reniecMenu', 'reniecArrow')">
-                    <div class="menu-link-left">
-                        <i class="fa-solid fa-id-card"></i>
-                        <span>Reniec</span>
-                    </div>
-                    <i class="fa-solid fa-chevron-down" id="reniecArrow"></i>
+                    <i class="fa-solid fa-chevron-down" id="osintArrow"></i>
                 </div>
-                <ul class="submenu" id="reniecMenu">
-                    <li><a href="#" onclick="filterBySidebar('RENIEC')">Foto de DNI / Huellas</a></li>
-                    <li><a href="#" onclick="filterBySidebar('RENIEC')">DNI Virtual</a></li>
-                    <li><a href="#" onclick="filterBySidebar('FAMILIA')">Árbol Genealógico</a></li>
+                
+                <ul class="submenu" id="osintMenu">
+                    <li><a href="#" onclick="filterBySidebar('Teléfono')"><i class="fa-solid fa-phone"></i> Teléfonos</a></li>
+                    <li><a href="#" onclick="filterBySidebar('Sunarp')"><i class="fa-solid fa-building"></i> Sunarp</a></li>
+                    
+                    <!-- Submenú Reniec -->
+                    <li>
+                        <div class="menu-link" onclick="toggleSubmenu('reniecMenu', 'reniecArrow')">
+                            <div class="menu-link-left">
+                                <i class="fa-solid fa-id-card"></i>
+                                <span>Reniec</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down" id="reniecArrow"></i>
+                        </div>
+                        <ul class="submenu" id="reniecMenu">
+                            <li><a href="#" onclick="filterBySidebar('RENIEC')">Foto de DNI / Huellas</a></li>
+                            <li><a href="#" onclick="filterBySidebar('RENIEC')">DNI Virtual</a></li>
+                            <li><a href="#" onclick="filterBySidebar('FAMILIA')">Árbol Genealógico</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Submenú Justicia -->
+                    <li>
+                        <div class="menu-link" onclick="toggleSubmenu('justiciaMenu', 'justiciaArrow')">
+                            <div class="menu-link-left">
+                                <i class="fa-solid fa-folder-open"></i>
+                                <span>Justicia</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down" id="justiciaArrow"></i>
+                        </div>
+                        <ul class="submenu" id="justiciaMenu">
+                            <li><a href="#" onclick="filterBySidebar('ANTECEDENTES')">Denuncias Policiales</a></li>
+                            <li><a href="#" onclick="filterBySidebar('ANTECEDENTES')">Carpetas Fiscales</a></li>
+                            <li><a href="#" onclick="filterBySidebar('ANTECEDENTES')">Requisitorias (RQ)</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#" onclick="filterBySidebar('FINANCIERO')"><i class="fa-solid fa-shield-halved"></i> Sentinel</a></li>
+                    <li><a href="#" onclick="filterBySidebar('Vehículo')"><i class="fa-solid fa-car"></i> Vehículo</a></li>
+                    <li><a href="#" onclick="filterBySidebar('Síguelo')"><i class="fa-solid fa-route"></i> Síguelo Plus</a></li>
+                    <li><a href="#" onclick="filterBySidebar('ACTAS')"><i class="fa-solid fa-file-lines"></i> Actas</a></li>
+                    <li><a href="#" onclick="filterBySidebar('Doxeo')"><i class="fa-solid fa-user-tag"></i> Doxing</a></li>
+                    <li><a href="#" onclick="filterBySidebar('Persona')"><i class="fa-solid fa-user-check"></i> Persona Plus</a></li>
+                    <li><a href="#" onclick="filterBySidebar('Sunat')"><i class="fa-solid fa-receipt"></i> Sunat</a></li>
+                    <li><a href="#" onclick="filterBySidebar('APIs')"><i class="fa-solid fa-code"></i> APIs</a></li>
+                    <li><a href="#" onclick="filterBySidebar('Chat Bot')"><i class="fa-solid fa-robot"></i> Chat Bot</a></li>
                 </ul>
             </li>
 
-            <!-- Justicia Dropdown -->
-            <li class="menu-item">
-                <div class="menu-link" onclick="toggleSubmenu('justiciaMenu', 'justiciaArrow')">
-                    <div class="menu-link-left">
-                        <i class="fa-solid fa-folder-open"></i>
-                        <span>Justicia</span>
-                    </div>
-                    <i class="fa-solid fa-chevron-down" id="justiciaArrow"></i>
-                </div>
-                <ul class="submenu" id="justiciaMenu">
-                    <li><a href="#" onclick="filterBySidebar('ANTECEDENTES')">Denuncias Policiales</a></li>
-                    <li><a href="#" onclick="filterBySidebar('ANTECEDENTES')">Carpetas Fiscales</a></li>
-                    <li><a href="#" onclick="filterBySidebar('ANTECEDENTES')">Requisitorias (RQ)</a></li>
-                </ul>
-            </li>
-
-            <li class="menu-item">
-                <a href="#" class="menu-link" onclick="filterBySidebar('FINANCIERO')">
-                    <div class="menu-link-left">
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <span>Sentinel</span>
-                    </div>
-                </a>
-            </li>
-
+            <!-- Otros Servicios Principales -->
             <li class="menu-item">
                 <a href="#" class="menu-link" onclick="filterBySidebar('Bloqueo')">
                     <div class="menu-link-left">
@@ -532,17 +523,24 @@
                     </div>
                 </a>
             </li>
+
+            <!-- Nuevo Servicio Añadido -->
+            <li class="menu-item">
+                <a href="#" class="menu-link" onclick="filterBySidebar('Trabajos')">
+                    <div class="menu-link-left">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>Trabajos Universitarios y Ediciones de Video</span>
+                    </div>
+                </a>
+            </li>
         </ul>
     </aside>
 
-    <!-- Main Content -->
+    <!-- Contenido Principal -->
     <main id="mainContainer">
-
-        <!-- Banner Principal Home -->
         <div class="hero-banner">
             <h1 class="hero-title">🚀 ROCKET — SERVICIOS DE INTELIGENCIA Y SEGURIDAD EMPRESARIAL</h1>
             <div class="badge-confidential">🔒 100% CONFIDENCIAL Y DISCRETO</div>
-            
             <div class="info-bar">
                 <div class="info-pill"><i class="fa-solid fa-tag"></i> Precio: Desde S/ 2.00</div>
                 <div class="info-pill"><i class="fa-solid fa-bolt"></i> Atención Rápida</div>
@@ -550,10 +548,10 @@
             </div>
         </div>
 
-        <!-- CATEGORÍA 1 -->
+        <!-- SECCIÓN OSINT -->
         <div class="category-header">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <span>Verificación de Datos y Registros Civiles</span>
+            <span>Verificación de Datos y Registros Civiles (OSINT)</span>
         </div>
 
         <div class="grid">
@@ -655,15 +653,15 @@
                 </div>
                 <div class="card-body">
                     <div>
-                        <div class="card-title">FINANCIERO</div>
-                        <div class="card-desc">Trabajos y sueldos | Reportes financieros | Consulta REC | Historial de consumos.</div>
+                        <div class="card-title">FINANCIERO & SENTINEL</div>
+                        <div class="card-desc">Trabajos y sueldos | Reportes financieros | Consulta REC | Consumos.</div>
                     </div>
                     <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20FINANCIERO" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
                 </div>
             </div>
         </div>
 
-        <!-- CATEGORÍA 2 -->
+        <!-- SECCIÓN SOLUCIONES OPERATIVAS -->
         <div class="category-header">
             <i class="fa-solid fa-shield-halved"></i>
             <span>Soluciones Operativas y Seguridad Avanzada</span>
@@ -806,10 +804,10 @@
             </div>
         </div>
 
-        <!-- CATEGORÍA 3 -->
+        <!-- SECCIÓN NÚMEROS VIRTUALES Y TRABAJOS -->
         <div class="category-header">
-            <i class="fa-solid fa-sim-card"></i>
-            <span>Números Virtuales</span>
+            <i class="fa-solid fa-plus-circle"></i>
+            <span>Servicios Adicionales</span>
         </div>
 
         <div class="grid">
@@ -827,12 +825,25 @@
                     <a href="https://wa.me/51900000000?text=Hola,%20deseo%20un%20Numero%20Virtual" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
                 </div>
             </div>
-        </div>
 
+            <div class="card">
+                <div class="card-img-placeholder">
+                    <i class="fa-solid fa-graduation-cap fa-2x"></i>
+                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
+                    <img src="trabajos.jpg" alt="Trabajos Universitarios" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="card-title">🎓 Trabajos Universitarios y Edición de Video</div>
+                        <div class="card-desc">Elaboración de tareas, monografías, presentaciones y edición profesional de contenido en video.</div>
+                    </div>
+                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20de%20Trabajos%20Universitarios/Ediciones" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                </div>
+            </div>
+        </div>
     </main>
 
     <script>
-        // Ocultar Pantalla de Carga
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
             setTimeout(() => {
@@ -841,22 +852,21 @@
             }, 400);
         });
 
-        // Alternar Menú Sidebar
         function toggleSidebar() {
             document.getElementById('sidebar').classList.toggle('active');
             document.getElementById('overlay').classList.toggle('active');
         }
 
-        // Submenús desplegables
         function toggleSubmenu(menuId, arrowId) {
             const menu = document.getElementById(menuId);
             const arrow = document.getElementById(arrowId);
-            menu.classList.toggle('open');
-            arrow.classList.toggle('fa-chevron-up');
-            arrow.classList.toggle('fa-chevron-down');
+            if(menu) menu.classList.toggle('open');
+            if(arrow) {
+                arrow.classList.toggle('fa-chevron-up');
+                arrow.classList.toggle('fa-chevron-down');
+            }
         }
 
-        // Modo Claro / Oscuro
         const themeToggleBtn = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
         
@@ -871,7 +881,6 @@
             }
         });
 
-        // Filtrar elementos del Menú Lateral
         function filterMenu() {
             const input = document.getElementById('searchInput').value.toLowerCase();
             const items = document.querySelectorAll('.menu-item');
@@ -886,12 +895,10 @@
             });
         }
 
-        // Función para volver al Home
         function showHome() {
             window.location.reload();
         }
 
-        // Filtrar tarjetas por búsqueda desde la barra lateral
         function filterBySidebar(query) {
             toggleSidebar();
             const cards = document.querySelectorAll('.card');
