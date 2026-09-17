@@ -21,10 +21,8 @@
             --input-bg: rgba(11, 15, 25, 0.7);
             --glass-bg: rgba(21, 28, 44, 0.82);
             --glass-border: rgba(255, 255, 255, 0.18);
-            --gold-color: #f59e0b;
         }
 
-        /* Ajustes para Modo Claro */
         [data-theme="light"] {
             --bg-primary: #f1f5f9;
             --bg-secondary: #ffffff;
@@ -54,7 +52,7 @@
             min-height: 100vh;
         }
 
-        /* Pantalla de Carga */
+        /* Loader */
         #loader {
             position: fixed;
             top: 0;
@@ -135,7 +133,7 @@
             background-color: var(--card-hover);
         }
 
-        /* MENÚ LATERAL CON FONDO 'casa 1.jpg' */
+        /* Sidebar con 'casa 1.jpg' */
         .sidebar {
             position: fixed;
             top: 60px;
@@ -214,7 +212,6 @@
             gap: 12px;
         }
 
-        /* OPCIONES TIPO CUADRITOS ELEGANTES */
         .menu-item {
             border-radius: 14px;
         }
@@ -270,7 +267,7 @@
             color: var(--wsp-color);
         }
 
-        /* Submenú Desplegable */
+        /* Submenú */
         .submenu {
             list-style: none;
             padding: 10px;
@@ -323,13 +320,12 @@
             margin-right: auto;
         }
 
-        /* Banner Principal (Fondo bebe 2.jpg) */
-        .hero-banner {
+        /* BANNER INICIO (SOLO ROCKET BONITO) */
+        .hero-banner-clean {
             background: linear-gradient(rgba(11, 15, 25, 0.78), rgba(11, 15, 25, 0.78)), url('bebe 2.jpg') center/cover no-repeat;
             border: 1px solid var(--border-color);
             border-radius: 20px;
-            padding: 65px 30px;
-            min-height: 280px;
+            padding: 60px 30px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -340,48 +336,65 @@
             color: #ffffff;
         }
 
-        .hero-title {
-            font-size: clamp(2.5rem, 6vw, 3.8rem);
+        .hero-title-clean {
+            font-size: clamp(2.8rem, 7vw, 4.2rem);
             font-weight: 900;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
+            letter-spacing: 4px;
             color: #ffffff;
-            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+            text-shadow: 0 4px 20px rgba(99, 102, 241, 0.6), 0 4px 10px rgba(0, 0, 0, 0.9);
+        }
+
+        .hero-subtitle-clean {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-top: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* BADGES OSINT (SOLO APARECEN DENTRO DE SERVICIOS OSINT) */
+        .osint-info-container {
+            margin-bottom: 30px;
+            text-align: center;
         }
 
         .badge-confidential {
             display: inline-block;
-            background: rgba(239, 68, 68, 0.3);
+            background: rgba(239, 68, 68, 0.25);
             color: #ff6b6b;
-            border: 1px solid rgba(239, 68, 68, 0.5);
-            padding: 8px 20px;
+            border: 1px solid rgba(239, 68, 68, 0.6);
+            padding: 8px 22px;
             border-radius: 50px;
             font-size: 0.9rem;
-            font-weight: 700;
-            margin-bottom: 20px;
+            font-weight: 800;
+            margin-bottom: 18px;
             backdrop-filter: blur(6px);
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.2);
         }
 
         .info-bar {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
-            margin-top: 10px;
+            gap: 12px;
         }
 
         .info-pill {
-            background: rgba(15, 23, 42, 0.88);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            color: #ffffff;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
             padding: 10px 18px;
             border-radius: 12px;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             font-weight: 600;
             display: flex;
             align-items: center;
             gap: 8px;
-            backdrop-filter: blur(6px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .info-pill i {
+            color: var(--accent-color);
         }
 
         /* Diagrama OSINT */
@@ -411,7 +424,7 @@
             box-shadow: 0 6px 25px rgba(0,0,0,0.5);
         }
 
-        /* Sección Trabajos Universitarios */
+        /* Trabajos Universitarios */
         .academic-section {
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
@@ -463,7 +476,7 @@
             border: 1px solid var(--border-color);
         }
 
-        /* Grids y Tarjetas Generales */
+        /* Grids y Tarjetas */
         .category-header {
             display: flex;
             align-items: center;
@@ -567,7 +580,7 @@
             transform: scale(1.01);
         }
 
-        /* DISEÑO ESPECIAL: PLANES DE PÁGINAS WEB */
+        /* Planes Web */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
@@ -649,7 +662,7 @@
             color: var(--wsp-color);
         }
 
-        /* Banner de Emprendimientos Universitarios */
+        /* Banner Emprendimiento */
         .promo-banner {
             background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(236, 72, 153, 0.2)), var(--bg-secondary);
             border: 2px dashed var(--accent-color);
@@ -681,13 +694,13 @@
 </head>
 <body>
 
-    <!-- Pantalla de Carga -->
+    <!-- Loader -->
     <div id="loader">
         <div class="spinner"></div>
         <p style="margin-top: 15px; color: var(--text-secondary);">Cargando ROCKET...</p>
     </div>
 
-    <!-- Header -->
+    <!-- Header Bar -->
     <header>
         <div class="brand-logo" onclick="showView('homeView')">
             <span>🚀 ROCKET</span>
@@ -704,7 +717,7 @@
 
     <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
 
-    <!-- MENÚ LATERAL MEJORADO CON 'casa 1.jpg' -->
+    <!-- MENÚ LATERAL CON 'casa 1.jpg' -->
     <aside class="sidebar" id="sidebar">
         <div class="search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -781,7 +794,7 @@
                 </a>
             </li>
 
-            <!-- NUEVO: Detalles y Regalos -->
+            <!-- Detalles y Regalos -->
             <li class="menu-item">
                 <a href="#" class="menu-link" onclick="showView('detallesView')">
                     <div class="menu-link-left">
@@ -791,7 +804,7 @@
                 </a>
             </li>
 
-            <!-- NUEVO: Emprendimientos Universitarios -->
+            <!-- Emprendimientos Universitarios -->
             <li class="menu-item">
                 <a href="#" class="menu-link" onclick="showView('emprendimientoView')">
                     <div class="menu-link-left">
@@ -801,7 +814,7 @@
                 </a>
             </li>
 
-            <!-- NUEVO: Crea tu Página Web -->
+            <!-- Crea tu Página Web -->
             <li class="menu-item">
                 <a href="#" class="menu-link" onclick="showView('webDevView')">
                     <div class="menu-link-left">
@@ -811,7 +824,7 @@
                 </a>
             </li>
 
-            <!-- NUEVO: Contáctanos -->
+            <!-- Contáctanos -->
             <li class="menu-item" style="margin-top: 15px;">
                 <a href="https://wa.me/51931309889?text=Hola,%20deseo%20mayor%20informaci%C3%B3n" target="_blank" class="menu-link menu-link-highlight">
                     <div class="menu-link-left">
@@ -826,19 +839,14 @@
 
     <!-- Contenido Principal -->
     <main id="mainContainer">
-        <!-- Hero Banner con fondo 'bebe 2.jpg' -->
-        <div class="hero-banner">
-            <h1 class="hero-title">🚀 ROCKET</h1>
-            <div class="badge-confidential">🔒 100% CONFIDENCIAL Y DISCRETO</div>
-            <div class="info-bar">
-                <div class="info-pill"><i class="fa-solid fa-tag"></i> Precio: Desde S/ 2.00 (varía según el servicio)</div>
-                <div class="info-pill"><i class="fa-solid fa-clock"></i> Atención 24/7</div>
-                <div class="info-pill"><i class="fa-solid fa-id-card"></i> Requisitos: Número de celular, DNI o Nombre completo</div>
-            </div>
-        </div>
 
-        <!-- 1. VISTA INICIO -->
+        <!-- 1. VISTA INICIO (SOLO MUESTRA ROCKET LIMPIO Y BONITO) -->
         <div id="homeView" class="view-section">
+            <div class="hero-banner-clean">
+                <h1 class="hero-title-clean">🚀 ROCKET</h1>
+                <p class="hero-subtitle-clean">Plataforma Integral de Servicios Digitales y Soluciones</p>
+            </div>
+
             <div class="diagram-container">
                 <h2 class="diagram-title">RED DE CONSULTAS E INTEGRACIÓN OSINT</h2>
                 <div class="diagram-img-wrapper">
@@ -869,8 +877,18 @@
             </div>
         </div>
 
-        <!-- 2. VISTA SERVICIOS GENERALES -->
+        <!-- 2. VISTA SERVICIOS OSINT / OPERACIONES (AQUÍ SÍ APARECEN LAS INSIGNIAS Y REQUISITOS) -->
         <div id="servicesView" class="view-section hidden">
+            <!-- INSIGNIAS Y BADGES SOLO VISIBLES EN ESTA SECCIÓN -->
+            <div class="osint-info-container">
+                <div class="badge-confidential">🔒 100% CONFIDENCIAL Y DISCRETO</div>
+                <div class="info-bar">
+                    <div class="info-pill"><i class="fa-solid fa-tag"></i> Precio: Desde S/ 2.00 (varía según el servicio)</div>
+                    <div class="info-pill"><i class="fa-solid fa-clock"></i> Atención 24/7</div>
+                    <div class="info-pill"><i class="fa-solid fa-id-card"></i> Requisitos: Número de celular, DNI o Nombre completo</div>
+                </div>
+            </div>
+
             <div class="category-header">
                 <i class="fa-solid fa-list-check"></i>
                 <span id="categoryTitle">Servicios Solicitados</span>
@@ -899,7 +917,7 @@
             </div>
         </div>
 
-        <!-- 3. NUEVA VISTA: DETALLES Y REGALOS GITHUB -->
+        <!-- 3. DETALLES Y REGALOS GITHUB -->
         <div id="detallesView" class="view-section hidden">
             <div class="category-header">
                 <i class="fa-solid fa-gift"></i>
@@ -911,7 +929,6 @@
             </p>
 
             <div class="grid">
-                <!-- Plantilla 1 -->
                 <div class="card">
                     <div class="card-img-placeholder">
                         <span class="price-tag">S/ 5.00</span>
@@ -927,7 +944,6 @@
                     </div>
                 </div>
 
-                <!-- Plantilla 2 -->
                 <div class="card">
                     <div class="card-img-placeholder">
                         <span class="price-tag">S/ 8.00</span>
@@ -943,7 +959,6 @@
                     </div>
                 </div>
 
-                <!-- Plantilla 3 -->
                 <div class="card">
                     <div class="card-img-placeholder">
                         <span class="price-tag">S/ 10.00</span>
@@ -961,7 +976,7 @@
             </div>
         </div>
 
-        <!-- 4. NUEVA VISTA: EMPRENDIMIENTOS UNIVERSITARIOS -->
+        <!-- 4. EMPRENDIMIENTOS UNIVERSITARIOS -->
         <div id="emprendimientoView" class="view-section hidden">
             <div class="promo-banner">
                 <h3>🛍️ VITRINA EMPRENDEDORA UNIVERSITARIA</h3>
@@ -975,7 +990,6 @@
             </div>
 
             <div class="grid">
-                <!-- Negocio 1 -->
                 <div class="card">
                     <div class="card-img-placeholder">
                         <i class="fa-solid fa-cookie-bite fa-3x" style="color: #d97706;"></i>
@@ -990,7 +1004,6 @@
                     </div>
                 </div>
 
-                <!-- Negocio 2 -->
                 <div class="card">
                     <div class="card-img-placeholder">
                         <i class="fa-solid fa-gem fa-3x" style="color: #ec4899;"></i>
@@ -1005,7 +1018,6 @@
                     </div>
                 </div>
 
-                <!-- Negocio 3 -->
                 <div class="card">
                     <div class="card-img-placeholder">
                         <i class="fa-solid fa-wand-magic-sparkles fa-3x" style="color: #a855f7;"></i>
@@ -1022,7 +1034,7 @@
             </div>
         </div>
 
-        <!-- 5. NUEVA VISTA: CREA TU PÁGINA WEB -->
+        <!-- 5. CREA TU PÁGINA WEB -->
         <div id="webDevView" class="view-section hidden">
             <div class="category-header">
                 <i class="fa-solid fa-laptop-code"></i>
@@ -1034,7 +1046,6 @@
             </p>
 
             <div class="pricing-grid">
-                <!-- PLAN BÁSICO -->
                 <div class="pricing-card">
                     <div>
                         <div class="plan-name">Plan Básico</div>
@@ -1049,7 +1060,6 @@
                     <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Plan%20Basico%20de%20Pagina%20Web%20(S/10)" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Solicitar Plan S/ 10</a>
                 </div>
 
-                <!-- PLAN PRO -->
                 <div class="pricing-card featured">
                     <div class="badge-popular">Más Solicitado</div>
                     <div>
@@ -1066,7 +1076,6 @@
                     <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Plan%20Pro%20de%20Pagina%20Web%20(S/20)" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Solicitar Plan S/ 20</a>
                 </div>
 
-                <!-- PLAN CONTROL TOTAL -->
                 <div class="pricing-card">
                     <div>
                         <div class="plan-name">Control Total + Soporte</div>
@@ -1083,6 +1092,7 @@
                 </div>
             </div>
         </div>
+
     </main>
 
     <script>
@@ -1093,7 +1103,7 @@
             setTimeout(() => { loader.style.visibility = 'hidden'; }, 500);
         });
 
-        // Alternar Menú
+        // Alternar Sidebar
         function toggleSidebar() {
             document.getElementById('sidebar').classList.toggle('active');
             document.getElementById('overlay').classList.toggle('active');
@@ -1107,7 +1117,7 @@
             arrow.classList.toggle('fa-chevron-down');
         }
 
-        // Control de Vistas (Inicio, Detalles, Emprendimiento, WebDev, Servicios)
+        // Mostrar Vistas
         function showView(viewId) {
             const views = document.querySelectorAll('.view-section');
             views.forEach(v => v.classList.add('hidden'));
@@ -1121,7 +1131,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Mostrar Categorías de Servicios
+        // Mostrar Categorías OSINT / Servicios
         function showCategory(category) {
             showView('servicesView');
             document.getElementById('categoryTitle').textContent = category;
