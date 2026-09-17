@@ -259,17 +259,51 @@
             margin-right: auto;
         }
 
-        .hero-banner-img {
-            width: 100%;
-            margin-bottom: 40px;
+        .hero-banner {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(15, 23, 42, 0.4) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px 20px;
             text-align: center;
+            margin-bottom: 40px;
         }
 
-        .hero-banner-img img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+        .hero-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .badge-confidential {
+            display: inline-block;
+            background: rgba(239, 68, 68, 0.15);
+            color: #ef4444;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .info-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .info-pill {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         /* Image Diagram Container */
@@ -562,9 +596,15 @@
 
     <!-- Contenido Principal -->
     <main id="mainContainer">
-        <!-- Banner Principal Reemplazado por Imagen -->
-        <div class="hero-banner-img">
-            <img src="BEBE 1.jpg" alt="ROCKET - Servicios de Inteligencia y Seguridad">
+        <!-- Banner Principal -->
+        <div class="hero-banner">
+            <h1 class="hero-title">🚀 ROCKET — SERVICIOS DE INTELIGENCIA Y SEGURIDAD</h1>
+            <div class="badge-confidential">🔒 100% CONFIDENCIAL Y DISCRETO</div>
+            <div class="info-bar">
+                <div class="info-pill"><i class="fa-solid fa-tag"></i> Precio: Desde S/ 2.00 (varía según el servicio)</div>
+                <div class="info-pill"><i class="fa-solid fa-clock"></i> Atención 24/7</div>
+                <div class="info-pill"><i class="fa-solid fa-id-card"></i> Requisitos: Número de celular, DNI o Nombre completo</div>
+            </div>
         </div>
 
         <!-- Secciones de Inicio -->
@@ -572,6 +612,7 @@
             <div class="diagram-container">
                 <h2 class="diagram-title">RED DE CONSULTAS E INTEGRACIÓN OSINT</h2>
                 <div class="diagram-img-wrapper">
+                    <!-- Imagen cargada desde tu archivo rocket.jpg -->
                     <img src="rocket.jpg" alt="Red de Consultas e Integración OSINT - ROCKET">
                 </div>
             </div>
