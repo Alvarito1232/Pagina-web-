@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROCKET - Servicios de Inteligencia y Seguridad</title>
+    <title>ROCKET</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -259,31 +259,41 @@
             margin-right: auto;
         }
 
+        /* Hero Banner Modificado con Imagen de Fondo y Tamaño Agrandado */
         .hero-banner {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(15, 23, 42, 0.4) 100%);
+            background: linear-gradient(rgba(11, 15, 25, 0.75), rgba(11, 15, 25, 0.75)), url('BEBE 1.jpg') center/cover no-repeat;
             border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 30px 20px;
+            border-radius: 20px;
+            padding: 65px 30px;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
             margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         .hero-title {
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 10px;
+            font-size: clamp(2.5rem, 6vw, 3.8rem);
+            font-weight: 900;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
         }
 
         .badge-confidential {
             display: inline-block;
-            background: rgba(239, 68, 68, 0.15);
+            background: rgba(239, 68, 68, 0.25);
             color: #ef4444;
-            border: 1px solid rgba(239, 68, 68, 0.3);
-            padding: 6px 16px;
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            padding: 8px 20px;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 700;
             margin-bottom: 20px;
+            backdrop-filter: blur(5px);
         }
 
         .info-bar {
@@ -291,19 +301,20 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
-            margin-top: 15px;
+            margin-top: 10px;
         }
 
         .info-pill {
-            background: var(--bg-card);
+            background: rgba(30, 41, 59, 0.85);
             border: 1px solid var(--border-color);
-            padding: 8px 16px;
-            border-radius: 10px;
-            font-size: 0.88rem;
+            padding: 10px 18px;
+            border-radius: 12px;
+            font-size: 0.9rem;
             font-weight: 600;
             display: flex;
             align-items: center;
             gap: 8px;
+            backdrop-filter: blur(5px);
         }
 
         /* Image Diagram Container */
@@ -412,7 +423,7 @@
             gap: 12px;
             font-size: 1.3rem;
             font-weight: 700;
-            margin: 40px 0 20px;
+            margin: 20px 0 20px;
             padding-bottom: 10px;
             border-bottom: 2px solid var(--border-color);
         }
@@ -504,7 +515,7 @@
             <span>🚀 ROCKET</span>
         </div>
         <div class="header-actions">
-            <button class="icon-btn" id="themeToggle" title="Cambiar Tema">
+            <button class="icon-btn" id="themeToggle" title="Cambiar Tema" onclick="toggleTheme()">
                 <i class="fa-regular fa-moon" id="themeIcon"></i>
             </button>
             <button class="icon-btn" onclick="toggleSidebar()" title="Menú">
@@ -596,9 +607,9 @@
 
     <!-- Contenido Principal -->
     <main id="mainContainer">
-        <!-- Banner Principal -->
+        <!-- Banner Principal Agrandado con Imagen de Fondo -->
         <div class="hero-banner">
-            <h1 class="hero-title">🚀 ROCKET — SERVICIOS DE INTELIGENCIA Y SEGURIDAD</h1>
+            <h1 class="hero-title">🚀 ROCKET</h1>
             <div class="badge-confidential">🔒 100% CONFIDENCIAL Y DISCRETO</div>
             <div class="info-bar">
                 <div class="info-pill"><i class="fa-solid fa-tag"></i> Precio: Desde S/ 2.00 (varía según el servicio)</div>
@@ -612,7 +623,6 @@
             <div class="diagram-container">
                 <h2 class="diagram-title">RED DE CONSULTAS E INTEGRACIÓN OSINT</h2>
                 <div class="diagram-img-wrapper">
-                    <!-- Imagen cargada desde tu archivo rocket.jpg -->
                     <img src="rocket.jpg" alt="Red de Consultas e Integración OSINT - ROCKET">
                 </div>
             </div>
@@ -685,11 +695,9 @@
             </div>
 
             <div class="grid" id="servicesGrid">
-                <!-- Tarjeta RENIEC -->
+                <!-- RENIEC -->
                 <div class="card service-item" data-category="RENIEC">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-id-card fa-3x"></i>
-                    </div>
+                    <div class="card-img-placeholder"><i class="fa-solid fa-id-card fa-3x"></i></div>
                     <div class="card-body">
                         <div>
                             <div class="card-title">RENIEC</div>
@@ -699,11 +707,9 @@
                     </div>
                 </div>
 
-                <!-- Tarjeta SUNAT -->
+                <!-- SUNAT -->
                 <div class="card service-item" data-category="SUNAT">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-receipt fa-3x"></i>
-                    </div>
+                    <div class="card-img-placeholder"><i class="fa-solid fa-receipt fa-3x"></i></div>
                     <div class="card-body">
                         <div>
                             <div class="card-title">SUNAT</div>
@@ -713,11 +719,9 @@
                     </div>
                 </div>
 
-                <!-- Tarjeta PODER JUDICIAL -->
+                <!-- PODER JUDICIAL -->
                 <div class="card service-item" data-category="PODER JUDICIAL">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-scale-balanced fa-3x"></i>
-                    </div>
+                    <div class="card-img-placeholder"><i class="fa-solid fa-scale-balanced fa-3x"></i></div>
                     <div class="card-body">
                         <div>
                             <div class="card-title">PODER JUDICIAL</div>
@@ -727,11 +731,9 @@
                     </div>
                 </div>
 
-                <!-- Tarjeta MIGRACIONES -->
+                <!-- MIGRACIONES -->
                 <div class="card service-item" data-category="MIGRACIONES">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-passport fa-3x"></i>
-                    </div>
+                    <div class="card-img-placeholder"><i class="fa-solid fa-passport fa-3x"></i></div>
                     <div class="card-body">
                         <div>
                             <div class="card-title">MIGRACIONES</div>
@@ -741,11 +743,9 @@
                     </div>
                 </div>
 
-                <!-- Tarjeta OSIPTEL -->
+                <!-- OSIPTEL -->
                 <div class="card service-item" data-category="OSIPTEL">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-tower-cell fa-3x"></i>
-                    </div>
+                    <div class="card-img-placeholder"><i class="fa-solid fa-tower-cell fa-3x"></i></div>
                     <div class="card-body">
                         <div>
                             <div class="card-title">OSIPTEL / TELÉFONO</div>
@@ -755,11 +755,9 @@
                     </div>
                 </div>
 
-                <!-- Tarjeta FISCALÍA -->
+                <!-- FISCALÍA -->
                 <div class="card service-item" data-category="FISCALÍA">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-gavel fa-3x"></i>
-                    </div>
+                    <div class="card-img-placeholder"><i class="fa-solid fa-gavel fa-3x"></i></div>
                     <div class="card-body">
                         <div>
                             <div class="card-title">FISCALÍA</div>
@@ -769,11 +767,9 @@
                     </div>
                 </div>
 
-                <!-- Tarjeta MINEDU -->
+                <!-- MINEDU -->
                 <div class="card service-item" data-category="MINEDU">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-book fa-3x"></i>
-                    </div>
+                    <div class="card-img-placeholder"><i class="fa-solid fa-book fa-3x"></i></div>
                     <div class="card-body">
                         <div>
                             <div class="card-title">MINEDU</div>
@@ -783,11 +779,9 @@
                     </div>
                 </div>
 
-                <!-- Tarjeta SENTINEL -->
+                <!-- SENTINEL -->
                 <div class="card service-item" data-category="SENTINEL">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-chart-line fa-3x"></i>
-                    </div>
+                    <div class="card-img-placeholder"><i class="fa-solid fa-chart-line fa-3x"></i></div>
                     <div class="card-body">
                         <div>
                             <div class="card-title">SENTINEL / FINANCIERO</div>
@@ -797,11 +791,9 @@
                     </div>
                 </div>
 
-                <!-- Tarjeta SUNEDU -->
+                <!-- SUNEDU -->
                 <div class="card service-item" data-category="SUNEDU">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-graduation-cap fa-3x"></i>
-                    </div>
+                    <div class="card-img-placeholder"><i class="fa-solid fa-graduation-cap fa-3x"></i></div>
                     <div class="card-body">
                         <div>
                             <div class="card-title">SUNEDU</div>
@@ -811,11 +803,9 @@
                     </div>
                 </div>
 
-                <!-- Tarjeta MTC -->
+                <!-- MTC -->
                 <div class="card service-item" data-category="MTC">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-car fa-3x"></i>
-                    </div>
+                    <div class="card-img-placeholder"><i class="fa-solid fa-car fa-3x"></i></div>
                     <div class="card-body">
                         <div>
                             <div class="card-title">MTC</div>
@@ -825,11 +815,9 @@
                     </div>
                 </div>
 
-                <!-- Tarjeta INPE -->
+                <!-- INPE -->
                 <div class="card service-item" data-category="INPE">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-building-columns fa-3x"></i>
-                    </div>
+                    <div class="card-img-placeholder"><i class="fa-solid fa-building-columns fa-3x"></i></div>
                     <div class="card-body">
                         <div>
                             <div class="card-title">INPE</div>
@@ -839,115 +827,99 @@
                     </div>
                 </div>
 
-                <!-- Tarjeta PNP -->
+                <!-- PNP -->
                 <div class="card service-item" data-category="PNP">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-shield-halved fa-3x"></i>
-                    </div>
+                    <div class="card-img-placeholder"><i class="fa-solid fa-shield-halved fa-3x"></i></div>
                     <div class="card-body">
                         <div>
-                            <div class="card-title">PNP (POLICÍA NACIONAL)</div>
-                            <div class="card-desc">Denuncias policiales | Antecedentes | Requisitorias (RQ).</div>
+                            <div class="card-title">PNP</div>
+                            <div class="card-desc">Consulta de denuncias policiales y requisitorias activas.</div>
                         </div>
                         <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20PNP" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
                     </div>
                 </div>
 
-                <!-- Tarjeta SUNARP -->
+                <!-- SUNARP -->
                 <div class="card service-item" data-category="SUNARP">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-building fa-3x"></i>
-                    </div>
+                    <div class="card-img-placeholder"><i class="fa-solid fa-building fa-3x"></i></div>
                     <div class="card-body">
                         <div>
                             <div class="card-title">SUNARP</div>
-                            <div class="card-desc">Búsqueda de vehículos | Propiedades inmuebles | Copias literales.</div>
+                            <div class="card-desc">Búsqueda de propiedades, terrenos y vehículos registrados.</div>
                         </div>
                         <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20SUNARP" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
                     </div>
                 </div>
 
-                <!-- Tarjeta Certificados -->
+                <!-- CERTIFICADOS -->
                 <div class="card service-item" data-category="CERTIFICADOS">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-award fa-3x"></i>
-                    </div>
+                    <div class="card-img-placeholder"><i class="fa-solid fa-award fa-3x"></i></div>
                     <div class="card-body">
                         <div>
-                            <div class="card-title">CERTIFICADOS OFICIALES</div>
-                            <div class="card-desc">Certificados Policiales, Judiciales y Penales oficiales.</div>
+                            <div class="card-title">Certificados Oficiales</div>
+                            <div class="card-desc">Certificación rápida de estudios, capacitaciones y documentos oficiales.</div>
                         </div>
-                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20CERTIFICADOS" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20Certificados" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
                     </div>
                 </div>
 
-                <!-- Tarjeta Actas -->
+                <!-- ACTAS -->
                 <div class="card service-item" data-category="ACTAS">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-file-lines fa-3x"></i>
-                    </div>
+                    <div class="card-img-placeholder"><i class="fa-solid fa-file-lines fa-3x"></i></div>
                     <div class="card-body">
                         <div>
-                            <div class="card-title">ACTAS</div>
-                            <div class="card-desc">Búsqueda y emisión de Actas de Nacimiento, Matrimonio y Defunción.</div>
+                            <div class="card-title">Actas Oficiales</div>
+                            <div class="card-desc">Búsqueda de Actas de Nacimiento, Matrimonio y Defunción.</div>
                         </div>
-                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20ACTAS" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20Actas" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
                     </div>
                 </div>
 
-                <!-- Tarjeta Familia -->
+                <!-- FAMILIA -->
                 <div class="card service-item" data-category="FAMILIA">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-users fa-3x"></i>
-                    </div>
+                    <div class="card-img-placeholder"><i class="fa-solid fa-users fa-3x"></i></div>
                     <div class="card-body">
                         <div>
-                            <div class="card-title">ÁRBOL GENEALÓGICO</div>
-                            <div class="card-desc">Árbol genealógico completo e integrantes de la familia.</div>
+                            <div class="card-title">Árbol Genealógico</div>
+                            <div class="card-desc">Mapeo de lazos familiares, padres, hijos y hermanos vinculados.</div>
                         </div>
-                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20FAMILIA" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20Arbol%20Genealogico" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
                     </div>
                 </div>
 
-                <!-- Tarjeta Bloqueos -->
+                <!-- BLOQUEO -->
                 <div class="card service-item" data-category="Bloqueo">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-ban fa-3x"></i>
-                    </div>
+                    <div class="card-img-placeholder"><i class="fa-solid fa-ban fa-3x"></i></div>
                     <div class="card-body">
                         <div>
-                            <div class="card-title">BLOQUEO DE LÍNEA + IMEI</div>
-                            <div class="card-desc">Bloqueos efectivos e inmediatos en Android e iOS.</div>
+                            <div class="card-title">Bloqueos y Operaciones</div>
+                            <div class="card-desc">Gestión de bloqueos operativos y líneas preventivas de seguridad.</div>
                         </div>
-                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20de%20Bloqueo" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20de%20Bloqueos" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
                     </div>
                 </div>
 
-                <!-- Tarjeta Números Virtuales -->
+                <!-- VIRTUALES -->
                 <div class="card service-item" data-category="VIRTUALES">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-sim-card fa-3x"></i>
-                    </div>
+                    <div class="card-img-placeholder"><i class="fa-solid fa-sim-card fa-3x"></i></div>
                     <div class="card-body">
                         <div>
-                            <div class="card-title">NÚMEROS VIRTUALES</div>
-                            <div class="card-desc">Activación inmediata para WhatsApp y redes sociales de cualquier país.</div>
+                            <div class="card-title">Números Virtuales</div>
+                            <div class="card-desc">Recepción de SMS para verificaciones de cuentas WhatsApp, Telegram y redes.</div>
                         </div>
-                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20Numero%20Virtual" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20de%20Numeros%20Virtuales" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
                     </div>
                 </div>
 
-                <!-- Tarjeta Trabajos Universitarios -->
+                <!-- TRABAJOS -->
                 <div class="card service-item" data-category="Trabajos">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-graduation-cap fa-3x"></i>
-                    </div>
+                    <div class="card-img-placeholder"><i class="fa-solid fa-graduation-cap fa-3x"></i></div>
                     <div class="card-body">
                         <div>
-                            <div class="card-title">TRABAJOS UNIVERSITARIOS Y ESCOLARES</div>
-                            <div class="card-desc">Asesoría, resolución de tareas, monografías y edición de video.</div>
+                            <div class="card-title">Trabajos Académicos</div>
+                            <div class="card-desc">Elaboración de tareas, monografías, presentaciones PowerPoint y proyectos escolares/universitarios.</div>
                         </div>
-                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20de%20Trabajos%20Universitarios" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20de%20Trabajos%20Academicos" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
                     </div>
                 </div>
             </div>
@@ -955,78 +927,90 @@
     </main>
 
     <script>
+        // Quitar pantalla de carga al terminar de cargar la web
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
             setTimeout(() => {
-                loader.style.opacity = '0';
-                setTimeout(() => loader.style.display = 'none', 500);
-            }, 400);
+                loader.style.visibility = 'hidden';
+            }, 500);
         });
 
+        // Alternar Menú Lateral (Sidebar)
         function toggleSidebar() {
-            document.getElementById('sidebar').classList.toggle('active');
-            document.getElementById('overlay').classList.toggle('active');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
         }
 
-        function toggleSubmenu(menuId, arrowId) {
-            const menu = document.getElementById(menuId);
+        // Alternar Submenús
+        function toggleSubmenu(id, arrowId) {
+            const menu = document.getElementById(id);
             const arrow = document.getElementById(arrowId);
-            if(menu) menu.classList.toggle('open');
-            if(arrow) {
-                arrow.classList.toggle('fa-chevron-up');
-                arrow.classList.toggle('fa-chevron-down');
-            }
+            menu.classList.toggle('open');
+            arrow.classList.toggle('fa-chevron-up');
+            arrow.classList.toggle('fa-chevron-down');
         }
 
-        const themeToggleBtn = document.getElementById('themeToggle');
-        const themeIcon = document.getElementById('themeIcon');
-        
-        themeToggleBtn.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            if (currentTheme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'light');
-                themeIcon.className = 'fa-regular fa-sun';
-            } else {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                themeIcon.className = 'fa-regular fa-moon';
-            }
-        });
-
-        function filterMenu() {
-            const input = document.getElementById('searchInput').value.toLowerCase();
-            const items = document.querySelectorAll('.menu-item');
-
-            items.forEach(item => {
-                const text = item.textContent.toLowerCase();
-                item.style.display = text.includes(input) ? '' : 'none';
-            });
-        }
-
+        // Mostrar Inicio
         function showHome() {
             document.getElementById('homeView').classList.remove('hidden');
             document.getElementById('servicesView').classList.add('hidden');
-            if(document.getElementById('sidebar').classList.contains('active')) {
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar.classList.contains('active')) {
                 toggleSidebar();
             }
         }
 
+        // Mostrar Categoría Filtrada
         function showCategory(category) {
             document.getElementById('homeView').classList.add('hidden');
             document.getElementById('servicesView').classList.remove('hidden');
-            document.getElementById('categoryTitle').innerText = category;
+            document.getElementById('categoryTitle').textContent = category;
 
-            const items = document.querySelectorAll('.service-item');
-            items.forEach(item => {
-                const itemCat = item.getAttribute('data-category');
-                if (category === 'ALL' || itemCat.toLowerCase().includes(category.toLowerCase())) {
-                    item.style.display = 'flex';
+            const cards = document.querySelectorAll('.service-item');
+            cards.forEach(card => {
+                if (category === 'ALL' || card.getAttribute('data-category').toUpperCase() === category.toUpperCase()) {
+                    card.classList.remove('hidden');
                 } else {
-                    item.style.display = 'none';
+                    card.classList.add('hidden');
                 }
             });
 
-            if(document.getElementById('sidebar').classList.contains('active')) {
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar.classList.contains('active')) {
                 toggleSidebar();
+            }
+        }
+
+        // Filtrar Menú en el Buscador
+        function filterMenu() {
+            const input = document.getElementById('searchInput').value.toUpperCase();
+            const items = document.querySelectorAll('#menuList .menu-item');
+
+            items.forEach(item => {
+                const text = item.textContent || item.innerText;
+                if (text.toUpperCase().indexOf(input) > -1) {
+                    item.style.display = "";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        }
+
+        // Modo Oscuro / Claro
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('themeIcon');
+            const currentTheme = html.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                html.setAttribute('data-theme', 'light');
+                icon.className = 'fa-regular fa-sun';
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                icon.className = 'fa-regular fa-moon';
             }
         }
     </script>
