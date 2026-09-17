@@ -285,7 +285,7 @@
             margin-right: auto;
         }
 
-        /* 1. HERO BANNER PRINCIPAL (AGRANDADO Y ENFOCADO EN DESKTOP) */
+        /* HERO BANNER PRINCIPAL */
         .hero-banner-main {
             background: linear-gradient(rgba(11, 15, 25, 0.72), rgba(11, 15, 25, 0.78)), url('bebe 2.jpg') center 30%/cover no-repeat;
             border: 1px solid var(--border-color);
@@ -304,7 +304,7 @@
 
         @media (min-width: 768px) {
             .hero-banner-main {
-                min-height: 320px; /* Mas amplio en escritorio */
+                min-height: 320px;
                 padding: 70px 30px;
             }
         }
@@ -335,7 +335,73 @@
             letter-spacing: 0.3px;
         }
 
-        /* BARRAS E INSIGNIAS DE OSINT (EXCLUSIVAS PARA OSINT) */
+        /* SECCIÓN DE PORTADAS DE SERVICIOS EN INICIO (FOTO 2 ESTILO FOTO 1) */
+        .main-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-bottom: 35px;
+        }
+
+        .service-cover-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 22px 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .service-cover-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.25);
+        }
+
+        .service-cover-icon {
+            width: 58px;
+            height: 58px;
+            border-radius: 14px;
+            background: rgba(99, 102, 241, 0.12);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: var(--accent-color);
+            margin-bottom: 14px;
+        }
+
+        .service-cover-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+
+        .service-cover-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .service-cover-btn {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* BARRAS DE OSINT (EXCLUSIVAS) */
         .osint-info-container {
             margin-bottom: 25px;
             text-align: center;
@@ -385,6 +451,26 @@
 
         .info-pill i {
             color: #6366f1;
+        }
+
+        /* BARRAS EXCLUSIVAS DE TRABAJOS (DESDE S/ 8.00 + TIEMPO Y DIFICULTAD) */
+        .trabajos-info-container {
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .badge-trabajos-price {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            padding: 8px 22px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 800;
+            margin-bottom: 15px;
         }
 
         .category-header {
@@ -540,7 +626,7 @@
             font-size: 0.9rem;
         }
 
-        /* 2. TARJETAS DE PLANES WEB (S/ 5 A S/ 45) */
+        /* PLANES WEB */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -696,9 +782,6 @@
                     <li><a href="#" onclick="showCategory('INPE')"><i class="fa-solid fa-building-columns"></i> INPE (Antecedentes Penales)</a></li>
                     <li><a href="#" onclick="showCategory('PNP')"><i class="fa-solid fa-shield-halved"></i> PNP (Denuncias / Requisitorias)</a></li>
                     <li><a href="#" onclick="showCategory('SUNARP')"><i class="fa-solid fa-building"></i> SUNARP (Propiedades / Vehículos)</a></li>
-                    <li><a href="#" onclick="showCategory('CERTIFICADOS')"><i class="fa-solid fa-award"></i> Certificados Oficiales</a></li>
-                    <li><a href="#" onclick="showCategory('ACTAS')"><i class="fa-solid fa-file-lines"></i> Actas de Nacimiento / Matrimonio</a></li>
-                    <li><a href="#" onclick="showCategory('FAMILIA')"><i class="fa-solid fa-users"></i> Árbol Genealógico</a></li>
                 </ul>
             </li>
 
@@ -721,7 +804,7 @@
             </li>
 
             <li class="menu-item">
-                <a href="#" class="menu-link" onclick="showCategory('Trabajos')">
+                <a href="#" class="menu-link" onclick="showView('trabajosView')">
                     <div class="menu-link-left">
                         <i class="fa-solid fa-graduation-cap"></i>
                         <span>Trabajos Universitarios y Escolares</span>
@@ -770,7 +853,7 @@
 
     <main id="mainContainer">
 
-        <!-- BANNER DE ENTRADA FIJO FIJADO CON ALTURA Y ENFOQUE MEJORADO -->
+        <!-- BANNER DE ENTRADA -->
         <div class="hero-banner-main">
             <div class="hero-logo-box">
                 <span class="rocket-icon">🚀</span>
@@ -781,6 +864,48 @@
 
         <!-- 1. VISTA DE INICIO -->
         <div id="homeView" class="view-section">
+
+            <!-- PORTADAS DE SERVICIOS PRINCIPALES (SEGUNDA FOTO ESTILO PRIMERA FOTO) -->
+            <div class="category-header" style="margin-top: 0;">
+                <i class="fa-solid fa-cubes"></i>
+                <span>Nuestros Servicios Principales</span>
+            </div>
+
+            <div class="main-services-grid">
+                <!-- TARJETA 1 -->
+                <div class="service-cover-card" onclick="showView('trabajosView')">
+                    <div class="service-cover-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div class="service-cover-title">Trabajos Universitarios y Escolares</div>
+                    <div class="service-cover-desc">Elaboración de tareas, monografías, presentaciones, ediciones de video y proyectos académicos.</div>
+                    <div class="service-cover-btn">Ver Precios y Servicios <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+
+                <!-- TARJETA 2 -->
+                <div class="service-cover-card" onclick="showView('detallesView')">
+                    <div class="service-cover-icon"><i class="fa-solid fa-gift"></i></div>
+                    <div class="service-cover-title">Detalles y Regalos GitHub</div>
+                    <div class="service-cover-desc">Cartas virtuales interactivas, aniversarios y sorpresas personalizadas publicadas en la web.</div>
+                    <div class="service-cover-btn">Explorar Detalles <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+
+                <!-- TARJETA 3 -->
+                <div class="service-cover-card" onclick="showView('emprendimientoView')">
+                    <div class="service-cover-icon"><i class="fa-solid fa-store"></i></div>
+                    <div class="service-cover-title">Emprendimientos Universitarios</div>
+                    <div class="service-cover-desc">Asesoría digital, creación de marcas y catálogos online para hacer crecer tu negocio.</div>
+                    <div class="service-cover-btn">Ver Opciones <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+
+                <!-- TARJETA 4 -->
+                <div class="service-cover-card" onclick="showView('webDevView')">
+                    <div class="service-cover-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <div class="service-cover-title">Crea tu Página Web</div>
+                    <div class="service-cover-desc">Desarrollo web a medida desde S/ 5.00 con hosting en GitHub Pages, catálogo y soporte.</div>
+                    <div class="service-cover-btn">Ver Planes Web <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+
+            <!-- DIAGRAMA OSINT -->
             <div class="diagram-container">
                 <h2 class="diagram-title">RED DE CONSULTAS E INTEGRACIÓN OSINT</h2>
                 <div class="diagram-img-wrapper">
@@ -788,10 +913,11 @@
                 </div>
             </div>
 
+            <!-- UNIVERSIDADES (FOTO 1) -->
             <div class="academic-section">
                 <div class="academic-header">
                     <h2>🎓 TRABAJOS UNIVERSITARIOS DE TODAS LAS UNIVERSIDADES Y COLEGIOS DEL PERÚ</h2>
-                    <p style="color: var(--text-secondary); margin-top: 6px;">Elaboración de tareas, proyectos, monografías, presentaciones y ediciones de video profesionales.</p>
+                    <p style="color: var(--text-secondary); margin-top: 6px;">Atención rápida y confidencial para alumnos de todas las instituciones.</p>
                 </div>
 
                 <div class="uni-grid">
@@ -811,22 +937,20 @@
             </div>
         </div>
 
-        <!-- 2. VISTA DE SERVICIOS / OSINT (CON LAS PLACAS CONDICIONADAS AQUÍ SOLAMENTE) -->
+        <!-- 2. VISTA DE SERVICIOS / OSINT (PLACAS EXCLUSIVAS S/ 2.00) -->
         <div id="servicesView" class="view-section hidden">
             
-            <!-- PLACAS EXCLUSIVAS DE OSINT Y CONSULTAS -->
             <div class="osint-info-container">
                 <div class="badge-confidential">
                     <i class="fa-solid fa-lock"></i> 100% CONFIDENCIAL Y DISCRETO
                 </div>
                 <div class="info-bar">
-                    <div class="info-pill"><i class="fa-solid fa-tag"></i> Precio: Desde S/ 2.00 (varía según el servicio)</div>
+                    <div class="info-pill"><i class="fa-solid fa-tag"></i> Precio: Desde S/ 2.00 (varía según la consulta)</div>
                     <div class="info-pill"><i class="fa-solid fa-clock"></i> Atención 24/7</div>
                     <div class="info-pill"><i class="fa-solid fa-id-card"></i> Requisitos: Número de celular, DNI o Nombre completo</div>
                 </div>
             </div>
 
-            <!-- ENCABEZADO DINÁMICO -->
             <div class="category-header">
                 <i class="fa-solid fa-bars-staggered"></i>
                 <span id="categoryTitle">RENIEC</span>
@@ -840,8 +964,8 @@
                 <div class="card service-item" data-category="OSIPTEL"><div class="card-img-placeholder"><i class="fa-solid fa-tower-cell fa-3x"></i></div><div class="card-body"><div><div class="card-title">OSIPTEL / TELÉFONO</div><div class="card-desc">Búsqueda de titular por número | Teléfonos registrados a un DNI.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20OSIPTEL" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
                 <div class="card service-item" data-category="FISCALÍA"><div class="card-img-placeholder"><i class="fa-solid fa-gavel fa-3x"></i></div><div class="card-body"><div><div class="card-title">FISCALÍA</div><div class="card-desc">Carpetas fiscales | Investigaciones en curso y denuncias.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20FISCALIA" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
                 <div class="card service-item" data-category="MINEDU"><div class="card-img-placeholder"><i class="fa-solid fa-book fa-3x"></i></div><div class="card-body"><div><div class="card-title">MINEDU</div><div class="card-desc">Certificados de estudios secundarios y notas oficiales.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20MINEDU" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="SENTINEL"><div class="card-img-placeholder"><i class="fa-solid fa-chart-line fa-3x"></i></div><div class="card-body"><div><div class="card-title">SENTINEL / EQUIFAX</div><div class="card-desc">Reporte de deudas finacieras | Calificación crediticia en Infocorp.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20SENTINEL" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="SUNEDU"><div class="card-img-placeholder"><i class="fa-solid fa-graduation-cap fa-3x"></i></div><div class="card-body"><div><div class="card-title">SUNEDU</div><div class="card-desc">Verificación de grados acadamicos, bachiller y títulos universitarios.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20SUNEDU" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
+                <div class="card service-item" data-category="SENTINEL"><div class="card-img-placeholder"><i class="fa-solid fa-chart-line fa-3x"></i></div><div class="card-body"><div><div class="card-title">SENTINEL / EQUIFAX</div><div class="card-desc">Reporte de deudas financieras | Calificación crediticia en Infocorp.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20SENTINEL" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
+                <div class="card service-item" data-category="SUNEDU"><div class="card-img-placeholder"><i class="fa-solid fa-graduation-cap fa-3x"></i></div><div class="card-body"><div><div class="card-title">SUNEDU</div><div class="card-desc">Verificación de grados académicos, bachiller y títulos universitarios.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20SUNEDU" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
                 <div class="card service-item" data-category="MTC"><div class="card-img-placeholder"><i class="fa-solid fa-car fa-3x"></i></div><div class="card-body"><div><div class="card-title">MTC</div><div class="card-desc">Licencias de conducir, papeletas de tránsito y récord de conductor.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20MTC" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
                 <div class="card service-item" data-category="INPE"><div class="card-img-placeholder"><i class="fa-solid fa-building-columns fa-3x"></i></div><div class="card-body"><div><div class="card-title">INPE</div><div class="card-desc">Verificación de antecedentes penales e ingresos penales.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20INPE" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
                 <div class="card service-item" data-category="PNP"><div class="card-img-placeholder"><i class="fa-solid fa-shield-halved fa-3x"></i></div><div class="card-body"><div><div class="card-title">PNP</div><div class="card-desc">Búsqueda de denuncias policiales y requisitorias.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20PNP" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
@@ -851,7 +975,85 @@
             </div>
         </div>
 
-        <!-- 3. VISTA DE DESARROLLO WEB (ESTRUCTURA COMPLETA S/ 5.00 A S/ 45.00) -->
+        <!-- 3. VISTA DE TRABAJOS UNIVERSITARIOS Y ESCOLARES (SIN S/ 2.00, DESDE S/ 8.00 + TIEMPO Y DIFICULTAD) -->
+        <div id="trabajosView" class="view-section hidden">
+            
+            <div class="trabajos-info-container">
+                <div class="badge-trabajos-price">
+                    <i class="fa-solid fa-tag"></i> PRECIOS: DESDE S/ 8.00 EN ADELANTE
+                </div>
+                <div class="info-bar">
+                    <div class="info-pill"><i class="fa-solid fa-layer-group"></i> El costo varía según la dificultad del tema</div>
+                    <div class="info-pill"><i class="fa-solid fa-stopwatch"></i> El precio depende del tiempo límite de entrega</div>
+                    <div class="info-pill"><i class="fa-solid fa-user-shield"></i> Entrega 100% Confidencial y Punctual</div>
+                </div>
+            </div>
+
+            <div class="category-header">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Trabajos Universitarios y Escolares</span>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-file-lines fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Tareas y Cuestionarios</div>
+                            <div class="card-desc">
+                                Resolución de ejercicios, guías de práctica, resúmenes y cuestionarios.
+                                <br><br><strong>Precio:</strong> Desde S/ 8.00 (Varía según complejidad y tiempo límite).
+                            </div>
+                        </div>
+                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20cotizar%20una%20Tarea%20o%20Cuestionario.%20Adjunto%20detalles%20y%20fecha%20de%20entrega:" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-book-open fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Monografías y Ensayos</div>
+                            <div class="card-desc">
+                                Investigación con normas APA/Vancouver, redacción académica e índice estructurado.
+                                <br><br><strong>Precio:</strong> Desde S/ 15.00 (Según extensión, tema y plazo).
+                            </div>
+                        </div>
+                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20cotizar%20una%20Monograf%C3%ADa%20o%20Ensayo.%20Adjunto%20tema%20y%20plazo:" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-file-powerpoint fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Presentaciones y Diapositivas PPT</div>
+                            <div class="card-desc">
+                                Diseños modernos en PowerPoint, Canva o Prezi orientados a exposiciones.
+                                <br><br><strong>Precio:</strong> Desde S/ 10.00 (Depende del número de diapositivas y urgencia).
+                            </div>
+                        </div>
+                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20cotizar%20una%20Presentaci%C3%B3n%20PPT.%20Detalles:" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-video fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Edición de Video Académico</div>
+                            <div class="card-desc">
+                                Edición de videos para exposiciones, subtítulos, audio dinámico y presentaciones.
+                                <br><br><strong>Precio:</strong> Desde S/ 12.00 (Según la duración del video y plazo de entrega).
+                            </div>
+                        </div>
+                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20cotizar%20una%20Edici%C3%B3n%20de%20Video.%20Detalles:" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. VISTA DE DESARROLLO WEB (PLANES S/ 5.00 A S/ 45.00) -->
         <div id="webDevView" class="view-section hidden">
             <div class="category-header">
                 <i class="fa-solid fa-laptop-code"></i>
@@ -941,13 +1143,18 @@
             </div>
         </div>
 
-        <!-- 4. OTRAS VISTAS (DETALLES Y EMPRENDIMIENTOS) -->
+        <!-- 5. OTRAS VISTAS -->
         <div id="detallesView" class="view-section hidden">
             <div class="category-header">
                 <i class="fa-solid fa-gift"></i>
                 <span>Detalles y Regalos GitHub</span>
             </div>
-            <p style="color: var(--text-secondary); text-align: center;">Sorprende a tu pareja o amigos con páginas web personalizadas de aniversarios, cartas virtuales y galerías.</p>
+            <p style="color: var(--text-secondary); text-align: center; font-size: 0.95rem;">
+                Sorprende a tu pareja o seres queridos con cartas virtuales, páginas con música, álbumes de fotos animados y regalos interactivos alojados en la web.
+            </p>
+            <div style="margin-top: 25px; text-align: center;">
+                <a href="https://wa.me/51931309889?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20Detalles%20y%20Regalos%20GitHub" target="_blank" class="btn-wsp" style="max-width: 300px; margin: 0 auto;"><i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp</a>
+            </div>
         </div>
 
         <div id="emprendimientoView" class="view-section hidden">
@@ -955,13 +1162,18 @@
                 <i class="fa-solid fa-store"></i>
                 <span>Emprendimientos Universitarios</span>
             </div>
-            <p style="color: var(--text-secondary); text-align: center;">Impulsa tu negocio con herramientas digitales integradas a WhatsApp.</p>
+            <p style="color: var(--text-secondary); text-align: center; font-size: 0.95rem;">
+                Soluciones digitales completas para tu negocio o marca: catálogos interactivos, branding, asesoría e integración directa con tu WhatsApp de ventas.
+            </p>
+            <div style="margin-top: 25px; text-align: center;">
+                <a href="https://wa.me/51931309889?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20Emprendimientos%20Universitarios" target="_blank" class="btn-wsp" style="max-width: 300px; margin: 0 auto;"><i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp</a>
+            </div>
         </div>
 
     </main>
 
     <script>
-        // Ocultar Loader al cargar la página
+        // Ocultar Loader
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
             loader.style.opacity = '0';
@@ -985,7 +1197,7 @@
             }
         }
 
-        // Abrir y Cerrar Menú Lateral
+        // Abrir / Cerrar Menú Lateral
         function toggleSidebar() {
             document.getElementById('sidebar').classList.toggle('active');
             document.getElementById('overlay').classList.toggle('active');
@@ -1001,7 +1213,7 @@
             }
         }
 
-        // Mostrar Vistas
+        // Cambiar entre Vistas de la Web
         function showView(viewId) {
             document.querySelectorAll('.view-section').forEach(view => {
                 view.classList.add('hidden');
@@ -1010,13 +1222,13 @@
             if (targetView) {
                 targetView.classList.remove('hidden');
             }
-            // Cerrar menú lateral en móvil tras clic
+            // Cerrar menú lateral en móviles
             document.getElementById('sidebar').classList.remove('active');
             document.getElementById('overlay').classList.remove('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Mostrar Categoría de Servicios (OSINT / Bloqueos / etc)
+        // Mostrar Categoría de Servicios OSINT
         function showCategory(category) {
             showView('servicesView');
             document.getElementById('categoryTitle').textContent = category;
@@ -1032,7 +1244,7 @@
             });
         }
 
-        // Filtro de Búsqueda en Menú
+        // Filtro del Menú
         function filterMenu() {
             const input = document.getElementById('searchInput').value.toLowerCase();
             const items = document.querySelectorAll('#menuList .menu-item');
