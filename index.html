@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROCKET - Servicios de Inteligencia y Seguridad Empresarial</title>
+    <title>ROCKET - Servicios de Inteligencia y Seguridad</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -18,6 +18,7 @@
             --accent-glow: rgba(99, 102, 241, 0.2);
             --wsp-color: #25d366;
             --card-hover: rgba(255, 255, 255, 0.05);
+            --rocket-orange: #ff5722;
         }
 
         [data-theme="light"] {
@@ -220,7 +221,6 @@
             color: var(--accent-color);
         }
 
-        /* Submenús */
         .submenu {
             list-style: none;
             padding-left: 20px;
@@ -248,12 +248,6 @@
         .submenu li a:hover, .submenu li .menu-link:hover {
             color: var(--text-primary);
             background-color: var(--card-hover);
-        }
-
-        .submenu .submenu {
-            margin-left: 10px;
-            padding-left: 12px;
-            border-left: 1px dashed var(--border-color);
         }
 
         /* Content Area */
@@ -305,13 +299,143 @@
             border: 1px solid var(--border-color);
             padding: 8px 16px;
             border-radius: 10px;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             font-weight: 600;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
+        /* Hub Diagram Section */
+        .diagram-container {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px 20px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .diagram-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--text-primary);
+        }
+
+        .hub-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .center-hub-node {
+            grid-column: 1 / -1;
+            margin: 20px auto;
+            background: linear-gradient(135deg, #ff5722, #e64a19);
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 900;
+            padding: 20px 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(255, 87, 34, 0.4);
+            letter-spacing: 2px;
+            display: inline-block;
+        }
+
+        .hub-node {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 15px 10px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .hub-node i {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        /* Section Trabajos Universitarios */
+        .academic-section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px 20px;
+            margin-bottom: 40px;
+        }
+
+        .academic-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .academic-header h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .academic-header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .uni-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .uni-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.2s;
+        }
+
+        .uni-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-color);
+        }
+
+        .uni-badge {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--bg-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            border: 1px solid var(--border-color);
+        }
+
+        .uni-name {
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        /* Grid de Servicios (Vista Filtrada) */
         .category-header {
             display: flex;
             align-items: center;
@@ -321,10 +445,6 @@
             margin: 40px 0 20px;
             padding-bottom: 10px;
             border-bottom: 2px solid var(--border-color);
-        }
-
-        .category-header i {
-            color: var(--accent-color);
         }
 
         .grid {
@@ -351,7 +471,7 @@
 
         .card-img-placeholder {
             width: 100%;
-            height: 160px;
+            height: 150px;
             background-color: var(--bg-card);
             display: flex;
             flex-direction: column;
@@ -359,14 +479,6 @@
             justify-content: center;
             color: var(--text-secondary);
             border-bottom: 1px solid var(--border-color);
-            position: relative;
-        }
-
-        .card-img-placeholder img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: none;
         }
 
         .card-body {
@@ -404,6 +516,10 @@
             font-weight: 700;
             font-size: 0.9rem;
         }
+
+        .hidden {
+            display: none !important;
+        }
     </style>
 </head>
 <body>
@@ -429,7 +545,7 @@
 
     <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
 
-    <!-- Menú Lateral -->
+    <!-- Menú Lateral Reorganizado -->
     <aside class="sidebar" id="sidebar">
         <div class="search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -437,17 +553,16 @@
         </div>
 
         <ul class="menu-list" id="menuList">
-            <!-- Home -->
             <li class="menu-item">
                 <a href="#" class="menu-link" onclick="showHome()">
                     <div class="menu-link-left">
                         <i class="fa-solid fa-house"></i>
-                        <span>Home</span>
+                        <span>Inicio / ROCKET</span>
                     </div>
                 </a>
             </li>
 
-            <!-- Desplegable Servicios de OSINT -->
+            <!-- Desplegable OSINT -->
             <li class="menu-item">
                 <div class="menu-link" onclick="toggleSubmenu('osintMenu', 'osintArrow')">
                     <div class="menu-link-left">
@@ -458,65 +573,29 @@
                 </div>
                 
                 <ul class="submenu" id="osintMenu">
-                    <li><a href="#" onclick="filterBySidebar('Teléfono')"><i class="fa-solid fa-phone"></i> Teléfonos</a></li>
-                    <li><a href="#" onclick="filterBySidebar('Sunarp')"><i class="fa-solid fa-building"></i> Sunarp</a></li>
-                    
-                    <!-- Submenú Reniec -->
-                    <li>
-                        <div class="menu-link" onclick="toggleSubmenu('reniecMenu', 'reniecArrow')">
-                            <div class="menu-link-left">
-                                <i class="fa-solid fa-id-card"></i>
-                                <span>Reniec</span>
-                            </div>
-                            <i class="fa-solid fa-chevron-down" id="reniecArrow"></i>
-                        </div>
-                        <ul class="submenu" id="reniecMenu">
-                            <li><a href="#" onclick="filterBySidebar('RENIEC')">Foto de DNI / Huellas</a></li>
-                            <li><a href="#" onclick="filterBySidebar('RENIEC')">DNI Virtual</a></li>
-                            <li><a href="#" onclick="filterBySidebar('FAMILIA')">Árbol Genealógico</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Submenú Justicia -->
-                    <li>
-                        <div class="menu-link" onclick="toggleSubmenu('justiciaMenu', 'justiciaArrow')">
-                            <div class="menu-link-left">
-                                <i class="fa-solid fa-folder-open"></i>
-                                <span>Justicia</span>
-                            </div>
-                            <i class="fa-solid fa-chevron-down" id="justiciaArrow"></i>
-                        </div>
-                        <ul class="submenu" id="justiciaMenu">
-                            <li><a href="#" onclick="filterBySidebar('ANTECEDENTES')">Denuncias Policiales</a></li>
-                            <li><a href="#" onclick="filterBySidebar('ANTECEDENTES')">Carpetas Fiscales</a></li>
-                            <li><a href="#" onclick="filterBySidebar('ANTECEDENTES')">Requisitorias (RQ)</a></li>
-                        </ul>
-                    </li>
-
-                    <li><a href="#" onclick="filterBySidebar('FINANCIERO')"><i class="fa-solid fa-shield-halved"></i> Sentinel</a></li>
-                    <li><a href="#" onclick="filterBySidebar('Vehículo')"><i class="fa-solid fa-car"></i> Vehículo</a></li>
-                    <li><a href="#" onclick="filterBySidebar('Síguelo')"><i class="fa-solid fa-route"></i> Síguelo Plus</a></li>
-                    <li><a href="#" onclick="filterBySidebar('ACTAS')"><i class="fa-solid fa-file-lines"></i> Actas</a></li>
-                    <li><a href="#" onclick="filterBySidebar('Doxeo')"><i class="fa-solid fa-user-tag"></i> Doxing</a></li>
-                    <li><a href="#" onclick="filterBySidebar('Persona')"><i class="fa-solid fa-user-check"></i> Persona Plus</a></li>
-                    <li><a href="#" onclick="filterBySidebar('Sunat')"><i class="fa-solid fa-receipt"></i> Sunat</a></li>
-                    <li><a href="#" onclick="filterBySidebar('APIs')"><i class="fa-solid fa-code"></i> APIs</a></li>
-                    <li><a href="#" onclick="filterBySidebar('Chat Bot')"><i class="fa-solid fa-robot"></i> Chat Bot</a></li>
+                    <li><a href="#" onclick="showCategory('RENIEC')"><i class="fa-solid fa-id-card"></i> RENIEC (Fotos / Huellas / DNI)</a></li>
+                    <li><a href="#" onclick="showCategory('ANTECEDENTES')"><i class="fa-solid fa-folder-open"></i> Antecedentes / Denuncias / RQ</a></li>
+                    <li><a href="#" onclick="showCategory('CERTIFICADOS')"><i class="fa-solid fa-award"></i> Certificados Oficiales</a></li>
+                    <li><a href="#" onclick="showCategory('ACTAS')"><i class="fa-solid fa-file-lines"></i> Actas de Nacimiento / Matrimonio</a></li>
+                    <li><a href="#" onclick="showCategory('FAMILIA')"><i class="fa-solid fa-users"></i> Árbol Genealógico</a></li>
+                    <li><a href="#" onclick="showCategory('TELÉFONO')"><i class="fa-solid fa-phone"></i> Búsqueda por Teléfono</a></li>
+                    <li><a href="#" onclick="showCategory('FINANCIERO')"><i class="fa-solid fa-chart-line"></i> Reportes Financieros / Sentinel</a></li>
                 </ul>
             </li>
 
-            <!-- Otros Servicios Principales -->
+            <!-- Operaciones -->
             <li class="menu-item">
-                <a href="#" class="menu-link" onclick="filterBySidebar('Bloqueo')">
+                <a href="#" class="menu-link" onclick="showCategory('Bloqueo')">
                     <div class="menu-link-left">
                         <i class="fa-solid fa-ban"></i>
-                        <span>Bloqueos</span>
+                        <span>Bloqueos y Operaciones</span>
                     </div>
                 </a>
             </li>
 
+            <!-- Números Virtuales -->
             <li class="menu-item">
-                <a href="#" class="menu-link" onclick="filterBySidebar('NÚMEROS VIRTUALES')">
+                <a href="#" class="menu-link" onclick="showCategory('VIRTUALES')">
                     <div class="menu-link-left">
                         <i class="fa-solid fa-sim-card"></i>
                         <span>Números Virtuales</span>
@@ -524,12 +603,12 @@
                 </a>
             </li>
 
-            <!-- Nuevo Servicio Añadido -->
+            <!-- Trabajos Universitarios -->
             <li class="menu-item">
-                <a href="#" class="menu-link" onclick="filterBySidebar('Trabajos')">
+                <a href="#" class="menu-link" onclick="showCategory('Trabajos')">
                     <div class="menu-link-left">
                         <i class="fa-solid fa-graduation-cap"></i>
-                        <span>Trabajos Universitarios y Ediciones de Video</span>
+                        <span>Trabajos Universitarios y Escolares</span>
                     </div>
                 </a>
             </li>
@@ -538,306 +617,248 @@
 
     <!-- Contenido Principal -->
     <main id="mainContainer">
+        <!-- Banner Principal -->
         <div class="hero-banner">
-            <h1 class="hero-title">🚀 ROCKET — SERVICIOS DE INTELIGENCIA Y SEGURIDAD EMPRESARIAL</h1>
+            <h1 class="hero-title">🚀 ROCKET — SERVICIOS DE INTELIGENCIA Y SEGURIDAD</h1>
             <div class="badge-confidential">🔒 100% CONFIDENCIAL Y DISCRETO</div>
             <div class="info-bar">
-                <div class="info-pill"><i class="fa-solid fa-tag"></i> Precio: Desde S/ 2.00</div>
-                <div class="info-pill"><i class="fa-solid fa-bolt"></i> Atención Rápida</div>
-                <div class="info-pill"><i class="fa-solid fa-mobile-screen"></i> Requisitos: Solo el número de celular</div>
+                <div class="info-pill"><i class="fa-solid fa-tag"></i> Precio: Desde S/ 2.00 (varía según el servicio)</div>
+                <div class="info-pill"><i class="fa-solid fa-clock"></i> Atención 24/7</div>
+                <div class="info-pill"><i class="fa-solid fa-id-card"></i> Requisitos: Número de celular, DNI o Nombre completo</div>
             </div>
         </div>
 
-        <!-- SECCIÓN OSINT -->
-        <div class="category-header">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <span>Verificación de Datos y Registros Civiles (OSINT)</span>
-        </div>
-
-        <div class="grid">
-            <div class="card">
-                <div class="card-img-placeholder">
-                    <i class="fa-solid fa-id-card fa-2x"></i>
-                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
-                    <img src="reniec.jpg" alt="Reniec" onerror="this.style.display='none'">
-                </div>
-                <div class="card-body">
-                    <div>
-                        <div class="card-title">RENIEC</div>
-                        <div class="card-desc">Foto de DNI | Firma y huellas | DNI virtual azul, amarillo y electrónico.</div>
-                    </div>
-                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20RENIEC" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img-placeholder">
-                    <i class="fa-solid fa-file-shield fa-2x"></i>
-                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
-                    <img src="antecedentes.jpg" alt="Antecedentes" onerror="this.style.display='none'">
-                </div>
-                <div class="card-body">
-                    <div>
-                        <div class="card-title">ANTECEDENTES</div>
-                        <div class="card-desc">Denuncias policiales | Requisitorias (RQ) | Carpetas fiscales | Detenidos / Sentenciados.</div>
-                    </div>
-                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20ANTECEDENTES" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+        <!-- Secciones de Inicio (Diagrama OSINT) -->
+        <div id="homeView">
+            <div class="diagram-container">
+                <h2 class="diagram-title">RED DE CONSULTAS E INTEGRACIÓN OSINT</h2>
+                
+                <div class="hub-wrapper">
+                    <div class="hub-node"><i class="fa-solid fa-id-card"></i> RENIEC</div>
+                    <div class="hub-node"><i class="fa-solid fa-receipt"></i> SUNAT</div>
+                    <div class="hub-node"><i class="fa-solid fa-scale-balanced"></i> PODER JUDICIAL</div>
+                    <div class="hub-node"><i class="fa-solid fa-passport"></i> MIGRACIONES</div>
+                    
+                    <div class="center-hub-node">🚀 ROCKET</div>
+                    
+                    <div class="hub-node"><i class="fa-solid fa-tower-cell"></i> OSIPTEL</div>
+                    <div class="hub-node"><i class="fa-solid fa-gavel"></i> FISCALÍA</div>
+                    <div class="hub-node"><i class="fa-solid fa-book"></i> MINEDU</div>
+                    <div class="hub-node"><i class="fa-solid fa-shield-halved"></i> SENTINEL</div>
+                    <div class="hub-node"><i class="fa-solid fa-graduation-cap"></i> SUNEDU</div>
+                    <div class="hub-node"><i class="fa-solid fa-car"></i> MTC</div>
+                    <div class="hub-node"><i class="fa-solid fa-building-columns"></i> INPE</div>
+                    <div class="hub-node"><i class="fa-solid fa-user-shield"></i> PNP</div>
+                    <div class="hub-node"><i class="fa-solid fa-building"></i> SUNARP</div>
                 </div>
             </div>
 
-            <div class="card">
-                <div class="card-img-placeholder">
-                    <i class="fa-solid fa-award fa-2x"></i>
-                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
-                    <img src="certificados.jpg" alt="Certificados" onerror="this.style.display='none'">
+            <!-- Sección Trabajos Universitarios y Colegios -->
+            <div class="academic-section">
+                <div class="academic-header">
+                    <h2>🎓 TRABAJOS UNIVERSITARIOS DE TODAS LAS UNIVERSIDADES Y COLEGIOS DEL PERÚ</h2>
+                    <p>Elaboración de tareas, proyectos, monografías, presentaciones y ediciones de video profesionales.</p>
                 </div>
-                <div class="card-body">
-                    <div>
-                        <div class="card-title">CERTIFICADOS</div>
-                        <div class="card-desc">Certificados Policiales, Judiciales y Penales oficiales.</div>
-                    </div>
-                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20CERTIFICADOS" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
-                </div>
-            </div>
 
-            <div class="card">
-                <div class="card-img-placeholder">
-                    <i class="fa-solid fa-file-lines fa-2x"></i>
-                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
-                    <img src="actas.jpg" alt="Actas" onerror="this.style.display='none'">
-                </div>
-                <div class="card-body">
-                    <div>
-                        <div class="card-title">ACTAS</div>
-                        <div class="card-desc">Búsqueda y emisión de Actas de Nacimiento | Matrimonio | Defunción.</div>
+                <div class="uni-grid">
+                    <div class="uni-card">
+                        <div class="uni-badge"><i class="fa-solid fa-university"></i></div>
+                        <div class="uni-name">UNMSM</div>
                     </div>
-                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20ACTAS" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img-placeholder">
-                    <i class="fa-solid fa-users-rectangle fa-2x"></i>
-                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
-                    <img src="familia.jpg" alt="Familia" onerror="this.style.display='none'">
-                </div>
-                <div class="card-body">
-                    <div>
-                        <div class="card-title">FAMILIA</div>
-                        <div class="card-desc">Árbol genealógico completo | Fotos e integrantes vinculados del hogar.</div>
+                    <div class="uni-card">
+                        <div class="uni-badge"><i class="fa-solid fa-building-columns"></i></div>
+                        <div class="uni-name">UNI</div>
                     </div>
-                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20FAMILIA" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img-placeholder">
-                    <i class="fa-solid fa-mobile-retro fa-2x"></i>
-                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
-                    <img src="telefono.jpg" alt="Teléfono" onerror="this.style.display='none'">
-                </div>
-                <div class="card-body">
-                    <div>
-                        <div class="card-title">TELÉFONO</div>
-                        <div class="card-desc">Búsqueda de titular en tiempo real (Movistar, Claro, Entel, Bitel).</div>
+                    <div class="uni-card">
+                        <div class="uni-badge"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div class="uni-name">PUCP</div>
                     </div>
-                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20TELEFONO" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img-placeholder">
-                    <i class="fa-solid fa-chart-line fa-2x"></i>
-                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
-                    <img src="financiero.jpg" alt="Financiero" onerror="this.style.display='none'">
-                </div>
-                <div class="card-body">
-                    <div>
-                        <div class="card-title">FINANCIERO & SENTINEL</div>
-                        <div class="card-desc">Trabajos y sueldos | Reportes financieros | Consulta REC | Consumos.</div>
+                    <div class="uni-card">
+                        <div class="uni-badge"><i class="fa-solid fa-book-bookmark"></i></div>
+                        <div class="uni-name">U. DE LIMA</div>
                     </div>
-                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20FINANCIERO" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                    <div class="uni-card">
+                        <div class="uni-badge"><i class="fa-solid fa-laptop-code"></i></div>
+                        <div class="uni-name">UTP</div>
+                    </div>
+                    <div class="uni-card">
+                        <div class="uni-badge"><i class="fa-solid fa-user-graduate"></i></div>
+                        <div class="uni-name">UCV</div>
+                    </div>
+                    <div class="uni-card">
+                        <div class="uni-badge"><i class="fa-solid fa-stethoscope"></i></div>
+                        <div class="uni-name">UPCH</div>
+                    </div>
+                    <div class="uni-card">
+                        <div class="uni-badge"><i class="fa-solid fa-leaf"></i></div>
+                        <div class="uni-name">CIENTÍFICA DEL SUR</div>
+                    </div>
+                    <div class="uni-card">
+                        <div class="uni-badge"><i class="fa-solid fa-briefcase"></i></div>
+                        <div class="uni-name">UPC</div>
+                    </div>
+                    <div class="uni-card">
+                        <div class="uni-badge"><i class="fa-solid fa-award"></i></div>
+                        <div class="uni-name">USMP</div>
+                    </div>
+                    <div class="uni-card">
+                        <div class="uni-badge"><i class="fa-solid fa-compass"></i></div>
+                        <div class="uni-name">UPN</div>
+                    </div>
+                    <div class="uni-card">
+                        <div class="uni-badge"><i class="fa-solid fa-school"></i></div>
+                        <div class="uni-name">COLEGIOS DEL PERÚ</div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- SECCIÓN SOLUCIONES OPERATIVAS -->
-        <div class="category-header">
-            <i class="fa-solid fa-shield-halved"></i>
-            <span>Soluciones Operativas y Seguridad Avanzada</span>
-        </div>
-
-        <div class="grid">
-            <div class="card">
-                <div class="card-img-placeholder">
-                    <i class="fa-solid fa-lock fa-2x"></i>
-                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
-                    <img src="bloqueo-linea.jpg" alt="Bloqueo Linea" onerror="this.style.display='none'">
-                </div>
-                <div class="card-body">
-                    <div>
-                        <div class="card-title">Bloqueo de Línea + IMEI</div>
-                        <div class="card-desc">Bloqueo efectivo para Android / iOS en cualquier operador.</div>
-                    </div>
-                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20Bloqueo%20de%20Linea%20%2B%20IMEI" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
-                </div>
+        <!-- Vista Filtrada de Servicios (Aparece solo al hacer clic en las opciones del menú) -->
+        <div id="servicesView" class="hidden">
+            <div class="category-header">
+                <i class="fa-solid fa-list-check"></i>
+                <span id="categoryTitle">Servicios Solicitados</span>
             </div>
 
-            <div class="card">
-                <div class="card-img-placeholder">
-                    <i class="fa-solid fa-phone-slash fa-2x"></i>
-                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
-                    <img src="bloqueo-llamada.jpg" alt="Operaciones Bloqueo" onerror="this.style.display='none'">
-                </div>
-                <div class="card-body">
-                    <div>
-                        <div class="card-title">Operaciones de Bloqueo Específicas</div>
-                        <div class="card-desc">Instantáneo, anónimo y verificable mediante llamada directa.</div>
+            <div class="grid" id="servicesGrid">
+                <!-- Tarjeta RENIEC -->
+                <div class="card service-item" data-category="RENIEC">
+                    <div class="card-img-placeholder">
+                        <i class="fa-solid fa-id-card fa-3x"></i>
                     </div>
-                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20Operaciones%20de%20bloqueo" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img-placeholder">
-                    <i class="fa-solid fa-user-secret fa-2x"></i>
-                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
-                    <img src="doxeo.jpg" alt="Doxeo" onerror="this.style.display='none'">
-                </div>
-                <div class="card-body">
-                    <div>
-                        <div class="card-title">Doxeo</div>
-                        <div class="card-desc">Búsqueda avanzada e informe perfilado de datos vinculados.</div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">RENIEC</div>
+                            <div class="card-desc">Foto de DNI | Firma y huellas | DNI virtual azul, amarillo y electrónico.</div>
+                        </div>
+                        <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20RENIEC" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
                     </div>
-                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20de%20Doxeo" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
                 </div>
-            </div>
 
-            <div class="card">
-                <div class="card-img-placeholder">
-                    <i class="fa-solid fa-gavel fa-2x"></i>
-                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
-                    <img src="denuncias.jpg" alt="Denuncias" onerror="this.style.display='none'">
-                </div>
-                <div class="card-body">
-                    <div>
-                        <div class="card-title">Denuncias Judiciales al Sistema</div>
-                        <div class="card-desc">Registro y verificación en el sistema oficial de denuncias.</div>
+                <!-- Tarjeta Antecedentes -->
+                <div class="card service-item" data-category="ANTECEDENTES">
+                    <div class="card-img-placeholder">
+                        <i class="fa-solid fa-file-shield fa-3x"></i>
                     </div>
-                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20Denuncias%20Judiciales" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img-placeholder">
-                    <i class="fa-solid fa-list-check fa-2x"></i>
-                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
-                    <img src="registro-entel.jpg" alt="Registro Entel" onerror="this.style.display='none'">
-                </div>
-                <div class="card-body">
-                    <div>
-                        <div class="card-title">Registro de Llamadas (Entel)</div>
-                        <div class="card-desc">Historial detallado de registros de llamadas entrantes/salientes.</div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">ANTECEDENTES</div>
+                            <div class="card-desc">Denuncias policiales | Requisitorias (RQ) | Carpetas fiscales | Detenidos.</div>
+                        </div>
+                        <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20ANTECEDENTES" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
                     </div>
-                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20Registro%20de%20llamadas%20Entel" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
                 </div>
-            </div>
 
-            <div class="card">
-                <div class="card-img-placeholder">
-                    <i class="fa-solid fa-hashtag fa-2x"></i>
-                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
-                    <img src="redes.jpg" alt="Seguidores" onerror="this.style.display='none'">
-                </div>
-                <div class="card-body">
-                    <div>
-                        <div class="card-title">Seguidores, Likes y Vistas</div>
-                        <div class="card-desc">Crecimiento e interacción garantizada para tus redes sociales.</div>
+                <!-- Tarjeta Certificados -->
+                <div class="card service-item" data-category="CERTIFICADOS">
+                    <div class="card-img-placeholder">
+                        <i class="fa-solid fa-award fa-3x"></i>
                     </div>
-                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20Seguidores/Likes/Vistas" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img-placeholder">
-                    <i class="fa-solid fa-notes-medical fa-2x"></i>
-                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
-                    <img src="medico.jpg" alt="Descanso Medico" onerror="this.style.display='none'">
-                </div>
-                <div class="card-body">
-                    <div>
-                        <div class="card-title">Descanso / Receta Médica</div>
-                        <div class="card-desc">Gestión y emisión de descansos y recetas médicas.</div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">CERTIFICADOS</div>
+                            <div class="card-desc">Certificados Policiales, Judiciales y Penales oficiales.</div>
+                        </div>
+                        <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20CERTIFICADOS" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
                     </div>
-                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20Descanso%20o%20Receta%20Medica" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
                 </div>
-            </div>
 
-            <div class="card">
-                <div class="card-img-placeholder">
-                    <i class="fa-solid fa-building-columns fa-2x"></i>
-                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
-                    <img src="banca.jpg" alt="Bloqueo Banca" onerror="this.style.display='none'">
-                </div>
-                <div class="card-body">
-                    <div>
-                        <div class="card-title">Bloqueo de Banca Móvil</div>
-                        <div class="card-desc">Soporte preventivo de bloqueo para BBVA, Interbank, BCP y Scotiabank.</div>
+                <!-- Tarjeta Actas -->
+                <div class="card service-item" data-category="ACTAS">
+                    <div class="card-img-placeholder">
+                        <i class="fa-solid fa-file-lines fa-3x"></i>
                     </div>
-                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20Bloqueo%20de%20Banca%20Movil" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img-placeholder">
-                    <i class="fa-solid fa-wallet fa-2x"></i>
-                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
-                    <img src="billeteras.jpg" alt="Bloqueo Billeteras" onerror="this.style.display='none'">
-                </div>
-                <div class="card-body">
-                    <div>
-                        <div class="card-title">Bloqueo de Billeteras Digitales</div>
-                        <div class="card-desc">Protección y bloqueo en Yape, Plin, Agora y Bim.</div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">ACTAS</div>
+                            <div class="card-desc">Búsqueda y emisión de Actas de Nacimiento, Matrimonio y Defunción.</div>
+                        </div>
+                        <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20ACTAS" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
                     </div>
-                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20Bloqueo%20de%20Billeteras%20Digitales" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
                 </div>
-            </div>
-        </div>
 
-        <!-- SECCIÓN NÚMEROS VIRTUALES Y TRABAJOS -->
-        <div class="category-header">
-            <i class="fa-solid fa-plus-circle"></i>
-            <span>Servicios Adicionales</span>
-        </div>
-
-        <div class="grid">
-            <div class="card">
-                <div class="card-img-placeholder">
-                    <i class="fa-solid fa-globe fa-2x"></i>
-                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
-                    <img src="virtual.jpg" alt="Números Virtuales" onerror="this.style.display='none'">
-                </div>
-                <div class="card-body">
-                    <div>
-                        <div class="card-title">📱 NÚMEROS VIRTUALES</div>
-                        <div class="card-desc">Activación inmediata para WhatsApp y cualquier red social de cualquier país.</div>
+                <!-- Tarjeta Familia -->
+                <div class="card service-item" data-category="FAMILIA">
+                    <div class="card-img-placeholder">
+                        <i class="fa-solid fa-users fa-3x"></i>
                     </div>
-                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20un%20Numero%20Virtual" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img-placeholder">
-                    <i class="fa-solid fa-graduation-cap fa-2x"></i>
-                    <span style="font-size:0.8rem; margin-top:5px;">Foto / Plantilla</span>
-                    <img src="trabajos.jpg" alt="Trabajos Universitarios" onerror="this.style.display='none'">
-                </div>
-                <div class="card-body">
-                    <div>
-                        <div class="card-title">🎓 Trabajos Universitarios y Edición de Video</div>
-                        <div class="card-desc">Elaboración de tareas, monografías, presentaciones y edición profesional de contenido en video.</div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">FAMILIA</div>
+                            <div class="card-desc">Árbol genealógico completo e integrantes vinculados.</div>
+                        </div>
+                        <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20FAMILIA" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
                     </div>
-                    <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20de%20Trabajos%20Universitarios/Ediciones" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                </div>
+
+                <!-- Tarjeta Teléfono -->
+                <div class="card service-item" data-category="TELÉFONO">
+                    <div class="card-img-placeholder">
+                        <i class="fa-solid fa-phone fa-3x"></i>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">TELÉFONO</div>
+                            <div class="card-desc">Búsqueda de titular en tiempo real para todos los operadores.</div>
+                        </div>
+                        <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20TELEFONO" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Financiero -->
+                <div class="card service-item" data-category="FINANCIERO">
+                    <div class="card-img-placeholder">
+                        <i class="fa-solid fa-chart-line fa-3x"></i>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">FINANCIERO & SENTINEL</div>
+                            <div class="card-desc">Reportes financieros, Sentinel, empleos y sueldos.</div>
+                        </div>
+                        <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20FINANCIERO" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Bloqueos -->
+                <div class="card service-item" data-category="Bloqueo">
+                    <div class="card-img-placeholder">
+                        <i class="fa-solid fa-ban fa-3x"></i>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">BLOQUEO DE LÍNEA + IMEI</div>
+                            <div class="card-desc">Bloqueos efectivos e inmediatos en Android e iOS.</div>
+                        </div>
+                        <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20de%20Bloqueo" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Números Virtuales -->
+                <div class="card service-item" data-category="VIRTUALES">
+                    <div class="card-img-placeholder">
+                        <i class="fa-solid fa-sim-card fa-3x"></i>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">NÚMEROS VIRTUALES</div>
+                            <div class="card-desc">Activación inmediata para WhatsApp y redes sociales de cualquier país.</div>
+                        </div>
+                        <a href="https://wa.me/51900000000?text=Hola,%20deseo%20Numero%20Virtual" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Trabajos Universitarios -->
+                <div class="card service-item" data-category="Trabajos">
+                    <div class="card-img-placeholder">
+                        <i class="fa-solid fa-graduation-cap fa-3x"></i>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">TRABAJOS UNIVERSITARIOS Y ESCOLARES</div>
+                            <div class="card-desc">Asesoría, resolución de tareas, monografías y edición de video.</div>
+                        </div>
+                        <a href="https://wa.me/51900000000?text=Hola,%20deseo%20servicio%20de%20Trabajos%20Universitarios" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -887,29 +908,36 @@
 
             items.forEach(item => {
                 const text = item.textContent.toLowerCase();
-                if (text.includes(input)) {
-                    item.style.display = '';
-                } else {
-                    item.style.display = 'none';
-                }
+                item.style.display = text.includes(input) ? '' : 'none';
             });
         }
 
         function showHome() {
-            window.location.reload();
+            document.getElementById('homeView').classList.remove('hidden');
+            document.getElementById('servicesView').classList.add('hidden');
+            if(document.getElementById('sidebar').classList.contains('active')) {
+                toggleSidebar();
+            }
         }
 
-        function filterBySidebar(query) {
-            toggleSidebar();
-            const cards = document.querySelectorAll('.card');
-            cards.forEach(card => {
-                const title = card.querySelector('.card-title').innerText.toLowerCase();
-                const desc = card.querySelector('.card-desc').innerText.toLowerCase();
-                if (title.includes(query.toLowerCase()) || desc.includes(query.toLowerCase())) {
-                    card.style.display = 'flex';
-                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        function showCategory(category) {
+            document.getElementById('homeView').classList.add('hidden');
+            document.getElementById('servicesView').classList.remove('hidden');
+            document.getElementById('categoryTitle').innerText = category;
+
+            const items = document.querySelectorAll('.service-item');
+            items.forEach(item => {
+                const itemCat = item.getAttribute('data-category');
+                if (category === 'ALL' || itemCat.toLowerCase().includes(category.toLowerCase())) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
                 }
             });
+
+            if(document.getElementById('sidebar').classList.contains('active')) {
+                toggleSidebar();
+            }
         }
     </script>
 </body>
