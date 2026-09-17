@@ -13,14 +13,12 @@
             --bg-header: rgba(11, 15, 25, 0.95);
             --text-primary: #ffffff;
             --text-secondary: #94a3b8;
-            --border-color: rgba(255, 255, 255, 0.15);
+            --border-color: rgba(255, 255, 255, 0.12);
             --accent-color: #6366f1;
-            --accent-glow: rgba(99, 102, 241, 0.35);
             --wsp-color: #25d366;
-            --card-hover: rgba(255, 255, 255, 0.12);
-            --input-bg: rgba(11, 15, 25, 0.7);
-            --glass-bg: rgba(21, 28, 44, 0.82);
-            --glass-border: rgba(255, 255, 255, 0.18);
+            --card-hover: rgba(255, 255, 255, 0.08);
+            --glass-bg: rgba(21, 28, 44, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.15);
         }
 
         [data-theme="light"] {
@@ -31,9 +29,7 @@
             --text-primary: #0f172a;
             --text-secondary: #475569;
             --border-color: #cbd5e1;
-            --accent-glow: rgba(99, 102, 241, 0.25);
             --card-hover: #e2e8f0;
-            --input-bg: rgba(255, 255, 255, 0.9);
             --glass-bg: rgba(255, 255, 255, 0.88);
             --glass-border: rgba(0, 0, 0, 0.12);
         }
@@ -64,12 +60,12 @@
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            transition: opacity 0.5s ease, visibility 0.5s;
+            transition: opacity 0.4s ease, visibility 0.4s;
         }
 
         .spinner {
-            width: 45px;
-            height: 45px;
+            width: 42px;
+            height: 42px;
             border: 4px solid var(--border-color);
             border-top: 4px solid var(--accent-color);
             border-radius: 50%;
@@ -111,7 +107,7 @@
         .header-actions {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .icon-btn {
@@ -172,7 +168,7 @@
 
         .search-box {
             position: relative;
-            margin-bottom: 22px;
+            margin-bottom: 20px;
         }
 
         .search-box input {
@@ -185,12 +181,6 @@
             color: var(--text-primary);
             outline: none;
             font-size: 0.92rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-        }
-
-        .search-box input:focus {
-            border-color: var(--accent-color);
-            box-shadow: 0 0 12px var(--accent-glow);
         }
 
         .search-box i {
@@ -205,45 +195,33 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 12px;
-        }
-
-        .menu-item {
-            border-radius: 14px;
+            gap: 10px;
         }
 
         .menu-link {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 14px 16px;
+            padding: 13px 16px;
             color: var(--text-primary);
             text-decoration: none;
             border-radius: 14px;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             cursor: pointer;
             font-weight: 700;
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
             backdrop-filter: blur(12px);
-            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
-            transition: all 0.25s ease;
         }
 
         .menu-link:hover {
-            transform: translateY(-2px);
-            border-color: var(--accent-color);
-            box-shadow: 0 6px 18px var(--accent-glow);
             background: var(--card-hover);
+            border-color: var(--accent-color);
         }
 
         .menu-link-highlight {
             border-color: var(--wsp-color) !important;
             background: rgba(37, 211, 102, 0.15) !important;
-        }
-
-        .menu-link-highlight:hover {
-            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35) !important;
         }
 
         .menu-link-left {
@@ -253,10 +231,9 @@
         }
 
         .menu-link-left i {
-            width: 22px;
+            width: 20px;
             text-align: center;
             color: var(--accent-color);
-            font-size: 1.1rem;
         }
 
         .menu-link-highlight .menu-link-left i {
@@ -265,158 +242,169 @@
 
         .submenu {
             list-style: none;
-            padding: 10px;
+            padding: 8px 10px;
             display: none;
-            margin-top: 8px;
-            background: rgba(11, 15, 25, 0.65);
+            margin-top: 6px;
+            background: rgba(11, 15, 25, 0.7);
             border: 1px solid var(--glass-border);
-            border-radius: 14px;
-            backdrop-filter: blur(12px);
+            border-radius: 12px;
         }
 
         [data-theme="light"] .submenu {
-            background: rgba(255, 255, 255, 0.75);
+            background: rgba(255, 255, 255, 0.8);
         }
 
         .submenu.open {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 6px;
         }
 
         .submenu li a {
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 10px 12px;
+            padding: 9px 12px;
             color: var(--text-primary);
             text-decoration: none;
             font-size: 0.88rem;
-            border-radius: 10px;
+            border-radius: 8px;
             font-weight: 600;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.2s ease;
         }
 
         .submenu li a:hover {
             color: var(--accent-color);
             background: var(--card-hover);
-            border-color: var(--accent-color);
-            transform: translateX(4px);
         }
 
         main {
             margin-top: 60px;
-            padding: 40px 20px;
+            padding: 30px 20px;
             max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        /* PORTADA DE ENTRADA CON IMAGEN FORMAL Y LOGO COHETE */
-        .hero-banner-clean {
-            background: linear-gradient(rgba(11, 15, 25, 0.75), rgba(11, 15, 25, 0.85)), url('bebe 2.jpg') center/cover no-repeat;
+        /* BANNER HERO FORMAL Y SOBRIO CON FOTO Y LOGO ROCKET */
+        .hero-banner-main {
+            background: linear-gradient(rgba(11, 15, 25, 0.72), rgba(11, 15, 25, 0.78)), url('bebe 2.jpg') center/cover no-repeat;
             border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 70px 30px;
+            border-radius: 18px;
+            padding: 45px 20px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin-bottom: 25px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
             color: #ffffff;
         }
 
-        .hero-logo-wrapper {
+        .hero-logo-box {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 12px;
+            gap: 14px;
         }
 
-        .rocket-emoji {
-            font-size: clamp(2.8rem, 7vw, 4.2rem);
-            filter: drop-shadow(0 0 15px rgba(99, 102, 241, 0.6));
+        .rocket-icon {
+            font-size: 2.4rem;
         }
 
-        .hero-title-clean {
-            font-size: clamp(2.8rem, 7vw, 4.2rem);
+        .hero-title-text {
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
             font-weight: 900;
-            letter-spacing: 4px;
+            letter-spacing: 3px;
             color: #ffffff;
-            text-shadow: 0 4px 25px rgba(255, 255, 255, 0.25), 0 4px 10px rgba(0, 0, 0, 0.9);
         }
 
-        .hero-subtitle-clean {
-            font-size: 1.15rem;
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 600;
-            letter-spacing: 0.5px;
+        .hero-subtitle-text {
+            font-size: 0.98rem;
+            color: #d1d5db;
+            font-weight: 500;
+            margin-top: 8px;
+            letter-spacing: 0.3px;
         }
 
-        /* INSIGNIAS SOLO VISIBLES DENTRO DE LOS SERVICIOS DEL MENÚ */
+        /* BARRAS E INSIGNIAS DE OSINT */
         .osint-info-container {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             text-align: center;
         }
 
         .badge-confidential {
-            display: inline-block;
-            background: rgba(239, 68, 68, 0.25);
-            color: #ff6b6b;
-            border: 1px solid rgba(239, 68, 68, 0.6);
-            padding: 8px 22px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(239, 68, 68, 0.18);
+            color: #f87171;
+            border: 1px solid rgba(239, 68, 68, 0.5);
+            padding: 7px 20px;
             border-radius: 50px;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             font-weight: 800;
-            margin-bottom: 18px;
-            backdrop-filter: blur(6px);
-            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.2);
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(239, 68, 68, 0.15);
         }
 
         .info-bar {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .info-pill {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            padding: 10px 18px;
+            background: #121826;
+            border: 1px solid #2a3447;
+            color: #e2e8f0;
+            padding: 9px 16px;
             border-radius: 12px;
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             font-weight: 600;
             display: flex;
             align-items: center;
             gap: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        [data-theme="light"] .info-pill {
+            background: #ffffff;
+            border-color: #cbd5e1;
+            color: #1e293b;
         }
 
         .info-pill i {
-            color: var(--accent-color);
+            color: #6366f1;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.35rem;
+            font-weight: 800;
+            margin: 20px 0 25px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-primary);
+            letter-spacing: 0.5px;
         }
 
         .diagram-container {
             background: linear-gradient(rgba(11, 15, 25, 0.82), rgba(11, 15, 25, 0.82)), url('BEBE 1.jpg') center/cover no-repeat;
             border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 40px 20px;
-            margin-bottom: 40px;
+            border-radius: 18px;
+            padding: 35px 20px;
+            margin-bottom: 35px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .diagram-title {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 800;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             color: #ffffff;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -425,71 +413,53 @@
         .diagram-img-wrapper img {
             max-width: 100%;
             height: auto;
-            border-radius: 14px;
-            box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
         }
 
         .academic-section {
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 40px 20px;
-            margin-bottom: 40px;
+            border-radius: 18px;
+            padding: 35px 20px;
+            margin-bottom: 35px;
         }
 
         .academic-header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .uni-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 15px;
-            margin-top: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+            gap: 14px;
+            margin-top: 20px;
         }
 
         .uni-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            padding: 18px 15px;
-            border-radius: 14px;
+            padding: 16px 12px;
+            border-radius: 12px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 10px;
-            transition: transform 0.2s;
-        }
-
-        .uni-card:hover {
-            transform: translateY(-3px);
-            border-color: var(--accent-color);
         }
 
         .uni-badge {
-            width: 48px;
-            height: 48px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             background: var(--bg-secondary);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--accent-color);
             border: 1px solid var(--border-color);
-        }
-
-        .category-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 1.4rem;
-            font-weight: 800;
-            margin: 20px 0 25px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid var(--border-color);
-            color: var(--text-primary);
         }
 
         .grid {
@@ -506,17 +476,15 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.3s, border-color 0.3s;
         }
 
         .card:hover {
-            transform: translateY(-4px);
             border-color: var(--accent-color);
         }
 
         .card-img-placeholder {
             width: 100%;
-            height: 160px;
+            height: 150px;
             background-color: var(--bg-card);
             display: flex;
             flex-direction: column;
@@ -533,15 +501,14 @@
             right: 12px;
             background: var(--accent-color);
             color: #fff;
-            padding: 5px 12px;
+            padding: 4px 12px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 800;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
         .card-body {
-            padding: 20px;
+            padding: 18px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -549,7 +516,7 @@
         }
 
         .card-title {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 800;
             margin-bottom: 8px;
             color: var(--text-primary);
@@ -557,9 +524,9 @@
 
         .card-desc {
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             line-height: 1.5;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
 
         .btn-wsp {
@@ -571,67 +538,57 @@
             background-color: var(--wsp-color);
             color: #ffffff;
             text-decoration: none;
-            padding: 12px;
-            border-radius: 12px;
+            padding: 11px;
+            border-radius: 10px;
             font-weight: 700;
-            font-size: 0.92rem;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
-        }
-
-        .btn-wsp:hover {
-            opacity: 0.92;
-            transform: scale(1.01);
+            font-size: 0.9rem;
         }
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
             margin-top: 20px;
         }
 
         .pricing-card {
             background: var(--bg-secondary);
             border: 2px solid var(--border-color);
-            border-radius: 20px;
-            padding: 30px 22px;
+            border-radius: 18px;
+            padding: 28px 20px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             position: relative;
-            transition: all 0.3s ease;
         }
 
         .pricing-card.featured {
             border-color: var(--accent-color);
-            box-shadow: 0 8px 30px var(--accent-glow);
-            transform: scale(1.02);
         }
 
         .badge-popular {
             position: absolute;
-            top: -14px;
+            top: -13px;
             left: 50%;
             transform: translateX(-50%);
             background: linear-gradient(135deg, #6366f1, #a855f7);
             color: #fff;
-            padding: 4px 16px;
+            padding: 3px 14px;
             border-radius: 20px;
-            font-size: 0.78rem;
+            font-size: 0.75rem;
             font-weight: 800;
-            letter-spacing: 1px;
             text-transform: uppercase;
         }
 
         .plan-name {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 800;
             margin-bottom: 10px;
             text-align: center;
         }
 
         .plan-price {
-            font-size: 2.2rem;
+            font-size: 2.1rem;
             font-weight: 900;
             color: var(--accent-color);
             text-align: center;
@@ -639,24 +596,24 @@
         }
 
         .plan-price span {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-secondary);
             font-weight: 600;
         }
 
         .plan-features {
             list-style: none;
-            margin: 20px 0;
+            margin: 18px 0;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
         .plan-features li {
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: var(--text-secondary);
         }
 
@@ -665,26 +622,24 @@
         }
 
         .promo-banner {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(236, 72, 153, 0.2)), var(--bg-secondary);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(236, 72, 153, 0.15)), var(--bg-secondary);
             border: 2px dashed var(--accent-color);
-            border-radius: 20px;
-            padding: 35px 25px;
+            border-radius: 18px;
+            padding: 30px 20px;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .promo-banner h3 {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 800;
-            margin-bottom: 12px;
-            color: var(--text-primary);
+            margin-bottom: 10px;
         }
 
         .promo-banner p {
             color: var(--text-secondary);
-            font-size: 0.95rem;
-            max-width: 700px;
-            margin: 0 auto 20px;
+            font-size: 0.92rem;
+            margin: 0 auto 18px;
             line-height: 1.6;
         }
 
@@ -697,7 +652,7 @@
 
     <div id="loader">
         <div class="spinner"></div>
-        <p style="margin-top: 15px; color: var(--text-secondary);">Cargando ROCKET...</p>
+        <p style="margin-top: 12px; color: var(--text-secondary); font-size: 0.9rem;">Cargando ROCKET...</p>
     </div>
 
     <header>
@@ -705,7 +660,7 @@
             <span>🚀 ROCKET</span>
         </div>
         <div class="header-actions">
-            <button class="icon-btn" id="themeToggle" title="Cambiar Modo Claro/Oscuro" onclick="toggleTheme()">
+            <button class="icon-btn" id="themeToggle" title="Cambiar Tema" onclick="toggleTheme()">
                 <i class="fa-regular fa-moon" id="themeIcon"></i>
             </button>
             <button class="icon-btn" onclick="toggleSidebar()" title="Menú">
@@ -829,16 +784,17 @@
 
     <main id="mainContainer">
 
-        <!-- VISTA INICIO CON LA IMAGEN Y PRESENCIA FORMAL -->
-        <div id="homeView" class="view-section">
-            <div class="hero-banner-clean">
-                <div class="hero-logo-wrapper">
-                    <span class="rocket-emoji">🚀</span>
-                    <h1 class="hero-title-clean">ROCKET</h1>
-                </div>
-                <p class="hero-subtitle-clean">Plataforma Integral de Servicios Digitales y Soluciones</p>
+        <!-- BANNER DE ENTRADA FIJO MANTENIENDO LA FOTO Y EL LOGO SOBRIO DE ROCKET -->
+        <div class="hero-banner-main">
+            <div class="hero-logo-box">
+                <span class="rocket-icon">🚀</span>
+                <h1 class="hero-title-text">ROCKET</h1>
             </div>
+            <p class="hero-subtitle-text">Plataforma Integral de Servicios Digitales y Soluciones</p>
+        </div>
 
+        <!-- VISTA DE INICIO COMPLETA -->
+        <div id="homeView" class="view-section">
             <div class="diagram-container">
                 <h2 class="diagram-title">RED DE CONSULTAS E INTEGRACIÓN OSINT</h2>
                 <div class="diagram-img-wrapper">
@@ -849,30 +805,34 @@
             <div class="academic-section">
                 <div class="academic-header">
                     <h2>🎓 TRABAJOS UNIVERSITARIOS DE TODAS LAS UNIVERSIDADES Y COLEGIOS DEL PERÚ</h2>
-                    <p>Elaboración de tareas, proyectos, monografías, presentaciones y ediciones de video profesionales.</p>
+                    <p style="color: var(--text-secondary); margin-top: 6px;">Elaboración de tareas, proyectos, monografías, presentaciones y ediciones de video profesionales.</p>
                 </div>
 
                 <div class="uni-grid">
-                    <div class="uni-card"><div class="uni-badge"><i class="fa-solid fa-university"></i></div><div class="uni-name">UNMSM</div></div>
-                    <div class="uni-card"><div class="uni-badge"><i class="fa-solid fa-building-columns"></i></div><div class="uni-name">UNI</div></div>
-                    <div class="uni-card"><div class="uni-badge"><i class="fa-solid fa-graduation-cap"></i></div><div class="uni-name">PUCP</div></div>
-                    <div class="uni-card"><div class="uni-badge"><i class="fa-solid fa-book-bookmark"></i></div><div class="uni-name">U. DE LIMA</div></div>
-                    <div class="uni-card"><div class="uni-badge"><i class="fa-solid fa-laptop-code"></i></div><div class="uni-name">UTP</div></div>
-                    <div class="uni-card"><div class="uni-badge"><i class="fa-solid fa-user-graduate"></i></div><div class="uni-name">UCV</div></div>
-                    <div class="uni-card"><div class="uni-badge"><i class="fa-solid fa-stethoscope"></i></div><div class="uni-name">UPCH</div></div>
-                    <div class="uni-card"><div class="uni-badge"><i class="fa-solid fa-leaf"></i></div><div class="uni-name">CIENTÍFICA DEL SUR</div></div>
-                    <div class="uni-card"><div class="uni-badge"><i class="fa-solid fa-briefcase"></i></div><div class="uni-name">UPC</div></div>
-                    <div class="uni-card"><div class="uni-badge"><i class="fa-solid fa-award"></i></div><div class="uni-name">USMP</div></div>
-                    <div class="uni-card"><div class="uni-badge"><i class="fa-solid fa-compass"></i></div><div class="uni-name">UPN</div></div>
-                    <div class="uni-card"><div class="uni-badge"><i class="fa-solid fa-school"></i></div><div class="uni-name">COLEGIOS DEL PERÚ</div></div>
+                    <div class="uni-card"><div class="uni-badge"><i class="fa-solid fa-university"></i></div><div>UNMSM</div></div>
+                    <div class="uni-card"><div class="uni-badge"><i class="fa-solid fa-building-columns"></i></div><div>UNI</div></div>
+                    <div class="uni-card"><div class="uni-badge"><i class="fa-solid fa-graduation-cap"></i></div><div>PUCP</div></div>
+                    <div class="uni-card"><div class="uni-badge"><i class="fa-solid fa-book-bookmark"></i></div><div>U. DE LIMA</div></div>
+                    <div class="uni-card"><div class="uni-badge"><i class="fa-solid fa-laptop-code"></i></div><div>UTP</div></div>
+                    <div class="uni-card"><div class="uni-badge"><i class="fa-solid fa-user-graduate"></i></div><div>UCV</div></div>
+                    <div class="uni-card"><div class="uni-badge"><i class="fa-solid fa-stethoscope"></i></div><div>UPCH</div></div>
+                    <div class="uni-card"><div class="uni-badge"><i class="fa-solid fa-leaf"></i></div><div>CIENTÍFICA DEL SUR</div></div>
+                    <div class="uni-card"><div class="uni-badge"><i class="fa-solid fa-briefcase"></i></div><div>UPC</div></div>
+                    <div class="uni-card"><div class="uni-badge"><i class="fa-solid fa-award"></i></div><div>USMP</div></div>
+                    <div class="uni-card"><div class="uni-badge"><i class="fa-solid fa-compass"></i></div><div>UPN</div></div>
+                    <div class="uni-card"><div class="uni-badge"><i class="fa-solid fa-school"></i></div><div>COLEGIOS DEL PERÚ</div></div>
                 </div>
             </div>
         </div>
 
-        <!-- VISTA SERVICIOS CON DISTINTIVOS -->
+        <!-- VISTA DE SERVICIOS / OSINT (CON EL MANTENIMIENTO DEL BANNER + LAS PLACAS INFORMATIVAS) -->
         <div id="servicesView" class="view-section hidden">
+            
+            <!-- PLACAS SOLICITADAS: 100% CONFIDENCIAL Y DISCRETO + PRECIO + ATENCION + REQUISITOS -->
             <div class="osint-info-container">
-                <div class="badge-confidential">🔒 100% CONFIDENCIAL Y DISCRETO</div>
+                <div class="badge-confidential">
+                    <i class="fa-solid fa-lock"></i> 100% CONFIDENCIAL Y DISCRETO
+                </div>
                 <div class="info-bar">
                     <div class="info-pill"><i class="fa-solid fa-tag"></i> Precio: Desde S/ 2.00 (varía según el servicio)</div>
                     <div class="info-pill"><i class="fa-solid fa-clock"></i> Atención 24/7</div>
@@ -880,9 +840,10 @@
                 </div>
             </div>
 
+            <!-- ENCABEZADO DE SERVICIO SELECCIONADO (Ej: ≡ RENIEC) -->
             <div class="category-header">
-                <i class="fa-solid fa-list-check"></i>
-                <span id="categoryTitle">Servicios Solicitados</span>
+                <i class="fa-solid fa-bars-staggered"></i>
+                <span id="categoryTitle">RENIEC</span>
             </div>
 
             <div class="grid" id="servicesGrid">
@@ -970,7 +931,7 @@
             <div class="promo-banner">
                 <h3>🛍️ VITRINA EMPRENDEDORA UNIVERSITARIA</h3>
                 <p>¿Tienes un emprendimiento en la universidad? Vende postres, accesorios, ropa, maquillaje o servicios y promociónate en ROCKET para llegar a cientos de estudiantes de tu campus.</p>
-                <a href="https://wa.me/51931309889?text=Hola,%20tengo%20un%20emprendimiento%20universitario%20y%20quiero%20promocionarme%20en%20tu%20p%C3%A1gina" target="_blank" class="btn-wsp" style="display: inline-flex; width: auto; padding: 12px 25px;"><i class="fa-brands fa-whatsapp"></i> ¡Publica tu Negocio Aquí!</a>
+                <a href="https://wa.me/51931309889?text=Hola,%20tengo%20un%20emprendimiento%20universitario%20y%20quiero%20promocionarme%20en%20tu%20p%C3%A1gina" target="_blank" class="btn-wsp" style="display: inline-flex; width: auto; padding: 11px 22px;"><i class="fa-brands fa-whatsapp"></i> ¡Publica tu Negocio Aquí!</a>
             </div>
 
             <div class="category-header">
@@ -1029,7 +990,7 @@
                 <span>Planes de Creación de Páginas Web</span>
             </div>
 
-            <p style="color: var(--text-secondary); margin-bottom: 30px; line-height: 1.6;">
+            <p style="color: var(--text-secondary); margin-bottom: 25px; line-height: 1.6;">
                 Obtén tu propia página web profesional adaptada a celulares y computadoras. Ideal para tu emprendimiento, portafolio personal o proyecto académico.
             </p>
 
@@ -1087,7 +1048,7 @@
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
             loader.style.opacity = '0';
-            setTimeout(() => { loader.style.visibility = 'hidden'; }, 500);
+            setTimeout(() => { loader.style.visibility = 'hidden'; }, 400);
         });
 
         function toggleSidebar() {
