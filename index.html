@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROCKET</title>
+    <title>ROCKET - Plataforma Integral</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -285,12 +285,13 @@
             margin-right: auto;
         }
 
-        /* BANNER HERO FORMAL Y SOBRIO CON FOTO Y LOGO ROCKET */
+        /* 1. HERO BANNER PRINCIPAL (AGRANDADO Y ENFOCADO EN DESKTOP) */
         .hero-banner-main {
-            background: linear-gradient(rgba(11, 15, 25, 0.72), rgba(11, 15, 25, 0.78)), url('bebe 2.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(11, 15, 25, 0.72), rgba(11, 15, 25, 0.78)), url('bebe 2.jpg') center 30%/cover no-repeat;
             border: 1px solid var(--border-color);
             border-radius: 18px;
-            padding: 45px 20px;
+            padding: 50px 20px;
+            min-height: 220px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -299,6 +300,13 @@
             margin-bottom: 25px;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
             color: #ffffff;
+        }
+
+        @media (min-width: 768px) {
+            .hero-banner-main {
+                min-height: 320px; /* Mas amplio en escritorio */
+                padding: 70px 30px;
+            }
         }
 
         .hero-logo-box {
@@ -327,7 +335,7 @@
             letter-spacing: 0.3px;
         }
 
-        /* BARRAS E INSIGNIAS DE OSINT */
+        /* BARRAS E INSIGNIAS DE OSINT (EXCLUSIVAS PARA OSINT) */
         .osint-info-container {
             margin-bottom: 25px;
             text-align: center;
@@ -495,18 +503,6 @@
             position: relative;
         }
 
-        .price-tag {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: var(--accent-color);
-            color: #fff;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.82rem;
-            font-weight: 800;
-        }
-
         .card-body {
             padding: 18px;
             flex-grow: 1;
@@ -544,103 +540,93 @@
             font-size: 0.9rem;
         }
 
+        /* 2. TARJETAS DE PLANES WEB (S/ 5 A S/ 45) */
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 22px;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 20px;
             margin-top: 20px;
         }
 
         .pricing-card {
             background: var(--bg-secondary);
-            border: 2px solid var(--border-color);
+            border: 1px solid var(--border-color);
             border-radius: 18px;
-            padding: 28px 20px;
+            padding: 25px 18px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             position: relative;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-color);
         }
 
         .pricing-card.featured {
-            border-color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
         }
 
         .badge-popular {
             position: absolute;
-            top: -13px;
+            top: -12px;
             left: 50%;
             transform: translateX(-50%);
             background: linear-gradient(135deg, #6366f1, #a855f7);
             color: #fff;
-            padding: 3px 14px;
+            padding: 3px 12px;
             border-radius: 20px;
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 800;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .plan-name {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             font-weight: 800;
             margin-bottom: 10px;
             text-align: center;
+            color: var(--text-primary);
         }
 
         .plan-price {
-            font-size: 2.1rem;
+            font-size: 1.8rem;
             font-weight: 900;
-            color: var(--accent-color);
+            color: #38bdf8;
             text-align: center;
             margin-bottom: 15px;
         }
 
         .plan-price span {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text-secondary);
             font-weight: 600;
         }
 
         .plan-features {
             list-style: none;
-            margin: 18px 0;
+            margin: 15px 0 22px;
             display: flex;
             flex-direction: column;
             gap: 10px;
+            flex-grow: 1;
         }
 
         .plan-features li {
             display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.88rem;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 0.85rem;
             color: var(--text-secondary);
         }
 
         .plan-features li i {
             color: var(--wsp-color);
-        }
-
-        .promo-banner {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(236, 72, 153, 0.15)), var(--bg-secondary);
-            border: 2px dashed var(--accent-color);
-            border-radius: 18px;
-            padding: 30px 20px;
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .promo-banner h3 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-        }
-
-        .promo-banner p {
-            color: var(--text-secondary);
-            font-size: 0.92rem;
-            margin: 0 auto 18px;
-            line-height: 1.6;
+            margin-top: 2px;
         }
 
         .hidden {
@@ -784,7 +770,7 @@
 
     <main id="mainContainer">
 
-        <!-- BANNER DE ENTRADA FIJO MANTENIENDO LA FOTO Y EL LOGO SOBRIO DE ROCKET -->
+        <!-- BANNER DE ENTRADA FIJO FIJADO CON ALTURA Y ENFOQUE MEJORADO -->
         <div class="hero-banner-main">
             <div class="hero-logo-box">
                 <span class="rocket-icon">🚀</span>
@@ -793,7 +779,7 @@
             <p class="hero-subtitle-text">Plataforma Integral de Servicios Digitales y Soluciones</p>
         </div>
 
-        <!-- VISTA DE INICIO COMPLETA -->
+        <!-- 1. VISTA DE INICIO -->
         <div id="homeView" class="view-section">
             <div class="diagram-container">
                 <h2 class="diagram-title">RED DE CONSULTAS E INTEGRACIÓN OSINT</h2>
@@ -825,10 +811,10 @@
             </div>
         </div>
 
-        <!-- VISTA DE SERVICIOS / OSINT (CON EL MANTENIMIENTO DEL BANNER + LAS PLACAS INFORMATIVAS) -->
+        <!-- 2. VISTA DE SERVICIOS / OSINT (CON LAS PLACAS CONDICIONADAS AQUÍ SOLAMENTE) -->
         <div id="servicesView" class="view-section hidden">
             
-            <!-- PLACAS SOLICITADAS: 100% CONFIDENCIAL Y DISCRETO + PRECIO + ATENCION + REQUISITOS -->
+            <!-- PLACAS EXCLUSIVAS DE OSINT Y CONSULTAS -->
             <div class="osint-info-container">
                 <div class="badge-confidential">
                     <i class="fa-solid fa-lock"></i> 100% CONFIDENCIAL Y DISCRETO
@@ -840,7 +826,7 @@
                 </div>
             </div>
 
-            <!-- ENCABEZADO DE SERVICIO SELECCIONADO (Ej: ≡ RENIEC) -->
+            <!-- ENCABEZADO DINÁMICO -->
             <div class="category-header">
                 <i class="fa-solid fa-bars-staggered"></i>
                 <span id="categoryTitle">RENIEC</span>
@@ -853,260 +839,212 @@
                 <div class="card service-item" data-category="MIGRACIONES"><div class="card-img-placeholder"><i class="fa-solid fa-passport fa-3x"></i></div><div class="card-body"><div><div class="card-title">MIGRACIONES</div><div class="card-desc">Movimiento migratorio | Verificación de pasaporte y extranjería.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20MIGRACIONES" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
                 <div class="card service-item" data-category="OSIPTEL"><div class="card-img-placeholder"><i class="fa-solid fa-tower-cell fa-3x"></i></div><div class="card-body"><div><div class="card-title">OSIPTEL / TELÉFONO</div><div class="card-desc">Búsqueda de titular por número | Teléfonos registrados a un DNI.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20OSIPTEL" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
                 <div class="card service-item" data-category="FISCALÍA"><div class="card-img-placeholder"><i class="fa-solid fa-gavel fa-3x"></i></div><div class="card-body"><div><div class="card-title">FISCALÍA</div><div class="card-desc">Carpetas fiscales | Investigaciones en curso y denuncias.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20FISCALIA" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="MINEDU"><div class="card-img-placeholder"><i class="fa-solid fa-book fa-3x"></i></div><div class="card-body"><div><div class="card-title">MINEDU</div><div class="card-desc">Certificados de estudios secundarios y registros oficiales.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20MINEDU" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="SENTINEL"><div class="card-img-placeholder"><i class="fa-solid fa-chart-line fa-3x"></i></div><div class="card-body"><div><div class="card-title">SENTINEL / FINANCIERO</div><div class="card-desc">Reporte de deudas, Infocorp, créditos e historial crediticio.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20SENTINEL" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="SUNEDU"><div class="card-img-placeholder"><i class="fa-solid fa-graduation-cap fa-3x"></i></div><div class="card-body"><div><div class="card-title">SUNEDU</div><div class="card-desc">Verificación de grados académicos y títulos universitarios.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20SUNEDU" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="MTC"><div class="card-img-placeholder"><i class="fa-solid fa-car fa-3x"></i></div><div class="card-body"><div><div class="card-title">MTC</div><div class="card-desc">Record del conductor | Brevete | Papeletas y puntos.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20MTC" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="INPE"><div class="card-img-placeholder"><i class="fa-solid fa-building-columns fa-3x"></i></div><div class="card-body"><div><div class="card-title">INPE</div><div class="card-desc">Verificación de antecedentes penales e historial carcelario.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20INPE" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="PNP"><div class="card-img-placeholder"><i class="fa-solid fa-shield-halved fa-3x"></i></div><div class="card-body"><div><div class="card-title">PNP</div><div class="card-desc">Consulta de denuncias policiales y requisitorias activas.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20PNP" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="SUNARP"><div class="card-img-placeholder"><i class="fa-solid fa-building fa-3x"></i></div><div class="card-body"><div><div class="card-title">SUNARP</div><div class="card-desc">Búsqueda de propiedades, terrenos y vehículos registrados.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20SUNARP" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="CERTIFICADOS"><div class="card-img-placeholder"><i class="fa-solid fa-award fa-3x"></i></div><div class="card-body"><div><div class="card-title">Certificados Oficiales</div><div class="card-desc">Certificación rápida de estudios, capacitaciones y documentos oficiales.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20Certificados" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="ACTAS"><div class="card-img-placeholder"><i class="fa-solid fa-file-lines fa-3x"></i></div><div class="card-body"><div><div class="card-title">Actas Oficiales</div><div class="card-desc">Búsqueda de Actas de Nacimiento, Matrimonio y Defunción.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20Actas" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="FAMILIA"><div class="card-img-placeholder"><i class="fa-solid fa-users fa-3x"></i></div><div class="card-body"><div><div class="card-title">Árbol Genealógico</div><div class="card-desc">Mapeo de lazos familiares, padres, hijos y hermanos vinculados.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20Arbol%20Genealogico" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="Bloqueo"><div class="card-img-placeholder"><i class="fa-solid fa-ban fa-3x"></i></div><div class="card-body"><div><div class="card-title">Bloqueos y Operaciones</div><div class="card-desc">Gestión de bloqueos operativos y líneas preventivas de seguridad.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20de%20Bloqueos" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="VIRTUALES"><div class="card-img-placeholder"><i class="fa-solid fa-sim-card fa-3x"></i></div><div class="card-body"><div><div class="card-title">Números Virtuales</div><div class="card-desc">Recepción de SMS para verificaciones de cuentas WhatsApp, Telegram y redes.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20de%20Numeros%20Virtuales" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="Trabajos"><div class="card-img-placeholder"><i class="fa-solid fa-graduation-cap fa-3x"></i></div><div class="card-body"><div><div class="card-title">Trabajos Académicos</div><div class="card-desc">Elaboración de tareas, monografías, presentaciones PowerPoint y proyectos.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20de%20Trabajos%20Academicos" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
+                <div class="card service-item" data-category="MINEDU"><div class="card-img-placeholder"><i class="fa-solid fa-book fa-3x"></i></div><div class="card-body"><div><div class="card-title">MINEDU</div><div class="card-desc">Certificados de estudios secundarios y notas oficiales.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20MINEDU" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
+                <div class="card service-item" data-category="SENTINEL"><div class="card-img-placeholder"><i class="fa-solid fa-chart-line fa-3x"></i></div><div class="card-body"><div><div class="card-title">SENTINEL / EQUIFAX</div><div class="card-desc">Reporte de deudas finacieras | Calificación crediticia en Infocorp.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20SENTINEL" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
+                <div class="card service-item" data-category="SUNEDU"><div class="card-img-placeholder"><i class="fa-solid fa-graduation-cap fa-3x"></i></div><div class="card-body"><div><div class="card-title">SUNEDU</div><div class="card-desc">Verificación de grados acadamicos, bachiller y títulos universitarios.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20SUNEDU" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
+                <div class="card service-item" data-category="MTC"><div class="card-img-placeholder"><i class="fa-solid fa-car fa-3x"></i></div><div class="card-body"><div><div class="card-title">MTC</div><div class="card-desc">Licencias de conducir, papeletas de tránsito y récord de conductor.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20MTC" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
+                <div class="card service-item" data-category="INPE"><div class="card-img-placeholder"><i class="fa-solid fa-building-columns fa-3x"></i></div><div class="card-body"><div><div class="card-title">INPE</div><div class="card-desc">Verificación de antecedentes penales e ingresos penales.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20INPE" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
+                <div class="card service-item" data-category="PNP"><div class="card-img-placeholder"><i class="fa-solid fa-shield-halved fa-3x"></i></div><div class="card-body"><div><div class="card-title">PNP</div><div class="card-desc">Búsqueda de denuncias policiales y requisitorias.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20PNP" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
+                <div class="card service-item" data-category="SUNARP"><div class="card-img-placeholder"><i class="fa-solid fa-building fa-3x"></i></div><div class="card-body"><div><div class="card-title">SUNARP</div><div class="card-desc">Búsqueda de propiedades, terrenos y vehículos a nivel nacional.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20SUNARP" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
+                <div class="card service-item" data-category="Bloqueo"><div class="card-img-placeholder"><i class="fa-solid fa-ban fa-3x"></i></div><div class="card-body"><div><div class="card-title">Bloqueos y Operaciones</div><div class="card-desc">Servicios de bloqueo administrativo de líneas, equipos y soporte.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20de%20Bloqueo" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
+                <div class="card service-item" data-category="VIRTUALES"><div class="card-img-placeholder"><i class="fa-solid fa-sim-card fa-3x"></i></div><div class="card-body"><div><div class="card-title">Números Virtuales</div><div class="card-desc">Números temporales para validaciones de SMS, WhatsApp y Telegram.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20un%20Numero%20Virtual" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
             </div>
         </div>
 
-        <div id="detallesView" class="view-section hidden">
-            <div class="category-header">
-                <i class="fa-solid fa-gift"></i>
-                <span>Detalles y Páginas Web Interactivas (GitHub)</span>
-            </div>
-
-            <p style="color: var(--text-secondary); margin-bottom: 25px; line-height: 1.6;">
-                Sorprende a esa persona especial con una página web personalizada alojada en GitHub. Ideales para aniversarios, cumple meses, declaraciones y detalles únicos.
-            </p>
-
-            <div class="grid">
-                <div class="card">
-                    <div class="card-img-placeholder">
-                        <span class="price-tag">S/ 5.00</span>
-                        <i class="fa-solid fa-heart fa-3x" style="color: #ef4444;"></i>
-                        <p style="font-size: 0.8rem; margin-top: 10px; color: var(--text-secondary);">[ Foto Próximamente ]</p>
-                    </div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">Carta Digital Interactiva</div>
-                            <div class="card-desc">Página web de un solo link con mensajes animados, música de fondo de tu elección y efectos visuales de corazones.</div>
-                        </div>
-                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20la%20Carta%20Digital%20Interactiva%20por%20S/5" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Pedir por S/ 5.00</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-img-placeholder">
-                        <span class="price-tag">S/ 8.00</span>
-                        <i class="fa-solid fa-images fa-3x" style="color: #3b82f6;"></i>
-                        <p style="font-size: 0.8rem; margin-top: 10px; color: var(--text-secondary);">[ Foto Próximamente ]</p>
-                    </div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">Álbum de Recuerdos + Tiempo Juntos</div>
-                            <div class="card-desc">Galería de fotos interactiva con contador exacto de tiempo juntos (días, horas y minutos) + canción especial.</div>
-                        </div>
-                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Album%20de%20Recuerdos%20por%20S/8" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Pedir por S/ 8.00</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-img-placeholder">
-                        <span class="price-tag">S/ 10.00</span>
-                        <i class="fa-solid fa-crown fa-3x" style="color: #f59e0b;"></i>
-                        <p style="font-size: 0.8rem; margin-top: 10px; color: var(--text-secondary);">[ Foto Próximamente ]</p>
-                    </div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">Detalle Premium GitHub Completo</div>
-                            <div class="card-desc">Página web multisegmento: Historia de amor, video de recuerdos, minijuego o botones interactivos ("¿Quieres ser mi novia?").</div>
-                        </div>
-                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Detalle%20Premium%20por%20S/10" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Pedir por S/ 10.00</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="emprendimientoView" class="view-section hidden">
-            <div class="promo-banner">
-                <h3>🛍️ VITRINA EMPRENDEDORA UNIVERSITARIA</h3>
-                <p>¿Tienes un emprendimiento en la universidad? Vende postres, accesorios, ropa, maquillaje o servicios y promociónate en ROCKET para llegar a cientos de estudiantes de tu campus.</p>
-                <a href="https://wa.me/51931309889?text=Hola,%20tengo%20un%20emprendimiento%20universitario%20y%20quiero%20promocionarme%20en%20tu%20p%C3%A1gina" target="_blank" class="btn-wsp" style="display: inline-flex; width: auto; padding: 11px 22px;"><i class="fa-brands fa-whatsapp"></i> ¡Publica tu Negocio Aquí!</a>
-            </div>
-
-            <div class="category-header">
-                <i class="fa-solid fa-bag-shopping"></i>
-                <span>Emprendimientos Destacados en el Campus</span>
-            </div>
-
-            <div class="grid">
-                <div class="card">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-cookie-bite fa-3x" style="color: #d97706;"></i>
-                        <p style="font-size: 0.85rem; margin-top: 10px; color: var(--text-secondary);">[ Espacio Reservado ]</p>
-                    </div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">Postres, Brownies & Snacks U</div>
-                            <div class="card-desc">Entrega directa en campus. Postres caseros, galletas, brownies y alfajores.</div>
-                        </div>
-                        <a href="https://wa.me/51931309889?text=Quiero%20promocionar%20mi%20negocio%20de%20postres" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Alquilar Espacio</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-gem fa-3x" style="color: #ec4899;"></i>
-                        <p style="font-size: 0.85rem; margin-top: 10px; color: var(--text-secondary);">[ Espacio Reservado ]</p>
-                    </div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">Joyería & Accesorios</div>
-                            <div class="card-desc">Anillos, cadenas de acero inoxidable, pulseras de pareja y accesorios estéticos.</div>
-                        </div>
-                        <a href="https://wa.me/51931309889?text=Quiero%20promocionar%20mi%20negocio%20de%20joyeria" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Alquilar Espacio</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-wand-magic-sparkles fa-3x" style="color: #a855f7;"></i>
-                        <p style="font-size: 0.85rem; margin-top: 10px; color: var(--text-secondary);">[ Espacio Reservado ]</p>
-                    </div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">Maquillaje & Cuidado Personal</div>
-                            <div class="card-desc">Skin care, glosses, perfumería y cosméticos originales para estudiantes.</div>
-                        </div>
-                        <a href="https://wa.me/51931309889?text=Quiero%20promocionar%20mi%20negocio%20de%20maquillaje" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Alquilar Espacio</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        <!-- 3. VISTA DE DESARROLLO WEB (ESTRUCTURA COMPLETA S/ 5.00 A S/ 45.00) -->
         <div id="webDevView" class="view-section hidden">
             <div class="category-header">
                 <i class="fa-solid fa-laptop-code"></i>
-                <span>Planes de Creación de Páginas Web</span>
+                <span>Crea tu Página Web</span>
             </div>
-
-            <p style="color: var(--text-secondary); margin-bottom: 25px; line-height: 1.6;">
-                Obtén tu propia página web profesional adaptada a celulares y computadoras. Ideal para tu emprendimiento, portafolio personal o proyecto académico.
+            <p style="color: var(--text-secondary); margin-bottom: 25px; font-size: 0.95rem; text-align: center;">
+                Páginas web modernas, ultra rápidas y 100% adaptadas a celulares y computadoras. Ideales para tu emprendimiento, marca personal o tareas académicas.
             </p>
 
             <div class="pricing-grid">
+                <!-- PLAN 1: S/ 5.00 -->
                 <div class="pricing-card">
                     <div>
-                        <div class="plan-name">Plan Básico</div>
-                        <div class="plan-price">S/ 10.00 <span>/ pago único</span></div>
+                        <div class="plan-name">Plan Bio-Link</div>
+                        <div class="plan-price">S/ 5.00 <span>/ pago único</span></div>
                         <ul class="plan-features">
-                            <li><i class="fa-solid fa-check"></i> Landing Page moderna de 1 sección</li>
+                            <li><i class="fa-solid fa-check"></i> Página de enlaces tipo Linktree</li>
                             <li><i class="fa-solid fa-check"></i> Diseño optimizado para celulares</li>
                             <li><i class="fa-solid fa-check"></i> Enlace directo a tu WhatsApp</li>
                             <li><i class="fa-solid fa-check"></i> Publicado en GitHub Pages</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Plan%20Basico%20de%20Pagina%20Web%20(S/10)" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Solicitar Plan S/ 10</a>
+                    <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Plan%20Bio-Link%20de%20S/%205" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Solicitar Plan S/ 5</a>
                 </div>
 
+                <!-- PLAN 2: S/ 15.00 -->
+                <div class="pricing-card">
+                    <div>
+                        <div class="plan-name">Plan Básico</div>
+                        <div class="plan-price">S/ 15.00 <span>/ pago único</span></div>
+                        <ul class="plan-features">
+                            <li><i class="fa-solid fa-check"></i> Landing Page moderna (1 sección)</li>
+                            <li><i class="fa-solid fa-check"></i> Diseñado para Celulares y PC</li>
+                            <li><i class="fa-solid fa-check"></i> Botón de WhatsApp integrado</li>
+                            <li><i class="fa-solid fa-check"></i> Publicado en GitHub Pages</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Plan%20Basico%20de%20S/%2015" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Solicitar Plan S/ 15</a>
+                </div>
+
+                <!-- PLAN 3: S/ 25.00 (DESTACADO) -->
                 <div class="pricing-card featured">
-                    <div class="badge-popular">Más Solicitado</div>
+                    <span class="badge-popular">MÁS SOLICITADO</span>
                     <div>
                         <div class="plan-name">Plan Pro Catálogo</div>
-                        <div class="plan-price">S/ 20.00 <span>/ pago único</span></div>
+                        <div class="plan-price">S/ 25.00 <span>/ pago único</span></div>
                         <ul class="plan-features">
                             <li><i class="fa-solid fa-check"></i> Página completa con submenús</li>
-                            <li><i class="fa-solid fa-check"></i> Catálogo de productos o servicios</li>
+                            <li><i class="fa-solid fa-check"></i> Catálogo interactivo de productos</li>
                             <li><i class="fa-solid fa-check"></i> Buscador interno y filtros</li>
-                            <li><i class="fa-solid fa-check"></i> Botones individuales a WhatsApp</li>
+                            <li><i class="fa-solid fa-check"></i> Botones a WhatsApp por producto</li>
                             <li><i class="fa-solid fa-check"></i> Modo Claro / Oscuro incluido</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Plan%20Pro%20de%20Pagina%20Web%20(S/20)" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Solicitar Plan S/ 20</a>
+                    <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Plan%20Pro%20Catalogo%20de%20S/%2025" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Solicitar Plan S/ 25</a>
                 </div>
 
+                <!-- PLAN 4: S/ 35.00 -->
+                <div class="pricing-card">
+                    <div>
+                        <div class="plan-name">Plan Negocio</div>
+                        <div class="plan-price">S/ 35.00 <span>/ pago único</span></div>
+                        <ul class="plan-features">
+                            <li><i class="fa-solid fa-check"></i> Todo lo del Plan Pro Catálogo</li>
+                            <li><i class="fa-solid fa-check"></i> Integración de mapa Google Maps</li>
+                            <li><i class="fa-solid fa-check"></i> Formularios de contacto dinámicos</li>
+                            <li><i class="fa-solid fa-check"></i> Optimización SEO para buscadores</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Plan%20Negocio%20de%20S/%2035" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Solicitar Plan S/ 35</a>
+                </div>
+
+                <!-- PLAN 5: S/ 45.00 -->
                 <div class="pricing-card">
                     <div>
                         <div class="plan-name">Control Total + Soporte</div>
-                        <div class="plan-price">S/ 30.00 <span>/ servicio completo</span></div>
+                        <div class="plan-price">S/ 45.00 <span>/ servicio completo</span></div>
                         <ul class="plan-features">
-                            <li><i class="fa-solid fa-check"></i> Todo lo del Plan Pro Catálogo</li>
-                            <li><i class="fa-solid fa-check"></i> Actualizaciones cada semana</li>
-                            <li><i class="fa-solid fa-check"></i> Mantenimiento continuo de tu web</li>
-                            <li><i class="fa-solid fa-check"></i> Cambio de fotos, precios y texto</li>
-                            <li><i class="fa-solid fa-check"></i> Asistencia técnica prioritaria 24/7</li>
+                            <li><i class="fa-solid fa-check"></i> Todo lo del Plan Negocio</li>
+                            <li><i class="fa-solid fa-check"></i> Actualizaciones continuas de contenido</li>
+                            <li><i class="fa-solid fa-check"></i> Mantenimiento de fotos, precios y texto</li>
+                            <li><i class="fa-solid fa-check"></i> Soporte técnico prioritario 24/7</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Plan%20Control%20Total%20con%20actualizaciones%20semanales%20(S/30)" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Solicitar Control Total S/ 30</a>
+                    <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Plan%20Control%20Total%20de%20S/%2045" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Solicitar Plan S/ 45</a>
                 </div>
             </div>
+        </div>
+
+        <!-- 4. OTRAS VISTAS (DETALLES Y EMPRENDIMIENTOS) -->
+        <div id="detallesView" class="view-section hidden">
+            <div class="category-header">
+                <i class="fa-solid fa-gift"></i>
+                <span>Detalles y Regalos GitHub</span>
+            </div>
+            <p style="color: var(--text-secondary); text-align: center;">Sorprende a tu pareja o amigos con páginas web personalizadas de aniversarios, cartas virtuales y galerías.</p>
+        </div>
+
+        <div id="emprendimientoView" class="view-section hidden">
+            <div class="category-header">
+                <i class="fa-solid fa-store"></i>
+                <span>Emprendimientos Universitarios</span>
+            </div>
+            <p style="color: var(--text-secondary); text-align: center;">Impulsa tu negocio con herramientas digitales integradas a WhatsApp.</p>
         </div>
 
     </main>
 
     <script>
+        // Ocultar Loader al cargar la página
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
             loader.style.opacity = '0';
-            setTimeout(() => { loader.style.visibility = 'hidden'; }, 400);
+            setTimeout(() => {
+                loader.style.visibility = 'hidden';
+            }, 400);
         });
 
+        // Alternar Tema Claro / Oscuro
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            
+            const themeIcon = document.getElementById('themeIcon');
+            if (newTheme === 'light') {
+                themeIcon.className = 'fa-regular fa-sun';
+            } else {
+                themeIcon.className = 'fa-regular fa-moon';
+            }
+        }
+
+        // Abrir y Cerrar Menú Lateral
         function toggleSidebar() {
             document.getElementById('sidebar').classList.toggle('active');
             document.getElementById('overlay').classList.toggle('active');
         }
 
+        // Desplegar Submenús
         function toggleSubmenu(id, arrowId) {
-            document.getElementById(id).classList.toggle('open');
+            const submenu = document.getElementById(id);
             const arrow = document.getElementById(arrowId);
-            arrow.classList.toggle('fa-chevron-up');
-            arrow.classList.toggle('fa-chevron-down');
+            submenu.classList.toggle('open');
+            if (arrow) {
+                arrow.style.transform = submenu.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
+            }
         }
 
+        // Mostrar Vistas
         function showView(viewId) {
-            const views = document.querySelectorAll('.view-section');
-            views.forEach(v => v.classList.add('hidden'));
-
-            document.getElementById(viewId).classList.remove('hidden');
-
-            const sidebar = document.getElementById('sidebar');
-            if (sidebar.classList.contains('active')) {
-                toggleSidebar();
+            document.querySelectorAll('.view-section').forEach(view => {
+                view.classList.add('hidden');
+            });
+            const targetView = document.getElementById(viewId);
+            if (targetView) {
+                targetView.classList.remove('hidden');
             }
+            // Cerrar menú lateral en móvil tras clic
+            document.getElementById('sidebar').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // Mostrar Categoría de Servicios (OSINT / Bloqueos / etc)
         function showCategory(category) {
             showView('servicesView');
             document.getElementById('categoryTitle').textContent = category;
-
-            const cards = document.querySelectorAll('.service-item');
-            cards.forEach(card => {
-                if (category === 'ALL' || card.getAttribute('data-category').toUpperCase() === category.toUpperCase()) {
-                    card.classList.remove('hidden');
+            
+            const items = document.querySelectorAll('#servicesGrid .service-item');
+            items.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+                if (category === 'ALL' || itemCategory === category) {
+                    item.classList.remove('hidden');
                 } else {
-                    card.classList.add('hidden');
+                    item.classList.add('hidden');
                 }
             });
         }
 
+        // Filtro de Búsqueda en Menú
         function filterMenu() {
-            const input = document.getElementById('searchInput').value.toUpperCase();
+            const input = document.getElementById('searchInput').value.toLowerCase();
             const items = document.querySelectorAll('#menuList .menu-item');
-
+            
             items.forEach(item => {
-                const text = item.textContent || item.innerText;
-                item.style.display = text.toUpperCase().indexOf(input) > -1 ? "" : "none";
+                const text = item.textContent.toLowerCase();
+                if (text.includes(input)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
             });
-        }
-
-        function toggleTheme() {
-            const html = document.documentElement;
-            const icon = document.getElementById('themeIcon');
-            const isDark = html.getAttribute('data-theme') === 'dark';
-
-            html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-            icon.className = isDark ? 'fa-regular fa-sun' : 'fa-regular fa-moon';
         }
     </script>
 </body>
