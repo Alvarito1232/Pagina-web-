@@ -588,6 +588,21 @@
             object-fit: cover;
         }
 
+        /* CUADRO DE COTIZACIÓN DE UNIVERSIDAD SELECCIONADA CON FONDO BEBE 1.jpg */
+        .uni-quote-card {
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.90)), url('BEBE 1.jpg') center/cover no-repeat;
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(2px);
+        }
+
+        [data-theme="light"] .uni-quote-card {
+            background: linear-gradient(rgba(255, 255, 255, 0.88), rgba(241, 245, 249, 0.92)), url('BEBE 1.jpg') center/cover no-repeat;
+        }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -969,23 +984,23 @@
             </div>
         </div>
 
-        <!-- VISTA DE COTIZACIÓN PERSONALIZADA POR UNIVERSIDAD -->
+        <!-- VISTA DE COTIZACIÓN PERSONALIZADA POR UNIVERSIDAD CON IMAGEN DE FONDO BEBE 1.jpg -->
         <div id="uniQuoteView" class="view-section hidden">
             <div class="category-header">
                 <i class="fa-solid fa-graduation-cap"></i>
-                <span id="selectedUniTitle">Trabajos Universitarios</span>
+                <span id="selectedUniTitle">Atención Especial: UNMSM</span>
             </div>
 
-            <div class="academic-section" style="text-align: center; padding: 40px 20px;">
+            <div class="uni-quote-card">
                 <div style="font-size: 3rem; margin-bottom: 12px;">📚</div>
-                <h2 style="font-size: 1.7rem; color: var(--text-primary); margin-bottom: 10px;">
+                <h2 style="font-size: 1.7rem; color: #ffffff; margin-bottom: 10px;">
                     ¡Hacemos tus trabajos de <span id="selectedUniName" style="color: var(--accent-color);">tu Universidad</span>!
                 </h2>
-                <p style="color: var(--text-secondary); max-width: 580px; margin: 0 auto 20px; font-size: 0.95rem; line-height: 1.5;">
+                <p style="color: #d1d5db; max-width: 580px; margin: 0 auto 20px; font-size: 0.95rem; line-height: 1.5;">
                     Cuéntanos qué necesitas (tarea, guía de laboratorio, ensayo, monografía o presentación PPT) y te cotizamos al instante. Entrega 100% puntual y confidencial.
                 </p>
 
-                <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(37, 211, 102, 0.15); color: #25d366; border: 1px solid rgba(37, 211, 102, 0.4); padding: 9px 22px; border-radius: 50px; font-size: 1rem; font-weight: 800; margin-bottom: 25px;">
+                <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(37, 211, 102, 0.18); color: #25d366; border: 1px solid rgba(37, 211, 102, 0.4); padding: 9px 22px; border-radius: 50px; font-size: 1rem; font-weight: 800; margin-bottom: 25px;">
                     <i class="fa-solid fa-tag"></i> Precio Base: Desde S/ 7.00
                 </div>
 
@@ -993,7 +1008,7 @@
                     <a id="uniWspBtn" href="#" target="_blank" class="btn-wsp" style="padding: 14px; font-size: 1rem; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);">
                         <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i> Cotizar por WhatsApp
                     </a>
-                    <button onclick="showView('homeView')" style="margin-top: 15px; background: none; border: none; color: var(--text-secondary); cursor: pointer; font-size: 0.88rem; text-decoration: underline; display: block; width: 100%;">
+                    <button onclick="showView('homeView')" style="margin-top: 15px; background: none; border: none; color: #94a3b8; cursor: pointer; font-size: 0.88rem; text-decoration: underline; display: block; width: 100%;">
                         <i class="fa-solid fa-arrow-left"></i> Volver al inicio
                     </button>
                 </div>
