@@ -42,6 +42,10 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+            user-select: none; /* Evita la selección de texto */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
         }
 
         html {
@@ -187,6 +191,7 @@
             color: var(--text-primary);
             outline: none;
             font-size: 0.92rem;
+            user-select: text;
         }
 
         .search-box i {
@@ -579,9 +584,9 @@
             letter-spacing: 0.5px;
         }
 
-        /* ===== MÓDULO AGRANDADO PARA LA SEGUNDA FOTO (BEBE 1.jpg) ===== */
+        /* ===== MÓDULO CON NUEVA IMAGEN DE FONDO ===== */
         .diagram-container {
-            background: linear-gradient(rgba(11, 15, 25, 0.82), rgba(11, 15, 25, 0.82)), url('BEBE 1.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(11, 15, 25, 0.82), rgba(11, 15, 25, 0.82)), url('fondo_nuevo.jpg') center/cover no-repeat;
             border: 1px solid var(--border-color);
             border-radius: 20px;
             padding: 45px 25px;
@@ -723,7 +728,7 @@
         }
 
         .uni-quote-card {
-            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.90)), url('BEBE 1.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.90)), url('fondo_nuevo.jpg') center/cover no-repeat;
             border: 1px solid var(--border-color);
             border-radius: 18px;
             padding: 40px 20px;
@@ -733,7 +738,7 @@
         }
 
         [data-theme="light"] .uni-quote-card {
-            background: linear-gradient(rgba(255, 255, 255, 0.88), rgba(241, 245, 249, 0.92)), url('BEBE 1.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(255, 255, 255, 0.88), rgba(241, 245, 249, 0.92)), url('fondo_nuevo.jpg') center/cover no-repeat;
         }
 
         .grid {
@@ -1016,6 +1021,7 @@
             color: var(--text-primary);
             outline: none;
             font-size: 0.9rem;
+            user-select: text;
         }
 
         .fab-container {
@@ -1309,11 +1315,11 @@
                 </div>
             </div>
 
-            <!-- SEGUNDA FOTO AGRANDADA Y AMPLIADA -->
+            <!-- MÓDULO CON FONDO ACTUALIZADO -->
             <div class="diagram-container">
                 <h2 class="diagram-title">RED DE CONSULTAS E INTEGRACIÓN OSINT</h2>
                 <div class="diagram-img-wrapper">
-                    <img src="rocket.jpg" alt="Red de Consultas e Integración OSINT - ROCKET" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\"fa-solid fa-network-wired fa-5x\" style=\"color: var(--accent-color); padding: 30px;\"></i>';">
+                    <img src="rocket.jpg" alt="Red de Consultas e Integración OSINT - ROCKET" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fa-solid fa-network-wired fa-5x\' style=\'color: var(--accent-color); padding: 30px;\'></i>';">
                 </div>
             </div>
 
@@ -2125,7 +2131,53 @@
         </a>
     </div>
 
+    <!-- SEGURIDAD Y FUNCIONALIDADES DE LA APLICACIÓN -->
     <script>
+        // --- SECCIÓN DE SEGURIDAD Y PROTECCIÓN DE CÓDIGO FUENTE ---
+        
+        // 1. Deshabilitar Clic Derecho
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        // 2. Bloquear atajos de teclado para ver código fuente o consola
+        document.addEventListener('keydown', function(e) {
+            // Bloquea F12
+            if (e.keyCode === 123) {
+                e.preventDefault();
+                return false;
+            }
+            // Bloquea Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+            if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
+                e.preventDefault();
+                return false;
+            }
+            // Bloquea Ctrl+U (Ver código fuente)
+            if (e.ctrlKey && e.keyCode === 85) {
+                e.preventDefault();
+                return false;
+            }
+            // Bloquea Ctrl+S (Guardar página)
+            if (e.ctrlKey && e.keyCode === 83) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // 3. Protección contra Inspección vía DevTools
+        (function() {
+            setInterval(function() {
+                const startTime = performance.now();
+                debugger; // Detiene la ejecución si las inspecciones están abiertas
+                const endTime = performance.now();
+                if (endTime - startTime > 100) {
+                    document.body.innerHTML = "Acceso no autorizado detected.";
+                }
+            }, 1000);
+        })();
+
+        // --- LÓGICA DE LA APLICACIÓN WEB ---
+
         let currentSelectedUni = 'Universidad/Colegio';
 
         window.addEventListener('load', () => {
@@ -2211,7 +2263,6 @@
                 const itemCategory = item.getAttribute('data-category');
                 
                 if (category === 'ALL') {
-                    // Mostrar todo lo que no sea exclusivo de streaming si se da clic en 'Todos'
                     item.classList.remove('hidden');
                 } else if (category === 'ALL_STREAMING') {
                     if (['STREAMING_PREMIUM', 'HERRAMIENTAS_PRO', 'DEPORTES', 'ANIME_SPECIAL'].includes(itemCategory)) {
