@@ -20,16 +20,17 @@
             --bg-header: rgba(11, 15, 25, 0.95);
             --text-primary: #ffffff;
             --text-secondary: #94a3b8;
-            --border-color: rgba(255, 255, 255, 0.12);
+            --border-color: rgba(255, 255, 255, 0.15);
             --accent-color: #6366f1;
-            --accent-glow: rgba(99, 102, 241, 0.35);
+            --accent-glow: rgba(99, 102, 241, 0.45);
             --wsp-color: #25d366;
             --tg-color: #229ed9;
             --ig-color: #e1306c;
-            --card-hover: rgba(255, 255, 255, 0.08);
-            --glass-bg: rgba(21, 28, 44, 0.85);
-            --glass-border: rgba(255, 255, 255, 0.15);
-            --card-bg-texture: linear-gradient(135deg, rgba(21, 28, 44, 0.88), rgba(15, 23, 42, 0.94)), url('FONDO 1 TOTAL.jpg') center/cover no-repeat, url('fondo_nuevo.jpg') center/cover no-repeat;
+            --card-hover: rgba(255, 255, 255, 0.12);
+            --glass-bg: rgba(21, 28, 44, 0.82);
+            --glass-border: rgba(255, 255, 255, 0.18);
+            /* TEXTURA Y FONDO PARA TARJETAS PEQUEÑAS (GAMPY 12) */
+            --card-bg-texture: linear-gradient(135deg, rgba(21, 28, 44, 0.82), rgba(15, 23, 42, 0.88)), url('gampy 12.jpg') center/cover no-repeat, url('FONDO 1 TOTAL.jpg') center/cover no-repeat, url('fondo_nuevo.jpg') center/cover no-repeat;
         }
 
         [data-theme="light"] {
@@ -38,13 +39,14 @@
             --bg-card: #f8fafc;
             --bg-header: rgba(255, 255, 255, 0.95);
             --text-primary: #0f172a;
-            --text-secondary: #475569;
+            --text-secondary: #334155;
             --border-color: #cbd5e1;
             --card-hover: #e2e8f0;
             --glass-bg: rgba(255, 255, 255, 0.88);
-            --glass-border: rgba(0, 0, 0, 0.12);
-            --accent-glow: rgba(99, 102, 241, 0.15);
-            --card-bg-texture: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(241, 245, 249, 0.96)), url('FONDO 1 TOTAL.jpg') center/cover no-repeat, url('fondo_nuevo.jpg') center/cover no-repeat;
+            --glass-border: rgba(0, 0, 0, 0.15);
+            --accent-glow: rgba(99, 102, 241, 0.25);
+            /* TEXTURA MODO CLARO CON GAMPY 12 */
+            --card-bg-texture: linear-gradient(135deg, rgba(255, 255, 255, 0.86), rgba(241, 245, 249, 0.92)), url('gampy 12.jpg') center/cover no-repeat, url('FONDO 1 TOTAL.jpg') center/cover no-repeat, url('fondo_nuevo.jpg') center/cover no-repeat;
         }
 
         * {
@@ -63,8 +65,9 @@
             scroll-behavior: smooth;
         }
 
+        /* FONDO PRINCIPAL CON MEJOR VISIBILIDAD DE "Fondo pagina web.jpg" */
         body {
-            background: linear-gradient(rgba(11, 15, 25, 0.88), rgba(11, 15, 25, 0.93)), url('Fondo pagina web.jpg') center/cover no-repeat fixed, url('FONDO 1 TOTAL.jpg') center/cover no-repeat fixed, var(--bg-primary);
+            background: linear-gradient(rgba(11, 15, 25, 0.55), rgba(11, 15, 25, 0.70)), url('Fondo pagina web.jpg') center/cover no-repeat fixed, url('FONDO 1 TOTAL.jpg') center/cover no-repeat fixed, var(--bg-primary);
             color: var(--text-primary);
             min-height: 100vh;
             overflow-x: hidden;
@@ -72,7 +75,7 @@
         }
 
         [data-theme="light"] body {
-            background: linear-gradient(rgba(241, 245, 249, 0.90), rgba(241, 245, 249, 0.95)), url('Fondo pagina web.jpg') center/cover no-repeat fixed, url('FONDO 1 TOTAL.jpg') center/cover no-repeat fixed, var(--bg-primary);
+            background: linear-gradient(rgba(241, 245, 249, 0.55), rgba(241, 245, 249, 0.72)), url('Fondo pagina web.jpg') center/cover no-repeat fixed, url('FONDO 1 TOTAL.jpg') center/cover no-repeat fixed, var(--bg-primary);
         }
 
         /* CUSTOM MODERN SCROLLBAR */
@@ -215,7 +218,7 @@
             left: -330px;
             width: 320px;
             height: calc(100vh - 60px);
-            background: linear-gradient(rgba(11, 15, 25, 0.90), rgba(11, 15, 25, 0.95)), url('FONDO 1 TOTAL.jpg') center/cover no-repeat, url('casa 1.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(11, 15, 25, 0.85), rgba(11, 15, 25, 0.92)), url('gampy 12.jpg') center/cover no-repeat, url('casa 1.jpg') center/cover no-repeat;
             border-right: 1px solid var(--border-color);
             overflow-y: auto;
             transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -225,7 +228,7 @@
         }
 
         [data-theme="light"] .sidebar {
-            background: linear-gradient(rgba(241, 245, 249, 0.90), rgba(241, 245, 249, 0.95)), url('FONDO 1 TOTAL.jpg') center/cover no-repeat, url('casa 1.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(241, 245, 249, 0.88), rgba(241, 245, 249, 0.94)), url('gampy 12.jpg') center/cover no-repeat, url('casa 1.jpg') center/cover no-repeat;
         }
 
         .sidebar.active {
@@ -338,13 +341,13 @@
             padding: 8px 10px;
             display: none;
             margin-top: 6px;
-            background: rgba(11, 15, 25, 0.7);
+            background: rgba(11, 15, 25, 0.75);
             border: 1px solid var(--glass-border);
             border-radius: 12px;
         }
 
         [data-theme="light"] .submenu {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.85);
         }
 
         .submenu.open {
@@ -371,8 +374,8 @@
         }
 
         .social-notice-box {
-            background: rgba(99, 102, 241, 0.12);
-            border: 1px solid rgba(99, 102, 241, 0.3);
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.35);
             border-radius: 12px;
             padding: 10px 12px;
             margin-top: 15px;
@@ -404,9 +407,10 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* HERO BANNER CON BEBE 2.JPG */
         .hero-banner-main {
             position: relative;
-            background: linear-gradient(135deg, rgba(11, 15, 25, 0.82), rgba(30, 41, 59, 0.88)), url('bebe 2.jpg') center 30%/cover no-repeat;
+            background: linear-gradient(135deg, rgba(11, 15, 25, 0.75), rgba(30, 41, 59, 0.82)), url('bebe 2.jpg') center 30%/cover no-repeat;
             border: 1px solid var(--border-color);
             border-radius: 22px;
             padding: 50px 20px;
@@ -429,7 +433,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 60%);
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 60%);
             pointer-events: none;
             animation: floatGlow 8s infinite alternate ease-in-out;
         }
@@ -478,7 +482,11 @@
             max-width: 650px;
         }
 
-        /* SECCIÓN 1: FOTO 1 - IMPACTO Y ESTADÍSTICAS CON FONDO 1 TOTAL */
+        [data-theme="light"] .hero-subtitle-text {
+            color: #f1f5f9;
+        }
+
+        /* CUADROS PEQUEÑOS DE ESTADÍSTICAS CON GAMPY 12 */
         .stats-counter-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -487,7 +495,7 @@
         }
 
         .stat-box {
-            background: linear-gradient(135deg, rgba(21, 28, 44, 0.88), rgba(15, 23, 42, 0.94)), url('FONDO 1 TOTAL.jpg') center/cover no-repeat, url('fondo_nuevo.jpg') center/cover no-repeat;
+            background: var(--card-bg-texture);
             border: 1px solid var(--border-color);
             border-radius: 16px;
             padding: 18px 16px;
@@ -507,7 +515,7 @@
             font-weight: 900;
             color: var(--accent-color);
             margin-bottom: 4px;
-            text-shadow: 0 2px 10px rgba(99, 102, 241, 0.3);
+            text-shadow: 0 2px 10px rgba(99, 102, 241, 0.4);
         }
 
         .stat-label {
@@ -518,7 +526,7 @@
             letter-spacing: 0.6px;
         }
 
-        /* SECCIÓN 2: FOTO 2 - TARJETAS PRINCIPALES DE SERVICIOS CON FONDO 1 TOTAL */
+        /* CUADROS PEQUEÑOS DE SERVICIOS CON GAMPY 12 */
         .main-services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -543,7 +551,7 @@
         .service-cover-card:hover {
             transform: translateY(-5px);
             border-color: var(--accent-color);
-            box-shadow: 0 12px 28px rgba(99, 102, 241, 0.3);
+            box-shadow: 0 12px 28px rgba(99, 102, 241, 0.35);
         }
 
         .service-cover-card.disney-card {
@@ -559,8 +567,8 @@
             width: 58px;
             height: 58px;
             border-radius: 14px;
-            background: rgba(99, 102, 241, 0.18);
-            border: 1px solid rgba(99, 102, 241, 0.35);
+            background: rgba(99, 102, 241, 0.2);
+            border: 1px solid rgba(99, 102, 241, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -613,9 +621,9 @@
             letter-spacing: 0.5px;
         }
 
-        /* SECCIÓN 3: FOTO 3 - CONTENEDOR DIAGRAMA OSINT CON FONDO 1 TOTAL */
+        /* DIAGRAMA OSINT CON GAMPY 12 */
         .diagram-container {
-            background: linear-gradient(rgba(11, 15, 25, 0.82), rgba(11, 15, 25, 0.85)), url('FONDO 1 TOTAL.jpg') center/cover no-repeat, url('fondo_nuevo.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(11, 15, 25, 0.80), rgba(11, 15, 25, 0.85)), url('gampy 12.jpg') center/cover no-repeat, url('FONDO 1 TOTAL.jpg') center/cover no-repeat;
             border: 1px solid var(--border-color);
             border-radius: 20px;
             padding: 45px 25px;
@@ -654,12 +662,12 @@
             object-fit: contain;
             border-radius: 14px;
             box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.18);
         }
 
-        /* SECCIÓN 4: FOTO 4 - SECCIÓN UNIVERSIDADES Y COLEGIOS CON FONDO 1 TOTAL */
+        /* SECCIÓN UNIVERSIDADES Y COLEGIOS CON GAMPY 12 */
         .academic-section {
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.88), rgba(15, 23, 42, 0.95)), url('FONDO 1 TOTAL.jpg') center/cover no-repeat, url('fondo_nuevo.jpg') center/cover no-repeat;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.85), rgba(15, 23, 42, 0.92)), url('gampy 12.jpg') center/cover no-repeat, url('FONDO 1 TOTAL.jpg') center/cover no-repeat;
             border: 1px solid var(--glass-border);
             backdrop-filter: blur(12px);
             border-radius: 20px;
@@ -690,8 +698,8 @@
         }
 
         .uni-card {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 14px;
             padding: 18px 10px;
             display: flex;
@@ -705,7 +713,7 @@
 
         .uni-card:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.18);
             border-color: var(--accent-color);
             box-shadow: 0 8px 20px var(--accent-glow);
         }
@@ -748,7 +756,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(239, 68, 68, 0.18);
+            background: rgba(239, 68, 68, 0.22);
             color: #f87171;
             border: 1px solid rgba(239, 68, 68, 0.5);
             padding: 7px 20px;
@@ -767,9 +775,9 @@
         }
 
         .info-pill {
-            background: #121826;
-            border: 1px solid #2a3447;
-            color: #e2e8f0;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
             padding: 9px 16px;
             border-radius: 12px;
             font-size: 0.85rem;
@@ -778,12 +786,6 @@
             align-items: center;
             gap: 8px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-        }
-
-        [data-theme="light"] .info-pill {
-            background: #ffffff;
-            border-color: #cbd5e1;
-            color: #1e293b;
         }
 
         .info-pill i {
@@ -828,9 +830,9 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(56, 189, 248, 0.15);
+            background: rgba(56, 189, 248, 0.2);
             color: #38bdf8;
-            border: 1px solid rgba(56, 189, 248, 0.4);
+            border: 1px solid rgba(56, 189, 248, 0.45);
             padding: 8px 22px;
             border-radius: 50px;
             font-size: 0.95rem;
@@ -852,13 +854,13 @@
         }
 
         .uni-quote-card {
-            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.90)), url('FONDO 1 TOTAL.jpg') center/cover no-repeat, url('fondo_nuevo.jpg') center/cover no-repeat;
+            background: var(--card-bg-texture);
             border: 1px solid var(--border-color);
             border-radius: 18px;
             padding: 40px 20px;
             text-align: center;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(2px);
+            backdrop-filter: blur(4px);
         }
 
         .grid {
@@ -867,6 +869,7 @@
             gap: 20px;
         }
 
+        /* TARJETAS SECUNDARIAS DE SERVICIO (CON GAMPY 12) */
         .card {
             background: var(--card-bg-texture);
             border: 1px solid var(--border-color);
@@ -875,16 +878,19 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.3);
+            transition: border-color 0.25s ease, transform 0.25s ease;
         }
 
         .card:hover {
             border-color: var(--accent-color);
+            transform: translateY(-4px);
         }
 
         .card-img-placeholder {
             width: 100%;
             height: 150px;
-            background-color: var(--bg-card);
+            background-color: rgba(15, 23, 42, 0.6);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -894,11 +900,15 @@
             position: relative;
         }
 
+        [data-theme="light"] .card-img-placeholder {
+            background-color: rgba(241, 245, 249, 0.7);
+        }
+
         .btn-preview-demo {
             position: absolute;
             top: 10px;
             right: 10px;
-            background: rgba(11, 15, 25, 0.8);
+            background: rgba(11, 15, 25, 0.85);
             border: 1px solid var(--border-color);
             color: var(--text-primary);
             font-size: 0.72rem;
@@ -1010,6 +1020,7 @@
             margin-top: 20px;
         }
 
+        /* TARJETAS DE PRECIOS CON GAMPY 12 */
         .pricing-card {
             background: var(--card-bg-texture);
             border: 1px solid var(--border-color);
@@ -1029,7 +1040,7 @@
 
         .pricing-card.featured {
             border: 2px solid var(--accent-color);
-            box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
         }
 
         .badge-popular {
@@ -1503,7 +1514,7 @@
             <p class="hero-subtitle-text">Plataforma Integral de Servicios Digitales, Inteligencia OSINT & Soluciones Académicas</p>
         </div>
 
-        <!-- FOTO 1: BANNERS DE IMPACTO CON FONDO 1 TOTAL -->
+        <!-- BANNERS DE IMPACTO CON GAMPY 12 -->
         <div class="stats-counter-grid">
             <div class="stat-box">
                 <div class="stat-number">+3,500</div>
@@ -1531,7 +1542,7 @@
                 <span>Nuestros Servicios Principales</span>
             </div>
 
-            <!-- FOTO 2: SERVICIOS PRINCIPALES CON FONDO 1 TOTAL -->
+            <!-- SERVICIOS PRINCIPALES CON GAMPY 12 -->
             <div class="main-services-grid">
                 <div class="service-cover-card" onclick="showView('trabajosView')">
                     <div class="service-cover-icon"><i class="fa-solid fa-graduation-cap"></i></div>
@@ -1635,7 +1646,7 @@
                 </div>
             </div>
 
-            <!-- FOTO 3: MÓDULO DIAGRAMA OSINT CON FONDO 1 TOTAL -->
+            <!-- MÓDULO DIAGRAMA OSINT CON GAMPY 12 -->
             <div class="diagram-container">
                 <h2 class="diagram-title">RED DE CONSULTAS E INTEGRACIÓN OSINT</h2>
                 <div class="diagram-img-wrapper">
@@ -1643,7 +1654,7 @@
                 </div>
             </div>
 
-            <!-- FOTO 4: SECCIÓN UNIVERSIDADES Y COLEGIOS CON FONDO 1 TOTAL -->
+            <!-- SECCIÓN UNIVERSIDADES Y COLEGIOS CON GAMPY 12 -->
             <div class="academic-section">
                 <div class="academic-header">
                     <h2>🎓 TRABAJOS UNIVERSITARIOS DE TODAS LAS UNIVERSIDADES Y COLEGIOS DEL PERÚ</h2>
@@ -1712,10 +1723,10 @@
 
             <div class="uni-quote-card">
                 <div style="font-size: 3rem; margin-bottom: 12px;">📚</div>
-                <h2 style="font-size: 1.7rem; color: #ffffff; margin-bottom: 10px;">
+                <h2 style="font-size: 1.7rem; color: var(--text-primary); margin-bottom: 10px;">
                     ¡Hacemos tus trabajos de <span id="selectedUniName" style="color: var(--accent-color);">tu Universidad</span>!
                 </h2>
-                <p style="color: #d1d5db; max-width: 580px; margin: 0 auto 20px; font-size: 0.95rem; line-height: 1.5;">
+                <p style="color: var(--text-secondary); max-width: 580px; margin: 0 auto 20px; font-size: 0.95rem; line-height: 1.5;">
                     Cuéntanos qué necesitas (tarea, guía de laboratorio, ensayo, monografía o presentación PPT) y te cotizamos al instante. Entrega 100% puntual y confidencial.
                 </p>
 
@@ -1730,10 +1741,10 @@
                     <a id="uniTgBtn" href="https://t.me/Adolf3728" target="_blank" class="btn-tg" style="padding: 12px; font-size: 0.95rem;">
                         <i class="fa-brands fa-telegram"></i> Chat directo en Telegram
                     </a>
-                    <a id="uniWspBtn" href="#" target="_blank" class="btn-tg" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border-color); color: #fff; padding: 12px; font-size: 0.95rem;">
+                    <a id="uniWspBtn" href="#" target="_blank" class="btn-tg" style="background: rgba(255,255,255,0.12); border: 1px solid var(--border-color); color: var(--text-primary); padding: 12px; font-size: 0.95rem;">
                         <i class="fa-brands fa-whatsapp"></i> Chat directo de WhatsApp
                     </a>
-                    <button onclick="showView('homeView')" style="margin-top: 10px; background: none; border: none; color: #94a3b8; cursor: pointer; font-size: 0.88rem; text-decoration: underline; display: block; width: 100%;">
+                    <button onclick="showView('homeView')" style="margin-top: 10px; background: none; border: none; color: var(--text-secondary); cursor: pointer; font-size: 0.88rem; text-decoration: underline; display: block; width: 100%;">
                         <i class="fa-solid fa-arrow-left"></i> Volver al inicio
                     </button>
                 </div>
@@ -1789,7 +1800,7 @@
 
             <div class="grid" id="servicesGrid">
                 
-                <!-- STREAMING PREMIUM -->
+                <!-- STREAMING PREMIUM (CON GAMPY 12) -->
                 <div class="card service-item" data-category="STREAMING_PREMIUM">
                     <div class="card-img-placeholder">
                         <i class="fa-solid fa-tv fa-3x" style="color: #e50914;"></i>
@@ -2035,7 +2046,7 @@
                     </div>
                 </div>
 
-                <!-- CATEGORÍAS OSINT Y CONSULTAS ROCKET CON DEMO DE MUESTRA -->
+                <!-- CATEGORÍAS OSINT Y CONSULTAS ROCKET (CON GAMPY 12) -->
 
                 <div class="card service-item" data-category="RENIEC">
                     <div class="card-img-placeholder">
