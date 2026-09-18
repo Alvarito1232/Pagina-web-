@@ -216,9 +216,18 @@
             box-shadow: 0 4px 18px var(--pink-glow);
         }
 
+        .mobile-fab-kimberly {
+            display: none;
+        }
+
         @keyframes pulsePink {
             0%, 100% { box-shadow: 0 0 10px rgba(236, 72, 153, 0.4); }
             50% { box-shadow: 0 0 20px rgba(236, 72, 153, 0.8); }
+        }
+
+        @keyframes floatKimberly {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
         }
 
         .icon-btn {
@@ -1628,9 +1637,34 @@
             .header-actions {
                 gap: 6px;
             }
-            .quick-calc-badge, .btn-kimberly {
-                padding: 5px 9px;
-                font-size: 0.72rem;
+            /* Ocultar el botón del header en móviles para no saturar la barra superior */
+            header .btn-kimberly {
+                display: none;
+            }
+            /* Botón Flotante Exclusivo para Celulares */
+            .mobile-fab-kimberly {
+                display: flex;
+                position: fixed;
+                bottom: 20px;
+                left: 16px;
+                z-index: 995;
+                background: linear-gradient(135deg, #f43f5e, #ec4899);
+                color: #ffffff;
+                padding: 10px 16px;
+                border-radius: 30px;
+                font-size: 0.8rem;
+                font-weight: 800;
+                box-shadow: 0 4px 20px rgba(236, 72, 153, 0.6);
+                border: 1px solid rgba(255, 255, 255, 0.35);
+                align-items: center;
+                gap: 8px;
+                animation: pulsePink 2s infinite, floatKimberly 3s ease-in-out infinite;
+                cursor: pointer;
+                backdrop-filter: blur(8px);
+            }
+            .quick-calc-badge {
+                padding: 6px 11px;
+                font-size: 0.74rem;
                 gap: 4px;
             }
             main {
@@ -3088,6 +3122,11 @@
         <a href="https://wa.me/51931309889" target="_blank" class="fab-btn fab-wsp"><i class="fa-brands fa-whatsapp"></i></a>
         <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="fab-btn fab-ig"><i class="fa-brands fa-instagram"></i></a>
     </div>
+
+    <!-- BOTÓN FLOTANTE EXCLUSIVO MÓVIL PARA KIMBERLY KRISTEL -->
+    <button class="mobile-fab-kimberly" onclick="openKimberlyModal()">
+        <i class="fa-solid fa-heart"></i> Para Kimberly Kristel
+    </button>
 
     <script>
         
