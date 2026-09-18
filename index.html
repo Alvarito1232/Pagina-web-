@@ -579,29 +579,48 @@
             letter-spacing: 0.5px;
         }
 
+        /* ===== MÓDULO AGRANDADO PARA LA SEGUNDA FOTO (BEBE 1.jpg) ===== */
         .diagram-container {
             background: linear-gradient(rgba(11, 15, 25, 0.82), rgba(11, 15, 25, 0.82)), url('BEBE 1.jpg') center/cover no-repeat;
             border: 1px solid var(--border-color);
-            border-radius: 18px;
-            padding: 35px 20px;
-            margin-bottom: 35px;
+            border-radius: 20px;
+            padding: 45px 25px;
+            margin-bottom: 40px;
             text-align: center;
+            min-height: 480px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         .diagram-title {
-            font-size: 1.3rem;
-            font-weight: 800;
-            margin-bottom: 20px;
+            font-size: 1.6rem;
+            font-weight: 900;
+            margin-bottom: 25px;
             color: #ffffff;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+
+        .diagram-img-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .diagram-img-wrapper img {
             max-width: 100%;
+            max-height: 520px;
+            width: auto;
             height: auto;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+            object-fit: contain;
+            border-radius: 14px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         .academic-section {
@@ -1078,6 +1097,25 @@
                 </a>
             </li>
 
+            <!-- MENÚ PLATAFORMAS Y STREAMING -->
+            <li class="menu-item">
+                <div class="menu-link" onclick="toggleSubmenu('streamingMenu', 'streamingArrow')">
+                    <div class="menu-link-left">
+                        <i class="fa-solid fa-play"></i>
+                        <span>Plataformas & Cuentas Pro</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down" id="streamingArrow"></i>
+                </div>
+                
+                <ul class="submenu" id="streamingMenu">
+                    <li><a href="#" onclick="showCategory('ALL_STREAMING')"><i class="fa-solid fa-border-all"></i> Ver Todo Streaming & Pro</a></li>
+                    <li><a href="#" onclick="showCategory('STREAMING_PREMIUM')"><i class="fa-solid fa-film"></i> Streaming Premium</a></li>
+                    <li><a href="#" onclick="showCategory('HERRAMIENTAS_PRO')"><i class="fa-solid fa-wrench"></i> Herramientas Pro</a></li>
+                    <li><a href="#" onclick="showCategory('DEPORTES')"><i class="fa-solid fa-football"></i> Deportes en Vivo</a></li>
+                    <li><a href="#" onclick="showCategory('ANIME_SPECIAL')"><i class="fa-solid fa-dragon"></i> Contenido Especializado</a></li>
+                </ul>
+            </li>
+
             <li class="menu-item">
                 <div class="menu-link" onclick="toggleSubmenu('osintMenu', 'osintArrow')">
                     <div class="menu-link-left">
@@ -1271,10 +1309,107 @@
                 </div>
             </div>
 
+            <!-- SEGUNDA FOTO AGRANDADA Y AMPLIADA -->
             <div class="diagram-container">
                 <h2 class="diagram-title">RED DE CONSULTAS E INTEGRACIÓN OSINT</h2>
                 <div class="diagram-img-wrapper">
                     <img src="rocket.jpg" alt="Red de Consultas e Integración OSINT - ROCKET" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\"fa-solid fa-network-wired fa-5x\" style=\"color: var(--accent-color); padding: 30px;\"></i>';">
+                </div>
+            </div>
+
+            <!-- SECCIÓN NUEVA: PLATAFORMAS & CUENTAS STREAMING / HERRAMIENTAS PRO -->
+            <div class="category-header">
+                <i class="fa-solid fa-tv"></i>
+                <span>📺 PLATAFORMAS Y SERVICIOS DISPONIBLES</span>
+            </div>
+
+            <div class="grid" style="margin-bottom: 35px;">
+                <!-- STREAMING PREMIUM -->
+                <div class="card">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-film fa-3x" style="color: #e50914;"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">🎬 Streaming Premium</div>
+                            <div class="card-desc">
+                                • Netflix Premium<br>
+                                • HBO Max / Max<br>
+                                • Prime Video<br>
+                                • Disney Premium (7 ESPN + Hulu)<br>
+                                • Paramount + UFC
+                            </div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consultar%20por%20Streaming%20Premium" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ENTRETE ADICIONAL & ESPECIALIZADO -->
+                <div class="card">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-compact-disc fa-3x" style="color: #1ed760;"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">🎭 Entretenimiento & Anime</div>
+                            <div class="card-desc">
+                                • Apple TV + MLS (Android y Smart TV)<br>
+                                • Crunchyroll Premium<br>
+                                • Viki Rakuten<br>
+                                • Spotify Premium
+                            </div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consultar%20por%20Entretenimiento%20y%20Música" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HERRAMIENTAS PRO -->
+                <div class="card">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-laptop-code fa-3x" style="color: #6366f1;"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">🛠 Herramientas Pro & Software</div>
+                            <div class="card-desc">
+                                • Autodesk (Licencias)<br>
+                                • Canva Pro<br>
+                                • CapCut Pro<br>
+                                • Windows 11<br>
+                                • ChatGPT Plus<br>
+                                • Office Microsoft<br>
+                                • Gemini Pro + NotebookLM
+                            </div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consultar%20por%20Herramientas%20Pro" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DEPORTES EN VIVO -->
+                <div class="card">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-futbol fa-3x" style="color: #38bdf8;"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">⚽ Deportes en Vivo</div>
+                            <div class="card-desc">
+                                • DGO + Liga 1 Max<br>
+                                • Movistar Play + Liga 1 Max<br>
+                                • Paramount + UFC Live<br>
+                                • Apple TV + MLS
+                            </div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consultar%20por%20Deportes%20en%20Vivo" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -1375,7 +1510,7 @@
             </div>
         </div>
 
-        <!-- 2. VISTA DE SERVICIOS / OSINT -->
+        <!-- 2. VISTA DE SERVICIOS / OSINT & STREAMING -->
         <div id="servicesView" class="view-section hidden">
             
             <div class="osint-info-container">
@@ -1383,22 +1518,22 @@
                     <i class="fa-solid fa-lock"></i> 100% CONFIDENCIAL Y DISCRETO
                 </div>
                 <div class="info-bar">
-                    <div class="info-pill"><i class="fa-solid fa-tag"></i> Precio: Desde S/ 2.00 (varía según la consulta)</div>
+                    <div class="info-pill"><i class="fa-solid fa-tag"></i> Consulta OSINT: Desde S/ 2.00</div>
+                    <div class="info-pill"><i class="fa-solid fa-tv"></i> Streaming & Pro: Precios Garantizados</div>
                     <div class="info-pill"><i class="fa-solid fa-clock"></i> Atención 24/7</div>
-                    <div class="info-pill"><i class="fa-solid fa-id-card"></i> Requisitos: Número de celular, DNI o Nombre completo</div>
                 </div>
             </div>
 
             <div class="category-filter-bar">
-                <button class="filter-chip active" onclick="showCategory('ALL', this)">Todos</button>
+                <button class="filter-chip active" onclick="showCategory('ALL', this)">Todos OSINT</button>
+                <button class="filter-chip" onclick="showCategory('ALL_STREAMING', this)">Ver Todo Streaming</button>
+                <button class="filter-chip" onclick="showCategory('STREAMING_PREMIUM', this)">Streaming</button>
+                <button class="filter-chip" onclick="showCategory('HERRAMIENTAS_PRO', this)">Herramientas Pro</button>
+                <button class="filter-chip" onclick="showCategory('DEPORTES', this)">Deportes</button>
                 <button class="filter-chip" onclick="showCategory('RENIEC', this)">RENIEC</button>
                 <button class="filter-chip" onclick="showCategory('SUNAT', this)">SUNAT</button>
                 <button class="filter-chip" onclick="showCategory('OSIPTEL', this)">OSIPTEL</button>
                 <button class="filter-chip" onclick="showCategory('MIGRACIONES', this)">MIGRACIONES</button>
-                <button class="filter-chip" onclick="showCategory('SUNARP', this)">SUNARP</button>
-                <button class="filter-chip" onclick="showCategory('PNP', this)">PNP / INPE</button>
-                <button class="filter-chip" onclick="showCategory('Bloqueo', this)">Bloqueos</button>
-                <button class="filter-chip" onclick="showCategory('VIRTUALES', this)">Virtuales</button>
             </div>
 
             <div class="category-header">
@@ -1407,6 +1542,67 @@
             </div>
 
             <div class="grid" id="servicesGrid">
+                <!-- TARJETAS STREAMING DETALLADAS -->
+                <div class="card service-item" data-category="STREAMING_PREMIUM">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-tv fa-3x" style="color: #e50914;"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Netflix Premium</div>
+                            <div class="card-desc">Cuentas completas y perfiles privados en Ultra HD 4K. Garantizado.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20Netflix%20Premium" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="STREAMING_PREMIUM">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-film fa-3x" style="color: #00d2ff;"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">HBO Max / Prime Video</div>
+                            <div class="card-desc">Disfruta de las mejores películas y series en alta definición.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20HBO%20Max%20o%20Prime%20Video" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="HERRAMIENTAS_PRO">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-robot fa-3x" style="color: #10a37f;"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">ChatGPT Plus / Gemini Pro</div>
+                            <div class="card-desc">Acceso a IA avanzada + NotebookLM y herramientas de productividad.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20ChatGPT%20Plus%20o%20Gemini%20Pro" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="HERRAMIENTAS_PRO">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-palette fa-3x" style="color: #00c4cc;"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Canva Pro / CapCut Pro</div>
+                            <div class="card-desc">Herramientas ilimitadas para diseño gráfico, edición de video y contenido.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20Canva%20Pro%20o%20CapCut%20Pro" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- TARJETAS OSINT CON TELEGRAM + REDES -->
                 <div class="card service-item" data-category="RENIEC">
                     <div class="card-img-placeholder"><i class="fa-solid fa-id-card fa-3x"></i></div>
@@ -1942,6 +2138,19 @@
             updateThemeIcon(savedTheme);
         });
 
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('scrollTopBtn');
+            if (window.scrollY > 300) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
         function toggleTheme() {
             const html = document.documentElement;
             const currentTheme = html.getAttribute('data-theme');
@@ -1986,12 +2195,31 @@
 
         function showCategory(category, element = null) {
             showView('servicesView');
-            document.getElementById('categoryTitle').textContent = category === 'ALL' ? 'Todas las Consultas OSINT' : category;
+            
+            let titleText = category;
+            if (category === 'ALL') titleText = 'Todas las Consultas OSINT';
+            if (category === 'ALL_STREAMING') titleText = 'Todas las Cuentas Streaming & Pro';
+            if (category === 'STREAMING_PREMIUM') titleText = 'Streaming Premium';
+            if (category === 'HERRAMIENTAS_PRO') titleText = 'Herramientas Pro & Software';
+            if (category === 'DEPORTES') titleText = 'Deportes en Vivo';
+            if (category === 'ANIME_SPECIAL') titleText = 'Anime & Música';
+
+            document.getElementById('categoryTitle').textContent = titleText;
             
             const items = document.querySelectorAll('#servicesGrid .service-item');
             items.forEach(item => {
                 const itemCategory = item.getAttribute('data-category');
-                if (category === 'ALL' || itemCategory === category) {
+                
+                if (category === 'ALL') {
+                    // Mostrar todo lo que no sea exclusivo de streaming si se da clic en 'Todos'
+                    item.classList.remove('hidden');
+                } else if (category === 'ALL_STREAMING') {
+                    if (['STREAMING_PREMIUM', 'HERRAMIENTAS_PRO', 'DEPORTES', 'ANIME_SPECIAL'].includes(itemCategory)) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                } else if (itemCategory === category) {
                     item.classList.remove('hidden');
                 } else {
                     item.classList.add('hidden');
@@ -2000,10 +2228,6 @@
 
             document.querySelectorAll('.filter-chip').forEach(chip => {
                 if (element && chip === element) {
-                    chip.classList.add('active');
-                } else if (!element && chip.textContent.trim().toUpperCase() === category.toUpperCase()) {
-                    chip.classList.add('active');
-                } else if (!element && category === 'ALL' && chip.textContent.trim().toUpperCase() === 'TODOS') {
                     chip.classList.add('active');
                 } else {
                     chip.classList.remove('active');
@@ -2032,6 +2256,7 @@
             
             const message = encodeURIComponent(`Hola, soy estudiante de ${uniName}. Deseo cotizar un trabajo académico (Precio base S/ 7.00). Adjunto los detalles:`);
             document.getElementById('uniWspBtn').href = `https://wa.me/51931309889?text=${message}`;
+            document.getElementById('uniTgBtn').href = `https://t.me/Adolf3728`;
             
             showView('uniQuoteView');
         }
@@ -2043,6 +2268,7 @@
 
         function openModalForTask(taskType) {
             document.getElementById('modalType').value = taskType;
+            document.getElementById('modalUni').value = '';
             document.getElementById('quoteModal').classList.add('active');
         }
 
@@ -2050,45 +2276,26 @@
             document.getElementById('quoteModal').classList.remove('active');
         }
 
-        function sendFormattedWsp() {
-            const uni = document.getElementById('modalUni').value || 'No especificado';
+        function sendFormattedTg() {
+            const uni = document.getElementById('modalUni').value || 'No especificada';
             const type = document.getElementById('modalType').value;
-            const topic = document.getElementById('modalTopic').value || 'Por definir';
+            const topic = document.getElementById('modalTopic').value || 'Sin especificar';
             const deadline = document.getElementById('modalDeadline').value || 'Lo antes posible';
 
-            const text = `Hola ROCKET 🚀, deseo cotizar un trabajo:%0A%0A🎓 *Institución:* ${uni}%0A📚 *Tipo:* ${type}%0A📖 *Materia/Tema:* ${topic}%0A⏰ *Fecha Límite:* ${deadline}`;
+            const text = `Hola!%20Deseo%20cotizar:%0A- Institución: ${encodeURIComponent(uni)}%0A- Tipo: ${encodeURIComponent(type)}%0A- Tema: ${encodeURIComponent(topic)}%0A- Entrega: ${encodeURIComponent(deadline)}`;
+            window.open(`https://t.me/Adolf3728?text=${text}`, '_blank');
+            closeModal();
+        }
+
+        function sendFormattedWsp() {
+            const uni = document.getElementById('modalUni').value || 'No especificada';
+            const type = document.getElementById('modalType').value;
+            const topic = document.getElementById('modalTopic').value || 'Sin especificar';
+            const deadline = document.getElementById('modalDeadline').value || 'Lo antes posible';
+
+            const text = `Hola!%20Deseo%20cotizar:%0A- Institución: ${encodeURIComponent(uni)}%0A- Tipo: ${encodeURIComponent(type)}%0A- Tema: ${encodeURIComponent(topic)}%0A- Entrega: ${encodeURIComponent(deadline)}`;
             window.open(`https://wa.me/51931309889?text=${text}`, '_blank');
             closeModal();
-        }
-
-        function sendFormattedTg() {
-            const uni = document.getElementById('modalUni').value || 'No especificado';
-            const type = document.getElementById('modalType').value;
-            const topic = document.getElementById('modalTopic').value || 'Por definir';
-            const deadline = document.getElementById('modalDeadline').value || 'Lo antes posible';
-
-            const text = `Hola ROCKET 🚀, deseo cotizar un trabajo:\n\n🎓 *Institución:* ${uni}\n📚 *Tipo:* ${type}\n📖 *Materia/Tema:* ${topic}\n⏰ *Fecha Límite:* ${deadline}`;
-
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(text).then(() => {
-                    alert('¡Cotización copiada al portapapeles! Pégala en el chat al ingresar a Telegram.');
-                }).catch(() => {});
-            }
-            window.open('https://t.me/Adolf3728', '_blank');
-            closeModal();
-        }
-
-        window.addEventListener('scroll', () => {
-            const topBtn = document.getElementById('scrollTopBtn');
-            if (window.scrollY > 300) {
-                topBtn.style.display = 'flex';
-            } else {
-                topBtn.style.display = 'none';
-            }
-        });
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
