@@ -292,6 +292,24 @@
             background: var(--card-hover);
         }
 
+        /* ESTILO DEL AVISO DE SOPORTE DE REDES */
+        .social-notice-box {
+            background: rgba(99, 102, 241, 0.12);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 12px;
+            padding: 10px 12px;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-size: 0.78rem;
+            line-height: 1.35;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+
+        .social-notice-box strong {
+            color: var(--text-primary);
+        }
+
         main {
             margin-top: 60px;
             padding: 30px 20px;
@@ -391,6 +409,16 @@
             box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
         }
 
+        /* ESTILO PARA TARJETA DE NEGOCIO CLIENTE (DISNEY+) */
+        .service-cover-card.disney-card {
+            border-color: rgba(0, 136, 204, 0.5);
+        }
+
+        .service-cover-card.disney-card:hover {
+            border-color: #0088cc;
+            box-shadow: 0 8px 25px rgba(0, 136, 204, 0.4);
+        }
+
         .service-cover-icon {
             width: 58px;
             height: 58px;
@@ -427,6 +455,20 @@
             display: flex;
             align-items: center;
             gap: 6px;
+        }
+
+        .badge-partner {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: linear-gradient(135deg, #0088cc, #38bdf8);
+            color: #ffffff;
+            font-size: 0.68rem;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .osint-info-container {
@@ -564,7 +606,7 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.4);
         }
 
-        /* SECCIÓN UNIVERSIDADES CON IMAGEN DE FONDO PAISAJE 123.JPG */
+        /* SECCIÓN UNIVERSIDADES */
         .academic-section {
             background-image: linear-gradient(rgba(11, 18, 33, 0.88), rgba(11, 18, 33, 0.88)), url('paisaje 123.jpg');
             background-size: cover;
@@ -592,7 +634,6 @@
             margin-bottom: 30px;
         }
 
-        /* GRID DE 6 COLUMNAS PARA UNIVERSIDADES */
         .uni-grid {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
@@ -1072,8 +1113,16 @@
                 </a>
             </li>
 
+            <!-- MENSAJE DE AVISO PARA REDES SOCIALES -->
+            <li class="menu-item">
+                <div class="social-notice-box">
+                    <i class="fa-solid fa-headset" style="color: var(--accent-color); font-size: 1.1rem; margin-bottom: 4px; display: block;"></i>
+                    En caso escribas al número de WhatsApp y no responda o no funcione, escríbenos por <strong>Telegram</strong> o <strong>Instagram</strong>. ¡Atendemos 24/7!
+                </div>
+            </li>
+
             <!-- ENLACES A REDES SOCIALES Y CANALES -->
-            <li class="menu-item" style="margin-top: 15px;">
+            <li class="menu-item">
                 <a href="https://wa.me/51931309889?text=Hola,%20deseo%20mayor%20informaci%C3%B3n" target="_blank" class="menu-link menu-link-wsp">
                     <div class="menu-link-left">
                         <i class="fa-brands fa-whatsapp"></i>
@@ -1151,6 +1200,23 @@
                     <div class="service-cover-desc">Desarrollo web a medida desde S/ 5.00 con hosting en GitHub Pages, catálogo y soporte.</div>
                     <div class="service-cover-btn">Ver Planes Web <i class="fa-solid fa-arrow-right"></i></div>
                 </div>
+
+                <!-- NUEVO CUADRO DE NEGOCIO CLIENTE (DISNEY+ PREMIUM) -->
+                <div class="service-cover-card disney-card" onclick="window.open('https://wa.me/51931309889?text=Hola,%20deseo%20adquirir%20Disney%2B%20Premium', '_blank')">
+                    <span class="badge-partner">Socio / Aliado</span>
+                    <div class="service-cover-icon" style="background: rgba(0, 136, 204, 0.2); color: #0088cc; border-color: rgba(0, 136, 204, 0.4);">
+                        <i class="fa-solid fa-tv"></i>
+                    </div>
+                    <div class="service-cover-title">🌀 DISNEY PREMIUM 🌀</div>
+                    <div class="service-cover-desc" style="text-align: left; font-size: 0.82rem;">
+                        • Perfil Privado con PIN personalizado<br>
+                        • Incluye <strong>7 ESPN</strong> + <strong>HULU</strong><br>
+                        • 30 Días | Renovable y Garantizado
+                    </div>
+                    <div class="service-cover-btn" style="color: #0088cc;">
+                        <i class="fa-brands fa-whatsapp"></i> Adquirir Cuenta <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
             </div>
 
             <div class="diagram-container">
@@ -1160,7 +1226,7 @@
                 </div>
             </div>
 
-            <!-- SECCIÓN TRABAJOS UNIVERSITARIOS CON FONDO Y 6 COLUMNAS -->
+            <!-- SECCIÓN TRABAJOS UNIVERSITARIOS -->
             <div class="academic-section">
                 <div class="academic-header">
                     <h2>🎓 TRABAJOS UNIVERSITARIOS DE TODAS LAS UNIVERSIDADES Y COLEGIOS DEL PERÚ</h2>
