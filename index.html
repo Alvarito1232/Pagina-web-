@@ -22,6 +22,7 @@
             --text-secondary: #94a3b8;
             --border-color: rgba(255, 255, 255, 0.12);
             --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.35);
             --wsp-color: #25d366;
             --tg-color: #229ed9;
             --ig-color: #e1306c;
@@ -41,6 +42,7 @@
             --card-hover: #e2e8f0;
             --glass-bg: rgba(255, 255, 255, 0.88);
             --glass-border: rgba(0, 0, 0, 0.12);
+            --accent-glow: rgba(99, 102, 241, 0.15);
         }
 
         * {
@@ -64,9 +66,10 @@
             color: var(--text-primary);
             min-height: 100vh;
             overflow-x: hidden;
+            position: relative;
         }
 
-        /* CUSTOM MODERN SCROLLBAR - MEJORA FOTO 2 */
+        /* CUSTOM MODERN SCROLLBAR */
         ::-webkit-scrollbar {
             height: 6px;
             width: 6px;
@@ -78,7 +81,7 @@
         ::-webkit-scrollbar-thumb {
             background: var(--accent-color);
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+            box-shadow: 0 0 10px var(--accent-color);
         }
         ::-webkit-scrollbar-thumb:hover {
             background: #4f46e5;
@@ -100,12 +103,12 @@
         }
 
         .spinner {
-            width: 42px;
-            height: 42px;
+            width: 46px;
+            height: 46px;
             border: 4px solid var(--border-color);
             border-top: 4px solid var(--accent-color);
             border-radius: 50%;
-            animation: spin 1s linear infinite;
+            animation: spin 0.9s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
         }
 
         @keyframes spin {
@@ -124,7 +127,7 @@
             align-items: center;
             padding: 0 20px;
             background: var(--bg-header);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
             z-index: 1000;
         }
@@ -134,16 +137,53 @@
             align-items: center;
             gap: 10px;
             font-weight: 800;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             cursor: pointer;
             color: var(--text-primary);
             letter-spacing: 1px;
+            position: relative;
+        }
+
+        .brand-logo .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #22c55e;
+            animation: pulseDot 1.8s infinite;
+        }
+
+        @keyframes pulseDot {
+            0% { transform: scale(0.9); opacity: 0.7; }
+            50% { transform: scale(1.3); opacity: 1; }
+            100% { transform: scale(0.9); opacity: 0.7; }
         }
 
         .header-actions {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
+        }
+
+        .quick-calc-badge {
+            background: linear-gradient(135deg, var(--accent-color), #818cf8);
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 10px var(--accent-glow);
+            border: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .quick-calc-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px var(--accent-glow);
         }
 
         .icon-btn {
@@ -169,7 +209,7 @@
             left: -330px;
             width: 320px;
             height: calc(100vh - 60px);
-            background: linear-gradient(rgba(11, 15, 25, 0.88), rgba(11, 15, 25, 0.92)), url('casa 1.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(11, 15, 25, 0.90), rgba(11, 15, 25, 0.95)), url('casa 1.jpg') center/cover no-repeat;
             border-right: 1px solid var(--border-color);
             overflow-y: auto;
             transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -179,7 +219,7 @@
         }
 
         [data-theme="light"] .sidebar {
-            background: linear-gradient(rgba(241, 245, 249, 0.88), rgba(241, 245, 249, 0.93)), url('casa 1.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(241, 245, 249, 0.90), rgba(241, 245, 249, 0.95)), url('casa 1.jpg') center/cover no-repeat;
         }
 
         .sidebar.active {
@@ -193,7 +233,7 @@
             width: 100%;
             height: calc(100vh - 60px);
             background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(3px);
+            backdrop-filter: blur(4px);
             display: none;
             z-index: 998;
         }
@@ -359,26 +399,38 @@
         }
 
         .hero-banner-main {
-            background: linear-gradient(rgba(11, 15, 25, 0.72), rgba(11, 15, 25, 0.78)), url('bebe 2.jpg') center 30%/cover no-repeat;
+            position: relative;
+            background: linear-gradient(135deg, rgba(11, 15, 25, 0.82), rgba(30, 41, 59, 0.88)), url('bebe 2.jpg') center 30%/cover no-repeat;
             border: 1px solid var(--border-color);
-            border-radius: 18px;
+            border-radius: 22px;
             padding: 50px 20px;
-            min-height: 220px;
+            min-height: 240px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             margin-bottom: 25px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
             color: #ffffff;
+            overflow: hidden;
         }
 
-        @media (min-width: 768px) {
-            .hero-banner-main {
-                min-height: 320px;
-                padding: 70px 30px;
-            }
+        .hero-banner-main::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 60%);
+            pointer-events: none;
+            animation: floatGlow 8s infinite alternate ease-in-out;
+        }
+
+        @keyframes floatGlow {
+            0% { transform: translate(-10%, -10%); }
+            100% { transform: translate(10%, 10%); }
         }
 
         .hero-logo-box {
@@ -386,25 +438,71 @@
             align-items: center;
             justify-content: center;
             gap: 14px;
+            z-index: 1;
         }
 
         .rocket-icon {
-            font-size: 2.4rem;
+            font-size: 2.5rem;
+            filter: drop-shadow(0 0 10px rgba(99,102,241,0.6));
+            animation: rocketFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes rocketFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-6px) rotate(4deg); }
         }
 
         .hero-title-text {
-            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
             font-weight: 900;
             letter-spacing: 3px;
             color: #ffffff;
+            background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero-subtitle-text {
-            font-size: 0.98rem;
-            color: #d1d5db;
+            font-size: 1rem;
+            color: #cbd5e1;
             font-weight: 500;
-            margin-top: 8px;
-            letter-spacing: 0.3px;
+            margin-top: 10px;
+            letter-spacing: 0.4px;
+            z-index: 1;
+            max-width: 650px;
+        }
+
+        /* SECCIÓN IMPACTO Y ESTADÍSTICAS ANIMADAS */
+        .stats-counter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .stat-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 16px;
+            text-align: center;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--accent-color);
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .main-services-grid {
@@ -551,12 +649,12 @@
             color: #6366f1;
         }
 
-        /* BARRA DE CHIPS SEPARADAS PARA EVITAR MEZCLA */
+        /* BARRA DE CHIPS SEPARADAS Y ESTILIZADAS */
         .category-filter-bar {
             display: flex;
             gap: 8px;
             overflow-x: auto;
-            padding-bottom: 10px;
+            padding-bottom: 12px;
             margin-bottom: 20px;
             scroll-behavior: smooth;
         }
@@ -578,7 +676,7 @@
             background: var(--accent-color);
             color: #ffffff;
             border-color: var(--accent-color);
-            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+            box-shadow: 0 4px 12px var(--accent-glow);
         }
 
         .trabajos-info-container {
@@ -704,7 +802,7 @@
             transform: translateY(-5px);
             background: rgba(255, 255, 255, 0.12);
             border-color: var(--accent-color);
-            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.25);
+            box-shadow: 0 8px 20px var(--accent-glow);
         }
 
         .uni-badge {
@@ -736,12 +834,6 @@
             text-align: center;
         }
 
-        @media (max-width: 600px) {
-            .academic-header h2 {
-                font-size: 1.2rem;
-            }
-        }
-
         .uni-quote-card {
             background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.90)), url('fondo_nuevo.jpg') center/cover no-repeat;
             border: 1px solid var(--border-color);
@@ -750,10 +842,6 @@
             text-align: center;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
             backdrop-filter: blur(2px);
-        }
-
-        [data-theme="light"] .uni-quote-card {
-            background: linear-gradient(rgba(255, 255, 255, 0.88), rgba(241, 245, 249, 0.92)), url('fondo_nuevo.jpg') center/cover no-repeat;
         }
 
         .grid {
@@ -787,6 +875,26 @@
             color: var(--text-secondary);
             border-bottom: 1px solid var(--border-color);
             position: relative;
+        }
+
+        .btn-preview-demo {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(11, 15, 25, 0.8);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            font-size: 0.72rem;
+            padding: 4px 10px;
+            border-radius: 12px;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+            font-weight: 700;
+        }
+
+        .btn-preview-demo:hover {
+            background: var(--accent-color);
+            color: #fff;
         }
 
         .card-body {
@@ -966,14 +1074,109 @@
             margin-top: 2px;
         }
 
+        /* COMPONENTE NOVEDOSO: COTIZADOR INTERACTIVO */
+        .calculator-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 35px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .calc-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .calc-result-box {
+            background: var(--bg-card);
+            border: 1px solid var(--accent-color);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .calc-result-price {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #38bdf8;
+            margin: 10px 0;
+        }
+
+        /* NOTIFICACIONES DE PRUEBA SOCIAL EN VIVO */
+        .social-proof-toast {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(21, 28, 44, 0.95);
+            border: 1px solid var(--accent-color);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 1000;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            animation: slideUp 0.4s ease-out;
+            max-width: 320px;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .toast-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(99, 102, 241, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .toast-text {
+            font-size: 0.8rem;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+
+        .toast-text span {
+            color: var(--text-secondary);
+            font-size: 0.72rem;
+            display: block;
+            margin-top: 2px;
+        }
+
         .modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.75);
-            backdrop-filter: blur(5px);
+            background: rgba(0,0,0,0.78);
+            backdrop-filter: blur(6px);
             display: none;
             justify-content: center;
             align-items: center;
@@ -1039,6 +1242,38 @@
             user-select: text;
         }
 
+        /* SAMPLE REPORT MOCKUP */
+        .sample-report-mockup {
+            background: #0f172a;
+            border: 1px dashed var(--border-color);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sample-report-mockup::before {
+            content: "MUESTRA CONFIDENCIAL ROCKET OSINT";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-25deg);
+            font-size: 1rem;
+            font-weight: 900;
+            color: rgba(255,255,255,0.06);
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        .blurred-line {
+            height: 12px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 4px;
+            margin-bottom: 8px;
+            filter: blur(2px);
+        }
+
         .fab-container {
             position: fixed;
             bottom: 20px;
@@ -1083,14 +1318,18 @@
 
     <div id="loader">
         <div class="spinner"></div>
-        <p style="margin-top: 12px; color: var(--text-secondary); font-size: 0.9rem;">Cargando ROCKET...</p>
+        <p style="margin-top: 14px; color: var(--text-secondary); font-size: 0.92rem; font-weight: 700; letter-spacing: 0.5px;">Cargando ROCKET Plataforma...</p>
     </div>
 
     <header>
         <div class="brand-logo" onclick="showView('homeView')">
+            <span class="pulse-dot"></span>
             <span>🚀 ROCKET</span>
         </div>
         <div class="header-actions">
+            <button class="quick-calc-badge" onclick="openCalcModal()">
+                <i class="fa-solid fa-calculator"></i> Cotizador
+            </button>
             <button class="icon-btn" id="themeToggle" title="Cambiar Tema" onclick="toggleTheme()">
                 <i class="fa-regular fa-moon" id="themeIcon"></i>
             </button>
@@ -1263,7 +1502,27 @@
                 <span class="rocket-icon">🚀</span>
                 <h1 class="hero-title-text">ROCKET</h1>
             </div>
-            <p class="hero-subtitle-text">Plataforma Integral de Servicios Digitales y Soluciones</p>
+            <p class="hero-subtitle-text">Plataforma Integral de Servicios Digitales, Inteligencia OSINT & Soluciones Académicas</p>
+        </div>
+
+        <!-- BANNERS DE IMPACTO / ESTADÍSTICAS ANIMADAS -->
+        <div class="stats-counter-grid">
+            <div class="stat-box">
+                <div class="stat-number">+3,500</div>
+                <div class="stat-label">Consultas Procesadas</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">99.8%</div>
+                <div class="stat-label">Satisfacción Cliente</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">&lt; 3 MIN</div>
+                <div class="stat-label">Tiempo de Respuesta</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">24 / 7</div>
+                <div class="stat-label">Atención Inmediata</div>
+            </div>
         </div>
 
         <!-- 1. VISTA DE INICIO -->
@@ -1531,10 +1790,11 @@
 
             <div class="grid" id="servicesGrid">
                 
-                <!-- ================= CATEGORÍAS STREAMING / HERRAMIENTAS / DEPORTES / ANIME ================= -->
-                
+                <!-- STREAMING PREMIUM -->
                 <div class="card service-item" data-category="STREAMING_PREMIUM">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-tv fa-3x" style="color: #e50914;"></i></div>
+                    <div class="card-img-placeholder">
+                        <i class="fa-solid fa-tv fa-3x" style="color: #e50914;"></i>
+                    </div>
                     <div class="card-body">
                         <div>
                             <div class="card-title">Netflix Premium</div>
@@ -1776,10 +2036,13 @@
                     </div>
                 </div>
 
-                <!-- ================= CATEGORÍAS OSINT Y CONSULTAS ROCKET ================= -->
+                <!-- CATEGORÍAS OSINT Y CONSULTAS ROCKET CON DEMO DE MUESTRA -->
 
                 <div class="card service-item" data-category="RENIEC">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-id-card fa-3x"></i></div>
+                    <div class="card-img-placeholder">
+                        <i class="fa-solid fa-id-card fa-3x"></i>
+                        <button class="btn-preview-demo" onclick="openSampleModal('RENIEC')"><i class="fa-solid fa-eye"></i> Ver Muestra</button>
+                    </div>
                     <div class="card-body">
                         <div>
                             <div class="card-title">RENIEC OSINT</div>
@@ -1794,7 +2057,10 @@
                 </div>
 
                 <div class="card service-item" data-category="SUNAT">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-receipt fa-3x"></i></div>
+                    <div class="card-img-placeholder">
+                        <i class="fa-solid fa-receipt fa-3x"></i>
+                        <button class="btn-preview-demo" onclick="openSampleModal('SUNAT')"><i class="fa-solid fa-eye"></i> Ver Muestra</button>
+                    </div>
                     <div class="card-body">
                         <div>
                             <div class="card-title">SUNAT Búsqueda</div>
@@ -2108,7 +2374,7 @@
                 <i class="fa-solid fa-gift"></i>
                 <span>Detalles y Regalos GitHub</span>
             </div>
-            <p style="color: var(--text-secondary); text-align: center; font-size: 0.95rem;">
+            <p style="color: var(--text-secondary); text-align: center; font-size: 0.95rem; max-width: 600px; margin: 0 auto 25px;">
                 Sorprende a tu pareja o seres queridos con cartas virtuales, páginas con música, álbumes de fotos animados y regalos interactivos alojados en la web.
             </p>
         </div>
@@ -2118,14 +2384,84 @@
                 <i class="fa-solid fa-store"></i>
                 <span>Emprendimientos Universitarios</span>
             </div>
-            <p style="color: var(--text-secondary); text-align: center; font-size: 0.95rem;">
+            <p style="color: var(--text-secondary); text-align: center; font-size: 0.95rem; max-width: 600px; margin: 0 auto 25px;">
                 Soluciones digitales completas para tu negocio o marca: catálogos interactivos, branding, asesoría e integración directa con tu sistema de ventas.
             </p>
         </div>
 
     </main>
 
-    <!-- MODAL DE COTIZACIÓN -->
+    <!-- MODAL COTIZADOR INTERACTIVO (NOVEDAD 1) -->
+    <div class="modal-overlay" id="calcModal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeCalcModal()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-title"><i class="fa-solid fa-calculator" style="color:var(--accent-color);"></i> Cotizador ROCKET Instantáneo</div>
+            
+            <div class="form-group">
+                <label>Categoría del Servicio</label>
+                <select id="calcCategory" onchange="updateCalc()">
+                    <option value="academico">📚 Trabajo Académico / Universidad</option>
+                    <option value="streaming">🎬 Combo Cuentas Streaming</option>
+                    <option value="web">💻 Desarrollo Web Personalizado</option>
+                </select>
+            </div>
+
+            <div id="calcOptionsAcademico">
+                <div class="form-group">
+                    <label>Tipo de Trabajo</label>
+                    <select id="calcTaskType" onchange="updateCalc()">
+                        <option value="7">Tarea Simple / Cuestionario (Desde S/ 7)</option>
+                        <option value="15">Monografía / Ensayo (Desde S/ 15)</option>
+                        <option value="12">Diapositivas PPT (Desde S/ 12)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Nivel de Urgencia</label>
+                    <select id="calcUrgency" onchange="updateCalc()">
+                        <option value="1">Normal (24 - 48 horas)</option>
+                        <option value="1.3">Express (&lt; 12 horas) +30%</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="calc-result-box">
+                <span style="font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; font-weight: 700;">Estimación Total</span>
+                <div class="calc-result-price" id="calcPriceDisplay">S/ 7.00</div>
+                <button onclick="sendCalcToWsp()" class="btn-tg" style="background: var(--wsp-color); border: none; width: 100%; padding: 10px; font-size: 0.9rem;">
+                    <i class="fa-brands fa-whatsapp"></i> Solicitar este Pedido
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL MUESTRA REPORTE DEMO (NOVEDAD 2) -->
+    <div class="modal-overlay" id="sampleModal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeSampleModal()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-title"><i class="fa-solid fa-shield-halved" style="color:var(--accent-color);"></i> Vista Previa de Formato OSINT</div>
+            
+            <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 12px;">
+                Los reportes emitidos por ROCKET se entregan en formato de alta resolución digital, de manera 100% confidencial:
+            </p>
+
+            <div class="sample-report-mockup">
+                <div style="font-size:0.75rem; color: #38bdf8; font-weight: 800; margin-bottom: 8px;">[ DEMO REPORT ] - CONSULTA VERIFICADA</div>
+                <div class="blurred-line" style="width: 80%;"></div>
+                <div class="blurred-line" style="width: 60%;"></div>
+                <div class="blurred-line" style="width: 90%;"></div>
+                <div class="blurred-line" style="width: 40%;"></div>
+                <div style="font-size:0.7rem; color: #475569; text-align: right; margin-top: 10px;">ID UNICO: #RCK-98231-PERU</div>
+            </div>
+
+            <div style="margin-top: 15px;">
+                <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg" style="padding: 12px; font-size: 0.9rem;">
+                    <i class="fa-brands fa-telegram"></i> Solicitar Consulta Real Ahora
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE COTIZACIÓN GUIADA UNIVERSITARIA -->
     <div class="modal-overlay" id="quoteModal">
         <div class="modal-card">
             <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
@@ -2153,6 +2489,15 @@
         </div>
     </div>
 
+    <!-- NOTIFICACIÓN DE PRUEBA SOCIAL EN VIVO -->
+    <div class="social-proof-toast hidden" id="socialToast">
+        <div class="toast-icon"><i class="fa-solid fa-circle-check"></i></div>
+        <div class="toast-text" id="socialToastText">
+            Nuevo pedido recibido
+            <span>Hace 2 min desde Lima</span>
+        </div>
+    </div>
+
     <!-- BOTONES FLOTANTES (FAB) -->
     <div class="fab-container">
         <button class="fab-btn fab-top" id="scrollTopBtn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
@@ -2162,16 +2507,14 @@
     </div>
 
     <script>
-        // PROTECCIÓN ANTI-CLICKJACKING & IFRAME (SEGURO PARA IFRAMES Y PREVIEWS)
+        /* PROTECCIÓN ANTI-CLICKJACKING & IFRAME */
         try {
             if (window.top !== window.self && window.top.location.host === window.self.location.host) {
                 window.top.location = window.self.location;
             }
-        } catch (e) {
-            // Ignorar restricciones de origen cruzado en entorno de vista previa / sandbox
-        }
+        } catch (e) {}
 
-        // DESACTIVAR MENÚ CONTEXTUAL E INSPECTOR
+        /* DESACTIVAR INSPECTOR & MENÚ CONTEXTUAL */
         document.addEventListener('contextmenu', e => e.preventDefault());
         document.addEventListener('keydown', e => {
             if (e.keyCode === 123 || (e.ctrlKey && e.shiftKey && [73, 74, 67].includes(e.keyCode)) || (e.ctrlKey && [85, 83].includes(e.keyCode))) {
@@ -2179,20 +2522,13 @@
             }
         });
 
-        // RATE LIMITER CLIENTE (PROTECCIÓN CONTRA SPAM / ATAGUES DE BOT)
-        const requestTracker = {
-            lastTime: 0,
-            count: 0
-        };
-
+        /* RATE LIMITER ANTI-DDoS Y ANTI-SPAM */
+        const requestTracker = { lastTime: 0, count: 0 };
         function checkRateLimit() {
             const now = Date.now();
             if (now - requestTracker.lastTime < 1000) {
                 requestTracker.count++;
-                if (requestTracker.count > 10) {
-                    console.warn("Demasiadas peticiones en poco tiempo.");
-                    return false;
-                }
+                if (requestTracker.count > 10) return false;
             } else {
                 requestTracker.lastTime = now;
                 requestTracker.count = 1;
@@ -2200,16 +2536,10 @@
             return true;
         }
 
-        // SANITIZADOR XSS
+        /* SANITIZADOR XSS */
         function sanitizeInput(str) {
             return String(str).replace(/[&<>"']/g, function(m) {
-                return {
-                    '&': '&amp;',
-                    '<': '&lt;',
-                    '>': '&gt;',
-                    '"': '&quot;',
-                    "'": '&#039;'
-                }[m];
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
             });
         }
 
@@ -2217,6 +2547,9 @@
             const loader = document.getElementById('loader');
             loader.style.opacity = '0';
             setTimeout(() => { loader.style.visibility = 'hidden'; }, 400);
+
+            // Iniciar notificaciones de prueba social en vivo
+            initSocialProofToasts();
         });
 
         window.addEventListener('scroll', () => {
@@ -2293,10 +2626,8 @@
 
             const osintChipsBar = document.getElementById('osintChipsBar');
             const streamingChipsBar = document.getElementById('streamingChipsBar');
-
             const isStreamingType = streamingCategories.includes(category);
 
-            // SEPARAR VISUALMENTE LOS CHIPS PARA EVITAR MEZCLAS
             if (isStreamingType) {
                 osintChipsBar.classList.add('hidden');
                 streamingChipsBar.classList.remove('hidden');
@@ -2320,11 +2651,9 @@
                 });
             }
 
-            // MOSTRAR U OCULTAR TARJETAS SÓLO SEGÚN SU SECCIÓN Y CATEGORÍA
             const items = document.querySelectorAll('#servicesGrid .service-item');
             items.forEach(item => {
                 const itemCat = item.getAttribute('data-category');
-                
                 if (category === 'ALL') {
                     if (!streamingCategories.includes(itemCat)) {
                         item.classList.remove('hidden');
@@ -2366,16 +2695,71 @@
             showView('uniQuoteView');
         }
 
-        function openModalForUni() {
-            document.getElementById('quoteModal').classList.add('active');
-        }
-
+        function openModalForUni() { document.getElementById('quoteModal').classList.add('active'); }
         function openModalForTask(taskType) {
             document.getElementById('modalType').value = taskType;
             document.getElementById('quoteModal').classList.add('active');
         }
-
         function closeModal() { document.getElementById('quoteModal').classList.remove('active'); }
+
+        /* LÓGICA DEL COTIZADOR INTERACTIVO */
+        function openCalcModal() { document.getElementById('calcModal').classList.add('active'); updateCalc(); }
+        function closeCalcModal() { document.getElementById('calcModal').classList.remove('active'); }
+
+        function updateCalc() {
+            const cat = document.getElementById('calcCategory').value;
+            const taskVal = parseFloat(document.getElementById('calcTaskType').value) || 7;
+            const urgVal = parseFloat(document.getElementById('calcUrgency').value) || 1;
+
+            let total = 0;
+            if (cat === 'academico') {
+                total = taskVal * urgVal;
+            } else if (cat === 'streaming') {
+                total = 18.00;
+            } else {
+                total = 25.00;
+            }
+
+            document.getElementById('calcPriceDisplay').textContent = 'S/ ' + total.toFixed(2);
+        }
+
+        function sendCalcToWsp() {
+            const cat = document.getElementById('calcCategory').value;
+            const total = document.getElementById('calcPriceDisplay').textContent;
+            const text = `Hola!%20Realic%C3%A9%20una%20cotizaci%C3%B3n%20en%20su%20web%20para%20${encodeURIComponent(cat)}%20por%20un%20monto%20estimado%20de%20${encodeURIComponent(total)}.%20%C2%BFMe%20pueden%20atender?`;
+            window.open(`https://wa.me/51931309889?text=${text}`, '_blank');
+            closeCalcModal();
+        }
+
+        /* LÓGICA DE DEMO/MUESTRA DE REPORTES */
+        function openSampleModal(type) { document.getElementById('sampleModal').classList.add('active'); }
+        function closeSampleModal() { document.getElementById('sampleModal').classList.remove('active'); }
+
+        /* PRUEBA SOCIAL EN VIVO - NOTIFICACIONES ROTATIVAS */
+        const mockSocialEvents = [
+            { text: "Consulta RENIEC solicitada", location: "Hace 2 min desde Lima" },
+            { text: "Suscripción Disney Premium activada", location: "Hace 5 min desde Arequipa" },
+            { text: "Trabajo UTP Cotizado con éxito", location: "Hace 8 min desde Trujillo" },
+            { text: "Consulta SUNAT Verificada", location: "Hace 12 min desde Cusco" }
+        ];
+
+        function initSocialProofToasts() {
+            let index = 0;
+            const toast = document.getElementById('socialToast');
+            const toastText = document.getElementById('socialToastText');
+
+            setInterval(() => {
+                const ev = mockSocialEvents[index];
+                toastText.innerHTML = `${ev.text}<span>${ev.location}</span>`;
+                toast.classList.remove('hidden');
+
+                setTimeout(() => {
+                    toast.classList.add('hidden');
+                }, 4000);
+
+                index = (index + 1) % mockSocialEvents.length;
+            }, 12000);
+        }
 
         function sendFormattedTg() {
             if (!checkRateLimit()) return;
