@@ -1310,6 +1310,28 @@
         .hidden {
             display: none !important;
         }
+
+        /* --- INICIO ESTILOS K --- */
+        .fab-k { background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%); animation: heartbeat 1.5s infinite; font-weight: 900; font-family: 'Segoe UI', sans-serif; color: white;}
+        @keyframes heartbeat { 0% { transform: scale(1); } 15% { transform: scale(1.15); } 30% { transform: scale(1); } 45% { transform: scale(1.15); } 60% { transform: scale(1); } }
+        #kOverlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #0b0f19, #1a1025); z-index: 9999; display: none; overflow-y: auto; color: white; padding: 40px 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .k-container { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; text-align: center;}
+        .k-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px; }
+        .k-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 117, 140, 0.2); border-radius: 20px; padding: 30px; backdrop-filter: blur(12px); box-shadow: 0 8px 32px rgba(255, 117, 140, 0.1); transition: transform 0.4s, border-color 0.4s; line-height: 1.7; text-align: left; }
+        .k-card:hover { transform: translateY(-8px); border-color: #ff7eb3; box-shadow: 0 12px 40px rgba(255, 117, 140, 0.25); }
+        .k-card-title { color: #ff7eb3; font-weight: 800; margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; }
+        .game-board { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 30px auto 60px; max-width: 350px; }
+        .game-card { background: rgba(255, 255, 255, 0.05); border-radius: 12px; height: 80px; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; cursor: pointer; transition: transform 0.4s, background 0.3s; border: 1px solid rgba(255,255,255,0.1); transform-style: preserve-3d; }
+        .game-card.flipped { background: rgba(255, 117, 140, 0.15); transform: rotateY(180deg); border-color: #ff7eb3; }
+        .game-card .emoji { transform: rotateY(180deg); display: none; }
+        .game-card.flipped .emoji { display: block; }
+        .game-card.matched { background: rgba(255, 117, 140, 0.3); border-color: #ff758c; transform: rotateY(180deg) scale(0.95); opacity: 0.8; cursor: default; }
+        .k-close { position: fixed; top: 25px; right: 25px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: white; font-size: 1.5rem; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; z-index: 10000; transition: background 0.3s; display: flex; align-items: center; justify-content: center; }
+        .k-close:hover { background: rgba(255, 117, 140, 0.5); }
+        .heart-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; overflow: hidden; }
+        .heart { position: absolute; bottom: -20px; color: #ff758c; opacity: 0.4; animation: floatUp linear infinite; text-shadow: 0 0 10px rgba(255,117,140,0.5); }
+        @keyframes floatUp { to { transform: translateY(-120vh) rotate(360deg); } }
+        /* --- FIN ESTILOS K --- */
     </style>
 </head>
 <body>
@@ -2471,10 +2493,53 @@
 
     <div class="fab-container">
         <button class="fab-btn fab-top" id="scrollTopBtn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+        <button class="fab-btn fab-k" onclick="openKSurprise()" title="Para K."><i class="fa-solid fa-k"></i></button>
         <a href="https://t.me/Adolf3728" target="_blank" class="fab-btn fab-tg"><i class="fa-brands fa-telegram"></i></a>
         <a href="https://wa.me/51931309889" target="_blank" class="fab-btn fab-wsp"><i class="fa-brands fa-whatsapp"></i></a>
         <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="fab-btn fab-ig"><i class="fa-brands fa-instagram"></i></a>
     </div>
+
+    <!-- INICIO SORPRESA K -->
+    <audio id="kAudio" src="Mike Bahía - Buscándote (Audio Oficial).mp3" loop></audio>
+    <div id="kOverlay">
+        <button class="k-close" onclick="closeKSurprise()"><i class="fa-solid fa-xmark"></i></button>
+        <div class="heart-bg" id="kHearts"></div>
+        <div class="k-container">
+            <h1 style="color: #ff7eb3; margin-bottom: 15px; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 900; letter-spacing: 1px; text-shadow: 0 0 20px rgba(255,117,140,0.4);">Para una persona muy especial ✨</h1>
+            <p style="color: #cbd5e1; margin-bottom: 45px; font-size: 1.1rem;">Quería compartir contigo estos pequeños detalles...</p>
+            
+            <div class="k-grid">
+                <div class="k-card">
+                    <div class="k-card-title"><i class="fa-solid fa-star"></i> Eres Arte</div>
+                    Se que a veces dudas de ti, que no te sientes bonita y hasta piensas que no eres suficiente, pero te equivocas, por qué tú eres hermosa, una verdadera obra de arte, un universo que aún no ha sido explorado, un hermoso atardecer de esos que te dejan sin aliento y no puedes dejar de ver.
+                </div>
+                <div class="k-card">
+                    <div class="k-card-title"><i class="fa-solid fa-dove"></i> Tranquilidad</div>
+                    Yo he encontrado la paz el día en que te escuché reír, donde el alma encontró tranquilidad y el corazón empezó a vivir.
+                </div>
+                <div class="k-card">
+                    <div class="k-card-title"><i class="fa-solid fa-mug-hot"></i> Ironía</div>
+                    Qué ironía que, aunque nunca me gustó el café, me enamoré del café de tus ojos.
+                </div>
+                <div class="k-card">
+                    <div class="k-card-title"><i class="fa-solid fa-eye"></i> Tu Mirada</div>
+                    Tus ojos me atraparon de una forma que ninguna palabra puede describir. No importa su color ni su forma, porque lo que realmente me cautiva es el cielo que encontré dentro de ellos. En tu mirada descubrí un universo al que siempre quiero regresar.
+                </div>
+            </div>
+
+            <h2 style="color: #ff7eb3; margin-top: 60px; font-size: 1.8rem; font-weight: 800;">Un pequeño juego 🎮</h2>
+            <p style="color: #94a3b8; margin-top: 8px;">Encuentra las parejas</p>
+            <div class="game-board" id="memoryGame"></div>
+        </div>
+
+        <!-- Custom Notification Modal para cuando termine el juego (sin usar alert) -->
+        <div id="kAlert" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:rgba(255, 117, 140, 0.95); padding:30px; border-radius:20px; font-weight:800; font-size:1.5rem; z-index:10001; box-shadow:0 10px 40px rgba(0,0,0,0.6); text-align:center; color:white;">
+            ¡Completaste el juego! ✨
+            <br>
+            <button onclick="document.getElementById('kAlert').style.display='none'" style="margin-top:20px; padding:10px 25px; background:white; color:#ff758c; border:none; border-radius:12px; font-size:1.1rem; cursor:pointer; font-weight:bold; transition:transform 0.2s;">Genial 💖</button>
+        </div>
+    </div>
+    <!-- FIN SORPRESA K -->
 
     <script>
         
@@ -2771,6 +2836,83 @@
             window.open(`https://wa.me/51931309889?text=${text}`, '_blank');
             closeModal();
         }
+
+        // --- LOGICA SORPRESA K ---
+        let heartInterval;
+        function openKSurprise() {
+            document.getElementById('kOverlay').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            const audio = document.getElementById('kAudio');
+            audio.play().catch(e => console.log("Reproducción automática bloqueada por el navegador. Haga clic de nuevo en el overlay."));
+            startHearts();
+            initGame();
+        }
+        function closeKSurprise() {
+            document.getElementById('kOverlay').style.display = 'none';
+            document.body.style.overflow = 'auto';
+            const audio = document.getElementById('kAudio');
+            audio.pause();
+            audio.currentTime = 0;
+            clearInterval(heartInterval);
+            document.getElementById('kHearts').innerHTML = '';
+        }
+        function startHearts() {
+            const container = document.getElementById('kHearts');
+            heartInterval = setInterval(() => {
+                if(document.getElementById('kOverlay').style.display !== 'block') return;
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '<i class="fa-solid fa-heart"></i>';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                heart.style.fontSize = (Math.random() * 15 + 10) + 'px';
+                container.appendChild(heart);
+                setTimeout(() => heart.remove(), 8000);
+            }, 400);
+        }
+        const emojis = ['✨', '🌸', '☕', '🎨', '🌌', '🦋', '🎵', '💫'];
+        let gameCards = [];
+        let flipped = [];
+        let matched = 0;
+        function initGame() {
+            gameCards = [...emojis, ...emojis].sort(() => Math.random() - 0.5);
+            const board = document.getElementById('memoryGame');
+            board.innerHTML = '';
+            flipped = [];
+            matched = 0;
+            gameCards.forEach((emoji, index) => {
+                const card = document.createElement('div');
+                card.className = 'game-card';
+                card.dataset.emoji = emoji;
+                card.innerHTML = `<span class="emoji">${emoji}</span><span class="back"><i class="fa-solid fa-question" style="color: rgba(255,255,255,0.2); font-size:1.5rem;"></i></span>`;
+                card.onclick = () => flipCard(card);
+                board.appendChild(card);
+            });
+        }
+        function flipCard(card) {
+            if (flipped.length < 2 && !card.classList.contains('flipped') && !card.classList.contains('matched')) {
+                card.classList.add('flipped');
+                card.querySelector('.back').style.display = 'none';
+                flipped.push(card);
+                if (flipped.length === 2) setTimeout(checkMatch, 700);
+            }
+        }
+        function checkMatch() {
+            const [c1, c2] = flipped;
+            if (c1.dataset.emoji === c2.dataset.emoji) {
+                c1.classList.add('matched');
+                c2.classList.add('matched');
+                matched += 2;
+                if(matched === gameCards.length) setTimeout(() => document.getElementById('kAlert').style.display='block', 400);
+            } else {
+                c1.classList.remove('flipped');
+                c2.classList.remove('flipped');
+                c1.querySelector('.back').style.display = 'inline';
+                c2.querySelector('.back').style.display = 'inline';
+            }
+            flipped = [];
+        }
+        // --- FIN LOGICA SORPRESA K ---
     </script>
 </body>
 </html>
