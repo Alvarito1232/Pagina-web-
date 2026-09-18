@@ -1613,6 +1613,160 @@
         .hidden {
             display: none !important;
         }
+
+        /* ==========================================================================
+           RESPONSIVIDAD FLUIDA Y OPTIMIZACIÓN PARA MÓVILES Y LAPTOPS
+           ========================================================================== */
+        @media (max-width: 768px) {
+            header {
+                padding: 0 10px;
+            }
+            .brand-logo {
+                font-size: 1.05rem;
+                gap: 6px;
+            }
+            .header-actions {
+                gap: 6px;
+            }
+            .quick-calc-badge, .btn-kimberly {
+                padding: 5px 9px;
+                font-size: 0.72rem;
+                gap: 4px;
+            }
+            main {
+                padding: 16px 10px;
+            }
+            .hero-banner-main {
+                padding: 28px 14px;
+                min-height: 180px;
+                border-radius: 18px;
+                margin-bottom: 18px;
+            }
+            .hero-title-text {
+                font-size: 2rem;
+            }
+            .hero-subtitle-text {
+                font-size: 0.85rem;
+                line-height: 1.4;
+            }
+            .stats-counter-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                margin-bottom: 22px;
+            }
+            .stat-box {
+                padding: 12px 8px;
+                border-radius: 14px;
+            }
+            .stat-number {
+                font-size: 1.4rem;
+            }
+            .stat-label {
+                font-size: 0.68rem;
+            }
+            .main-services-grid, .grid, .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .service-cover-card {
+                padding: 18px 14px;
+                border-radius: 16px;
+            }
+            .uni-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+            }
+            .uni-card {
+                padding: 10px 4px;
+                border-radius: 12px;
+            }
+            .uni-badge {
+                width: 44px;
+                height: 44px;
+                margin-bottom: 6px;
+            }
+            .uni-card-title {
+                font-size: 0.68rem;
+            }
+
+            /* OPTIMIZACIÓN ESPACIOSA PARA EL MODAL DE KIMBERLY EN MÓVIL */
+            .kimberly-modal-card {
+                padding: 20px 12px;
+                border-radius: 20px;
+                width: 96%;
+                max-height: 92vh;
+            }
+            .kimberly-avatar {
+                width: 65px;
+                height: 65px;
+                font-size: 1.8rem;
+                margin-bottom: 8px;
+            }
+            .kimberly-title {
+                font-size: 1.4rem;
+            }
+            .kimberly-subtitle {
+                font-size: 0.8rem;
+                margin-bottom: 14px;
+            }
+            .kimberly-tabs {
+                gap: 6px;
+                margin-bottom: 14px;
+            }
+            .kim-tab-btn {
+                padding: 6px 11px;
+                font-size: 0.74rem;
+                border-radius: 16px;
+            }
+            .poem-card, .game-box, .kimberly-phrase-card {
+                padding: 12px 10px;
+                border-radius: 14px;
+                margin-bottom: 12px;
+            }
+            .poem-text {
+                font-size: 0.83rem;
+                line-height: 1.5;
+            }
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+            .secret-envelope {
+                padding: 12px 6px;
+            }
+            .secret-envelope i {
+                font-size: 1.5rem;
+            }
+            #catcherCanvas {
+                height: 170px;
+            }
+            .fab-container {
+                bottom: 14px;
+                right: 14px;
+                gap: 8px;
+            }
+            .fab-btn {
+                width: 42px;
+                height: 42px;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .header-actions {
+                gap: 4px;
+            }
+            .quick-calc-badge, .btn-kimberly {
+                padding: 5px 7px;
+                font-size: 0.68rem;
+            }
+            .uni-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .kimberly-title {
+                font-size: 1.25rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -3137,7 +3291,7 @@
             if (!canvas) return;
             const ctx = canvas.getContext('2d');
             canvas.width = canvas.parentElement.clientWidth || 300;
-            canvas.height = 220;
+            canvas.height = window.innerWidth < 640 ? 170 : 220;
 
             fallingHearts = [];
             for (let i = 0; i < 6; i++) {
