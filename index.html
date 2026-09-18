@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <title>ROCKET - Plataforma Integral</title>
+
+    <!-- FAVICON DEDICADO 🚀 -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
             --bg-primary: #0b0f19;
@@ -56,6 +63,25 @@
             background-color: var(--bg-primary);
             color: var(--text-primary);
             min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* CUSTOM MODERN SCROLLBAR - MEJORA FOTO 2 */
+        ::-webkit-scrollbar {
+            height: 6px;
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4f46e5;
         }
 
         #loader {
@@ -525,13 +551,14 @@
             color: #6366f1;
         }
 
+        /* BARRA DE CHIPS SEPARADAS PARA EVITAR MEZCLA */
         .category-filter-bar {
             display: flex;
             gap: 8px;
             overflow-x: auto;
-            padding-bottom: 12px;
+            padding-bottom: 10px;
             margin-bottom: 20px;
-            scrollbar-width: thin;
+            scroll-behavior: smooth;
         }
 
         .filter-chip {
@@ -544,12 +571,14 @@
             font-weight: 700;
             cursor: pointer;
             white-space: nowrap;
+            transition: all 0.2s ease;
         }
 
         .filter-chip.active, .filter-chip:hover {
             background: var(--accent-color);
             color: #ffffff;
             border-color: var(--accent-color);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
         }
 
         .trabajos-info-container {
@@ -1466,18 +1495,33 @@
                 </div>
             </div>
 
-            <!-- Chips de Filtrado Superior -->
-            <div class="category-filter-bar">
+            <!-- CHIPS EXCLUSIVOS DE OSINT -->
+            <div class="category-filter-bar" id="osintChipsBar">
                 <button class="filter-chip active" onclick="showCategory('ALL', this)">Todos OSINT</button>
-                <button class="filter-chip" onclick="showCategory('ALL_STREAMING', this)">Ver Todo Streaming</button>
-                <button class="filter-chip" onclick="showCategory('STREAMING_PREMIUM', this)">Streaming</button>
-                <button class="filter-chip" onclick="showCategory('HERRAMIENTAS_PRO', this)">Herramientas Pro</button>
-                <button class="filter-chip" onclick="showCategory('DEPORTES', this)">Deportes</button>
-                <button class="filter-chip" onclick="showCategory('ANIME_SPECIAL', this)">Anime & Especial</button>
                 <button class="filter-chip" onclick="showCategory('RENIEC', this)">RENIEC</button>
                 <button class="filter-chip" onclick="showCategory('SUNAT', this)">SUNAT</button>
-                <button class="filter-chip" onclick="showCategory('OSIPTEL', this)">OSIPTEL</button>
+                <button class="filter-chip" onclick="showCategory('PODER JUDICIAL', this)">PODER JUDICIAL</button>
                 <button class="filter-chip" onclick="showCategory('MIGRACIONES', this)">MIGRACIONES</button>
+                <button class="filter-chip" onclick="showCategory('OSIPTEL', this)">OSIPTEL</button>
+                <button class="filter-chip" onclick="showCategory('FISCALÍA', this)">FISCALÍA</button>
+                <button class="filter-chip" onclick="showCategory('MINEDU', this)">MINEDU</button>
+                <button class="filter-chip" onclick="showCategory('SENTINEL', this)">SENTINEL</button>
+                <button class="filter-chip" onclick="showCategory('SUNEDU', this)">SUNEDU</button>
+                <button class="filter-chip" onclick="showCategory('MTC', this)">MTC</button>
+                <button class="filter-chip" onclick="showCategory('INPE', this)">INPE</button>
+                <button class="filter-chip" onclick="showCategory('PNP', this)">PNP</button>
+                <button class="filter-chip" onclick="showCategory('SUNARP', this)">SUNARP</button>
+                <button class="filter-chip" onclick="showCategory('Bloqueo', this)">Bloqueos</button>
+                <button class="filter-chip" onclick="showCategory('VIRTUALES', this)">Virtuales SMS</button>
+            </div>
+
+            <!-- CHIPS EXCLUSIVOS DE STREAMING & PLATAFORMAS PRO -->
+            <div class="category-filter-bar hidden" id="streamingChipsBar">
+                <button class="filter-chip active" onclick="showCategory('ALL_STREAMING', this)">Ver Todo Streaming & Pro</button>
+                <button class="filter-chip" onclick="showCategory('STREAMING_PREMIUM', this)">Streaming Premium</button>
+                <button class="filter-chip" onclick="showCategory('HERRAMIENTAS_PRO', this)">Herramientas Pro</button>
+                <button class="filter-chip" onclick="showCategory('DEPORTES', this)">Deportes en Vivo</button>
+                <button class="filter-chip" onclick="showCategory('ANIME_SPECIAL', this)">Anime & Especial</button>
             </div>
 
             <div class="category-header">
@@ -1489,7 +1533,6 @@
                 
                 <!-- ================= CATEGORÍAS STREAMING / HERRAMIENTAS / DEPORTES / ANIME ================= -->
                 
-                <!-- STREAMING PREMIUM -->
                 <div class="card service-item" data-category="STREAMING_PREMIUM">
                     <div class="card-img-placeholder"><i class="fa-solid fa-tv fa-3x" style="color: #e50914;"></i></div>
                     <div class="card-body">
@@ -2090,7 +2133,7 @@
             
             <div class="form-group">
                 <label>Universidad / Colegio</label>
-                <input type="text" id="modalUni" placeholder="Ej: UNMSM, UTP, etc.">
+                <input type="text" id="modalUni" placeholder="Ej: UNMSM, UTP, etc." maxlength="80">
             </div>
 
             <div class="form-group">
@@ -2119,12 +2162,56 @@
     </div>
 
     <script>
+        // PROTECCIÓN ANTI-CLICKJACKING & IFRAME (SEGURO PARA IFRAMES Y PREVIEWS)
+        try {
+            if (window.top !== window.self && window.top.location.host === window.self.location.host) {
+                window.top.location = window.self.location;
+            }
+        } catch (e) {
+            // Ignorar restricciones de origen cruzado en entorno de vista previa / sandbox
+        }
+
+        // DESACTIVAR MENÚ CONTEXTUAL E INSPECTOR
         document.addEventListener('contextmenu', e => e.preventDefault());
         document.addEventListener('keydown', e => {
             if (e.keyCode === 123 || (e.ctrlKey && e.shiftKey && [73, 74, 67].includes(e.keyCode)) || (e.ctrlKey && [85, 83].includes(e.keyCode))) {
                 e.preventDefault();
             }
         });
+
+        // RATE LIMITER CLIENTE (PROTECCIÓN CONTRA SPAM / ATAGUES DE BOT)
+        const requestTracker = {
+            lastTime: 0,
+            count: 0
+        };
+
+        function checkRateLimit() {
+            const now = Date.now();
+            if (now - requestTracker.lastTime < 1000) {
+                requestTracker.count++;
+                if (requestTracker.count > 10) {
+                    console.warn("Demasiadas peticiones en poco tiempo.");
+                    return false;
+                }
+            } else {
+                requestTracker.lastTime = now;
+                requestTracker.count = 1;
+            }
+            return true;
+        }
+
+        // SANITIZADOR XSS
+        function sanitizeInput(str) {
+            return String(str).replace(/[&<>"']/g, function(m) {
+                return {
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    '"': '&quot;',
+                    "'": '&#039;'
+                }[m];
+            });
+        }
 
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
@@ -2160,6 +2247,7 @@
         }
 
         function showView(viewId) {
+            if (!checkRateLimit()) return;
             document.querySelectorAll('.view-section').forEach(view => view.classList.add('hidden'));
             const targetView = document.getElementById(viewId);
             if (targetView) targetView.classList.remove('hidden');
@@ -2192,20 +2280,35 @@
             'VIRTUALES': 'Números Virtuales SMS'
         };
 
-        const streamingCategories = ['STREAMING_PREMIUM', 'HERRAMIENTAS_PRO', 'DEPORTES', 'ANIME_SPECIAL'];
+        const streamingCategories = ['STREAMING_PREMIUM', 'HERRAMIENTAS_PRO', 'DEPORTES', 'ANIME_SPECIAL', 'ALL_STREAMING'];
 
         function showCategory(category, element = null) {
+            if (!checkRateLimit()) return;
             showView('servicesView');
             
-            // Actualizar Título
             const titleElem = document.getElementById('categoryTitle');
             if (titleElem) {
                 titleElem.textContent = categoryTitles[category] || ('Servicios de ' + category);
             }
 
-            // Sincronizar / Activar chip visual en la barra superior
-            const chips = document.querySelectorAll('.category-filter-bar .filter-chip');
+            const osintChipsBar = document.getElementById('osintChipsBar');
+            const streamingChipsBar = document.getElementById('streamingChipsBar');
+
+            const isStreamingType = streamingCategories.includes(category);
+
+            // SEPARAR VISUALMENTE LOS CHIPS PARA EVITAR MEZCLAS
+            if (isStreamingType) {
+                osintChipsBar.classList.add('hidden');
+                streamingChipsBar.classList.remove('hidden');
+            } else {
+                osintChipsBar.classList.remove('hidden');
+                streamingChipsBar.classList.add('hidden');
+            }
+
+            const activeBar = isStreamingType ? streamingChipsBar : osintChipsBar;
+            const chips = activeBar.querySelectorAll('.filter-chip');
             chips.forEach(chip => chip.classList.remove('active'));
+
             if (element) {
                 element.classList.add('active');
             } else {
@@ -2217,20 +2320,18 @@
                 });
             }
 
-            // Ocultar / Mostrar tarjetas según categoría
+            // MOSTRAR U OCULTAR TARJETAS SÓLO SEGÚN SU SECCIÓN Y CATEGORÍA
             const items = document.querySelectorAll('#servicesGrid .service-item');
             items.forEach(item => {
                 const itemCat = item.getAttribute('data-category');
                 
                 if (category === 'ALL') {
-                    // Muestra únicamente consultas OSINT / Servicios
                     if (!streamingCategories.includes(itemCat)) {
                         item.classList.remove('hidden');
                     } else {
                         item.classList.add('hidden');
                     }
                 } else if (category === 'ALL_STREAMING') {
-                    // Muestra todo lo de la sección Plataformas & Cuentas Pro
                     if (streamingCategories.includes(itemCat)) {
                         item.classList.remove('hidden');
                     } else {
@@ -2245,26 +2346,22 @@
         }
 
         function filterMenu() {
-            const input = document.getElementById('searchInput').value.toLowerCase();
+            const input = sanitizeInput(document.getElementById('searchInput').value.toLowerCase());
             const links = document.querySelectorAll('.menu-list .menu-item');
             links.forEach(item => {
                 const text = item.textContent.toLowerCase();
-                if (text.includes(input)) {
-                    item.style.display = '';
-                } else {
-                    item.style.display = 'none';
-                }
+                item.style.display = text.includes(input) ? '' : 'none';
             });
         }
 
         function openUniQuote(uniName) {
-            document.getElementById('selectedUniTitle').textContent = 'Atención Especial: ' + uniName;
-            document.getElementById('selectedUniName').textContent = uniName;
+            const safeUni = sanitizeInput(uniName);
+            document.getElementById('selectedUniTitle').textContent = 'Atención Especial: ' + safeUni;
+            document.getElementById('selectedUniName').textContent = safeUni;
             
-            // Configurar WhatsApp dinámico para Universidad
             const wspBtn = document.getElementById('uniWspBtn');
             if (wspBtn) {
-                wspBtn.href = `https://wa.me/51931309889?text=Hola,%20deseo%20cotizar%20un%20trabajo%20de%20la%20${encodeURIComponent(uniName)}`;
+                wspBtn.href = `https://wa.me/51931309889?text=Hola,%20deseo%20cotizar%20un%20trabajo%20de%20la%20${encodeURIComponent(safeUni)}`;
             }
             showView('uniQuoteView');
         }
@@ -2281,16 +2378,18 @@
         function closeModal() { document.getElementById('quoteModal').classList.remove('active'); }
 
         function sendFormattedTg() {
-            const uni = document.getElementById('modalUni').value || 'No especificada';
-            const type = document.getElementById('modalType').value;
+            if (!checkRateLimit()) return;
+            const uni = sanitizeInput(document.getElementById('modalUni').value) || 'No especificada';
+            const type = sanitizeInput(document.getElementById('modalType').value);
             const text = `Hola!%20Deseo%20cotizar:%0A- Institución: ${encodeURIComponent(uni)}%0A- Tipo: ${encodeURIComponent(type)}`;
             window.open(`https://t.me/Adolf3728?text=${text}`, '_blank');
             closeModal();
         }
 
         function sendFormattedWsp() {
-            const uni = document.getElementById('modalUni').value || 'No especificada';
-            const type = document.getElementById('modalType').value;
+            if (!checkRateLimit()) return;
+            const uni = sanitizeInput(document.getElementById('modalUni').value) || 'No especificada';
+            const type = sanitizeInput(document.getElementById('modalType').value);
             const text = `Hola!%20Deseo%20cotizar:%0A- Institución: ${encodeURIComponent(uni)}%0A- Tipo: ${encodeURIComponent(type)}`;
             window.open(`https://wa.me/51931309889?text=${text}`, '_blank');
             closeModal();
