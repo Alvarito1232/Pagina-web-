@@ -29,7 +29,6 @@
             --card-hover: rgba(255, 255, 255, 0.12);
             --glass-bg: rgba(21, 28, 44, 0.82);
             --glass-border: rgba(255, 255, 255, 0.18);
-            /* TEXTURA Y FONDO PARA TARJETAS PEQUEÑAS (GAMPY 12) */
             --card-bg-texture: linear-gradient(135deg, rgba(21, 28, 44, 0.82), rgba(15, 23, 42, 0.88)), url('gampy 12.jpg') center/cover no-repeat, url('FONDO 1 TOTAL.jpg') center/cover no-repeat, url('fondo_nuevo.jpg') center/cover no-repeat;
         }
 
@@ -45,7 +44,6 @@
             --glass-bg: rgba(255, 255, 255, 0.88);
             --glass-border: rgba(0, 0, 0, 0.15);
             --accent-glow: rgba(99, 102, 241, 0.25);
-            /* TEXTURA MODO CLARO CON GAMPY 12 */
             --card-bg-texture: linear-gradient(135deg, rgba(255, 255, 255, 0.86), rgba(241, 245, 249, 0.92)), url('gampy 12.jpg') center/cover no-repeat, url('FONDO 1 TOTAL.jpg') center/cover no-repeat, url('fondo_nuevo.jpg') center/cover no-repeat;
         }
 
@@ -65,7 +63,6 @@
             scroll-behavior: smooth;
         }
 
-        /* FONDO PRINCIPAL CON MEJOR VISIBILIDAD DE "Fondo pagina web.jpg" */
         body {
             background: linear-gradient(rgba(11, 15, 25, 0.55), rgba(11, 15, 25, 0.70)), url('Fondo pagina web.jpg') center/cover no-repeat fixed, url('FONDO 1 TOTAL.jpg') center/cover no-repeat fixed, var(--bg-primary);
             color: var(--text-primary);
@@ -78,7 +75,6 @@
             background: linear-gradient(rgba(241, 245, 249, 0.55), rgba(241, 245, 249, 0.72)), url('Fondo pagina web.jpg') center/cover no-repeat fixed, url('FONDO 1 TOTAL.jpg') center/cover no-repeat fixed, var(--bg-primary);
         }
 
-        /* CUSTOM MODERN SCROLLBAR */
         ::-webkit-scrollbar {
             height: 6px;
             width: 6px;
@@ -407,7 +403,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* HERO BANNER CON BEBE 2.JPG */
         .hero-banner-main {
             position: relative;
             background: linear-gradient(135deg, rgba(11, 15, 25, 0.75), rgba(30, 41, 59, 0.82)), url('bebe 2.jpg') center 30%/cover no-repeat;
@@ -486,7 +481,6 @@
             color: #f1f5f9;
         }
 
-        /* CUADROS PEQUEÑOS DE ESTADÍSTICAS CON GAMPY 12 */
         .stats-counter-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -526,7 +520,6 @@
             letter-spacing: 0.6px;
         }
 
-        /* CUADROS PEQUEÑOS DE SERVICIOS CON GAMPY 12 */
         .main-services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -621,7 +614,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* DIAGRAMA OSINT CON GAMPY 12 */
         .diagram-container {
             background: linear-gradient(rgba(11, 15, 25, 0.80), rgba(11, 15, 25, 0.85)), url('gampy 12.jpg') center/cover no-repeat, url('FONDO 1 TOTAL.jpg') center/cover no-repeat;
             border: 1px solid var(--border-color);
@@ -665,7 +657,6 @@
             border: 1px solid rgba(255, 255, 255, 0.18);
         }
 
-        /* SECCIÓN UNIVERSIDADES Y COLEGIOS CON GAMPY 12 */
         .academic-section {
             background: linear-gradient(135deg, rgba(30, 41, 59, 0.85), rgba(15, 23, 42, 0.92)), url('gampy 12.jpg') center/cover no-repeat, url('FONDO 1 TOTAL.jpg') center/cover no-repeat;
             border: 1px solid var(--glass-border);
@@ -869,7 +860,6 @@
             gap: 20px;
         }
 
-        /* TARJETAS SECUNDARIAS DE SERVICIO (CON GAMPY 12) */
         .card {
             background: var(--card-bg-texture);
             border: 1px solid var(--border-color);
@@ -1020,7 +1010,6 @@
             margin-top: 20px;
         }
 
-        /* TARJETAS DE PRECIOS CON GAMPY 12 */
         .pricing-card {
             background: var(--card-bg-texture);
             border: 1px solid var(--border-color);
@@ -1514,7 +1503,6 @@
             <p class="hero-subtitle-text">Plataforma Integral de Servicios Digitales, Inteligencia OSINT & Soluciones Académicas</p>
         </div>
 
-        <!-- BANNERS DE IMPACTO CON GAMPY 12 -->
         <div class="stats-counter-grid">
             <div class="stat-box">
                 <div class="stat-number">+3,500</div>
@@ -1534,7 +1522,6 @@
             </div>
         </div>
 
-        <!-- 1. VISTA DE INICIO -->
         <div id="homeView" class="view-section">
 
             <div class="category-header" style="margin-top: 0;">
@@ -1542,7 +1529,6 @@
                 <span>Nuestros Servicios Principales</span>
             </div>
 
-            <!-- SERVICIOS PRINCIPALES CON GAMPY 12 -->
             <div class="main-services-grid">
                 <div class="service-cover-card" onclick="showView('trabajosView')">
                     <div class="service-cover-icon"><i class="fa-solid fa-graduation-cap"></i></div>
@@ -1572,7 +1558,6 @@
                     <div class="service-cover-btn">Ver Planes Web <i class="fa-solid fa-arrow-right"></i></div>
                 </div>
 
-                <!-- SOCIO DISNEY -->
                 <div class="service-cover-card disney-card" style="cursor: default;">
                     <span class="badge-partner">Socio / Aliado</span>
                     <div class="service-cover-icon" style="background: rgba(34, 158, 217, 0.2); color: #229ed9;">
@@ -1591,7 +1576,6 @@
                     </div>
                 </div>
 
-                <!-- STREAMING PREMIUM -->
                 <div class="service-cover-card" onclick="showCategory('STREAMING_PREMIUM')" style="cursor: pointer;">
                     <div class="service-cover-icon" style="color: #e50914;"><i class="fa-solid fa-film"></i></div>
                     <div class="service-cover-title">🎬 Streaming Premium</div>
@@ -1605,7 +1589,6 @@
                     <div class="service-cover-btn">Ver Cuentas de Streaming <i class="fa-solid fa-arrow-right"></i></div>
                 </div>
 
-                <!-- ENTRETENIMIENTO & ANIME -->
                 <div class="service-cover-card" onclick="showCategory('ANIME_SPECIAL')" style="cursor: pointer;">
                     <div class="service-cover-icon" style="color: #1ed760;"><i class="fa-solid fa-compact-disc"></i></div>
                     <div class="service-cover-title">🎭 Entretenimiento & Anime</div>
@@ -1618,7 +1601,6 @@
                     <div class="service-cover-btn">Ver Contenido Especializado <i class="fa-solid fa-arrow-right"></i></div>
                 </div>
 
-                <!-- HERRAMIENTAS PRO & SOFTWARE -->
                 <div class="service-cover-card" onclick="showCategory('HERRAMIENTAS_PRO')" style="cursor: pointer;">
                     <div class="service-cover-icon" style="color: #6366f1;"><i class="fa-solid fa-laptop-code"></i></div>
                     <div class="service-cover-title">🛠 Herramientas Pro & Software</div>
@@ -1632,7 +1614,6 @@
                     <div class="service-cover-btn">Ver Herramientas Pro <i class="fa-solid fa-arrow-right"></i></div>
                 </div>
 
-                <!-- DEPORTES EN VIVO -->
                 <div class="service-cover-card" onclick="showCategory('DEPORTES')" style="cursor: pointer;">
                     <div class="service-cover-icon" style="color: #38bdf8;"><i class="fa-solid fa-futbol"></i></div>
                     <div class="service-cover-title">⚽ Deportes en Vivo</div>
@@ -1646,7 +1627,6 @@
                 </div>
             </div>
 
-            <!-- MÓDULO DIAGRAMA OSINT CON GAMPY 12 -->
             <div class="diagram-container">
                 <h2 class="diagram-title">RED DE CONSULTAS E INTEGRACIÓN OSINT</h2>
                 <div class="diagram-img-wrapper">
@@ -1654,7 +1634,6 @@
                 </div>
             </div>
 
-            <!-- SECCIÓN UNIVERSIDADES Y COLEGIOS CON GAMPY 12 -->
             <div class="academic-section">
                 <div class="academic-header">
                     <h2>🎓 TRABAJOS UNIVERSITARIOS DE TODAS LAS UNIVERSIDADES Y COLEGIOS DEL PERÚ</h2>
@@ -1714,7 +1693,6 @@
             </div>
         </div>
 
-        <!-- VISTA DE COTIZACIÓN POR UNIVERSIDAD -->
         <div id="uniQuoteView" class="view-section hidden">
             <div class="category-header">
                 <i class="fa-solid fa-graduation-cap"></i>
@@ -1751,7 +1729,6 @@
             </div>
         </div>
 
-        <!-- 2. VISTA DE SERVICIOS / OSINT & STREAMING -->
         <div id="servicesView" class="view-section hidden">
             <div class="osint-info-container">
                 <div class="badge-confidential">
@@ -1764,7 +1741,6 @@
                 </div>
             </div>
 
-            <!-- CHIPS EXCLUSIVOS DE OSINT -->
             <div class="category-filter-bar" id="osintChipsBar">
                 <button class="filter-chip active" onclick="showCategory('ALL', this)">Todos OSINT</button>
                 <button class="filter-chip" onclick="showCategory('RENIEC', this)">RENIEC</button>
@@ -1784,7 +1760,6 @@
                 <button class="filter-chip" onclick="showCategory('VIRTUALES', this)">Virtuales SMS</button>
             </div>
 
-            <!-- CHIPS EXCLUSIVOS DE STREAMING & PLATAFORMAS PRO -->
             <div class="category-filter-bar hidden" id="streamingChipsBar">
                 <button class="filter-chip active" onclick="showCategory('ALL_STREAMING', this)">Ver Todo Streaming & Pro</button>
                 <button class="filter-chip" onclick="showCategory('STREAMING_PREMIUM', this)">Streaming Premium</button>
@@ -1799,8 +1774,6 @@
             </div>
 
             <div class="grid" id="servicesGrid">
-                
-                <!-- STREAMING PREMIUM (CON GAMPY 12) -->
                 <div class="card service-item" data-category="STREAMING_PREMIUM">
                     <div class="card-img-placeholder">
                         <i class="fa-solid fa-tv fa-3x" style="color: #e50914;"></i>
@@ -1878,7 +1851,6 @@
                     </div>
                 </div>
 
-                <!-- HERRAMIENTAS PRO -->
                 <div class="card service-item" data-category="HERRAMIENTAS_PRO">
                     <div class="card-img-placeholder"><i class="fa-solid fa-palette fa-3x" style="color: #00c4cc;"></i></div>
                     <div class="card-body">
@@ -1954,7 +1926,6 @@
                     </div>
                 </div>
 
-                <!-- DEPORTES EN VIVO -->
                 <div class="card service-item" data-category="DEPORTES">
                     <div class="card-img-placeholder"><i class="fa-solid fa-futbol fa-3x" style="color: #0284c7;"></i></div>
                     <div class="card-body">
@@ -2000,7 +1971,6 @@
                     </div>
                 </div>
 
-                <!-- CONTENIDO ESPECIALIZADO / ANIME -->
                 <div class="card service-item" data-category="ANIME_SPECIAL">
                     <div class="card-img-placeholder"><i class="fa-solid fa-dragon fa-3x" style="color: #f97316;"></i></div>
                     <div class="card-body">
@@ -2045,8 +2015,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- CATEGORÍAS OSINT Y CONSULTAS ROCKET (CON GAMPY 12) -->
 
                 <div class="card service-item" data-category="RENIEC">
                     <div class="card-img-placeholder">
@@ -2282,7 +2250,6 @@
             </div>
         </div>
 
-        <!-- 3. VISTA DE TRABAJOS UNIVERSITARIOS Y ESCOLARES -->
         <div id="trabajosView" class="view-section hidden">
             <div class="trabajos-info-container">
                 <div class="badge-trabajos-price">
@@ -2333,7 +2300,6 @@
             </div>
         </div>
 
-        <!-- 4. VISTA DE DESARROLLO WEB -->
         <div id="webDevView" class="view-section hidden">
             <div class="category-header">
                 <i class="fa-solid fa-laptop-code"></i>
@@ -2378,7 +2344,6 @@
             </div>
         </div>
 
-        <!-- 5. OTRAS VISTAS -->
         <div id="detallesView" class="view-section hidden">
             <div class="category-header">
                 <i class="fa-solid fa-gift"></i>
@@ -2401,7 +2366,6 @@
 
     </main>
 
-    <!-- MODAL COTIZADOR INTERACTIVO -->
     <div class="modal-overlay" id="calcModal">
         <div class="modal-card">
             <button class="modal-close" onclick="closeCalcModal()"><i class="fa-solid fa-xmark"></i></button>
@@ -2444,7 +2408,6 @@
         </div>
     </div>
 
-    <!-- MODAL MUESTRA REPORTE DEMO -->
     <div class="modal-overlay" id="sampleModal">
         <div class="modal-card">
             <button class="modal-close" onclick="closeSampleModal()"><i class="fa-solid fa-xmark"></i></button>
@@ -2471,7 +2434,6 @@
         </div>
     </div>
 
-    <!-- MODAL DE COTIZACIÓN GUIADA UNIVERSITARIA -->
     <div class="modal-overlay" id="quoteModal">
         <div class="modal-card">
             <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
@@ -2499,7 +2461,6 @@
         </div>
     </div>
 
-    <!-- NOTIFICACIÓN DE PRUEBA SOCIAL EN VIVO -->
     <div class="social-proof-toast hidden" id="socialToast">
         <div class="toast-icon"><i class="fa-solid fa-circle-check"></i></div>
         <div class="toast-text" id="socialToastText">
@@ -2508,7 +2469,6 @@
         </div>
     </div>
 
-    <!-- BOTONES FLOTANTES (FAB) -->
     <div class="fab-container">
         <button class="fab-btn fab-top" id="scrollTopBtn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
         <a href="https://t.me/Adolf3728" target="_blank" class="fab-btn fab-tg"><i class="fa-brands fa-telegram"></i></a>
@@ -2517,22 +2477,50 @@
     </div>
 
     <script>
-        /* PROTECCIÓN ANTI-CLICKJACKING & IFRAME */
+        
+        // Anti-iFrame Hijacking
         try {
             if (window.top !== window.self && window.top.location.host === window.self.location.host) {
                 window.top.location = window.self.location;
             }
         } catch (e) {}
 
-        /* DESACTIVAR INSPECTOR & MENÚ CONTEXTUAL */
+        // Desactivar Menú Contextual (Click derecho)
         document.addEventListener('contextmenu', e => e.preventDefault());
+
+        // Bloqueador estricto de atajos de teclado de DevTools (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C, Ctrl+U, Ctrl+S)
         document.addEventListener('keydown', e => {
-            if (e.keyCode === 123 || (e.ctrlKey && e.shiftKey && [73, 74, 67].includes(e.keyCode)) || (e.ctrlKey && [85, 83].includes(e.keyCode))) {
+            if (
+                e.keyCode === 123 || 
+                (e.ctrlKey && e.shiftKey && [73, 74, 67, 75].includes(e.keyCode)) || 
+                (e.ctrlKey && [85, 83, 80].includes(e.keyCode))
+            ) {
                 e.preventDefault();
+                e.stopPropagation();
+                return false;
             }
         });
 
-        /* RATE LIMITER ANTI-DDoS Y ANTI-SPAM */
+        // Limpieza y anulación de funciones de Consola
+        (function() {
+            const emptyFn = function() {};
+            window.console.log = emptyFn;
+            window.console.warn = emptyFn;
+            window.console.error = emptyFn;
+            window.console.info = emptyFn;
+            window.console.debug = emptyFn;
+        })();
+
+        // Bucle Anti-Debugging: si abren DevTools en una ventana flotante, pausa/bloquea el inspector
+        setInterval(function() {
+            const startTime = performance.now();
+            (function() {}.constructor('debugger')());
+            const endTime = performance.now();
+            if (endTime - startTime > 100) {
+                document.body.innerHTML = '<div style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:100vh;background:#0b0f19;color:#fff;font-family:sans-serif;text-align:center;padding:20px;"><h1 style="font-size:2rem;margin-bottom:10px;color:#f87171;">🚀 ROCKET Security Alert</h1><p style="color:#94a3b8;max-width:480px;">Se han detectado herramientas de inspección o depuración activa. Por motivos de privacidad y seguridad, el acceso ha sido pausado. Por favor, cierra las herramientas de desarrollador y recarga la página.</p></div>';
+            }
+        }, 500);
+
         const requestTracker = { lastTime: 0, count: 0 };
         function checkRateLimit() {
             const now = Date.now();
@@ -2546,7 +2534,6 @@
             return true;
         }
 
-        /* SANITIZADOR XSS */
         function sanitizeInput(str) {
             return String(str).replace(/[&<>"']/g, function(m) {
                 return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
@@ -2558,7 +2545,6 @@
             loader.style.opacity = '0';
             setTimeout(() => { loader.style.visibility = 'hidden'; }, 400);
 
-            // Iniciar notificaciones de prueba social en vivo
             initSocialProofToasts();
         });
 
@@ -2712,7 +2698,6 @@
         }
         function closeModal() { document.getElementById('quoteModal').classList.remove('active'); }
 
-        /* LÓGICA DEL COTIZADOR INTERACTIVO */
         function openCalcModal() { document.getElementById('calcModal').classList.add('active'); updateCalc(); }
         function closeCalcModal() { document.getElementById('calcModal').classList.remove('active'); }
 
@@ -2741,11 +2726,9 @@
             closeCalcModal();
         }
 
-        /* LÓGICA DE DEMO/MUESTRA DE REPORTES */
         function openSampleModal(type) { document.getElementById('sampleModal').classList.add('active'); }
         function closeSampleModal() { document.getElementById('sampleModal').classList.remove('active'); }
 
-        /* PRUEBA SOCIAL EN VIVO - NOTIFICACIONES ROTATIVAS */
         const mockSocialEvents = [
             { text: "Consulta RENIEC solicitada", location: "Hace 2 min desde Lima" },
             { text: "Suscripción Disney Premium activada", location: "Hace 5 min desde Arequipa" },
