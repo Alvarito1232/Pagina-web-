@@ -16,7 +16,8 @@
             --border-color: rgba(255, 255, 255, 0.12);
             --accent-color: #6366f1;
             --wsp-color: #25d366;
-            --tg-color: #0088cc;
+            --tg-color: #229ed9;
+            --ig-color: #e1306c;
             --card-hover: rgba(255, 255, 255, 0.08);
             --glass-bg: rgba(21, 28, 44, 0.85);
             --glass-border: rgba(255, 255, 255, 0.15);
@@ -231,11 +232,11 @@
 
         .menu-link-tg {
             border-color: var(--tg-color) !important;
-            background: rgba(0, 136, 204, 0.15) !important;
+            background: rgba(34, 158, 217, 0.15) !important;
         }
 
         .menu-link-ig {
-            border-color: #e1306c !important;
+            border-color: var(--ig-color) !important;
             background: rgba(225, 48, 108, 0.15) !important;
         }
 
@@ -253,7 +254,7 @@
 
         .menu-link-wsp .menu-link-left i { color: var(--wsp-color); }
         .menu-link-tg .menu-link-left i { color: var(--tg-color); }
-        .menu-link-ig .menu-link-left i { color: #e1306c; }
+        .menu-link-ig .menu-link-left i { color: var(--ig-color); }
 
         .submenu {
             list-style: none;
@@ -408,12 +409,12 @@
         }
 
         .service-cover-card.disney-card {
-            border-color: rgba(0, 136, 204, 0.5);
+            border-color: rgba(34, 158, 217, 0.5);
         }
 
         .service-cover-card.disney-card:hover {
-            border-color: #0088cc;
-            box-shadow: 0 8px 25px rgba(0, 136, 204, 0.4);
+            border-color: #229ed9;
+            box-shadow: 0 8px 25px rgba(34, 158, 217, 0.4);
         }
 
         .service-cover-icon {
@@ -771,21 +772,72 @@
             margin-bottom: 16px;
         }
 
-        .btn-wsp {
+        /* GRUPO DE BOTONES Y REDES SOCIALES EN TARJETAS */
+        .social-buttons {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-top: auto;
+            width: 100%;
+        }
+
+        .btn-tg {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            width: 100%;
-            background-color: var(--wsp-color);
+            flex-grow: 1;
+            background-color: var(--tg-color);
             color: #ffffff;
             text-decoration: none;
-            padding: 11px;
+            padding: 11px 14px;
             border-radius: 10px;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             cursor: pointer;
             border: none;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+
+        .btn-tg:hover {
+            background-color: #1a82b4;
+            transform: translateY(-2px);
+        }
+
+        .btn-icon-sm {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: background-color 0.2s, transform 0.2s;
+            flex-shrink: 0;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-icon-sm:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-icon-wsp {
+            background-color: var(--wsp-color);
+        }
+
+        .btn-icon-wsp:hover {
+            background-color: #1eb757;
+        }
+
+        .btn-icon-ig {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .btn-icon-ig:hover {
+            opacity: 0.9;
         }
 
         .pricing-grid {
@@ -979,7 +1031,7 @@
         }
 
         .fab-wsp { background: #25d366; }
-        .fab-tg { background: #0088cc; }
+        .fab-tg { background: #229ed9; }
         .fab-ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         .fab-top { background: var(--accent-color); display: none; }
 
@@ -1014,12 +1066,12 @@
     <aside class="sidebar" id="sidebar">
         <div class="search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" id="searchInput" onkeyup="filterMenu()" placeholder="Buscar servicio o consulta...">
+            <input type="text" id="searchInput" onkeyup="filterMenu()" placeholder="Buscar servicio...">
         </div>
 
         <ul class="menu-list" id="menuList">
             <li class="menu-item">
-                <a href="#" class="menu-link active-link" onclick="showView('homeView', this)">
+                <a href="#" class="menu-link active-link" onclick="showView('homeView')">
                     <div class="menu-link-left">
                         <i class="fa-solid fa-house"></i>
                         <span>Inicio / ROCKET</span>
@@ -1073,7 +1125,7 @@
             </li>
 
             <li class="menu-item">
-                <a href="#" class="menu-link" onclick="showView('trabajosView', this)">
+                <a href="#" class="menu-link" onclick="showView('trabajosView')">
                     <div class="menu-link-left">
                         <i class="fa-solid fa-graduation-cap"></i>
                         <span>Trabajos Universitarios y Escolares</span>
@@ -1082,7 +1134,7 @@
             </li>
 
             <li class="menu-item">
-                <a href="#" class="menu-link" onclick="showView('detallesView', this)">
+                <a href="#" class="menu-link" onclick="showView('detallesView')">
                     <div class="menu-link-left">
                         <i class="fa-solid fa-gift"></i>
                         <span>Detalles y Regalos GitHub</span>
@@ -1091,7 +1143,7 @@
             </li>
 
             <li class="menu-item">
-                <a href="#" class="menu-link" onclick="showView('emprendimientoView', this)">
+                <a href="#" class="menu-link" onclick="showView('emprendimientoView')">
                     <div class="menu-link-left">
                         <i class="fa-solid fa-store"></i>
                         <span>Emprendimientos Universitarios</span>
@@ -1100,7 +1152,7 @@
             </li>
 
             <li class="menu-item">
-                <a href="#" class="menu-link" onclick="showView('webDevView', this)">
+                <a href="#" class="menu-link" onclick="showView('webDevView')">
                     <div class="menu-link-left">
                         <i class="fa-solid fa-laptop-code"></i>
                         <span>Crea tu Página Web</span>
@@ -1111,8 +1163,18 @@
             <li class="menu-item">
                 <div class="social-notice-box">
                     <i class="fa-solid fa-headset" style="color: var(--accent-color); font-size: 1.1rem; margin-bottom: 4px; display: block;"></i>
-                    En caso escribas al número de WhatsApp y no responda o no funcione, escríbenos por <strong>Telegram</strong> o <strong>Instagram</strong>. ¡Atendemos 24/7!
+                    Atención rápida vía <strong>Telegram</strong> preferiblemente. ¡Atendemos 24/7!
                 </div>
+            </li>
+
+            <li class="menu-item">
+                <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="menu-link menu-link-tg">
+                    <div class="menu-link-left">
+                        <i class="fa-brands fa-telegram"></i>
+                        <span>Telegram Oficial</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i>
+                </a>
             </li>
 
             <li class="menu-item">
@@ -1120,16 +1182,6 @@
                     <div class="menu-link-left">
                         <i class="fa-brands fa-whatsapp"></i>
                         <span>WhatsApp Oficial</span>
-                    </div>
-                    <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i>
-                </a>
-            </li>
-
-            <li class="menu-item">
-                <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="menu-link menu-link-tg">
-                    <div class="menu-link-left">
-                        <i class="fa-brands fa-telegram"></i>
-                        <span>Grupo de Telegram</span>
                     </div>
                     <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i>
                 </a>
@@ -1194,9 +1246,9 @@
                     <div class="service-cover-btn">Ver Planes Web <i class="fa-solid fa-arrow-right"></i></div>
                 </div>
 
-                <div class="service-cover-card disney-card" onclick="window.open('https://wa.me/51931309889?text=Hola,%20deseo%20adquirir%20Disney%2B%20Premium', '_blank')">
+                <div class="service-cover-card disney-card" onclick="window.open('https://t.me/+FI7jNf9oVo44ZjBh', '_blank')">
                     <span class="badge-partner">Socio / Aliado</span>
-                    <div class="service-cover-icon" style="background: rgba(0, 136, 204, 0.2); color: #0088cc; border-color: rgba(0, 136, 204, 0.4);">
+                    <div class="service-cover-icon" style="background: rgba(34, 158, 217, 0.2); color: #229ed9; border-color: rgba(34, 158, 217, 0.4);">
                         <i class="fa-solid fa-tv"></i>
                     </div>
                     <div class="service-cover-title">🌀 DISNEY PREMIUM 🌀</div>
@@ -1205,8 +1257,8 @@
                         • Incluye <strong>7 ESPN</strong> + <strong>HULU</strong><br>
                         • 30 Días | Renovable y Garantizado
                     </div>
-                    <div class="service-cover-btn" style="color: #0088cc;">
-                        <i class="fa-brands fa-whatsapp"></i> Adquirir Cuenta <i class="fa-solid fa-arrow-right"></i>
+                    <div class="service-cover-btn" style="color: #229ed9;">
+                        <i class="fa-brands fa-telegram"></i> Adquirir por Telegram <i class="fa-solid fa-arrow-right"></i>
                     </div>
                 </div>
             </div>
@@ -1218,6 +1270,7 @@
                 </div>
             </div>
 
+            <!-- SECCIÓN UNIVERSIDADES -->
             <div class="academic-section">
                 <div class="academic-header">
                     <h2>🎓 TRABAJOS UNIVERSITARIOS DE TODAS LAS UNIVERSIDADES Y COLEGIOS DEL PERÚ</h2>
@@ -1226,86 +1279,51 @@
 
                 <div class="uni-grid">
                     <div class="uni-card" onclick="openUniQuote('UNMSM')">
-                        <div class="uni-badge">
-                            <img src="unmsm.png" alt="UNMSM" onerror="this.onerror=null; this.src='san marcos.jpg';">
-                        </div>
+                        <div class="uni-badge"><img src="unmsm.png" alt="UNMSM" onerror="this.onerror=null; this.src='san marcos.jpg';"></div>
                         <span class="uni-card-title">UNMSM</span>
                     </div>
-
                     <div class="uni-card" onclick="openUniQuote('UNI')">
-                        <div class="uni-badge">
-                            <img src="uni.png" alt="UNI" onerror="this.onerror=null; this.src='UNI.png';">
-                        </div>
+                        <div class="uni-badge"><img src="uni.png" alt="UNI" onerror="this.onerror=null; this.src='UNI.png';"></div>
                         <span class="uni-card-title">UNI</span>
                     </div>
-
                     <div class="uni-card" onclick="openUniQuote('PUCP')">
-                        <div class="uni-badge">
-                            <img src="pucp.png" alt="PUCP" onerror="this.onerror=null; this.src='PUCP.webp';">
-                        </div>
+                        <div class="uni-badge"><img src="pucp.png" alt="PUCP" onerror="this.onerror=null; this.src='PUCP.webp';"></div>
                         <span class="uni-card-title">PUCP</span>
                     </div>
-
                     <div class="uni-card" onclick="openUniQuote('U. DE LIMA')">
-                        <div class="uni-badge">
-                            <img src="ulima.png" alt="U. DE LIMA" onerror="this.onerror=null; this.src='U. lima.png';">
-                        </div>
+                        <div class="uni-badge"><img src="ulima.png" alt="U. DE LIMA" onerror="this.onerror=null; this.src='U. lima.png';"></div>
                         <span class="uni-card-title">U. DE LIMA</span>
                     </div>
-
                     <div class="uni-card" onclick="openUniQuote('UTP')">
-                        <div class="uni-badge">
-                            <img src="utp.png" alt="UTP" onerror="this.onerror=null; this.src='utp.jpg';">
-                        </div>
+                        <div class="uni-badge"><img src="utp.png" alt="UTP" onerror="this.onerror=null; this.src='utp.jpg';"></div>
                         <span class="uni-card-title">UTP</span>
                     </div>
-
                     <div class="uni-card" onclick="openUniQuote('UCV')">
-                        <div class="uni-badge">
-                            <img src="ucv.png" alt="UCV">
-                        </div>
+                        <div class="uni-badge"><img src="ucv.png" alt="UCV"></div>
                         <span class="uni-card-title">UCV</span>
                     </div>
-
                     <div class="uni-card" onclick="openUniQuote('UPCH')">
-                        <div class="uni-badge">
-                            <img src="upch.png" alt="UPCH" onerror="this.onerror=null; this.src='upch.jpg';">
-                        </div>
+                        <div class="uni-badge"><img src="upch.png" alt="UPCH" onerror="this.onerror=null; this.src='upch.jpg';"></div>
                         <span class="uni-card-title">UPCH</span>
                     </div>
-
                     <div class="uni-card" onclick="openUniQuote('CIENTÍFICA DEL SUR')">
-                        <div class="uni-badge">
-                            <img src="cientifica.png" alt="CIENTÍFICA DEL SUR" onerror="this.onerror=null; this.src='cientifica del sur.png';">
-                        </div>
+                        <div class="uni-badge"><img src="cientifica.png" alt="CIENTÍFICA DEL SUR" onerror="this.onerror=null; this.src='cientifica del sur.png';"></div>
                         <span class="uni-card-title">CIENTÍFICA DEL SUR</span>
                     </div>
-
                     <div class="uni-card" onclick="openUniQuote('UPC')">
-                        <div class="uni-badge">
-                            <img src="upc.png" alt="UPC">
-                        </div>
+                        <div class="uni-badge"><img src="upc.png" alt="UPC"></div>
                         <span class="uni-card-title">UPC</span>
                     </div>
-
                     <div class="uni-card" onclick="openUniQuote('USMP')">
-                        <div class="uni-badge">
-                            <img src="usmp.png" alt="USMP" onerror="this.onerror=null; this.src='umsp.jpg';">
-                        </div>
+                        <div class="uni-badge"><img src="usmp.png" alt="USMP" onerror="this.onerror=null; this.src='umsp.jpg';"></div>
                         <span class="uni-card-title">USMP</span>
                     </div>
-
                     <div class="uni-card" onclick="openUniQuote('UPN')">
-                        <div class="uni-badge">
-                            <img src="upn.png" alt="UPN">
-                        </div>
+                        <div class="uni-badge"><img src="upn.png" alt="UPN"></div>
                         <span class="uni-card-title">UPN</span>
                     </div>
-
                     <div class="uni-card" onclick="openUniQuote('COLEGIOS DEL PERÚ')">
-                        <div class="uni-badge">
-                            <img src="colegios.png" alt="COLEGIOS DEL PERÚ" onerror="this.outerHTML='<i class=\"fa-solid fa-school\" style=\"font-size: 1.5rem; color: var(--accent-color);\"></i>';">
-                        </div>
+                        <div class="uni-badge"><img src="colegios.png" alt="COLEGIOS DEL PERÚ" onerror="this.outerHTML='<i class=\"fa-solid fa-school\" style=\"font-size: 1.5rem; color: var(--accent-color);\"></i>';"></div>
                         <span class="uni-card-title">COLEGIOS DEL PERÚ</span>
                     </div>
                 </div>
@@ -1333,10 +1351,13 @@
                 </div>
 
                 <div style="max-width: 420px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px;">
-                    <button onclick="openModalForUni()" class="btn-wsp" style="padding: 14px; font-size: 1rem; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);">
+                    <button onclick="openModalForUni()" class="btn-tg" style="padding: 14px; font-size: 1rem; box-shadow: 0 4px 15px rgba(34, 158, 217, 0.3);">
                         <i class="fa-solid fa-calculator"></i> Formulario de Cotización Guiada
                     </button>
-                    <a id="uniWspBtn" href="#" target="_blank" class="btn-wsp" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border-color); padding: 12px; font-size: 0.95rem;">
+                    <a id="uniTgBtn" href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg" style="padding: 12px; font-size: 0.95rem;">
+                        <i class="fa-brands fa-telegram"></i> Chat directo en Telegram
+                    </a>
+                    <a id="uniWspBtn" href="#" target="_blank" class="btn-tg" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border-color); color: #fff; padding: 12px; font-size: 0.95rem;">
                         <i class="fa-brands fa-whatsapp"></i> Chat directo de WhatsApp
                     </a>
                     <button onclick="showView('homeView')" style="margin-top: 10px; background: none; border: none; color: #94a3b8; cursor: pointer; font-size: 0.88rem; text-decoration: underline; display: block; width: 100%;">
@@ -1346,7 +1367,7 @@
             </div>
         </div>
 
-        <!-- 2. VISTA DE SERVICIOS / OSINT CON FILTROS RÁPIDOS -->
+        <!-- 2. VISTA DE SERVICIOS / OSINT -->
         <div id="servicesView" class="view-section hidden">
             
             <div class="osint-info-container">
@@ -1378,32 +1399,236 @@
             </div>
 
             <div class="grid" id="servicesGrid">
-                <div class="card service-item" data-category="RENIEC"><div class="card-img-placeholder"><i class="fa-solid fa-id-card fa-3x"></i></div><div class="card-body"><div><div class="card-title">RENIEC</div><div class="card-desc">Foto de DNI | Firma y huellas | DNI virtual azul, amarillo y electrónico.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20RENIEC" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="SUNAT"><div class="card-img-placeholder"><i class="fa-solid fa-receipt fa-3x"></i></div><div class="card-body"><div><div class="card-title">SUNAT</div><div class="card-desc">Consulta RUC | Ficha RUC | Representantes legales | Domicilio fiscal.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20SUNAT" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="PODER JUDICIAL"><div class="card-img-placeholder"><i class="fa-solid fa-scale-balanced fa-3x"></i></div><div class="card-body"><div><div class="card-title">PODER JUDICIAL</div><div class="card-desc">Búsqueda de expediente judicial | Procesos penales y civiles.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20PODER%20JUDICIAL" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="MIGRACIONES"><div class="card-img-placeholder"><i class="fa-solid fa-passport fa-3x"></i></div><div class="card-body"><div><div class="card-title">MIGRACIONES</div><div class="card-desc">Movimiento migratorio | Verificación de pasaporte y extranjería.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20MIGRACIONES" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="OSIPTEL"><div class="card-img-placeholder"><i class="fa-solid fa-tower-cell fa-3x"></i></div><div class="card-body"><div><div class="card-title">OSIPTEL / TELÉFONO</div><div class="card-desc">Búsqueda de titular por número | Teléfonos registrados a un DNI.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20OSIPTEL" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="FISCALÍA"><div class="card-img-placeholder"><i class="fa-solid fa-gavel fa-3x"></i></div><div class="card-body"><div><div class="card-title">FISCALÍA</div><div class="card-desc">Carpetas fiscales | Investigaciones en curso y denuncias.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20FISCALIA" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="MINEDU"><div class="card-img-placeholder"><i class="fa-solid fa-book fa-3x"></i></div><div class="card-body"><div><div class="card-title">MINEDU</div><div class="card-desc">Certificados de estudios secundarios y notas oficiales.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20MINEDU" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="SENTINEL"><div class="card-img-placeholder"><i class="fa-solid fa-chart-line fa-3x"></i></div><div class="card-body"><div><div class="card-title">SENTINEL / EQUIFAX</div><div class="card-desc">Reporte de deudas financieras | Calificación crediticia en Infocorp.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20SENTINEL" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="SUNEDU"><div class="card-img-placeholder"><i class="fa-solid fa-graduation-cap fa-3x"></i></div><div class="card-body"><div><div class="card-title">SUNEDU</div><div class="card-desc">Verificación de grados académicos, bachiller y títulos universitarios.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20SUNEDU" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="MTC"><div class="card-img-placeholder"><i class="fa-solid fa-car fa-3x"></i></div><div class="card-body"><div><div class="card-title">MTC</div><div class="card-desc">Licencias de conducir, papeletas de tránsito y récord de conductor.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20MTC" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="INPE"><div class="card-img-placeholder"><i class="fa-solid fa-building-columns fa-3x"></i></div><div class="card-body"><div><div class="card-title">INPE</div><div class="card-desc">Verificación de antecedentes penales e ingresos penales.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20INPE" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="PNP"><div class="card-img-placeholder"><i class="fa-solid fa-shield-halved fa-3x"></i></div><div class="card-body"><div><div class="card-title">PNP</div><div class="card-desc">Búsqueda de denuncias policiales y requisitorias.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20PNP" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="SUNARP"><div class="card-img-placeholder"><i class="fa-solid fa-building fa-3x"></i></div><div class="card-body"><div><div class="card-title">SUNARP</div><div class="card-desc">Búsqueda de propiedades, terrenos y vehículos a nivel nacional.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20SUNARP" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="Bloqueo"><div class="card-img-placeholder"><i class="fa-solid fa-ban fa-3x"></i></div><div class="card-body"><div><div class="card-title">Bloqueos y Operaciones</div><div class="card-desc">Servicios de bloqueo administrativo de líneas, equipos y soporte.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20de%20Bloqueo" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                <div class="card service-item" data-category="VIRTUALES"><div class="card-img-placeholder"><i class="fa-solid fa-sim-card fa-3x"></i></div><div class="card-body"><div><div class="card-title">Números Virtuales</div><div class="card-desc">Números temporales para validaciones de SMS, WhatsApp y Telegram.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20un%20Numero%20Virtual" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
-                
-                <div id="noResultsMsg" class="hidden" style="grid-column: 1 / -1; text-align: center; padding: 40px 20px; color: var(--text-secondary);">
-                    <i class="fa-solid fa-magnifying-glass-minus fa-3x" style="margin-bottom: 12px; color: var(--accent-color);"></i>
-                    <p style="font-size: 1rem; font-weight: 600;">No se encontraron servicios disponibles para este filtro.</p>
+                <!-- TARJETAS OSINT CON TELEGRAM + REDES -->
+                <div class="card service-item" data-category="RENIEC">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-id-card fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">RENIEC</div>
+                            <div class="card-desc">Foto de DNI | Firma y huellas | DNI virtual azul, amarillo y electrónico.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20RENIEC" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="SUNAT">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-receipt fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">SUNAT</div>
+                            <div class="card-desc">Consulta RUC | Ficha RUC | Representantes legales | Domicilio fiscal.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20SUNAT" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="PODER JUDICIAL">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-scale-balanced fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">PODER JUDICIAL</div>
+                            <div class="card-desc">Búsqueda de expediente judicial | Procesos penales y civiles.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20PODER%20JUDICIAL" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="MIGRACIONES">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-passport fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">MIGRACIONES</div>
+                            <div class="card-desc">Movimiento migratorio | Verificación de pasaporte y extranjería.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20MIGRACIONES" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="OSIPTEL">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-tower-cell fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">OSIPTEL / TELÉFONO</div>
+                            <div class="card-desc">Búsqueda de titular por número | Teléfonos registrados a un DNI.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20OSIPTEL" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="FISCALÍA">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-gavel fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">FISCALÍA</div>
+                            <div class="card-desc">Carpetas fiscales | Investigaciones en curso y denuncias.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20FISCALIA" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="MINEDU">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-book fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">MINEDU</div>
+                            <div class="card-desc">Certificados de estudios secundarios y notas oficiales.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20MINEDU" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="SENTINEL">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-chart-line fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">SENTINEL / EQUIFAX</div>
+                            <div class="card-desc">Reporte de deudas financieras | Calificación crediticia en Infocorp.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20SENTINEL" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="SUNEDU">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-graduation-cap fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">SUNEDU</div>
+                            <div class="card-desc">Verificación de grados académicos, bachiller y títulos universitarios.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20SUNEDU" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="MTC">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-car fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">MTC</div>
+                            <div class="card-desc">Licencias de conducir, papeletas de tránsito y récord de conductor.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20MTC" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="INPE">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-building-columns fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">INPE</div>
+                            <div class="card-desc">Verificación de antecedentes penales e ingresos penales.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20INPE" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="PNP">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-shield-halved fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">PNP</div>
+                            <div class="card-desc">Búsqueda de denuncias policiales y requisitorias.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20PNP" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="SUNARP">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-building fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">SUNARP</div>
+                            <div class="card-desc">Búsqueda de propiedades, terrenos y vehículos a nivel nacional.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20SUNARP" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="Bloqueo">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-ban fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Bloqueos y Operaciones</div>
+                            <div class="card-desc">Servicios de bloqueo administrativo de líneas, equipos y soporte.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20de%20Bloqueo" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="VIRTUALES">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-sim-card fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Números Virtuales</div>
+                            <div class="card-desc">Números temporales para validaciones de SMS, WhatsApp y Telegram.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20un%20Numero%20Virtual" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- 3. VISTA DE TRABAJOS UNIVERSITARIOS Y ESCOLARES -->
         <div id="trabajosView" class="view-section hidden">
-            
             <div class="trabajos-info-container">
                 <div class="badge-trabajos-price">
                     <i class="fa-solid fa-tag"></i> PRECIOS: DESDE S/ 8.00 EN ADELANTE
@@ -1431,7 +1656,11 @@
                                 <br><br><strong>Precio:</strong> Desde S/ 8.00 (Varía según complejidad y tiempo límite).
                             </div>
                         </div>
-                        <button onclick="openModalForTask('Tareas y Cuestionarios')" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp</button>
+                        <div class="social-buttons">
+                            <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <button onclick="openModalForTask('Tareas y Cuestionarios')" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></button>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
                     </div>
                 </div>
 
@@ -1445,7 +1674,11 @@
                                 <br><br><strong>Precio:</strong> Desde S/ 15.00 (Según extensión, tema y plazo).
                             </div>
                         </div>
-                        <button onclick="openModalForTask('Monografías y Ensayos')" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp</button>
+                        <div class="social-buttons">
+                            <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <button onclick="openModalForTask('Monografías y Ensayos')" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></button>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
                     </div>
                 </div>
 
@@ -1459,7 +1692,11 @@
                                 <br><br><strong>Precio:</strong> Desde S/ 10.00 (Depende del número de diapositivas y urgencia).
                             </div>
                         </div>
-                        <button onclick="openModalForTask('Diapositivas PPT')" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp</button>
+                        <div class="social-buttons">
+                            <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <button onclick="openModalForTask('Diapositivas PPT')" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></button>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
                     </div>
                 </div>
 
@@ -1473,7 +1710,11 @@
                                 <br><br><strong>Precio:</strong> Desde S/ 12.00 (Según la duración del video y plazo de entrega).
                             </div>
                         </div>
-                        <button onclick="openModalForTask('Edición de Video')" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp</button>
+                        <div class="social-buttons">
+                            <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <button onclick="openModalForTask('Edición de Video')" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></button>
+                            <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1497,11 +1738,15 @@
                         <ul class="plan-features">
                             <li><i class="fa-solid fa-check"></i> Página de enlaces tipo Linktree</li>
                             <li><i class="fa-solid fa-check"></i> Diseño optimizado para celulares</li>
-                            <li><i class="fa-solid fa-check"></i> Enlace directo a tu WhatsApp</li>
+                            <li><i class="fa-solid fa-check"></i> Enlace directo a tu WhatsApp / Telegram</li>
                             <li><i class="fa-solid fa-check"></i> Publicado en GitHub Pages</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Plan%20Bio-Link%20de%20S/%205" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Solicitar Plan S/ 5</a>
+                    <div class="social-buttons">
+                        <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Plan%20Bio-Link%20de%20S/%205" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
                 </div>
 
                 <div class="pricing-card">
@@ -1511,11 +1756,15 @@
                         <ul class="plan-features">
                             <li><i class="fa-solid fa-check"></i> Landing Page moderna (1 sección)</li>
                             <li><i class="fa-solid fa-check"></i> Diseñado para Celulares y PC</li>
-                            <li><i class="fa-solid fa-check"></i> Botón de WhatsApp integrado</li>
+                            <li><i class="fa-solid fa-check"></i> Botón de WhatsApp / Telegram</li>
                             <li><i class="fa-solid fa-check"></i> Publicado en GitHub Pages</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Plan%20Basico%20de%20S/%2015" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Solicitar Plan S/ 15</a>
+                    <div class="social-buttons">
+                        <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Plan%20Basico%20de%20S/%2015" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
                 </div>
 
                 <div class="pricing-card featured">
@@ -1527,11 +1776,15 @@
                             <li><i class="fa-solid fa-check"></i> Página completa con submenús</li>
                             <li><i class="fa-solid fa-check"></i> Catálogo interactivo de productos</li>
                             <li><i class="fa-solid fa-check"></i> Buscador interno y filtros</li>
-                            <li><i class="fa-solid fa-check"></i> Botones a WhatsApp por producto</li>
+                            <li><i class="fa-solid fa-check"></i> Botones a Telegram / WhatsApp</li>
                             <li><i class="fa-solid fa-check"></i> Modo Claro / Oscuro incluido</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Plan%20Pro%20Catalogo%20de%20S/%2025" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Solicitar Plan S/ 25</a>
+                    <div class="social-buttons">
+                        <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Plan%20Pro%20Catalogo%20de%20S/%2025" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
                 </div>
 
                 <div class="pricing-card">
@@ -1545,7 +1798,11 @@
                             <li><i class="fa-solid fa-check"></i> Optimización SEO para buscadores</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Plan%20Negocio%20de%20S/%2035" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Solicitar Plan S/ 35</a>
+                    <div class="social-buttons">
+                        <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Plan%20Negocio%20de%20S/%2035" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
                 </div>
 
                 <div class="pricing-card">
@@ -1559,7 +1816,11 @@
                             <li><i class="fa-solid fa-check"></i> Soporte técnico prioritario 24/7</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Plan%20Control%20Total%20de%20S/%2045" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Solicitar Plan S/ 45</a>
+                    <div class="social-buttons">
+                        <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Plan%20Control%20Total%20de%20S/%2045" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1573,8 +1834,12 @@
             <p style="color: var(--text-secondary); text-align: center; font-size: 0.95rem;">
                 Sorprende a tu pareja o seres queridos con cartas virtuales, páginas con música, álbumes de fotos animados y regalos interactivos alojados en la web.
             </p>
-            <div style="margin-top: 25px; text-align: center;">
-                <a href="https://wa.me/51931309889?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20Detalles%20y%20Regalos%20GitHub" target="_blank" class="btn-wsp" style="max-width: 300px; margin: 0 auto;"><i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp</a>
+            <div style="margin-top: 25px; max-width: 320px; margin-left: auto; margin-right: auto;">
+                <div class="social-buttons">
+                    <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                    <a href="https://wa.me/51931309889?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20Detalles%20y%20Regalos%20GitHub" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
             </div>
         </div>
 
@@ -1584,10 +1849,14 @@
                 <span>Emprendimientos Universitarios</span>
             </div>
             <p style="color: var(--text-secondary); text-align: center; font-size: 0.95rem;">
-                Soluciones digitales completas para tu negocio o marca: catálogos interactivos, branding, asesoría e integración directa con tu WhatsApp de ventas.
+                Soluciones digitales completas para tu negocio o marca: catálogos interactivos, branding, asesoría e integración directa con tu sistema de ventas.
             </p>
-            <div style="margin-top: 25px; text-align: center;">
-                <a href="https://wa.me/51931309889?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20Emprendimientos%20Universitarios" target="_blank" class="btn-wsp" style="max-width: 300px; margin: 0 auto;"><i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp</a>
+            <div style="margin-top: 25px; max-width: 320px; margin-left: auto; margin-right: auto;">
+                <div class="social-buttons">
+                    <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                    <a href="https://wa.me/51931309889?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20Emprendimientos%20Universitarios" target="_blank" class="btn-icon-sm btn-icon-wsp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
             </div>
         </div>
 
@@ -1616,7 +1885,7 @@
             </div>
 
             <div class="form-group">
-                <label>Tema o Materia *</label>
+                <label>Tema o Materia</label>
                 <input type="text" id="modalTopic" placeholder="Ej: Fisiología, Anatomía, Álgebra...">
             </div>
 
@@ -1625,24 +1894,30 @@
                 <input type="text" id="modalDeadline" placeholder="Ej: Mañana a las 6:00 PM">
             </div>
 
-            <button onclick="sendFormattedWsp()" class="btn-wsp" style="margin-top:10px; padding:12px;">
-                <i class="fa-brands fa-whatsapp"></i> Enviar Cotización a WhatsApp
-            </button>
+            <div style="display: flex; gap: 10px; margin-top: 15px;">
+                <button onclick="sendFormattedTg()" class="btn-tg" style="padding: 12px;">
+                    <i class="fa-brands fa-telegram"></i> Enviar por Telegram
+                </button>
+                <button onclick="sendFormattedWsp()" class="btn-icon-sm btn-icon-wsp" style="width: auto; padding: 0 16px; gap: 6px;" title="Enviar por WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </button>
+            </div>
         </div>
     </div>
 
+    <!-- BOTONES FLOTANTES (FAB) -->
     <div class="fab-container">
         <button class="fab-btn fab-top" id="scrollTopBtn" onclick="scrollToTop()" title="Volver arriba">
             <i class="fa-solid fa-arrow-up"></i>
         </button>
-        <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="fab-btn fab-ig" title="Instagram Oficial">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="fab-btn fab-tg" title="Grupo de Telegram">
+        <a href="https://t.me/+FI7jNf9oVo44ZjBh" target="_blank" class="fab-btn fab-tg" title="Grupo / Canal de Telegram">
             <i class="fa-brands fa-telegram"></i>
         </a>
         <a href="https://wa.me/51931309889?text=Hola,%20deseo%20informaci%C3%B3n" target="_blank" class="fab-btn fab-wsp" title="Contacto WhatsApp">
             <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="https://www.instagram.com/rocket.official.pe?stkn=MXIybGJtNXpoN2wxbA%3D%3D&utm_source=qr" target="_blank" class="fab-btn fab-ig" title="Instagram Oficial">
+            <i class="fa-brands fa-instagram"></i>
         </a>
     </div>
 
@@ -1687,14 +1962,7 @@
             }
         }
 
-        function updateActiveLink(targetElement) {
-            document.querySelectorAll('.menu-link').forEach(link => link.classList.remove('active-link'));
-            if (targetElement && targetElement.classList.contains('menu-link')) {
-                targetElement.classList.add('active-link');
-            }
-        }
-
-        function showView(viewId, element = null) {
+        function showView(viewId) {
             document.querySelectorAll('.view-section').forEach(view => {
                 view.classList.add('hidden');
             });
@@ -1703,7 +1971,6 @@
                 targetView.classList.remove('hidden');
             }
             
-            updateActiveLink(element);
             document.getElementById('sidebar').classList.remove('active');
             document.getElementById('overlay').classList.remove('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1714,75 +1981,31 @@
             document.getElementById('categoryTitle').textContent = category === 'ALL' ? 'Todas las Consultas OSINT' : category;
             
             const items = document.querySelectorAll('#servicesGrid .service-item');
-            let visibleCount = 0;
-
             items.forEach(item => {
                 const itemCategory = item.getAttribute('data-category');
                 if (category === 'ALL' || itemCategory === category) {
                     item.classList.remove('hidden');
-                    visibleCount++;
                 } else {
                     item.classList.add('hidden');
                 }
             });
 
-            const noResults = document.getElementById('noResultsMsg');
-            if (visibleCount === 0) {
-                noResults.classList.remove('hidden');
-            } else {
-                noResults.classList.add('hidden');
+            if (element) {
+                document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+                element.classList.add('active');
             }
-
-            document.querySelectorAll('.filter-chip').forEach(c => {
-                if (element && c === element) {
-                    c.classList.add('active');
-                } else if (!element && c.textContent.trim().toUpperCase() === category.toUpperCase()) {
-                    c.classList.add('active');
-                } else if (!element && category === 'ALL' && c.textContent.trim() === 'Todos') {
-                    c.classList.add('active');
-                } else {
-                    c.classList.remove('active');
-                }
-            });
         }
 
         function filterMenu() {
-            const input = document.getElementById('searchInput').value.toLowerCase().trim();
-            const menuItems = document.querySelectorAll('#menuList > .menu-item');
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const items = document.querySelectorAll('#menuList .menu-item');
             
-            menuItems.forEach(item => {
-                const link = item.querySelector('.menu-link');
-                const submenu = item.querySelector('.submenu');
-                
-                if (submenu) {
-                    const subLinks = submenu.querySelectorAll('li');
-                    let subMatch = false;
-                    
-                    subLinks.forEach(sub => {
-                        const text = sub.textContent.toLowerCase();
-                        if (text.includes(input)) {
-                            sub.style.display = '';
-                            subMatch = true;
-                        } else {
-                            sub.style.display = 'none';
-                        }
-                    });
-                    
-                    if (subMatch || (link && link.textContent.toLowerCase().includes(input))) {
-                        item.style.display = '';
-                        if (input !== '') {
-                            submenu.classList.add('open');
-                        }
-                    } else {
-                        item.style.display = 'none';
-                    }
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(input)) {
+                    item.style.display = '';
                 } else {
-                    const text = item.textContent.toLowerCase();
-                    if (text.includes(input)) {
-                        item.style.display = '';
-                    } else {
-                        item.style.display = 'none';
-                    }
+                    item.style.display = 'none';
                 }
             });
         }
@@ -1800,13 +2023,10 @@
 
         function openModalForUni() {
             document.getElementById('modalUni').value = currentSelectedUni;
-            document.getElementById('modalTopic').value = '';
             document.getElementById('quoteModal').classList.add('active');
         }
 
         function openModalForTask(taskType) {
-            document.getElementById('modalUni').value = '';
-            document.getElementById('modalTopic').value = '';
             document.getElementById('modalType').value = taskType;
             document.getElementById('quoteModal').classList.add('active');
         }
@@ -1815,26 +2035,19 @@
             document.getElementById('quoteModal').classList.remove('active');
         }
 
-        document.getElementById('quoteModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
-
         function sendFormattedWsp() {
-            const uni = document.getElementById('modalUni').value.trim() || 'No especificado';
+            const uni = document.getElementById('modalUni').value || 'No especificado';
             const type = document.getElementById('modalType').value;
-            const topic = document.getElementById('modalTopic').value.trim();
-            const deadline = document.getElementById('modalDeadline').value.trim();
+            const topic = document.getElementById('modalTopic').value || 'Por definir';
+            const deadline = document.getElementById('modalDeadline').value || 'Lo antes posible';
 
-            if (!topic) {
-                alert('Por favor, ingresa el tema o materia de tu trabajo.');
-                document.getElementById('modalTopic').focus();
-                return;
-            }
-
-            const text = `Hola ROCKET 🚀, deseo cotizar un trabajo:%0A%0A🎓 *Institución:* ${encodeURIComponent(uni)}%0A📚 *Tipo:* ${encodeURIComponent(type)}%0A📖 *Materia/Tema:* ${encodeURIComponent(topic)}%0A⏰ *Fecha Límite:* ${encodeURIComponent(deadline || 'Lo antes posible')}`;
+            const text = `Hola ROCKET 🚀, deseo cotizar un trabajo:%0A%0A🎓 *Institución:* ${uni}%0A📚 *Tipo:* ${type}%0A📖 *Materia/Tema:* ${topic}%0A⏰ *Fecha Límite:* ${deadline}`;
             window.open(`https://wa.me/51931309889?text=${text}`, '_blank');
+            closeModal();
+        }
+
+        function sendFormattedTg() {
+            window.open('https://t.me/+FI7jNf9oVo44ZjBh', '_blank');
             closeModal();
         }
 
