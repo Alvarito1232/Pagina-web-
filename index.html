@@ -1307,12 +1307,88 @@
         .fab-ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         .fab-top { background: var(--accent-color); display: none; }
 
+        /* BOTÓN FLOTANTE K PARA KIMBERLY */
+        .fab-kimberly {
+            background: linear-gradient(135deg, #ec4899, #f43f5e);
+            position: relative;
+            font-size: 1.1rem;
+            font-weight: 900;
+            box-shadow: 0 0 20px rgba(236, 72, 153, 0.7);
+            animation: pulseKimberly 2s infinite;
+        }
+        @keyframes pulseKimberly {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.7); }
+            70% { transform: scale(1.08); box-shadow: 0 0 0 12px rgba(236, 72, 153, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
+        }
+        .fab-kimberly .k-badge {
+            display: flex; align-items: center; justify-content: center; gap: 2px; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        /* PANTALLA NEGRA Y LLUVIA MATRIX PARA KIMBERLY */
+        #matrixOverlay {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: #000000; z-index: 99999; display: none;
+            overflow-y: auto; padding: 20px; box-sizing: border-box;
+            animation: fadeInBlack 0.5s ease;
+        }
+        @keyframes fadeInBlack { from { opacity: 0; } to { opacity: 1; } }
+
+        #matrixCanvas {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;
+        }
+
+        .matrix-content-wrapper {
+            position: relative; z-index: 2; max-width: 800px; margin: 40px auto;
+            display: flex; flex-direction: column; gap: 25px; padding-bottom: 50px;
+        }
+
+        .matrix-header {
+            text-align: center; color: #ff6584; font-size: 1.8rem; font-weight: 900;
+            text-shadow: 0 0 15px rgba(255, 101, 132, 0.6); margin-bottom: 10px;
+        }
+
+        .cute-poem-card {
+            background: rgba(20, 24, 33, 0.85);
+            border: 1px solid rgba(255, 105, 180, 0.4);
+            border-radius: 18px; padding: 22px; text-align: center;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+            backdrop-filter: blur(8px);
+            transition: transform 0.3s;
+        }
+        .cute-poem-card:hover { transform: translateY(-3px); border-color: #ff6584; }
+        .cute-poem-card p {
+            font-size: 1.05rem; line-height: 1.6; color: #f1f5f9; font-style: italic;
+        }
+        .cute-poem-card .card-icon {
+            font-size: 1.4rem; color: #ff6584; margin-bottom: 8px;
+        }
+
+        .game-box {
+            background: rgba(15, 23, 42, 0.9); border: 2px dashed rgba(255, 105, 180, 0.5);
+            border-radius: 18px; padding: 20px; text-align: center; position: relative; overflow: hidden;
+        }
+        #gameCanvas {
+            background: #090d16; border-radius: 12px; display: block; margin: 15px auto 0 auto;
+            max-width: 100%; border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .close-matrix-btn {
+            background: linear-gradient(135deg, #ff6584, #e11d48); color: white; border: none;
+            padding: 12px 30px; border-radius: 30px; font-weight: 800; font-size: 1rem;
+            cursor: pointer; display: block; margin: 20px auto 0 auto; box-shadow: 0 4px 15px rgba(225, 29, 72, 0.4);
+        }
+        .close-matrix-btn:hover { opacity: 0.9; }
+
         .hidden {
             display: none !important;
         }
     </style>
 </head>
 <body>
+
+    <!-- AUDIO DE AMBIENTE (Mike Bahía - Buscándote)[cite: 37] -->
+    <audio id="kimberlyAudio" src="Mike Bahía - Buscándote (Audio Oficial).mp3" preload="auto"></audio>
 
     <div id="loader">
         <div class="spinner"></div>
@@ -2469,7 +2545,55 @@
         </div>
     </div>
 
+    <!-- PANTALLA NEGRA Y LLUVIA MATRIX CON LOS DETALLES PARA KIMBERLY -->
+    <div id="matrixOverlay">
+        <canvas id="matrixCanvas"></canvas>
+        <div class="matrix-content-wrapper">
+            <div class="matrix-header">✨ Para ti, Kimberly Kristel ✨</div>
+            <p style="text-align: center; color: #94a3b8; font-size: 0.95rem; margin-top: -15px;">Un pequeño detalle educado y especial para alegrarte el día</p>
+
+            <!-- Cuadrito 1: Ojos -->
+            <div class="cute-poem-card">
+                <div class="card-icon"><i class="fa-solid fa-eye"></i></div>
+                <p>“Tus ojos me atraparon de una forma que ninguna palabra puede describir. No importa su color ni su forma, porque lo que realmente me cautiva es el cielo que encontré dentro de ellos. En tu mirada descubrí un universo al que siempre quiero regresar[cite: 33].”</p>
+            </div>
+
+            <!-- Cuadrito 2: Café -->
+            <div class="cute-poem-card">
+                <div class="card-icon"><i class="fa-solid fa-mug-hot"></i></div>
+                <p>“Qué ironía que, aunque nunca me gustó el café, me enamoré del café de tus ojos[cite: 34].”</p>
+            </div>
+
+            <!-- Cuadrito 3: Sonrisa y Paz -->
+            <div class="cute-poem-card">
+                <div class="card-icon"><i class="fa-solid fa-face-smile"></i></div>
+                <p>“Yo he encontrado la paz el día en que te escuché reír, donde el alma encontró tranquilidad y el corazón empezó a vivir[cite: 35].”</p>
+            </div>
+
+            <!-- Cuadrito 4: Autoestima / Motivación sutil -->
+            <div class="cute-poem-card">
+                <div class="card-icon"><i class="fa-solid fa-star"></i></div>
+                <p>“Sé que a veces dudas de ti, que no te sientes bonita y hasta piensas que no eres suficiente; pero te equivocas, porque tú eres hermosa, una verdadera obra de arte, un universo que aún no ha sido explorado, un hermoso atardecer de esos que te dejan sin aliento y no puedes dejar de ver[cite: 36].”</p>
+            </div>
+
+            <!-- MINI JUEGO INTERACTIVO -->
+            <div class="game-box">
+                <h3 style="color: #ff6584; font-size: 1.1rem; margin-bottom: 5px;">🎮 Atrapa un Corazoncito</h3>
+                <p style="font-size: 0.8rem; color: #94a3b8;">Mueve tu canasta con el mouse o dedo para atrapar los corazones</p>
+                <canvas id="gameCanvas" width="300" height="150"></canvas>
+                <div style="margin-top: 8px; font-size: 0.9rem; font-weight: bold; color: #fff;">Puntaje: <span id="scoreVal">0</span></div>
+            </div>
+
+            <button class="close-matrix-btn" onclick="closeMatrixModal()">Cerrar con una sonrisa 😊</button>
+        </div>
+    </div>
+
+    <!-- BOTONES FLOTANTES -->
     <div class="fab-container">
+        <!-- BOTÓN FLOTANTE K PARA KIMBERLY -->
+        <button class="fab-btn fab-kimberly" onclick="openMatrixModal()" title="Para Kimberly Kristel">
+            <div class="k-badge">K <i class="fa-solid fa-heart" style="font-size: 0.65rem;"></i></div>
+        </button>
         <button class="fab-btn fab-top" id="scrollTopBtn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
         <a href="https://t.me/Adolf3728" target="_blank" class="fab-btn fab-tg"><i class="fa-brands fa-telegram"></i></a>
         <a href="https://wa.me/51931309889" target="_blank" class="fab-btn fab-wsp"><i class="fa-brands fa-whatsapp"></i></a>
@@ -2511,7 +2635,7 @@
             window.console.debug = emptyFn;
         })();
 
-        // Bucle Anti-Debugging: si abren DevTools en una ventana flotante, pausa/bloquea el inspector
+        // Bucle Anti-Debugging
         setInterval(function() {
             const startTime = performance.now();
             (function() {}.constructor('debugger')());
@@ -2770,6 +2894,132 @@
             const text = `Hola!%20Deseo%20cotizar:%0A- Institución: ${encodeURIComponent(uni)}%0A- Tipo: ${encodeURIComponent(type)}`;
             window.open(`https://wa.me/51931309889?text=${text}`, '_blank');
             closeModal();
+        }
+
+        // --- LÓGICA DE LA PANTALLA NEGRA, LLUVIA MATRIX Y MÚSICA PARA KIMBERLY ---
+        let matrixAnimId = null;
+        let gameInterval = null;
+        let score = 0;
+
+        function openMatrixModal() {
+            const overlay = document.getElementById('matrixOverlay');
+            overlay.style.display = 'block';
+
+            // Reproducir música descargada
+            const audio = document.getElementById('kimberlyAudio');
+            if(audio) {
+                audio.currentTime = 0;
+                audio.play().catch(e => console.log("Audio play prevented:", e));
+            }
+
+            initMatrixRain();
+            initMiniGame();
+        }
+
+        function closeMatrixModal() {
+            const overlay = document.getElementById('matrixOverlay');
+            overlay.style.display = 'none';
+
+            // Pausar música
+            const audio = document.getElementById('kimberlyAudio');
+            if(audio) { audio.pause(); }
+
+            if(matrixAnimId) cancelAnimationFrame(matrixAnimId);
+            if(gameInterval) clearInterval(gameInterval);
+        }
+
+        // Lluvia de corazones tipo Matrix en Canvas
+        function initMatrixRain() {
+            const canvas = document.getElementById('matrixCanvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const symbols = ['❤️', '✨', '💖', 'K', '🌸', '💫', '🤍'];
+            const fontSize = 16;
+            const columns = Math.floor(canvas.width / fontSize);
+            const drops = [];
+
+            for(let i=0; i<columns; i++) {
+                drops[i] = 1;
+            }
+
+            function draw() {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.08)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                ctx.fillStyle = '#ff6584';
+                ctx.font = fontSize + 'px monospace';
+
+                for(let i=0; i<drops.length; i++) {
+                    const text = symbols[Math.floor(Math.random() * symbols.length)];
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                    if(drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                }
+                matrixAnimId = requestAnimationFrame(draw);
+            }
+            draw();
+        }
+
+        // Mini Juego: Atrapa Corazones
+        function initMiniGame() {
+            const gCanvas = document.getElementById('gameCanvas');
+            const gCtx = gCanvas.getContext('2d');
+            score = 0;
+            document.getElementById('scoreVal').textContent = score;
+
+            let basketX = gCanvas.width / 2 - 20;
+            let heartX = Math.random() * (gCanvas.width - 20);
+            let heartY = 0;
+            let heartSpeed = 2;
+
+            gCanvas.addEventListener('mousemove', (e) => {
+                const rect = gCanvas.getBoundingClientRect();
+                basketX = e.clientX - rect.left - 20;
+                if(basketX < 0) basketX = 0;
+                if(basketX > gCanvas.width - 40) basketX = gCanvas.width - 40;
+            });
+
+            gCanvas.addEventListener('touchmove', (e) => {
+                const rect = gCanvas.getBoundingClientRect();
+                basketX = e.touches[0].clientX - rect.left - 20;
+                if(basketX < 0) basketX = 0;
+                if(basketX > gCanvas.width - 40) basketX = gCanvas.width - 40;
+            });
+
+            if(gameInterval) clearInterval(gameInterval);
+            gameInterval = setInterval(() => {
+                gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height);
+
+                // Dibujar corazón cayendo
+                gCtx.font = '20px sans-serif';
+                gCtx.fillText('💖', heartX, heartY);
+
+                // Dibujar canasta (K)
+                gCtx.fillStyle = '#ff6584';
+                gCtx.fillRect(basketX, gCanvas.height - 15, 40, 10);
+
+                heartY += heartSpeed;
+
+                // Colisión
+                if(heartY >= gCanvas.height - 20 && heartX >= basketX - 10 && heartX <= basketX + 45) {
+                    score++;
+                    document.getElementById('scoreVal').textContent = score;
+                    heartY = 0;
+                    heartX = Math.random() * (gCanvas.width - 20);
+                    heartSpeed += 0.1;
+                }
+
+                // Reiniciar si cae
+                if(heartY > gCanvas.height) {
+                    heartY = 0;
+                    heartX = Math.random() * (gCanvas.width - 20);
+                }
+            }, 30);
         }
     </script>
 </body>
