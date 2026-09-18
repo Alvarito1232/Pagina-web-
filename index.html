@@ -29,6 +29,7 @@
             --card-hover: rgba(255, 255, 255, 0.08);
             --glass-bg: rgba(21, 28, 44, 0.85);
             --glass-border: rgba(255, 255, 255, 0.15);
+            --card-bg-texture: linear-gradient(135deg, rgba(21, 28, 44, 0.88), rgba(15, 23, 42, 0.94)), url('FONDO 1 TOTAL.jpg') center/cover no-repeat, url('fondo_nuevo.jpg') center/cover no-repeat;
         }
 
         [data-theme="light"] {
@@ -43,6 +44,7 @@
             --glass-bg: rgba(255, 255, 255, 0.88);
             --glass-border: rgba(0, 0, 0, 0.12);
             --accent-glow: rgba(99, 102, 241, 0.15);
+            --card-bg-texture: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(241, 245, 249, 0.96)), url('FONDO 1 TOTAL.jpg') center/cover no-repeat, url('fondo_nuevo.jpg') center/cover no-repeat;
         }
 
         * {
@@ -209,7 +211,7 @@
             left: -330px;
             width: 320px;
             height: calc(100vh - 60px);
-            background: linear-gradient(rgba(11, 15, 25, 0.90), rgba(11, 15, 25, 0.95)), url('casa 1.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(11, 15, 25, 0.90), rgba(11, 15, 25, 0.95)), url('FONDO 1 TOTAL.jpg') center/cover no-repeat, url('casa 1.jpg') center/cover no-repeat;
             border-right: 1px solid var(--border-color);
             overflow-y: auto;
             transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -219,7 +221,7 @@
         }
 
         [data-theme="light"] .sidebar {
-            background: linear-gradient(rgba(241, 245, 249, 0.90), rgba(241, 245, 249, 0.95)), url('casa 1.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(241, 245, 249, 0.90), rgba(241, 245, 249, 0.95)), url('FONDO 1 TOTAL.jpg') center/cover no-repeat, url('casa 1.jpg') center/cover no-repeat;
         }
 
         .sidebar.active {
@@ -472,7 +474,7 @@
             max-width: 650px;
         }
 
-        /* SECCIÓN IMPACTO Y ESTADÍSTICAS ANIMADAS */
+        /* SECCIÓN 1: FOTO 1 - IMPACTO Y ESTADÍSTICAS CON FONDO 1 TOTAL */
         .stats-counter-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -481,30 +483,38 @@
         }
 
         .stat-box {
-            background: var(--bg-card);
+            background: linear-gradient(135deg, rgba(21, 28, 44, 0.88), rgba(15, 23, 42, 0.94)), url('FONDO 1 TOTAL.jpg') center/cover no-repeat, url('fondo_nuevo.jpg') center/cover no-repeat;
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 16px;
+            padding: 18px 16px;
             text-align: center;
             backdrop-filter: blur(8px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 18px rgba(0,0,0,0.3);
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-color);
         }
 
         .stat-number {
-            font-size: 1.8rem;
+            font-size: 1.85rem;
             font-weight: 900;
             color: var(--accent-color);
             margin-bottom: 4px;
+            text-shadow: 0 2px 10px rgba(99, 102, 241, 0.3);
         }
 
         .stat-label {
             font-size: 0.78rem;
             color: var(--text-secondary);
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.6px;
         }
 
+        /* SECCIÓN 2: FOTO 2 - TARJETAS PRINCIPALES DE SERVICIOS CON FONDO 1 TOTAL */
         .main-services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -513,7 +523,7 @@
         }
 
         .service-cover-card {
-            background: var(--bg-secondary);
+            background: var(--card-bg-texture);
             border: 1px solid var(--border-color);
             border-radius: 18px;
             padding: 22px 18px;
@@ -523,13 +533,13 @@
             position: relative;
             overflow: hidden;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
         }
 
         .service-cover-card:hover {
             transform: translateY(-5px);
             border-color: var(--accent-color);
-            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.25);
+            box-shadow: 0 12px 28px rgba(99, 102, 241, 0.3);
         }
 
         .service-cover-card.disney-card {
@@ -545,14 +555,15 @@
             width: 58px;
             height: 58px;
             border-radius: 14px;
-            background: rgba(99, 102, 241, 0.15);
-            border: 1px solid rgba(99, 102, 241, 0.3);
+            background: rgba(99, 102, 241, 0.18);
+            border: 1px solid rgba(99, 102, 241, 0.35);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
             color: var(--accent-color);
             margin: 0 auto 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         .service-cover-title {
@@ -596,6 +607,132 @@
             border-radius: 10px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+        }
+
+        /* SECCIÓN 3: FOTO 3 - CONTENEDOR DIAGRAMA OSINT CON FONDO 1 TOTAL */
+        .diagram-container {
+            background: linear-gradient(rgba(11, 15, 25, 0.82), rgba(11, 15, 25, 0.85)), url('FONDO 1 TOTAL.jpg') center/cover no-repeat, url('fondo_nuevo.jpg') center/cover no-repeat;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 45px 25px;
+            margin-bottom: 40px;
+            text-align: center;
+            min-height: 480px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .diagram-title {
+            font-size: 1.6rem;
+            font-weight: 900;
+            margin-bottom: 25px;
+            color: #ffffff;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+
+        .diagram-img-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .diagram-img-wrapper img {
+            max-width: 100%;
+            max-height: 520px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 14px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* SECCIÓN 4: FOTO 4 - SECCIÓN UNIVERSIDADES Y COLEGIOS CON FONDO 1 TOTAL */
+        .academic-section {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.88), rgba(15, 23, 42, 0.95)), url('FONDO 1 TOTAL.jpg') center/cover no-repeat, url('fondo_nuevo.jpg') center/cover no-repeat;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 40px 25px;
+            margin-bottom: 35px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+            text-align: center;
+        }
+
+        .academic-header h2 {
+            color: #ffffff;
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .academic-header p {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            margin-bottom: 30px;
+        }
+
+        .uni-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 16px;
+        }
+
+        .uni-card {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            padding: 18px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .uni-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--accent-color);
+            box-shadow: 0 8px 20px var(--accent-glow);
+        }
+
+        .uni-badge {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .uni-badge img {
+            width: 78%;
+            height: 78%;
+            object-fit: contain;
+        }
+
+        .uni-card-title {
+            color: #ffffff;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-align: center;
         }
 
         .osint-info-container {
@@ -649,7 +786,6 @@
             color: #6366f1;
         }
 
-        /* BARRA DE CHIPS SEPARADAS Y ESTILIZADAS */
         .category-filter-bar {
             display: flex;
             gap: 8px;
@@ -711,131 +847,8 @@
             letter-spacing: 0.5px;
         }
 
-        .diagram-container {
-            background: linear-gradient(rgba(11, 15, 25, 0.82), rgba(11, 15, 25, 0.82)), url('fondo_nuevo.jpg') center/cover no-repeat;
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 45px 25px;
-            margin-bottom: 40px;
-            text-align: center;
-            min-height: 480px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .diagram-title {
-            font-size: 1.6rem;
-            font-weight: 900;
-            margin-bottom: 25px;
-            color: #ffffff;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
-        }
-
-        .diagram-img-wrapper {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .diagram-img-wrapper img {
-            max-width: 100%;
-            max-height: 520px;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            border-radius: 14px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .academic-section {
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.85), rgba(15, 23, 42, 0.95));
-            border: 1px solid var(--glass-border);
-            backdrop-filter: blur(12px);
-            border-radius: 20px;
-            padding: 40px 25px;
-            margin-bottom: 35px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-            text-align: center;
-        }
-
-        .academic-header h2 {
-            color: #ffffff;
-            font-size: 1.4rem;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
-        }
-
-        .academic-header p {
-            color: var(--text-secondary);
-            font-size: 0.92rem;
-            margin-bottom: 30px;
-        }
-
-        .uni-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            gap: 16px;
-        }
-
-        .uni-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 14px;
-            padding: 18px 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.25s ease;
-        }
-
-        .uni-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.12);
-            border-color: var(--accent-color);
-            box-shadow: 0 8px 20px var(--accent-glow);
-        }
-
-        .uni-badge {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .uni-badge img {
-            width: 78%;
-            height: 78%;
-            object-fit: contain;
-        }
-
-        .uni-card-title {
-            color: #ffffff;
-            font-size: 0.82rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            text-align: center;
-        }
-
         .uni-quote-card {
-            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.90)), url('fondo_nuevo.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.90)), url('FONDO 1 TOTAL.jpg') center/cover no-repeat, url('fondo_nuevo.jpg') center/cover no-repeat;
             border: 1px solid var(--border-color);
             border-radius: 18px;
             padding: 40px 20px;
@@ -851,7 +864,7 @@
         }
 
         .card {
-            background-color: var(--bg-secondary);
+            background: var(--card-bg-texture);
             border: 1px solid var(--border-color);
             border-radius: 16px;
             overflow: hidden;
@@ -994,7 +1007,7 @@
         }
 
         .pricing-card {
-            background: var(--bg-secondary);
+            background: var(--card-bg-texture);
             border: 1px solid var(--border-color);
             border-radius: 18px;
             padding: 25px 18px;
@@ -1074,7 +1087,6 @@
             margin-top: 2px;
         }
 
-        /* COMPONENTE NOVEDOSO: COTIZADOR INTERACTIVO */
         .calculator-card {
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
@@ -1082,22 +1094,6 @@
             padding: 25px;
             margin-bottom: 35px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-        }
-
-        .calc-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.2rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            color: var(--text-primary);
-        }
-
-        .calc-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
         }
 
         .calc-result-box {
@@ -1119,7 +1115,6 @@
             margin: 10px 0;
         }
 
-        /* NOTIFICACIONES DE PRUEBA SOCIAL EN VIVO */
         .social-proof-toast {
             position: fixed;
             bottom: 20px;
@@ -1242,7 +1237,6 @@
             user-select: text;
         }
 
-        /* SAMPLE REPORT MOCKUP */
         .sample-report-mockup {
             background: #0f172a;
             border: 1px dashed var(--border-color);
@@ -1505,7 +1499,7 @@
             <p class="hero-subtitle-text">Plataforma Integral de Servicios Digitales, Inteligencia OSINT & Soluciones Académicas</p>
         </div>
 
-        <!-- BANNERS DE IMPACTO / ESTADÍSTICAS ANIMADAS -->
+        <!-- FOTO 1: BANNERS DE IMPACTO CON FONDO 1 TOTAL -->
         <div class="stats-counter-grid">
             <div class="stat-box">
                 <div class="stat-number">+3,500</div>
@@ -1533,6 +1527,7 @@
                 <span>Nuestros Servicios Principales</span>
             </div>
 
+            <!-- FOTO 2: SERVICIOS PRINCIPALES CON FONDO 1 TOTAL -->
             <div class="main-services-grid">
                 <div class="service-cover-card" onclick="showView('trabajosView')">
                     <div class="service-cover-icon"><i class="fa-solid fa-graduation-cap"></i></div>
@@ -1636,7 +1631,7 @@
                 </div>
             </div>
 
-            <!-- MÓDULO DIAGRAMA OSINT -->
+            <!-- FOTO 3: MÓDULO DIAGRAMA OSINT CON FONDO 1 TOTAL -->
             <div class="diagram-container">
                 <h2 class="diagram-title">RED DE CONSULTAS E INTEGRACIÓN OSINT</h2>
                 <div class="diagram-img-wrapper">
@@ -1644,7 +1639,7 @@
                 </div>
             </div>
 
-            <!-- SECCIÓN UNIVERSIDADES -->
+            <!-- FOTO 4: SECCIÓN UNIVERSIDADES Y COLEGIOS CON FONDO 1 TOTAL -->
             <div class="academic-section">
                 <div class="academic-header">
                     <h2>🎓 TRABAJOS UNIVERSITARIOS DE TODAS LAS UNIVERSIDADES Y COLEGIOS DEL PERÚ</h2>
@@ -2391,7 +2386,7 @@
 
     </main>
 
-    <!-- MODAL COTIZADOR INTERACTIVO (NOVEDAD 1) -->
+    <!-- MODAL COTIZADOR INTERACTIVO -->
     <div class="modal-overlay" id="calcModal">
         <div class="modal-card">
             <button class="modal-close" onclick="closeCalcModal()"><i class="fa-solid fa-xmark"></i></button>
@@ -2434,7 +2429,7 @@
         </div>
     </div>
 
-    <!-- MODAL MUESTRA REPORTE DEMO (NOVEDAD 2) -->
+    <!-- MODAL MUESTRA REPORTE DEMO -->
     <div class="modal-overlay" id="sampleModal">
         <div class="modal-card">
             <button class="modal-close" onclick="closeSampleModal()"><i class="fa-solid fa-xmark"></i></button>
