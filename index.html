@@ -292,7 +292,6 @@
             background: var(--card-hover);
         }
 
-        /* ESTILO DEL AVISO DE SOPORTE DE REDES */
         .social-notice-box {
             background: rgba(99, 102, 241, 0.12);
             border: 1px solid rgba(99, 102, 241, 0.3);
@@ -327,7 +326,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* HERO BANNER PRINCIPAL */
         .hero-banner-main {
             background: linear-gradient(rgba(11, 15, 25, 0.72), rgba(11, 15, 25, 0.78)), url('bebe 2.jpg') center 30%/cover no-repeat;
             border: 1px solid var(--border-color);
@@ -409,7 +407,6 @@
             box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
         }
 
-        /* ESTILO PARA TARJETA DE NEGOCIO CLIENTE (DISNEY+) */
         .service-cover-card.disney-card {
             border-color: rgba(0, 136, 204, 0.5);
         }
@@ -606,7 +603,6 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.4);
         }
 
-        /* SECCIÓN UNIVERSIDADES */
         .academic-section {
             background-image: linear-gradient(rgba(11, 18, 33, 0.88), rgba(11, 18, 33, 0.88)), url('paisaje 123.jpg');
             background-size: cover;
@@ -952,7 +948,6 @@
             font-size: 0.9rem;
         }
 
-        /* BOTONES FLOTANTES (FAB) */
         .fab-container {
             position: fixed;
             bottom: 20px;
@@ -1019,12 +1014,12 @@
     <aside class="sidebar" id="sidebar">
         <div class="search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" id="searchInput" onkeyup="filterMenu()" placeholder="Buscar servicio...">
+            <input type="text" id="searchInput" onkeyup="filterMenu()" placeholder="Buscar servicio o consulta...">
         </div>
 
         <ul class="menu-list" id="menuList">
             <li class="menu-item">
-                <a href="#" class="menu-link active-link" onclick="showView('homeView')">
+                <a href="#" class="menu-link active-link" onclick="showView('homeView', this)">
                     <div class="menu-link-left">
                         <i class="fa-solid fa-house"></i>
                         <span>Inicio / ROCKET</span>
@@ -1078,7 +1073,7 @@
             </li>
 
             <li class="menu-item">
-                <a href="#" class="menu-link" onclick="showView('trabajosView')">
+                <a href="#" class="menu-link" onclick="showView('trabajosView', this)">
                     <div class="menu-link-left">
                         <i class="fa-solid fa-graduation-cap"></i>
                         <span>Trabajos Universitarios y Escolares</span>
@@ -1087,7 +1082,7 @@
             </li>
 
             <li class="menu-item">
-                <a href="#" class="menu-link" onclick="showView('detallesView')">
+                <a href="#" class="menu-link" onclick="showView('detallesView', this)">
                     <div class="menu-link-left">
                         <i class="fa-solid fa-gift"></i>
                         <span>Detalles y Regalos GitHub</span>
@@ -1096,7 +1091,7 @@
             </li>
 
             <li class="menu-item">
-                <a href="#" class="menu-link" onclick="showView('emprendimientoView')">
+                <a href="#" class="menu-link" onclick="showView('emprendimientoView', this)">
                     <div class="menu-link-left">
                         <i class="fa-solid fa-store"></i>
                         <span>Emprendimientos Universitarios</span>
@@ -1105,7 +1100,7 @@
             </li>
 
             <li class="menu-item">
-                <a href="#" class="menu-link" onclick="showView('webDevView')">
+                <a href="#" class="menu-link" onclick="showView('webDevView', this)">
                     <div class="menu-link-left">
                         <i class="fa-solid fa-laptop-code"></i>
                         <span>Crea tu Página Web</span>
@@ -1113,7 +1108,6 @@
                 </a>
             </li>
 
-            <!-- MENSAJE DE AVISO PARA REDES SOCIALES -->
             <li class="menu-item">
                 <div class="social-notice-box">
                     <i class="fa-solid fa-headset" style="color: var(--accent-color); font-size: 1.1rem; margin-bottom: 4px; display: block;"></i>
@@ -1121,7 +1115,6 @@
                 </div>
             </li>
 
-            <!-- ENLACES A REDES SOCIALES Y CANALES -->
             <li class="menu-item">
                 <a href="https://wa.me/51931309889?text=Hola,%20deseo%20mayor%20informaci%C3%B3n" target="_blank" class="menu-link menu-link-wsp">
                     <div class="menu-link-left">
@@ -1201,7 +1194,6 @@
                     <div class="service-cover-btn">Ver Planes Web <i class="fa-solid fa-arrow-right"></i></div>
                 </div>
 
-                <!-- NUEVO CUADRO DE NEGOCIO CLIENTE (DISNEY+ PREMIUM) -->
                 <div class="service-cover-card disney-card" onclick="window.open('https://wa.me/51931309889?text=Hola,%20deseo%20adquirir%20Disney%2B%20Premium', '_blank')">
                     <span class="badge-partner">Socio / Aliado</span>
                     <div class="service-cover-icon" style="background: rgba(0, 136, 204, 0.2); color: #0088cc; border-color: rgba(0, 136, 204, 0.4);">
@@ -1226,7 +1218,6 @@
                 </div>
             </div>
 
-            <!-- SECCIÓN TRABAJOS UNIVERSITARIOS -->
             <div class="academic-section">
                 <div class="academic-header">
                     <h2>🎓 TRABAJOS UNIVERSITARIOS DE TODAS LAS UNIVERSIDADES Y COLEGIOS DEL PERÚ</h2>
@@ -1402,6 +1393,11 @@
                 <div class="card service-item" data-category="SUNARP"><div class="card-img-placeholder"><i class="fa-solid fa-building fa-3x"></i></div><div class="card-body"><div><div class="card-title">SUNARP</div><div class="card-desc">Búsqueda de propiedades, terrenos y vehículos a nivel nacional.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20SUNARP" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
                 <div class="card service-item" data-category="Bloqueo"><div class="card-img-placeholder"><i class="fa-solid fa-ban fa-3x"></i></div><div class="card-body"><div><div class="card-title">Bloqueos y Operaciones</div><div class="card-desc">Servicios de bloqueo administrativo de líneas, equipos y soporte.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20de%20Bloqueo" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
                 <div class="card service-item" data-category="VIRTUALES"><div class="card-img-placeholder"><i class="fa-solid fa-sim-card fa-3x"></i></div><div class="card-body"><div><div class="card-title">Números Virtuales</div><div class="card-desc">Números temporales para validaciones de SMS, WhatsApp y Telegram.</div></div><a href="https://wa.me/51931309889?text=Hola,%20deseo%20un%20Numero%20Virtual" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div></div>
+                
+                <div id="noResultsMsg" class="hidden" style="grid-column: 1 / -1; text-align: center; padding: 40px 20px; color: var(--text-secondary);">
+                    <i class="fa-solid fa-magnifying-glass-minus fa-3x" style="margin-bottom: 12px; color: var(--accent-color);"></i>
+                    <p style="font-size: 1rem; font-weight: 600;">No se encontraron servicios disponibles para este filtro.</p>
+                </div>
             </div>
         </div>
 
@@ -1620,7 +1616,7 @@
             </div>
 
             <div class="form-group">
-                <label>Tema o Materia</label>
+                <label>Tema o Materia *</label>
                 <input type="text" id="modalTopic" placeholder="Ej: Fisiología, Anatomía, Álgebra...">
             </div>
 
@@ -1635,7 +1631,6 @@
         </div>
     </div>
 
-    <!-- BOTONES FLOTANTES (FAB) CON TELEGRAM, INSTAGRAM Y WHATSAPP -->
     <div class="fab-container">
         <button class="fab-btn fab-top" id="scrollTopBtn" onclick="scrollToTop()" title="Volver arriba">
             <i class="fa-solid fa-arrow-up"></i>
@@ -1692,7 +1687,14 @@
             }
         }
 
-        function showView(viewId) {
+        function updateActiveLink(targetElement) {
+            document.querySelectorAll('.menu-link').forEach(link => link.classList.remove('active-link'));
+            if (targetElement && targetElement.classList.contains('menu-link')) {
+                targetElement.classList.add('active-link');
+            }
+        }
+
+        function showView(viewId, element = null) {
             document.querySelectorAll('.view-section').forEach(view => {
                 view.classList.add('hidden');
             });
@@ -1701,6 +1703,7 @@
                 targetView.classList.remove('hidden');
             }
             
+            updateActiveLink(element);
             document.getElementById('sidebar').classList.remove('active');
             document.getElementById('overlay').classList.remove('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1711,31 +1714,75 @@
             document.getElementById('categoryTitle').textContent = category === 'ALL' ? 'Todas las Consultas OSINT' : category;
             
             const items = document.querySelectorAll('#servicesGrid .service-item');
+            let visibleCount = 0;
+
             items.forEach(item => {
                 const itemCategory = item.getAttribute('data-category');
                 if (category === 'ALL' || itemCategory === category) {
                     item.classList.remove('hidden');
+                    visibleCount++;
                 } else {
                     item.classList.add('hidden');
                 }
             });
 
-            if (element) {
-                document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
-                element.classList.add('active');
+            const noResults = document.getElementById('noResultsMsg');
+            if (visibleCount === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
             }
+
+            document.querySelectorAll('.filter-chip').forEach(c => {
+                if (element && c === element) {
+                    c.classList.add('active');
+                } else if (!element && c.textContent.trim().toUpperCase() === category.toUpperCase()) {
+                    c.classList.add('active');
+                } else if (!element && category === 'ALL' && c.textContent.trim() === 'Todos') {
+                    c.classList.add('active');
+                } else {
+                    c.classList.remove('active');
+                }
+            });
         }
 
         function filterMenu() {
-            const input = document.getElementById('searchInput').value.toLowerCase();
-            const items = document.querySelectorAll('#menuList .menu-item');
+            const input = document.getElementById('searchInput').value.toLowerCase().trim();
+            const menuItems = document.querySelectorAll('#menuList > .menu-item');
             
-            items.forEach(item => {
-                const text = item.textContent.toLowerCase();
-                if (text.includes(input)) {
-                    item.style.display = '';
+            menuItems.forEach(item => {
+                const link = item.querySelector('.menu-link');
+                const submenu = item.querySelector('.submenu');
+                
+                if (submenu) {
+                    const subLinks = submenu.querySelectorAll('li');
+                    let subMatch = false;
+                    
+                    subLinks.forEach(sub => {
+                        const text = sub.textContent.toLowerCase();
+                        if (text.includes(input)) {
+                            sub.style.display = '';
+                            subMatch = true;
+                        } else {
+                            sub.style.display = 'none';
+                        }
+                    });
+                    
+                    if (subMatch || (link && link.textContent.toLowerCase().includes(input))) {
+                        item.style.display = '';
+                        if (input !== '') {
+                            submenu.classList.add('open');
+                        }
+                    } else {
+                        item.style.display = 'none';
+                    }
                 } else {
-                    item.style.display = 'none';
+                    const text = item.textContent.toLowerCase();
+                    if (text.includes(input)) {
+                        item.style.display = '';
+                    } else {
+                        item.style.display = 'none';
+                    }
                 }
             });
         }
@@ -1753,10 +1800,13 @@
 
         function openModalForUni() {
             document.getElementById('modalUni').value = currentSelectedUni;
+            document.getElementById('modalTopic').value = '';
             document.getElementById('quoteModal').classList.add('active');
         }
 
         function openModalForTask(taskType) {
+            document.getElementById('modalUni').value = '';
+            document.getElementById('modalTopic').value = '';
             document.getElementById('modalType').value = taskType;
             document.getElementById('quoteModal').classList.add('active');
         }
@@ -1765,13 +1815,25 @@
             document.getElementById('quoteModal').classList.remove('active');
         }
 
-        function sendFormattedWsp() {
-            const uni = document.getElementById('modalUni').value || 'No especificado';
-            const type = document.getElementById('modalType').value;
-            const topic = document.getElementById('modalTopic').value || 'Por definir';
-            const deadline = document.getElementById('modalDeadline').value || 'Lo antes posible';
+        document.getElementById('quoteModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
 
-            const text = `Hola ROCKET 🚀, deseo cotizar un trabajo:%0A%0A🎓 *Institución:* ${uni}%0A📚 *Tipo:* ${type}%0A📖 *Materia/Tema:* ${topic}%0A⏰ *Fecha Límite:* ${deadline}`;
+        function sendFormattedWsp() {
+            const uni = document.getElementById('modalUni').value.trim() || 'No especificado';
+            const type = document.getElementById('modalType').value;
+            const topic = document.getElementById('modalTopic').value.trim();
+            const deadline = document.getElementById('modalDeadline').value.trim();
+
+            if (!topic) {
+                alert('Por favor, ingresa el tema o materia de tu trabajo.');
+                document.getElementById('modalTopic').focus();
+                return;
+            }
+
+            const text = `Hola ROCKET 🚀, deseo cotizar un trabajo:%0A%0A🎓 *Institución:* ${encodeURIComponent(uni)}%0A📚 *Tipo:* ${encodeURIComponent(type)}%0A📖 *Materia/Tema:* ${encodeURIComponent(topic)}%0A⏰ *Fecha Límite:* ${encodeURIComponent(deadline || 'Lo antes posible')}`;
             window.open(`https://wa.me/51931309889?text=${text}`, '_blank');
             closeModal();
         }
