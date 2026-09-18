@@ -772,7 +772,6 @@
             margin-bottom: 16px;
         }
 
-        /* GRUPO DE BOTONES Y REDES SOCIALES EN TARJETAS */
         .social-buttons {
             display: flex;
             gap: 8px;
@@ -1990,10 +1989,17 @@
                 }
             });
 
-            if (element) {
-                document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
-                element.classList.add('active');
-            }
+            document.querySelectorAll('.filter-chip').forEach(chip => {
+                if (element && chip === element) {
+                    chip.classList.add('active');
+                } else if (!element && chip.textContent.trim().toUpperCase() === category.toUpperCase()) {
+                    chip.classList.add('active');
+                } else if (!element && category === 'ALL' && chip.textContent.trim().toUpperCase() === 'TODOS') {
+                    chip.classList.add('active');
+                } else {
+                    chip.classList.remove('active');
+                }
+            });
         }
 
         function filterMenu() {
@@ -2047,6 +2053,18 @@
         }
 
         function sendFormattedTg() {
+            const uni = document.getElementById('modalUni').value || 'No especificado';
+            const type = document.getElementById('modalType').value;
+            const topic = document.getElementById('modalTopic').value || 'Por definir';
+            const deadline = document.getElementById('modalDeadline').value || 'Lo antes posible';
+
+            const text = `Hola ROCKET 🚀, deseo cotizar un trabajo:\n\n🎓 *Institución:* ${uni}\n📚 *Tipo:* ${type}\n📖 *Materia/Tema:* ${topic}\n⏰ *Fecha Límite:* ${deadline}`;
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => {
+                    alert('¡Cotización copiada al portapapeles! Pégala en el chat al ingresar a Telegram.');
+                }).catch(() => {});
+            }
             window.open('https://t.me/+FI7jNf9oVo44ZjBh', '_blank');
             closeModal();
         }
