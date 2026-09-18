@@ -23,6 +23,8 @@
             --border-color: rgba(255, 255, 255, 0.15);
             --accent-color: #6366f1;
             --accent-glow: rgba(99, 102, 241, 0.45);
+            --pink-accent: #ec4899;
+            --pink-glow: rgba(236, 72, 153, 0.5);
             --wsp-color: #25d366;
             --tg-color: #229ed9;
             --ig-color: #e1306c;
@@ -189,6 +191,34 @@
         .quick-calc-badge:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 15px var(--accent-glow);
+        }
+
+        /* BOTÓN DEDICADO Y EXCLUSIVO PARA KIMBERLY */
+        .btn-kimberly {
+            background: linear-gradient(135deg, #f43f5e, #ec4899);
+            color: #ffffff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 12px var(--pink-glow);
+            border: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            animation: pulsePink 2s infinite;
+        }
+
+        .btn-kimberly:hover {
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 4px 18px var(--pink-glow);
+        }
+
+        @keyframes pulsePink {
+            0%, 100% { box-shadow: 0 0 10px rgba(236, 72, 153, 0.4); }
+            50% { box-shadow: 0 0 20px rgba(236, 72, 153, 0.8); }
         }
 
         .icon-btn {
@@ -1272,6 +1302,279 @@
             filter: blur(2px);
         }
 
+        /* MODAL DEDICADO Y ROMÁNTICO PARA KIMBERLY */
+        .kimberly-modal-card {
+            background: linear-gradient(135deg, rgba(26, 16, 37, 0.98), rgba(15, 23, 42, 0.98));
+            border: 2px solid rgba(236, 72, 153, 0.5);
+            border-radius: 28px;
+            width: 100%;
+            max-width: 780px;
+            max-height: 90vh;
+            padding: 30px 24px;
+            box-shadow: 0 20px 50px rgba(236, 72, 153, 0.35);
+            position: relative;
+            text-align: center;
+            overflow-y: auto;
+        }
+
+        .kimberly-modal-card canvas#heartsCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .kimberly-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .kimberly-avatar {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f43f5e, #ec4899);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            box-shadow: 0 0 25px rgba(236, 72, 153, 0.7);
+            font-size: 2.3rem;
+            color: #ffffff;
+            animation: heartPulse 1.8s infinite;
+        }
+
+        @keyframes heartPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+        }
+
+        .kimberly-title {
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #f43f5e, #f472b6, #fb7185);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .kimberly-subtitle {
+            font-size: 0.92rem;
+            color: #fbcfe8;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        /* TABS NAVEGACIÓN DENTRO DEL MODAL */
+        .kimberly-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .kim-tab-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(236, 72, 153, 0.3);
+            color: #fbcfe8;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.83rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .kim-tab-btn.active, .kim-tab-btn:hover {
+            background: linear-gradient(135deg, #f43f5e, #ec4899);
+            color: #ffffff;
+            border-color: #f43f5e;
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.5);
+        }
+
+        .kim-tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .kim-tab-content.active {
+            display: block;
+        }
+
+        /* POEMAS Y FRASES */
+        .poem-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(236, 72, 153, 0.25);
+            border-radius: 18px;
+            padding: 20px;
+            margin-bottom: 15px;
+            text-align: left;
+            position: relative;
+            backdrop-filter: blur(8px);
+        }
+
+        .poem-author {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: #f472b6;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .poem-text {
+            color: #f1f5f9;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            font-style: italic;
+            margin-bottom: 6px;
+        }
+
+        .kimberly-phrase-card {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(236, 72, 153, 0.3);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 14px;
+            backdrop-filter: blur(8px);
+            text-align: left;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .kimberly-phrase-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(236, 72, 153, 0.7);
+        }
+
+        .kimberly-phrase-card i {
+            color: #ec4899;
+            margin-right: 8px;
+            font-size: 1rem;
+        }
+
+        .kimberly-phrase-card p {
+            color: #f1f5f9;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        /* JUEGUITOS INTERACTIVOS */
+        .game-box {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(236, 72, 153, 0.3);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .game-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #f472b6;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        /* JUEGO 1: ATRAPA CORAZONES CANVAS */
+        #catcherCanvas {
+            width: 100%;
+            height: 220px;
+            background: radial-gradient(circle, rgba(30, 20, 50, 0.9), rgba(10, 10, 25, 0.95));
+            border-radius: 16px;
+            border: 1px solid rgba(236, 72, 153, 0.4);
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .game-score-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.88rem;
+            color: #fbcfe8;
+            font-weight: 700;
+            padding: 0 5px;
+        }
+
+        /* JUEGO 2: SOBRES SECRETOS */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .secret-envelope {
+            background: linear-gradient(135deg, rgba(244, 63, 94, 0.2), rgba(236, 72, 153, 0.2));
+            border: 1px solid rgba(236, 72, 153, 0.4);
+            border-radius: 14px;
+            padding: 16px 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .secret-envelope:hover {
+            transform: translateY(-4px) scale(1.03);
+            border-color: #ec4899;
+            box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4);
+        }
+
+        .secret-envelope i {
+            font-size: 1.8rem;
+            color: #f43f5e;
+        }
+
+        .secret-envelope span {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #f1f5f9;
+        }
+
+        /* JUEGO 3: JARDÍN DE ROSAS */
+        .rose-garden {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            min-height: 80px;
+            margin-top: 12px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 14px;
+            border: 1px dashed rgba(236, 72, 153, 0.3);
+        }
+
+        .bloomed-rose {
+            font-size: 2.2rem;
+            animation: popRose 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            filter: drop-shadow(0 0 8px rgba(244, 63, 94, 0.8));
+            cursor: pointer;
+        }
+
+        @keyframes popRose {
+            0% { transform: scale(0) rotate(-30deg); opacity: 0; }
+            100% { transform: scale(1) rotate(0deg); opacity: 1; }
+        }
+
         .fab-container {
             position: fixed;
             bottom: 20px;
@@ -1325,6 +1628,10 @@
             <span>🚀 ROCKET</span>
         </div>
         <div class="header-actions">
+            <!-- BOTÓN EXCLUSIVO SOLICITADO PARA KIMBERLY KRISTEL -->
+            <button class="btn-kimberly" onclick="openKimberlyModal()">
+                <i class="fa-solid fa-heart"></i> Para Kimberly Kristel
+            </button>
             <button class="quick-calc-badge" onclick="openCalcModal()">
                 <i class="fa-solid fa-calculator"></i> Cotizador
             </button>
@@ -2366,6 +2673,158 @@
 
     </main>
 
+
+    <!-- MODAL ESPECIAL DEDICADO A KIMBERLY KRISTEL -->
+    <div class="modal-overlay" id="kimberlyModal">
+        <div class="kimberly-modal-card">
+            <button class="modal-close" onclick="closeKimberlyModal()"><i class="fa-solid fa-xmark"></i></button>
+            <canvas id="heartsCanvas"></canvas>
+
+            <div class="kimberly-content">
+                <div class="kimberly-avatar">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                
+                <h2 class="kimberly-title">Para Kimberly Kristel ✨</h2>
+                <p class="kimberly-subtitle">Un espacio lleno de poesía, detalles y juegos dedicados para ti 💖</p>
+
+                <!-- BOTONES DE PESTAÑAS -->
+                <div class="kimberly-tabs">
+                    <button class="kim-tab-btn active" onclick="switchKimTab('tabPoemas', this)">
+                        <i class="fa-solid fa-scroll"></i> Poemas & Frases
+                    </button>
+                    <button class="kim-tab-btn" onclick="switchKimTab('tabJuegos', this)">
+                        <i class="fa-solid fa-gamepad"></i> Jueguitos
+                    </button>
+                    <button class="kim-tab-btn" onclick="switchKimTab('tabRosas', this)">
+                        <i class="fa-solid fa-rose"></i> Jardín de Rosas
+                    </button>
+                </div>
+
+                <!-- PESTAÑA 1: POEMAS Y FRASES DE AMOR -->
+                <div class="kim-tab-content active" id="tabPoemas">
+                    <div class="poem-card">
+                        <div class="poem-author"><i class="fa-solid fa-feather-pointed"></i> Pablo Neruda - Poema XX</div>
+                        <div class="poem-text">
+                            "Te amo sin saber cómo, ni cuándo, ni de dónde,<br>
+                            te amo directamente sin problemas ni orgullo:<br>
+                            así te amo porque no sé amar de otra manera,<br>
+                            sino así de este modo en que no soy ni eres..."
+                        </div>
+                    </div>
+
+                    <div class="poem-card">
+                        <div class="poem-author"><i class="fa-solid fa-feather-pointed"></i> Gustavo Adolfo Bécquer</div>
+                        <div class="poem-text">
+                            "¿Qué es poesía? —dices mientras clavas<br>
+                            en mi pupila tu pupila azul.<br>
+                            ¿Qué es poesía? ¿Y tú me lo preguntas?<br>
+                            Poesía... eres tú."
+                        </div>
+                    </div>
+
+                    <div class="poem-card">
+                        <div class="poem-author"><i class="fa-solid fa-feather-pointed"></i> Mario Benedetti</div>
+                        <div class="poem-text">
+                            "Si te quiero es porque sos mi amor mi cómplice y todo,<br>
+                            y en la calle codo a codo somos mucho más que dos.<br>
+                            Tu mirada es tu mejor refugio contra las sombras..."
+                        </div>
+                    </div>
+
+                    <div class="kimberly-phrase-card">
+                        <p><i class="fa-solid fa-star"></i> Hay personas que con solo existir hacen que el día sea más bonito, y tú eres definitivamente una de ellas.</p>
+                    </div>
+
+                    <div class="kimberly-phrase-card">
+                        <p><i class="fa-solid fa-sparkles"></i> Tu sonrisa tiene ese brillo único que alegra cualquier lugar. Nunca dejes de sonreír.</p>
+                    </div>
+
+                    <div class="kimberly-phrase-card">
+                        <p><i class="fa-solid fa-rose"></i> Espero que tengas un día increíble y lleno de cosas bonitas, ¡te lo mereces siempre!</p>
+                    </div>
+                </div>
+
+                <!-- PESTAÑA 2: JUEGUITOS INTERACTIVOS -->
+                <div class="kim-tab-content" id="tabJuegos">
+                    <!-- JUEGO 1: ATRAPA CORAZONES -->
+                    <div class="game-box">
+                        <div class="game-title"><i class="fa-solid fa-heart-pulse"></i> Juego 1: Atrapa los Corazones</div>
+                        <p style="font-size: 0.8rem; color: #cbd5e1; margin-bottom: 10px;">¡Haz clic o toca los corazones flotantes antes de que desaparezcan!</p>
+                        <canvas id="catcherCanvas"></canvas>
+                        <div class="game-score-bar">
+                            <span id="gameScoreText">Corazones Atrapados: 0 💖</span>
+                            <button onclick="resetHeartGame()" class="btn-kimberly" style="padding: 4px 10px; font-size: 0.75rem;">Reiniciar Juego</button>
+                        </div>
+                        <p id="gameRewardMsg" style="font-size: 0.85rem; color: #f472b6; font-weight: 800; margin-top: 10px; min-height: 24px;"></p>
+                    </div>
+
+                    <!-- JUEGO 2: SOBRES SECRETOS -->
+                    <div class="game-box">
+                        <div class="game-title"><i class="fa-solid fa-envelope-open-text"></i> Juego 2: Sobres de la Suerte</div>
+                        <p style="font-size: 0.8rem; color: #cbd5e1;">Abre un sobre secreto para descubrir una cualidad especial sobre ti:</p>
+                        
+                        <div class="cards-grid">
+                            <div class="secret-envelope" onclick="openSecretEnvelope(1, this)">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>Sobre 1</span>
+                            </div>
+                            <div class="secret-envelope" onclick="openSecretEnvelope(2, this)">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>Sobre 2</span>
+                            </div>
+                            <div class="secret-envelope" onclick="openSecretEnvelope(3, this)">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>Sobre 3</span>
+                            </div>
+                            <div class="secret-envelope" onclick="openSecretEnvelope(4, this)">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>Sobre 4</span>
+                            </div>
+                        </div>
+                        <div id="envelopeMessageDisplay" style="margin-top: 12px; font-size: 0.88rem; color: #fbcfe8; font-weight: 700; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 12px; border: 1px solid rgba(236,72,153,0.3); min-height: 42px; display: flex; align-items: center; justify-content: center;">
+                            Haz clic en cualquiera de los sobres de arriba 💌
+                        </div>
+                    </div>
+
+                    <!-- JUEGO 3: MEDIDOR DE DULZURA -->
+                    <div class="game-box">
+                        <div class="game-title"><i class="fa-solid fa-gauge-high"></i> Juego 3: Medidor de Encanto de Kimberly</div>
+                        <p style="font-size: 0.8rem; color: #cbd5e1; margin-bottom: 12px;">Pulsa el botón para calcular tu nivel de dulzura hoy:</p>
+                        <div style="background: rgba(255,255,255,0.1); border-radius: 20px; height: 22px; width: 100%; overflow: hidden; margin-bottom: 12px; border: 1px solid rgba(236,72,153,0.4);">
+                            <div id="charmMeterBar" style="height: 100%; width: 0%; background: linear-gradient(90deg, #f43f5e, #ec4899, #fb7185); transition: width 1s ease-out; border-radius: 20px;"></div>
+                        </div>
+                        <button onclick="testCharmMeter()" class="btn-kimberly" style="width: 100%; justify-content: center; padding: 10px; font-size: 0.88rem;">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> ¡Calcular Encanto!
+                        </button>
+                        <div id="charmMeterResult" style="margin-top: 10px; font-size: 0.9rem; color: #f472b6; font-weight: 800; min-height: 24px;"></div>
+                    </div>
+                </div>
+
+                <!-- PESTAÑA 3: JARDÍN DE ROSAS VIRTUALES -->
+                <div class="kim-tab-content" id="tabRosas">
+                    <div class="game-box">
+                        <div class="game-title"><i class="fa-solid fa-plant-wilt"></i> Tu Jardín de Rosas Digital</div>
+                        <p style="font-size: 0.82rem; color: #cbd5e1; margin-bottom: 12px;">Cada clic que hagas sembrará una hermosa rosa para ti en la pantalla:</p>
+                        
+                        <button onclick="plantVirtualRose()" class="btn-kimberly" style="margin: 0 auto; padding: 10px 20px; font-size: 0.88rem;">
+                            <i class="fa-solid fa-seedling"></i> ¡Regalarme una Rosa! 🌹
+                        </button>
+
+                        <div class="rose-garden" id="roseGardenContainer">
+                            <span class="bloomed-rose">🌹</span>
+                        </div>
+                        <p id="roseCounterText" style="font-size: 0.8rem; color: #fbcfe8; margin-top: 8px;">Has cultivado 1 rosa para Kimberly 💖</p>
+                    </div>
+                </div>
+
+                <button onclick="closeKimberlyModal()" class="btn-kimberly" style="width: 100%; justify-content: center; padding: 12px; font-size: 0.92rem; margin-top: 15px;">
+                    <i class="fa-solid fa-face-smile-beam"></i> ¡Gracias por este detalle tan bonito! 💕
+                </button>
+            </div>
+        </div>
+    </div>
+
     <div class="modal-overlay" id="calcModal">
         <div class="modal-card">
             <button class="modal-close" onclick="closeCalcModal()"><i class="fa-solid fa-xmark"></i></button>
@@ -2583,6 +3042,230 @@
             document.getElementById('sidebar').classList.remove('active');
             document.getElementById('overlay').classList.remove('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        /* LÓGICA Y ANIMACIÓN DEL MODAL DE KIMBERLY KRISTEL */
+        let heartAnimId = null;
+        let heartCatcherAnimId = null;
+        let catcherScore = 0;
+        let roseCount = 1;
+        let fallingHearts = [];
+
+        function openKimberlyModal() {
+            document.getElementById('kimberlyModal').classList.add('active');
+            startHeartsAnimation();
+            initHeartCatcherGame();
+        }
+
+        function closeKimberlyModal() {
+            document.getElementById('kimberlyModal').classList.remove('active');
+            if (heartAnimId) cancelAnimationFrame(heartAnimId);
+            if (heartCatcherAnimId) cancelAnimationFrame(heartCatcherAnimId);
+        }
+
+        function switchKimTab(tabId, btnElem) {
+            document.querySelectorAll('.kim-tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.kim-tab-btn').forEach(btn => btn.classList.remove('active'));
+            
+            const targetTab = document.getElementById(tabId);
+            if (targetTab) targetTab.classList.add('active');
+            if (btnElem) btnElem.classList.add('active');
+
+            if (tabId === 'tabJuegos') {
+                setTimeout(() => { initHeartCatcherGame(); }, 100);
+            }
+        }
+
+        function startHeartsAnimation() {
+            const canvas = document.getElementById('heartsCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvas.parentElement.clientWidth;
+            canvas.height = canvas.parentElement.clientHeight;
+
+            const hearts = [];
+            const colors = ['#f43f5e', '#ec4899', '#f472b6', '#fb7185', '#fda4af'];
+
+            for (let i = 0; i < 30; i++) {
+                hearts.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 12 + 8,
+                    speedY: Math.random() * 1.5 + 0.5,
+                    speedX: (Math.random() - 0.5) * 0.8,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    opacity: Math.random() * 0.7 + 0.3
+                });
+            }
+
+            function drawHeart(x, y, size, color, opacity) {
+                ctx.save();
+                ctx.globalAlpha = opacity;
+                ctx.fillStyle = color;
+                ctx.beginPath();
+                const d = size;
+                ctx.moveTo(x, y + d / 4);
+                ctx.quadraticCurveTo(x, y, x - d / 2, y);
+                ctx.quadraticCurveTo(x - d, y, x - d, y + d / 2);
+                ctx.quadraticCurveTo(x - d, y + d, x, y + d * 1.3);
+                ctx.quadraticCurveTo(x + d, y + d, x + d, y + d / 2);
+                ctx.quadraticCurveTo(x + d, y, x + d / 2, y);
+                ctx.quadraticCurveTo(x, y, x, y + d / 4);
+                ctx.fill();
+                ctx.restore();
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                hearts.forEach(h => {
+                    h.y -= h.speedY;
+                    h.x += h.speedX;
+                    if (h.y < -20) {
+                        h.y = canvas.height + 20;
+                        h.x = Math.random() * canvas.width;
+                    }
+                    drawHeart(h.x, h.y, h.size, h.color, h.opacity);
+                });
+                heartAnimId = requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        /* LÓGICA DEL JUEGO ATRAPA CORAZONES */
+        function initHeartCatcherGame() {
+            const canvas = document.getElementById('catcherCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvas.parentElement.clientWidth || 300;
+            canvas.height = 220;
+
+            fallingHearts = [];
+            for (let i = 0; i < 6; i++) {
+                spawnFallingHeart(canvas);
+            }
+
+            canvas.onclick = function(e) {
+                const rect = canvas.getBoundingClientRect();
+                const clickX = e.clientX - rect.left;
+                const clickY = e.clientY - rect.top;
+
+                for (let i = fallingHearts.length - 1; i >= 0; i--) {
+                    const h = fallingHearts[i];
+                    const dist = Math.hypot(clickX - h.x, clickY - h.y);
+                    if (dist < h.size + 15) {
+                        fallingHearts.splice(i, 1);
+                        catcherScore++;
+                        updateGameScore();
+                        spawnFallingHeart(canvas);
+                        break;
+                    }
+                }
+            };
+
+            function animateCatcher() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                fallingHearts.forEach((h, index) => {
+                    h.y += h.speed;
+                    if (h.y > canvas.height + 20) {
+                        h.y = -20;
+                        h.x = Math.random() * (canvas.width - 40) + 20;
+                    }
+
+                    // Dibujar corazón
+                    ctx.save();
+                    ctx.fillStyle = h.color;
+                    ctx.beginPath();
+                    const d = h.size;
+                    ctx.moveTo(h.x, h.y + d / 4);
+                    ctx.quadraticCurveTo(h.x, h.y, h.x - d / 2, h.y);
+                    ctx.quadraticCurveTo(h.x - d, h.y, h.x - d, h.y + d / 2);
+                    ctx.quadraticCurveTo(h.x - d, h.y + d, h.x, h.y + d * 1.3);
+                    ctx.quadraticCurveTo(h.x + d, h.y + d, h.x + d, h.y + d / 2);
+                    ctx.quadraticCurveTo(h.x + d, h.y, h.x + d / 2, h.y);
+                    ctx.quadraticCurveTo(h.x, h.y, h.x, h.y + d / 4);
+                    ctx.fill();
+                    ctx.restore();
+                });
+
+                heartCatcherAnimId = requestAnimationFrame(animateCatcher);
+            }
+
+            if (heartCatcherAnimId) cancelAnimationFrame(heartCatcherAnimId);
+            animateCatcher();
+        }
+
+        function spawnFallingHeart(canvas) {
+            const colors = ['#f43f5e', '#ec4899', '#f472b6', '#fb7185', '#a855f7'];
+            fallingHearts.push({
+                x: Math.random() * (canvas.width - 40) + 20,
+                y: -Math.random() * 100 - 10,
+                size: Math.random() * 8 + 12,
+                speed: Math.random() * 1.2 + 0.8,
+                color: colors[Math.floor(Math.random() * colors.length)]
+            });
+        }
+
+        function updateGameScore() {
+            document.getElementById('gameScoreText').textContent = `Corazones Atrapados: ${catcherScore} 💖`;
+            const rewardElem = document.getElementById('gameRewardMsg');
+            if (catcherScore === 5) {
+                rewardElem.textContent = "✨ ¡Nivel 1! Eres una experta atrapando sonrisas.";
+            } else if (catcherScore === 10) {
+                rewardElem.textContent = "🌟 ¡Nivel 2! Tu energía positiva es increíble.";
+            } else if (catcherScore === 20) {
+                rewardElem.textContent = "👑 ¡Puntaje Máximo! Ganaste un abrazo virtual infinito 💖";
+            }
+        }
+
+        function resetHeartGame() {
+            catcherScore = 0;
+            document.getElementById('gameRewardMsg').textContent = "";
+            updateGameScore();
+            initHeartCatcherGame();
+        }
+
+        /* LÓGICA SOBRES SECRETOS */
+        const secretPhrases = {
+            1: "💌 Sobrecito 1: Tu amabilidad y buena vibra siempre contagian alegría a quienes te rodean.",
+            2: "💌 Sobrecito 2: Tienes una determinación hermosa para lograr todo lo que te propones.",
+            3: "💌 Sobrecito 3: Tu sonrisa es capaz de iluminar hasta el día más nublado.",
+            4: "💌 Sobrecito 4: Gracias por ser una persona tan auténtica, valiosa y especial."
+        };
+
+        function openSecretEnvelope(num, elem) {
+            const display = document.getElementById('envelopeMessageDisplay');
+            display.textContent = secretPhrases[num] || "¡Abriste un sobre con mucho cariño!";
+            elem.style.transform = "scale(0.95)";
+            setTimeout(() => { elem.style.transform = "none"; }, 200);
+        }
+
+        /* LÓGICA MEDIDOR DE ENCANTO */
+        function testCharmMeter() {
+            const bar = document.getElementById('charmMeterBar');
+            const result = document.getElementById('charmMeterResult');
+            bar.style.width = "0%";
+            result.textContent = "Calculando dulzura...";
+            
+            setTimeout(() => {
+                bar.style.width = "100%";
+                result.textContent = "✨ ¡Nivel de Encanto: 10,000% fuera de escala! ¡Increíble! 💕";
+            }, 300);
+        }
+
+        /* LÓGICA JARDÍN DE ROSAS */
+        function plantVirtualRose() {
+            const garden = document.getElementById('roseGardenContainer');
+            const newRose = document.createElement('span');
+            newRose.className = 'bloomed-rose';
+            
+            const roseIcons = ['🌹', '🌷', '🌸', '🌺', '✨'];
+            newRose.textContent = roseIcons[Math.floor(Math.random() * roseIcons.length)];
+            
+            garden.appendChild(newRose);
+            roseCount++;
+            
+            document.getElementById('roseCounterText').textContent = `Has cultivado ${roseCount} flores para Kimberly 💖`;
         }
 
         const categoryTitles = {
