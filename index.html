@@ -42,6 +42,10 @@
             transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: var(--bg-primary);
             color: var(--text-primary);
@@ -214,7 +218,7 @@
             backdrop-filter: blur(12px);
         }
 
-        .menu-link:hover {
+        .menu-link:hover, .menu-link.active-link {
             background: var(--card-hover);
             border-color: var(--accent-color);
         }
@@ -283,6 +287,15 @@
             max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        .view-section {
+            animation: fadeIn 0.35s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* HERO BANNER PRINCIPAL */
@@ -406,7 +419,7 @@
             gap: 6px;
         }
 
-        /* BARRAS DE OSINT */
+        /* BARRAS Y PESTAÑAS DE OSINT */
         .osint-info-container {
             margin-bottom: 25px;
             text-align: center;
@@ -456,6 +469,34 @@
 
         .info-pill i {
             color: #6366f1;
+        }
+
+        /* BARRA DE FILTROS RÁPIDOS OSINT */
+        .category-filter-bar {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            scrollbar-width: thin;
+        }
+
+        .filter-chip {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.83rem;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .filter-chip.active, .filter-chip:hover {
+            background: var(--accent-color);
+            color: #ffffff;
+            border-color: var(--accent-color);
         }
 
         /* BARRAS DE TRABAJOS */
@@ -536,7 +577,6 @@
             margin-top: 20px;
         }
 
-        /* CUADROS DE UNIVERSIDAD CON IMAGEN DE FONDO BEBE 1.jpg */
         .uni-card {
             background: linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.88)), url('BEBE 1.jpg') center/cover no-repeat;
             border: 1px solid var(--border-color);
@@ -588,7 +628,6 @@
             object-fit: cover;
         }
 
-        /* CUADRO DE COTIZACIÓN DE UNIVERSIDAD SELECCIONADA CON FONDO BEBE 1.jpg */
         .uni-quote-card {
             background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.90)), url('BEBE 1.jpg') center/cover no-repeat;
             border: 1px solid var(--border-color);
@@ -671,6 +710,8 @@
             border-radius: 10px;
             font-weight: 700;
             font-size: 0.9rem;
+            cursor: pointer;
+            border: none;
         }
 
         /* PLANES WEB */
@@ -762,6 +803,108 @@
             margin-top: 2px;
         }
 
+        /* MODAL INTERACTIVO DE COTIZACIÓN */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.75);
+            backdrop-filter: blur(5px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            padding: 15px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            width: 100%;
+            max-width: 480px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.3rem;
+            cursor: pointer;
+        }
+
+        .modal-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .form-group {
+            margin-bottom: 14px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text-secondary);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            color: var(--text-primary);
+            outline: none;
+            font-size: 0.9rem;
+        }
+
+        /* BOTONES FLOTANTES (FAB) */
+        .fab-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 900;
+        }
+
+        .fab-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .fab-wsp { background: #25d366; }
+        .fab-top { background: var(--accent-color); display: none; }
+
         .hidden {
             display: none !important;
         }
@@ -798,7 +941,7 @@
 
         <ul class="menu-list" id="menuList">
             <li class="menu-item">
-                <a href="#" class="menu-link" onclick="showView('homeView')">
+                <a href="#" class="menu-link active-link" onclick="showView('homeView')">
                     <div class="menu-link-left">
                         <i class="fa-solid fa-house"></i>
                         <span>Inicio / ROCKET</span>
@@ -816,6 +959,7 @@
                 </div>
                 
                 <ul class="submenu" id="osintMenu">
+                    <li><a href="#" onclick="showCategory('ALL')"><i class="fa-solid fa-border-all"></i> Ver Todos los OSINT</a></li>
                     <li><a href="#" onclick="showCategory('RENIEC')"><i class="fa-solid fa-id-card"></i> RENIEC (Fotos / Huellas / DNI)</a></li>
                     <li><a href="#" onclick="showCategory('SUNAT')"><i class="fa-solid fa-receipt"></i> SUNAT (Consulta RUC / Empresas)</a></li>
                     <li><a href="#" onclick="showCategory('PODER JUDICIAL')"><i class="fa-solid fa-scale-balanced"></i> PODER JUDICIAL (Demandas)</a></li>
@@ -919,7 +1063,6 @@
             </div>
 
             <div class="main-services-grid">
-                <!-- TARJETA 1 -->
                 <div class="service-cover-card" onclick="showView('trabajosView')">
                     <div class="service-cover-icon"><i class="fa-solid fa-graduation-cap"></i></div>
                     <div class="service-cover-title">Trabajos Universitarios y Escolares</div>
@@ -927,7 +1070,6 @@
                     <div class="service-cover-btn">Ver Precios y Servicios <i class="fa-solid fa-arrow-right"></i></div>
                 </div>
 
-                <!-- TARJETA 2 -->
                 <div class="service-cover-card" onclick="showView('detallesView')">
                     <div class="service-cover-icon"><i class="fa-solid fa-gift"></i></div>
                     <div class="service-cover-title">Detalles y Regalos GitHub</div>
@@ -935,7 +1077,6 @@
                     <div class="service-cover-btn">Explorar Detalles <i class="fa-solid fa-arrow-right"></i></div>
                 </div>
 
-                <!-- TARJETA 3 -->
                 <div class="service-cover-card" onclick="showView('emprendimientoView')">
                     <div class="service-cover-icon"><i class="fa-solid fa-store"></i></div>
                     <div class="service-cover-title">Emprendimientos Universitarios</div>
@@ -943,7 +1084,6 @@
                     <div class="service-cover-btn">Ver Opciones <i class="fa-solid fa-arrow-right"></i></div>
                 </div>
 
-                <!-- TARJETA 4 -->
                 <div class="service-cover-card" onclick="showView('webDevView')">
                     <div class="service-cover-icon"><i class="fa-solid fa-laptop-code"></i></div>
                     <div class="service-cover-title">Crea tu Página Web</div>
@@ -956,11 +1096,11 @@
             <div class="diagram-container">
                 <h2 class="diagram-title">RED DE CONSULTAS E INTEGRACIÓN OSINT</h2>
                 <div class="diagram-img-wrapper">
-                    <img src="rocket.jpg" alt="Red de Consultas e Integración OSINT - ROCKET">
+                    <img src="rocket.jpg" alt="Red de Consultas e Integración OSINT - ROCKET" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\"fa-solid fa-network-wired fa-5x\" style=\"color: var(--accent-color); padding: 30px;\"></i>';">
                 </div>
             </div>
 
-            <!-- UNIVERSIDADES CON FONDO PERSONALIZADO BEBE 1.jpg -->
+            <!-- UNIVERSIDADES CON FALLBACKS DE IMÁGENES -->
             <div class="academic-section">
                 <div class="academic-header">
                     <h2>🎓 TRABAJOS UNIVERSITARIOS DE TODAS LAS UNIVERSIDADES Y COLEGIOS DEL PERÚ</h2>
@@ -968,23 +1108,23 @@
                 </div>
 
                 <div class="uni-grid">
-                    <div class="uni-card" onclick="openUniQuote('UNMSM')"><div class="uni-badge"><img src="san marcos.jpg" alt="UNMSM"></div><div>UNMSM</div></div>
-                    <div class="uni-card" onclick="openUniQuote('UNI')"><div class="uni-badge"><img src="UNI.png" alt="UNI"></div><div>UNI</div></div>
-                    <div class="uni-card" onclick="openUniQuote('PUCP')"><div class="uni-badge"><img src="PUCP.webp" alt="PUCP"></div><div>PUCP</div></div>
-                    <div class="uni-card" onclick="openUniQuote('U. DE LIMA')"><div class="uni-badge"><img src="U. lima.png" alt="U. DE LIMA"></div><div>U. DE LIMA</div></div>
-                    <div class="uni-card" onclick="openUniQuote('UTP')"><div class="uni-badge"><img src="utp.jpg" alt="UTP"></div><div>UTP</div></div>
-                    <div class="uni-card" onclick="openUniQuote('UCV')"><div class="uni-badge"><img src="ucv.png" alt="UCV"></div><div>UCV</div></div>
-                    <div class="uni-card" onclick="openUniQuote('UPCH')"><div class="uni-badge"><img src="upch.jpg" alt="UPCH"></div><div>UPCH</div></div>
-                    <div class="uni-card" onclick="openUniQuote('CIENTÍFICA DEL SUR')"><div class="uni-badge"><img src="cientifica del sur.png" alt="CIENTÍFICA DEL SUR"></div><div>CIENTÍFICA DEL SUR</div></div>
-                    <div class="uni-card" onclick="openUniQuote('UPC')"><div class="uni-badge"><img src="upc.png" alt="UPC"></div><div>UPC</div></div>
-                    <div class="uni-card" onclick="openUniQuote('USMP')"><div class="uni-badge"><img src="umsp.jpg" alt="USMP"></div><div>USMP</div></div>
-                    <div class="uni-card" onclick="openUniQuote('UPN')"><div class="uni-badge"><img src="upn.png" alt="UPN"></div><div>UPN</div></div>
+                    <div class="uni-card" onclick="openUniQuote('UNMSM')"><div class="uni-badge"><img src="san marcos.jpg" alt="UNMSM" onerror="this.outerHTML='<i class=\"fa-solid fa-university\"></i>'"></div><div>UNMSM</div></div>
+                    <div class="uni-card" onclick="openUniQuote('UNI')"><div class="uni-badge"><img src="UNI.png" alt="UNI" onerror="this.outerHTML='<i class=\"fa-solid fa-university\"></i>'"></div><div>UNI</div></div>
+                    <div class="uni-card" onclick="openUniQuote('PUCP')"><div class="uni-badge"><img src="PUCP.webp" alt="PUCP" onerror="this.outerHTML='<i class=\"fa-solid fa-university\"></i>'"></div><div>PUCP</div></div>
+                    <div class="uni-card" onclick="openUniQuote('U. DE LIMA')"><div class="uni-badge"><img src="U. lima.png" alt="U. DE LIMA" onerror="this.outerHTML='<i class=\"fa-solid fa-university\"></i>'"></div><div>U. DE LIMA</div></div>
+                    <div class="uni-card" onclick="openUniQuote('UTP')"><div class="uni-badge"><img src="utp.jpg" alt="UTP" onerror="this.outerHTML='<i class=\"fa-solid fa-university\"></i>'"></div><div>UTP</div></div>
+                    <div class="uni-card" onclick="openUniQuote('UCV')"><div class="uni-badge"><img src="ucv.png" alt="UCV" onerror="this.outerHTML='<i class=\"fa-solid fa-university\"></i>'"></div><div>UCV</div></div>
+                    <div class="uni-card" onclick="openUniQuote('UPCH')"><div class="uni-badge"><img src="upch.jpg" alt="UPCH" onerror="this.outerHTML='<i class=\"fa-solid fa-university\"></i>'"></div><div>UPCH</div></div>
+                    <div class="uni-card" onclick="openUniQuote('CIENTÍFICA DEL SUR')"><div class="uni-badge"><img src="cientifica del sur.png" alt="CIENTÍFICA DEL SUR" onerror="this.outerHTML='<i class=\"fa-solid fa-university\"></i>'"></div><div>CIENTÍFICA DEL SUR</div></div>
+                    <div class="uni-card" onclick="openUniQuote('UPC')"><div class="uni-badge"><img src="upc.png" alt="UPC" onerror="this.outerHTML='<i class=\"fa-solid fa-university\"></i>'"></div><div>UPC</div></div>
+                    <div class="uni-card" onclick="openUniQuote('USMP')"><div class="uni-badge"><img src="umsp.jpg" alt="USMP" onerror="this.outerHTML='<i class=\"fa-solid fa-university\"></i>'"></div><div>USMP</div></div>
+                    <div class="uni-card" onclick="openUniQuote('UPN')"><div class="uni-badge"><img src="upn.png" alt="UPN" onerror="this.outerHTML='<i class=\"fa-solid fa-university\"></i>'"></div><div>UPN</div></div>
                     <div class="uni-card" onclick="openUniQuote('COLEGIOS DEL PERÚ')"><div class="uni-badge"><i class="fa-solid fa-school"></i></div><div>COLEGIOS DEL PERÚ</div></div>
                 </div>
             </div>
         </div>
 
-        <!-- VISTA DE COTIZACIÓN PERSONALIZADA POR UNIVERSIDAD CON IMAGEN DE FONDO BEBE 1.jpg -->
+        <!-- VISTA DE COTIZACIÓN PERSONALIZADA POR UNIVERSIDAD -->
         <div id="uniQuoteView" class="view-section hidden">
             <div class="category-header">
                 <i class="fa-solid fa-graduation-cap"></i>
@@ -1004,18 +1144,21 @@
                     <i class="fa-solid fa-tag"></i> Precio Base: Desde S/ 7.00
                 </div>
 
-                <div style="max-width: 420px; margin: 0 auto;">
-                    <a id="uniWspBtn" href="#" target="_blank" class="btn-wsp" style="padding: 14px; font-size: 1rem; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);">
-                        <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i> Cotizar por WhatsApp
+                <div style="max-width: 420px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px;">
+                    <button onclick="openModalForUni()" class="btn-wsp" style="padding: 14px; font-size: 1rem; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);">
+                        <i class="fa-solid fa-calculator"></i> Formulario de Cotización Guiada
+                    </button>
+                    <a id="uniWspBtn" href="#" target="_blank" class="btn-wsp" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border-color); padding: 12px; font-size: 0.95rem;">
+                        <i class="fa-brands fa-whatsapp"></i> Chat directo de WhatsApp
                     </a>
-                    <button onclick="showView('homeView')" style="margin-top: 15px; background: none; border: none; color: #94a3b8; cursor: pointer; font-size: 0.88rem; text-decoration: underline; display: block; width: 100%;">
+                    <button onclick="showView('homeView')" style="margin-top: 10px; background: none; border: none; color: #94a3b8; cursor: pointer; font-size: 0.88rem; text-decoration: underline; display: block; width: 100%;">
                         <i class="fa-solid fa-arrow-left"></i> Volver al inicio
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- 2. VISTA DE SERVICIOS / OSINT -->
+        <!-- 2. VISTA DE SERVICIOS / OSINT CON FILTROS RÁPIDOS -->
         <div id="servicesView" class="view-section hidden">
             
             <div class="osint-info-container">
@@ -1029,9 +1172,22 @@
                 </div>
             </div>
 
+            <!-- FILTROS POR CATEGORÍA DIRECTOS -->
+            <div class="category-filter-bar">
+                <button class="filter-chip active" onclick="showCategory('ALL', this)">Todos</button>
+                <button class="filter-chip" onclick="showCategory('RENIEC', this)">RENIEC</button>
+                <button class="filter-chip" onclick="showCategory('SUNAT', this)">SUNAT</button>
+                <button class="filter-chip" onclick="showCategory('OSIPTEL', this)">OSIPTEL</button>
+                <button class="filter-chip" onclick="showCategory('MIGRACIONES', this)">MIGRACIONES</button>
+                <button class="filter-chip" onclick="showCategory('SUNARP', this)">SUNARP</button>
+                <button class="filter-chip" onclick="showCategory('PNP', this)">PNP / INPE</button>
+                <button class="filter-chip" onclick="showCategory('Bloqueo', this)">Bloqueos</button>
+                <button class="filter-chip" onclick="showCategory('VIRTUALES', this)">Virtuales</button>
+            </div>
+
             <div class="category-header">
                 <i class="fa-solid fa-bars-staggered"></i>
-                <span id="categoryTitle">RENIEC</span>
+                <span id="categoryTitle">Todas las Consultas OSINT</span>
             </div>
 
             <div class="grid" id="servicesGrid">
@@ -1083,7 +1239,7 @@
                                 <br><br><strong>Precio:</strong> Desde S/ 8.00 (Varía según complejidad y tiempo límite).
                             </div>
                         </div>
-                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20cotizar%20una%20Tarea%20o%20Cuestionario.%20Adjunto%20detalles%20y%20fecha%20de%20entrega:" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp</a>
+                        <button onclick="openModalForTask('Tareas y Cuestionarios')" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp</button>
                     </div>
                 </div>
 
@@ -1097,7 +1253,7 @@
                                 <br><br><strong>Precio:</strong> Desde S/ 15.00 (Según extensión, tema y plazo).
                             </div>
                         </div>
-                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20cotizar%20una%20Monograf%C3%ADa%20o%20Ensayo.%20Adjunto%20tema%20y%20plazo:" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp</a>
+                        <button onclick="openModalForTask('Monografías y Ensayos')" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp</button>
                     </div>
                 </div>
 
@@ -1111,7 +1267,7 @@
                                 <br><br><strong>Precio:</strong> Desde S/ 10.00 (Depende del número de diapositivas y urgencia).
                             </div>
                         </div>
-                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20cotizar%20una%20Presentaci%C3%B3n%20PPT.%20Detalles:" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp</a>
+                        <button onclick="openModalForTask('Diapositivas PPT')" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp</button>
                     </div>
                 </div>
 
@@ -1125,7 +1281,7 @@
                                 <br><br><strong>Precio:</strong> Desde S/ 12.00 (Según la duración del video y plazo de entrega).
                             </div>
                         </div>
-                        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20cotizar%20una%20Edici%C3%B3n%20de%20Video.%20Detalles:" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp</a>
+                        <button onclick="openModalForTask('Edición de Video')" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp</button>
                     </div>
                 </div>
             </div>
@@ -1142,7 +1298,6 @@
             </p>
 
             <div class="pricing-grid">
-                <!-- PLAN 1: S/ 5.00 -->
                 <div class="pricing-card">
                     <div>
                         <div class="plan-name">Plan Bio-Link</div>
@@ -1157,7 +1312,6 @@
                     <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Plan%20Bio-Link%20de%20S/%205" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Solicitar Plan S/ 5</a>
                 </div>
 
-                <!-- PLAN 2: S/ 15.00 -->
                 <div class="pricing-card">
                     <div>
                         <div class="plan-name">Plan Básico</div>
@@ -1172,7 +1326,6 @@
                     <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Plan%20Basico%20de%20S/%2015" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Solicitar Plan S/ 15</a>
                 </div>
 
-                <!-- PLAN 3: S/ 25.00 -->
                 <div class="pricing-card featured">
                     <span class="badge-popular">MÁS SOLICITADO</span>
                     <div>
@@ -1189,7 +1342,6 @@
                     <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Plan%20Pro%20Catalogo%20de%20S/%2025" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Solicitar Plan S/ 25</a>
                 </div>
 
-                <!-- PLAN 4: S/ 35.00 -->
                 <div class="pricing-card">
                     <div>
                         <div class="plan-name">Plan Negocio</div>
@@ -1204,7 +1356,6 @@
                     <a href="https://wa.me/51931309889?text=Hola,%20deseo%20el%20Plan%20Negocio%20de%20S/%2035" target="_blank" class="btn-wsp"><i class="fa-brands fa-whatsapp"></i> Solicitar Plan S/ 35</a>
                 </div>
 
-                <!-- PLAN 5: S/ 45.00 -->
                 <div class="pricing-card">
                     <div>
                         <div class="plan-name">Control Total + Soporte</div>
@@ -1250,29 +1401,82 @@
 
     </main>
 
+    <!-- MODAL DE COTIZACIÓN GUIADA -->
+    <div class="modal-overlay" id="quoteModal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-title"><i class="fa-solid fa-paper-plane" style="color:var(--accent-color);"></i> Cotizar Trabajo Académico</div>
+            
+            <div class="form-group">
+                <label>Universidad / Colegio</label>
+                <input type="text" id="modalUni" placeholder="Ej: UNMSM, Científica del Sur, etc.">
+            </div>
+
+            <div class="form-group">
+                <label>Tipo de Trabajo</label>
+                <select id="modalType">
+                    <option value="Tarea o Cuestionario">Tarea / Cuestionario</option>
+                    <option value="Monografía o Ensayo">Monografía / Ensayo</option>
+                    <option value="Presentación PPT">Diapositivas PPT</option>
+                    <option value="Edición de Video">Edición de Video</option>
+                    <option value="Otro Proyecto">Otro Servicio</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Tema o Materia</label>
+                <input type="text" id="modalTopic" placeholder="Ej: Fisiología, Anatomía, Álgebra...">
+            </div>
+
+            <div class="form-group">
+                <label>Fecha y hora límite de entrega</label>
+                <input type="text" id="modalDeadline" placeholder="Ej: Mañana a las 6:00 PM">
+            </div>
+
+            <button onclick="sendFormattedWsp()" class="btn-wsp" style="margin-top:10px; padding:12px;">
+                <i class="fa-brands fa-whatsapp"></i> Enviar Cotización a WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- BOTONES FLOTANTES -->
+    <div class="fab-container">
+        <button class="fab-btn fab-top" id="scrollTopBtn" onclick="scrollToTop()" title="Volver arriba">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+        <a href="https://wa.me/51931309889?text=Hola,%20deseo%20informaci%C3%B3n" target="_blank" class="fab-btn fab-wsp" title="Contacto WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
     <script>
-        // Ocultar Loader
+        let currentSelectedUni = 'Universidad/Colegio';
+
+        // Ocultar Loader e Iniciar Tema Guardado
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
             loader.style.opacity = '0';
-            setTimeout(() => {
-                loader.style.visibility = 'hidden';
-            }, 400);
+            setTimeout(() => { loader.style.visibility = 'hidden'; }, 400);
+
+            // Cargar tema desde LocalStorage
+            const savedTheme = localStorage.getItem('rocket_theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
         });
 
-        // Alternar Tema Claro / Oscuro
+        // Alternar Tema Claro / Oscuro con Guardado
         function toggleTheme() {
             const html = document.documentElement;
             const currentTheme = html.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             html.setAttribute('data-theme', newTheme);
-            
+            localStorage.setItem('rocket_theme', newTheme);
+            updateThemeIcon(newTheme);
+        }
+
+        function updateThemeIcon(theme) {
             const themeIcon = document.getElementById('themeIcon');
-            if (newTheme === 'light') {
-                themeIcon.className = 'fa-regular fa-sun';
-            } else {
-                themeIcon.className = 'fa-regular fa-moon';
-            }
+            themeIcon.className = theme === 'light' ? 'fa-regular fa-sun' : 'fa-regular fa-moon';
         }
 
         // Abrir / Cerrar Menú Lateral
@@ -1300,6 +1504,7 @@
             if (targetView) {
                 targetView.classList.remove('hidden');
             }
+            
             // Cerrar menú lateral en móviles
             document.getElementById('sidebar').classList.remove('active');
             document.getElementById('overlay').classList.remove('active');
@@ -1307,9 +1512,9 @@
         }
 
         // Mostrar Categoría de Servicios OSINT
-        function showCategory(category) {
+        function showCategory(category, element = null) {
             showView('servicesView');
-            document.getElementById('categoryTitle').textContent = category;
+            document.getElementById('categoryTitle').textContent = category === 'ALL' ? 'Todas las Consultas OSINT' : category;
             
             const items = document.querySelectorAll('#servicesGrid .service-item');
             items.forEach(item => {
@@ -1320,9 +1525,15 @@
                     item.classList.add('hidden');
                 }
             });
+
+            // Resaltar Chip si se hace click en barra
+            if (element) {
+                document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+                element.classList.add('active');
+            }
         }
 
-        // Filtro del Menú
+        // Filtro del Menú Lateral
         function filterMenu() {
             const input = document.getElementById('searchInput').value.toLowerCase();
             const items = document.querySelectorAll('#menuList .menu-item');
@@ -1337,17 +1548,56 @@
             });
         }
 
-        // Función para cotización personalizada según la universidad seleccionada
+        // Función para cotización por Universidad
         function openUniQuote(uniName) {
+            currentSelectedUni = uniName;
             document.getElementById('selectedUniTitle').textContent = 'Atención Especial: ' + uniName;
             document.getElementById('selectedUniName').textContent = uniName;
             
-            // Genera mensaje listo para enviar a WhatsApp
             const message = encodeURIComponent(`Hola, soy estudiante de ${uniName}. Deseo cotizar un trabajo académico (Precio base S/ 7.00). Adjunto los detalles:`);
             document.getElementById('uniWspBtn').href = `https://wa.me/51931309889?text=${message}`;
             
-            // Cambia a la vista de cotización
             showView('uniQuoteView');
+        }
+
+        // Modal Helpers
+        function openModalForUni() {
+            document.getElementById('modalUni').value = currentSelectedUni;
+            document.getElementById('quoteModal').classList.add('active');
+        }
+
+        function openModalForTask(taskType) {
+            document.getElementById('modalType').value = taskType;
+            document.getElementById('quoteModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('quoteModal').classList.remove('active');
+        }
+
+        function sendFormattedWsp() {
+            const uni = document.getElementById('modalUni').value || 'No especificado';
+            const type = document.getElementById('modalType').value;
+            const topic = document.getElementById('modalTopic').value || 'Por definir';
+            const deadline = document.getElementById('modalDeadline').value || 'Lo antes posible';
+
+            const text = `Hola ROCKET 🚀, deseo cotizar un trabajo:%0A%0A🎓 *Institución:* ${uni}%0A📚 *Tipo:* ${type}%0A📖 *Materia/Tema:* ${topic}%0A⏰ *Fecha Límite:* ${deadline}`;
+            window.open(`https://wa.me/51931309889?text=${text}`, '_blank');
+            closeModal();
+        }
+
+        // Botón Volver Arriba
+        window.addEventListener('scroll', () => {
+            const topBtn = document.getElementById('scrollTopBtn');
+            if (window.scrollY > 300) {
+                topBtn.style.display = 'flex';
+            } else {
+                topBtn.style.display = 'none';
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
