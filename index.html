@@ -1307,7 +1307,7 @@
         .fab-ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         .fab-top { background: var(--accent-color); display: none; }
 
-        /* NUEVO DISEÑO MÁS BONITO PARA EL BOTÓN K DE KIMBERLY */
+        /* DISEÑO MEJORADO PARA EL BOTÓN K DE KIMBERLY */
         .fab-kimberly {
             width: 54px;
             height: 54px;
@@ -1329,7 +1329,7 @@
             display: flex; align-items: center; justify-content: center; gap: 3px; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.4);
         }
 
-        /* PANTALLA ESPECIAL CON LLUVIA DE CORAZONES Y CUADRITOS EN CUADRÍCULA */
+        /* PANTALLA ESPECIAL CON CORAZONES Y CUADRÍCULA */
         #matrixOverlay {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             background: radial-gradient(circle at center, #141824 0%, #07090f 100%); z-index: 99999; display: none;
@@ -1338,7 +1338,7 @@
         }
         @keyframes fadeInBlack { from { opacity: 0; } to { opacity: 1; } }
 
-        /* LLUVIA DE CORAZONES FLOTANTES (ESTILO FOTO 3) */
+        /* CORAZONES FLOTANTES DE FONDO */
         .hearts-rain-container {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; overflow: hidden; z-index: 1;
         }
@@ -1364,7 +1364,7 @@
             text-shadow: 0 0 20px rgba(255, 101, 132, 0.6); margin-bottom: 5px;
         }
 
-        /* NUEVA CUADRÍCULA DE CUADRITOS (2 COLUMNAS) */
+        /* CUADRÍCULA EN DOS COLUMNAS */
         .cards-grid-layout {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
@@ -2573,37 +2573,36 @@
         </div>
     </div>
 
-    <!-- PANTALLA ESPECIAL CON LLUVIA DE CORAZONES Y CUADRITOS EN CUADRÍCULA PARA KIMBERLY -->
+    <!-- PANTALLA ESPECIAL CON CORAZONES Y CUADRICULA EN 2 COLUMNAS PARA KIMBERLY -->
     <div id="matrixOverlay">
         <div class="hearts-rain-container" id="heartsRain"></div>
         <div class="matrix-content-wrapper">
             <div class="matrix-header">✨ Para ti, Kimberly Kristel ✨</div>
             <p style="text-align: center; color: #94a3b8; font-size: 0.95rem; margin-bottom: 10px;">Un pequeño detalle educado y especial para alegrarte el día</p>
 
-            <!-- CUADRITOS ORGANIZADOS EN CUADRÍCULA (2 COLUMNAS) -->
             <div class="cards-grid-layout">
                 <!-- Cuadrito 1 -->
                 <div class="cute-poem-card">
                     <div class="card-icon"><i class="fa-solid fa-eye"></i></div>
-                    <p>“Tus ojos me atraparon de una forma que ninguna palabra puede describir. No importa su color ni su forma, porque lo que realmente me cautiva es el cielo que encontré dentro de ellos. En tu mirada descubrí un universo al que siempre quiero regresar[cite: 33].”</p>
+                    <p>“Tus ojos me atraparon de una forma que ninguna palabra puede describir. No importa su color ni su forma, porque lo que realmente me cautiva es el cielo que encontré dentro de ellos. En tu mirada descubrí un universo al que siempre quiero regresar[cite: 44].”</p>
                 </div>
 
                 <!-- Cuadrito 2 -->
                 <div class="cute-poem-card">
                     <div class="card-icon"><i class="fa-solid fa-mug-hot"></i></div>
-                    <p>“Qué ironía que, aunque nunca me gustó el café, me enamoré del café de tus ojos[cite: 34].”</p>
+                    <p>“Qué ironía que, aunque nunca me gustó el café, me enamoré del café de tus ojos[cite: 44].”</p>
                 </div>
 
                 <!-- Cuadrito 3 -->
                 <div class="cute-poem-card">
                     <div class="card-icon"><i class="fa-solid fa-face-smile"></i></div>
-                    <p>“Yo he encontrado la paz el día en que te escuché reír, donde el alma encontró tranquilidad y el corazón empezó a vivir[cite: 35].”</p>
+                    <p>“Yo he encontrado la paz el día en que te escuché reír, donde el alma encontró tranquilidad y el corazón empezó a vivir[cite: 44].”</p>
                 </div>
 
                 <!-- Cuadrito 4 -->
                 <div class="cute-poem-card">
                     <div class="card-icon"><i class="fa-solid fa-star"></i></div>
-                    <p>“Sé que a veces dudas de ti, que no te sientes bonita y hasta piensas que no eres suficiente; pero te equivocas, porque tú eres hermosa, una verdadera obra de arte, un universo que aún no ha sido explorado, un hermoso atardecer de esos que te dejan sin aliento y no puedes dejar de ver[cite: 36].”</p>
+                    <p>“Sé que a veces dudas de ti, que no te sientes bonita y hasta piensas que no eres suficiente; pero te equivocas, porque tú eres hermosa, una verdadera obra de arte, un universo que aún no ha sido explorado, un hermoso atardecer de esos que te dejan sin aliento y no puedes dejar de ver[cite: 44].”</p>
                 </div>
 
                 <!-- MINI JUEGO INTERACTIVO -->
@@ -2621,7 +2620,7 @@
 
     <!-- BOTONES FLOTANTES -->
     <div class="fab-container">
-        <!-- BOTÓN FLOTANTE K MEJORADO -->
+        <!-- BOTÓN FLOTANTE K PARA KIMBERLY -->
         <button class="fab-btn fab-kimberly" onclick="openMatrixModal()" title="Para Kimberly Kristel">
             <div class="k-badge">K <i class="fa-solid fa-heart" style="font-size: 0.7rem;"></i></div>
         </button>
@@ -2632,7 +2631,6 @@
     </div>
 
     <script>
-        
         // Anti-iFrame Hijacking
         try {
             if (window.top !== window.self && window.top.location.host === window.self.location.host) {
@@ -2642,39 +2640,6 @@
 
         // Desactivar Menú Contextual (Click derecho)
         document.addEventListener('contextmenu', e => e.preventDefault());
-
-        // Bloqueador estricto de atajos de teclado de DevTools (F12, Ctrl+Shift+I, etc.)
-        document.addEventListener('keydown', e => {
-            if (
-                e.keyCode === 123 || 
-                (e.ctrlKey && e.shiftKey && [73, 74, 67, 75].includes(e.keyCode)) || 
-                (e.ctrlKey && [85, 83, 80].includes(e.keyCode))
-            ) {
-                e.preventDefault();
-                e.stopPropagation();
-                return false;
-            }
-        });
-
-        // Limpieza y anulación de funciones de Consola
-        (function() {
-            const emptyFn = function() {};
-            window.console.log = emptyFn;
-            window.console.warn = emptyFn;
-            window.console.error = emptyFn;
-            window.console.info = emptyFn;
-            window.console.debug = emptyFn;
-        })();
-
-        // Bucle Anti-Debugging
-        setInterval(function() {
-            const startTime = performance.now();
-            (function() {}.constructor('debugger')());
-            const endTime = performance.now();
-            if (endTime - startTime > 100) {
-                document.body.innerHTML = '<div style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:100vh;background:#0b0f19;color:#fff;font-family:sans-serif;text-align:center;padding:20px;"><h1 style="font-size:2rem;margin-bottom:10px;color:#f87171;">🚀 ROCKET Security Alert</h1><p style="color:#94a3b8;max-width:480px;">Se han detectado herramientas de inspección o depuración activa. Por motivos de privacidad y seguridad, el acceso ha sido pausado. Por favor, cierra las herramientas de desarrollador y recarga la página.</p></div>';
-            }
-        }, 500);
 
         const requestTracker = { lastTime: 0, count: 0 };
         function checkRateLimit() {
@@ -2695,11 +2660,13 @@
             });
         }
 
-        window.addEventListener('load', () => {
+        // CARGA LIMPIA Y SEGURA SIN BLOQUEOS
+        window.addEventListener('DOMContentLoaded', () => {
             const loader = document.getElementById('loader');
-            loader.style.opacity = '0';
-            setTimeout(() => { loader.style.visibility = 'hidden'; }, 400);
-
+            if (loader) {
+                loader.style.opacity = '0';
+                setTimeout(() => { loader.style.display = 'none'; }, 400);
+            }
             initSocialProofToasts();
         });
 
@@ -2927,7 +2894,7 @@
             closeModal();
         }
 
-        // --- LÓGICA DE LLUVIA DE CORAZONES FLOTANTES Y MINI JUEGO ---
+        // CORAZONES FLOTANTES Y MINI JUEGO
         let gameInterval = null;
         let score = 0;
         let heartsInterval = null;
@@ -2936,11 +2903,10 @@
             const overlay = document.getElementById('matrixOverlay');
             overlay.style.display = 'block';
 
-            // Reproducir música
             const audio = document.getElementById('kimberlyAudio');
             if(audio) {
                 audio.currentTime = 0;
-                audio.play().catch(e => console.log("Audio play prevented:", e));
+                audio.play().catch(e => console.log("Audio play error:", e));
             }
 
             startHeartsRain();
@@ -2951,7 +2917,6 @@
             const overlay = document.getElementById('matrixOverlay');
             overlay.style.display = 'none';
 
-            // Pausar música
             const audio = document.getElementById('kimberlyAudio');
             if(audio) { audio.pause(); }
 
@@ -2960,7 +2925,6 @@
             document.getElementById('heartsRain').innerHTML = '';
         }
 
-        // Generar lluvia de corazones flotantes por HTML
         function startHeartsRain() {
             const container = document.getElementById('heartsRain');
             container.innerHTML = '';
@@ -2981,7 +2945,6 @@
             }, 300);
         }
 
-        // Mini Juego: Atrapa Corazones
         function initMiniGame() {
             const gCanvas = document.getElementById('gameCanvas');
             const gCtx = gCanvas.getContext('2d');
@@ -3011,17 +2974,14 @@
             gameInterval = setInterval(() => {
                 gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height);
 
-                // Dibujar corazón cayendo
                 gCtx.font = '20px sans-serif';
                 gCtx.fillText('💖', heartX, heartY);
 
-                // Dibujar canasta
                 gCtx.fillStyle = '#ff6584';
                 gCtx.fillRect(basketX, gCanvas.height - 15, 40, 10);
 
                 heartY += heartSpeed;
 
-                // Colisión
                 if(heartY >= gCanvas.height - 20 && heartX >= basketX - 10 && heartX <= basketX + 45) {
                     score++;
                     document.getElementById('scoreVal').textContent = score;
@@ -3030,7 +2990,6 @@
                     heartSpeed += 0.1;
                 }
 
-                // Reiniciar si cae
                 if(heartY > gCanvas.height) {
                     heartY = 0;
                     heartX = Math.random() * (gCanvas.width - 20);
