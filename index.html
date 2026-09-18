@@ -564,75 +564,105 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.4);
         }
 
+        /* SECCIÓN UNIVERSIDADES CON IMAGEN DE FONDO PAISAJE 123.JPG */
         .academic-section {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
+            background-image: linear-gradient(rgba(11, 18, 33, 0.88), rgba(11, 18, 33, 0.88)), url('paisaje 123.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 18px;
-            padding: 35px 20px;
+            padding: 40px 25px;
             margin-bottom: 35px;
-        }
-
-        .academic-header {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
             text-align: center;
-            margin-bottom: 25px;
         }
 
+        .academic-header h2 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .academic-header p {
+            color: #a0aec0;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+        }
+
+        /* GRID DE 6 COLUMNAS PARA UNIVERSIDADES */
         .uni-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-            gap: 14px;
-            margin-top: 20px;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 16px;
         }
 
         .uni-card {
-            background: linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.88)), url('BEBE 1.jpg') center/cover no-repeat;
-            border: 1px solid var(--border-color);
-            padding: 18px 12px;
-            border-radius: 14px;
-            text-align: center;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px 10px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
-            font-weight: 800;
-            font-size: 0.9rem;
-            color: #ffffff;
+            justify-content: center;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(2px);
-            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        [data-theme="light"] .uni-card {
-            background: linear-gradient(rgba(255, 255, 255, 0.82), rgba(241, 245, 249, 0.88)), url('BEBE 1.jpg') center/cover no-repeat;
-            color: var(--text-primary);
+            backdrop-filter: blur(4px);
+            transition: all 0.25s ease;
+            text-decoration: none;
         }
 
         .uni-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-color);
-            box-shadow: 0 8px 22px rgba(99, 102, 241, 0.35);
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
         }
 
         .uni-badge {
-            width: 52px;
-            height: 52px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
-            background: #ffffff;
+            background-color: #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
-            color: var(--accent-color);
-            border: 2px solid rgba(255, 255, 255, 0.8);
+            margin-bottom: 12px;
             overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         .uni-badge img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+        }
+
+        .uni-card-title {
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        @media (max-width: 1024px) {
+            .uni-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .uni-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .academic-header h2 {
+                font-size: 1.2rem;
+            }
         }
 
         .uni-quote-card {
@@ -1130,25 +1160,97 @@
                 </div>
             </div>
 
+            <!-- SECCIÓN TRABAJOS UNIVERSITARIOS CON FONDO Y 6 COLUMNAS -->
             <div class="academic-section">
                 <div class="academic-header">
                     <h2>🎓 TRABAJOS UNIVERSITARIOS DE TODAS LAS UNIVERSIDADES Y COLEGIOS DEL PERÚ</h2>
-                    <p style="color: var(--text-secondary); margin-top: 6px;">Haz clic en tu universidad para cotizar tus trabajos académicos al instante.</p>
+                    <p>Haz clic en tu universidad para cotizar tus trabajos académicos al instante.</p>
                 </div>
 
                 <div class="uni-grid">
-                    <div class="uni-card" onclick="openUniQuote('UNMSM')"><div class="uni-badge"><img src="san marcos.jpg" alt="UNMSM" onerror="this.outerHTML='<i class=\"fa-solid fa-university\"></i>'"></div><div>UNMSM</div></div>
-                    <div class="uni-card" onclick="openUniQuote('UNI')"><div class="uni-badge"><img src="UNI.png" alt="UNI" onerror="this.outerHTML='<i class=\"fa-solid fa-university\"></i>'"></div><div>UNI</div></div>
-                    <div class="uni-card" onclick="openUniQuote('PUCP')"><div class="uni-badge"><img src="PUCP.webp" alt="PUCP" onerror="this.outerHTML='<i class=\"fa-solid fa-university\"></i>'"></div><div>PUCP</div></div>
-                    <div class="uni-card" onclick="openUniQuote('U. DE LIMA')"><div class="uni-badge"><img src="U. lima.png" alt="U. DE LIMA" onerror="this.outerHTML='<i class=\"fa-solid fa-university\"></i>'"></div><div>U. DE LIMA</div></div>
-                    <div class="uni-card" onclick="openUniQuote('UTP')"><div class="uni-badge"><img src="utp.jpg" alt="UTP" onerror="this.outerHTML='<i class=\"fa-solid fa-university\"></i>'"></div><div>UTP</div></div>
-                    <div class="uni-card" onclick="openUniQuote('UCV')"><div class="uni-badge"><img src="ucv.png" alt="UCV" onerror="this.outerHTML='<i class=\"fa-solid fa-university\"></i>'"></div><div>UCV</div></div>
-                    <div class="uni-card" onclick="openUniQuote('UPCH')"><div class="uni-badge"><img src="upch.jpg" alt="UPCH" onerror="this.outerHTML='<i class=\"fa-solid fa-university\"></i>'"></div><div>UPCH</div></div>
-                    <div class="uni-card" onclick="openUniQuote('CIENTÍFICA DEL SUR')"><div class="uni-badge"><img src="cientifica del sur.png" alt="CIENTÍFICA DEL SUR" onerror="this.outerHTML='<i class=\"fa-solid fa-university\"></i>'"></div><div>CIENTÍFICA DEL SUR</div></div>
-                    <div class="uni-card" onclick="openUniQuote('UPC')"><div class="uni-badge"><img src="upc.png" alt="UPC" onerror="this.outerHTML='<i class=\"fa-solid fa-university\"></i>'"></div><div>UPC</div></div>
-                    <div class="uni-card" onclick="openUniQuote('USMP')"><div class="uni-badge"><img src="umsp.jpg" alt="USMP" onerror="this.outerHTML='<i class=\"fa-solid fa-university\"></i>'"></div><div>USMP</div></div>
-                    <div class="uni-card" onclick="openUniQuote('UPN')"><div class="uni-badge"><img src="upn.png" alt="UPN" onerror="this.outerHTML='<i class=\"fa-solid fa-university\"></i>'"></div><div>UPN</div></div>
-                    <div class="uni-card" onclick="openUniQuote('COLEGIOS DEL PERÚ')"><div class="uni-badge"><i class="fa-solid fa-school"></i></div><div>COLEGIOS DEL PERÚ</div></div>
+                    <div class="uni-card" onclick="openUniQuote('UNMSM')">
+                        <div class="uni-badge">
+                            <img src="unmsm.png" alt="UNMSM" onerror="this.onerror=null; this.src='san marcos.jpg';">
+                        </div>
+                        <span class="uni-card-title">UNMSM</span>
+                    </div>
+
+                    <div class="uni-card" onclick="openUniQuote('UNI')">
+                        <div class="uni-badge">
+                            <img src="uni.png" alt="UNI" onerror="this.onerror=null; this.src='UNI.png';">
+                        </div>
+                        <span class="uni-card-title">UNI</span>
+                    </div>
+
+                    <div class="uni-card" onclick="openUniQuote('PUCP')">
+                        <div class="uni-badge">
+                            <img src="pucp.png" alt="PUCP" onerror="this.onerror=null; this.src='PUCP.webp';">
+                        </div>
+                        <span class="uni-card-title">PUCP</span>
+                    </div>
+
+                    <div class="uni-card" onclick="openUniQuote('U. DE LIMA')">
+                        <div class="uni-badge">
+                            <img src="ulima.png" alt="U. DE LIMA" onerror="this.onerror=null; this.src='U. lima.png';">
+                        </div>
+                        <span class="uni-card-title">U. DE LIMA</span>
+                    </div>
+
+                    <div class="uni-card" onclick="openUniQuote('UTP')">
+                        <div class="uni-badge">
+                            <img src="utp.png" alt="UTP" onerror="this.onerror=null; this.src='utp.jpg';">
+                        </div>
+                        <span class="uni-card-title">UTP</span>
+                    </div>
+
+                    <div class="uni-card" onclick="openUniQuote('UCV')">
+                        <div class="uni-badge">
+                            <img src="ucv.png" alt="UCV">
+                        </div>
+                        <span class="uni-card-title">UCV</span>
+                    </div>
+
+                    <div class="uni-card" onclick="openUniQuote('UPCH')">
+                        <div class="uni-badge">
+                            <img src="upch.png" alt="UPCH" onerror="this.onerror=null; this.src='upch.jpg';">
+                        </div>
+                        <span class="uni-card-title">UPCH</span>
+                    </div>
+
+                    <div class="uni-card" onclick="openUniQuote('CIENTÍFICA DEL SUR')">
+                        <div class="uni-badge">
+                            <img src="cientifica.png" alt="CIENTÍFICA DEL SUR" onerror="this.onerror=null; this.src='cientifica del sur.png';">
+                        </div>
+                        <span class="uni-card-title">CIENTÍFICA DEL SUR</span>
+                    </div>
+
+                    <div class="uni-card" onclick="openUniQuote('UPC')">
+                        <div class="uni-badge">
+                            <img src="upc.png" alt="UPC">
+                        </div>
+                        <span class="uni-card-title">UPC</span>
+                    </div>
+
+                    <div class="uni-card" onclick="openUniQuote('USMP')">
+                        <div class="uni-badge">
+                            <img src="usmp.png" alt="USMP" onerror="this.onerror=null; this.src='umsp.jpg';">
+                        </div>
+                        <span class="uni-card-title">USMP</span>
+                    </div>
+
+                    <div class="uni-card" onclick="openUniQuote('UPN')">
+                        <div class="uni-badge">
+                            <img src="upn.png" alt="UPN">
+                        </div>
+                        <span class="uni-card-title">UPN</span>
+                    </div>
+
+                    <div class="uni-card" onclick="openUniQuote('COLEGIOS DEL PERÚ')">
+                        <div class="uni-badge">
+                            <img src="colegios.png" alt="COLEGIOS DEL PERÚ" onerror="this.outerHTML='<i class=\"fa-solid fa-school\" style=\"font-size: 1.5rem; color: var(--accent-color);\"></i>';">
+                        </div>
+                        <span class="uni-card-title">COLEGIOS DEL PERÚ</span>
+                    </div>
                 </div>
             </div>
         </div>
