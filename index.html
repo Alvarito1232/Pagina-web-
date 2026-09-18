@@ -64,11 +64,15 @@
         }
 
         body {
-            background-color: var(--bg-primary);
+            background: linear-gradient(rgba(11, 15, 25, 0.88), rgba(11, 15, 25, 0.93)), url('Fondo pagina web.jpg') center/cover no-repeat fixed, url('FONDO 1 TOTAL.jpg') center/cover no-repeat fixed, var(--bg-primary);
             color: var(--text-primary);
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
+        }
+
+        [data-theme="light"] body {
+            background: linear-gradient(rgba(241, 245, 249, 0.90), rgba(241, 245, 249, 0.95)), url('Fondo pagina web.jpg') center/cover no-repeat fixed, url('FONDO 1 TOTAL.jpg') center/cover no-repeat fixed, var(--bg-primary);
         }
 
         /* CUSTOM MODERN SCROLLBAR */
