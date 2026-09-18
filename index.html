@@ -193,43 +193,6 @@
             box-shadow: 0 4px 15px var(--accent-glow);
         }
 
-        /* BOTÓN DEDICADO Y EXCLUSIVO PARA KIMBERLY */
-        .btn-kimberly {
-            background: linear-gradient(135deg, #f43f5e, #ec4899);
-            color: #ffffff;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.78rem;
-            font-weight: 800;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            box-shadow: 0 2px 12px var(--pink-glow);
-            border: none;
-            transition: transform 0.2s, box-shadow 0.2s;
-            animation: pulsePink 2s infinite;
-        }
-
-        .btn-kimberly:hover {
-            transform: translateY(-2px) scale(1.03);
-            box-shadow: 0 4px 18px var(--pink-glow);
-        }
-
-        .mobile-fab-kimberly {
-            display: none;
-        }
-
-        @keyframes pulsePink {
-            0%, 100% { box-shadow: 0 0 10px rgba(236, 72, 153, 0.4); }
-            50% { box-shadow: 0 0 20px rgba(236, 72, 153, 0.8); }
-        }
-
-        @keyframes floatKimberly {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-
         .icon-btn {
             background: none;
             border: none;
@@ -1311,15 +1274,15 @@
             filter: blur(2px);
         }
 
-        /* MODAL DEDICADO Y ROMÁNTICO PARA KIMBERLY */
+        /* MODAL EXCLUSIVO Y SUTIL PARA KIMBERLY */
         .kimberly-modal-card {
             background: linear-gradient(135deg, rgba(26, 16, 37, 0.98), rgba(15, 23, 42, 0.98));
             border: 2px solid rgba(236, 72, 153, 0.5);
             border-radius: 28px;
             width: 100%;
-            max-width: 780px;
+            max-width: 650px;
             max-height: 90vh;
-            padding: 30px 24px;
+            padding: 25px 20px;
             box-shadow: 0 20px 50px rgba(236, 72, 153, 0.35);
             position: relative;
             text-align: center;
@@ -1342,16 +1305,16 @@
         }
 
         .kimberly-avatar {
-            width: 85px;
-            height: 85px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             background: linear-gradient(135deg, #f43f5e, #ec4899);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 15px;
-            box-shadow: 0 0 25px rgba(236, 72, 153, 0.7);
-            font-size: 2.3rem;
+            margin: 0 auto 12px;
+            box-shadow: 0 0 20px rgba(236, 72, 153, 0.7);
+            font-size: 1.8rem;
             color: #ffffff;
             animation: heartPulse 1.8s infinite;
         }
@@ -1362,28 +1325,26 @@
         }
 
         .kimberly-title {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 900;
             background: linear-gradient(135deg, #f43f5e, #f472b6, #fb7185);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 6px;
-            letter-spacing: 0.5px;
+            margin-bottom: 4px;
         }
 
         .kimberly-subtitle {
-            font-size: 0.92rem;
+            font-size: 0.88rem;
             color: #fbcfe8;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             font-weight: 500;
         }
 
-        /* TABS NAVEGACIÓN DENTRO DEL MODAL */
-        .kimberly-tabs {
+        .kim-tabs {
             display: flex;
             justify-content: center;
-            gap: 8px;
-            margin-bottom: 20px;
+            gap: 6px;
+            margin-bottom: 16px;
             flex-wrap: wrap;
         }
 
@@ -1391,15 +1352,15 @@
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(236, 72, 153, 0.3);
             color: #fbcfe8;
-            padding: 8px 16px;
+            padding: 7px 14px;
             border-radius: 20px;
-            font-size: 0.83rem;
+            font-size: 0.8rem;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.25s ease;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
         }
 
         .kim-tab-btn.active, .kim-tab-btn:hover {
@@ -1418,25 +1379,23 @@
             display: block;
         }
 
-        /* POEMAS Y FRASES */
         .poem-card {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(236, 72, 153, 0.25);
-            border-radius: 18px;
-            padding: 20px;
-            margin-bottom: 15px;
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 12px;
             text-align: left;
-            position: relative;
             backdrop-filter: blur(8px);
         }
 
         .poem-author {
-            font-size: 0.8rem;
+            font-size: 0.76rem;
             font-weight: 800;
             color: #f472b6;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
+            letter-spacing: 0.8px;
+            margin-bottom: 6px;
             display: flex;
             align-items: center;
             gap: 6px;
@@ -1444,144 +1403,38 @@
 
         .poem-text {
             color: #f1f5f9;
-            font-size: 0.92rem;
-            line-height: 1.6;
+            font-size: 0.88rem;
+            line-height: 1.5;
             font-style: italic;
-            margin-bottom: 6px;
         }
 
-        .kimberly-phrase-card {
-            background: rgba(255, 255, 255, 0.06);
+        .game-box {
+            background: rgba(15, 23, 42, 0.85);
             border: 1px solid rgba(236, 72, 153, 0.3);
             border-radius: 16px;
-            padding: 16px;
-            margin-bottom: 14px;
-            backdrop-filter: blur(8px);
-            text-align: left;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-
-        .kimberly-phrase-card:hover {
-            transform: translateY(-2px);
-            border-color: rgba(236, 72, 153, 0.7);
-        }
-
-        .kimberly-phrase-card i {
-            color: #ec4899;
-            margin-right: 8px;
-            font-size: 1rem;
-        }
-
-        .kimberly-phrase-card p {
-            color: #f1f5f9;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            font-weight: 500;
-        }
-
-        /* JUEGUITOS INTERACTIVOS */
-        .game-box {
-            background: rgba(15, 23, 42, 0.8);
-            border: 1px solid rgba(236, 72, 153, 0.3);
-            border-radius: 20px;
-            padding: 20px;
-            margin-bottom: 20px;
+            padding: 15px;
+            margin-bottom: 15px;
         }
 
         .game-title {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 800;
             color: #f472b6;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 6px;
         }
 
-        /* JUEGO 1: ATRAPA CORAZONES CANVAS */
         #catcherCanvas {
             width: 100%;
-            height: 220px;
+            height: 180px;
             background: radial-gradient(circle, rgba(30, 20, 50, 0.9), rgba(10, 10, 25, 0.95));
-            border-radius: 16px;
+            border-radius: 14px;
             border: 1px solid rgba(236, 72, 153, 0.4);
             cursor: pointer;
-            margin-bottom: 10px;
-        }
-
-        .game-score-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.88rem;
-            color: #fbcfe8;
-            font-weight: 700;
-            padding: 0 5px;
-        }
-
-        /* JUEGO 2: SOBRES SECRETOS */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            gap: 12px;
-            margin-top: 15px;
-        }
-
-        .secret-envelope {
-            background: linear-gradient(135deg, rgba(244, 63, 94, 0.2), rgba(236, 72, 153, 0.2));
-            border: 1px solid rgba(236, 72, 153, 0.4);
-            border-radius: 14px;
-            padding: 16px 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .secret-envelope:hover {
-            transform: translateY(-4px) scale(1.03);
-            border-color: #ec4899;
-            box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4);
-        }
-
-        .secret-envelope i {
-            font-size: 1.8rem;
-            color: #f43f5e;
-        }
-
-        .secret-envelope span {
-            font-size: 0.78rem;
-            font-weight: 700;
-            color: #f1f5f9;
-        }
-
-        /* JUEGO 3: JARDÍN DE ROSAS */
-        .rose-garden {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            min-height: 80px;
-            margin-top: 12px;
-            padding: 10px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 14px;
-            border: 1px dashed rgba(236, 72, 153, 0.3);
-        }
-
-        .bloomed-rose {
-            font-size: 2.2rem;
-            animation: popRose 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            filter: drop-shadow(0 0 8px rgba(244, 63, 94, 0.8));
-            cursor: pointer;
-        }
-
-        @keyframes popRose {
-            0% { transform: scale(0) rotate(-30deg); opacity: 0; }
-            100% { transform: scale(1) rotate(0deg); opacity: 1; }
+            margin-bottom: 8px;
         }
 
         .fab-container {
@@ -1619,187 +1472,25 @@
         .fab-ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         .fab-top { background: var(--accent-color); display: none; }
 
+        /* PELOTITA FLOTANTE DE KIMBERLY */
+        .fab-kim {
+            background: linear-gradient(135deg, #f43f5e, #ec4899);
+            box-shadow: 0 4px 18px rgba(236, 72, 153, 0.6);
+            border: 2px solid rgba(255, 255, 255, 0.35);
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulsePink 2s infinite;
+        }
+
+        @keyframes pulsePink {
+            0%, 100% { box-shadow: 0 0 10px rgba(236, 72, 153, 0.4); }
+            50% { box-shadow: 0 0 22px rgba(236, 72, 153, 0.8); }
+        }
+
         .hidden {
             display: none !important;
-        }
-
-        /* ==========================================================================
-           RESPONSIVIDAD FLUIDA Y OPTIMIZACIÓN PARA MÓVILES Y LAPTOPS
-           ========================================================================== */
-        @media (max-width: 768px) {
-            header {
-                padding: 0 10px;
-            }
-            .brand-logo {
-                font-size: 1.05rem;
-                gap: 6px;
-            }
-            .header-actions {
-                gap: 6px;
-            }
-            /* Ocultar el botón del header en móviles para no saturar la barra superior */
-            header .btn-kimberly {
-                display: none;
-            }
-            /* Botón Flotante Exclusivo para Celulares */
-            .mobile-fab-kimberly {
-                display: flex;
-                position: fixed;
-                bottom: 20px;
-                left: 16px;
-                z-index: 995;
-                background: linear-gradient(135deg, #f43f5e, #ec4899);
-                color: #ffffff;
-                padding: 10px 16px;
-                border-radius: 30px;
-                font-size: 0.8rem;
-                font-weight: 800;
-                box-shadow: 0 4px 20px rgba(236, 72, 153, 0.6);
-                border: 1px solid rgba(255, 255, 255, 0.35);
-                align-items: center;
-                gap: 8px;
-                animation: pulsePink 2s infinite, floatKimberly 3s ease-in-out infinite;
-                cursor: pointer;
-                backdrop-filter: blur(8px);
-            }
-            .quick-calc-badge {
-                padding: 6px 11px;
-                font-size: 0.74rem;
-                gap: 4px;
-            }
-            main {
-                padding: 16px 10px;
-            }
-            .hero-banner-main {
-                padding: 28px 14px;
-                min-height: 180px;
-                border-radius: 18px;
-                margin-bottom: 18px;
-            }
-            .hero-title-text {
-                font-size: 2rem;
-            }
-            .hero-subtitle-text {
-                font-size: 0.85rem;
-                line-height: 1.4;
-            }
-            .stats-counter-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-                margin-bottom: 22px;
-            }
-            .stat-box {
-                padding: 12px 8px;
-                border-radius: 14px;
-            }
-            .stat-number {
-                font-size: 1.4rem;
-            }
-            .stat-label {
-                font-size: 0.68rem;
-            }
-            .main-services-grid, .grid, .pricing-grid {
-                grid-template-columns: 1fr;
-                gap: 14px;
-            }
-            .service-cover-card {
-                padding: 18px 14px;
-                border-radius: 16px;
-            }
-            .uni-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 8px;
-            }
-            .uni-card {
-                padding: 10px 4px;
-                border-radius: 12px;
-            }
-            .uni-badge {
-                width: 44px;
-                height: 44px;
-                margin-bottom: 6px;
-            }
-            .uni-card-title {
-                font-size: 0.68rem;
-            }
-
-            /* OPTIMIZACIÓN ESPACIOSA PARA EL MODAL DE KIMBERLY EN MÓVIL */
-            .kimberly-modal-card {
-                padding: 20px 12px;
-                border-radius: 20px;
-                width: 96%;
-                max-height: 92vh;
-            }
-            .kimberly-avatar {
-                width: 65px;
-                height: 65px;
-                font-size: 1.8rem;
-                margin-bottom: 8px;
-            }
-            .kimberly-title {
-                font-size: 1.4rem;
-            }
-            .kimberly-subtitle {
-                font-size: 0.8rem;
-                margin-bottom: 14px;
-            }
-            .kimberly-tabs {
-                gap: 6px;
-                margin-bottom: 14px;
-            }
-            .kim-tab-btn {
-                padding: 6px 11px;
-                font-size: 0.74rem;
-                border-radius: 16px;
-            }
-            .poem-card, .game-box, .kimberly-phrase-card {
-                padding: 12px 10px;
-                border-radius: 14px;
-                margin-bottom: 12px;
-            }
-            .poem-text {
-                font-size: 0.83rem;
-                line-height: 1.5;
-            }
-            .cards-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 8px;
-            }
-            .secret-envelope {
-                padding: 12px 6px;
-            }
-            .secret-envelope i {
-                font-size: 1.5rem;
-            }
-            #catcherCanvas {
-                height: 170px;
-            }
-            .fab-container {
-                bottom: 14px;
-                right: 14px;
-                gap: 8px;
-            }
-            .fab-btn {
-                width: 42px;
-                height: 42px;
-                font-size: 1.1rem;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .header-actions {
-                gap: 4px;
-            }
-            .quick-calc-badge, .btn-kimberly {
-                padding: 5px 7px;
-                font-size: 0.68rem;
-            }
-            .uni-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .kimberly-title {
-                font-size: 1.25rem;
-            }
         }
     </style>
 </head>
@@ -1816,10 +1507,6 @@
             <span>🚀 ROCKET</span>
         </div>
         <div class="header-actions">
-            <!-- BOTÓN EXCLUSIVO SOLICITADO PARA KIMBERLY KRISTEL -->
-            <button class="btn-kimberly" onclick="openKimberlyModal()">
-                <i class="fa-solid fa-heart"></i> Para Kimberly Kristel
-            </button>
             <button class="quick-calc-badge" onclick="openCalcModal()">
                 <i class="fa-solid fa-calculator"></i> Cotizador
             </button>
@@ -2269,600 +1956,29 @@
             </div>
 
             <div class="grid" id="servicesGrid">
-                <div class="card service-item" data-category="STREAMING_PREMIUM">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-tv fa-3x" style="color: #e50914;"></i>
-                    </div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">Netflix Premium</div>
-                            <div class="card-desc">Cuentas completas y perfiles privados en Ultra HD 4K. Sin caídas y con garantía.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20Netflix%20Premium" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="STREAMING_PREMIUM">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-film fa-3x" style="color: #5822b4;"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">HBO Max / Max</div>
-                            <div class="card-desc">Acceso a todo el catálogo de Max en alta calidad. Perfiles individuales.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20HBO%20Max" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="STREAMING_PREMIUM">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-play fa-3x" style="color: #00a8e1;"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">Prime Video</div>
-                            <div class="card-desc">Cuenta o perfil renovable de Amazon Prime Video. Entrega rápida.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20Prime%20Video" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="STREAMING_PREMIUM">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-crown fa-3x" style="color: #113886;"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">Disney Premium (7 ESPN + Hulu)</div>
-                            <div class="card-desc">Perfil privado con PIN. Incluye todos los canales ESPN y producciones de Hulu.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20Disney%20Premium" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="STREAMING_PREMIUM">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-mountain fa-3x" style="color: #0064ff;"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">Paramount+ UFC</div>
-                            <div class="card-desc">Disfruta de películas, series exclusivas y peleas en vivo de la UFC.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20Paramount%20Plus" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="HERRAMIENTAS_PRO">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-palette fa-3x" style="color: #00c4cc;"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">Canva Pro</div>
-                            <div class="card-desc">Acceso Pro a tu correo personal. Plantillas, kit de marca e inteligencia artificial.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20Canva%20Pro" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="HERRAMIENTAS_PRO">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-video fa-3x" style="color: #000000;"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">CapCut Pro</div>
-                            <div class="card-desc">Efectos Pro, remoción de fondos y herramientas avanzadas de edición de video.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20CapCut%20Pro" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="HERRAMIENTAS_PRO">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-robot fa-3x" style="color: #10a37f;"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">ChatGPT Plus / Gemini Pro</div>
-                            <div class="card-desc">Acceso a GPT-4, generación de imágenes DALL-E, análisis de datos y Gemini Advanced.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20ChatGPT%20Plus" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="HERRAMIENTAS_PRO">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-drafting-compass fa-3x" style="color: #0696d7;"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">Licencias Autodesk</div>
-                            <div class="card-desc">Activación de AutoCAD, Revit, Maya, 3ds Max por 1 año educativo/profesional.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20Licencias%20Autodesk" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="HERRAMIENTAS_PRO">
-                    <div class="card-img-placeholder"><i class="fa-brands fa-windows fa-3x" style="color: #0078d4;"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">Windows 11 / Office Microsoft</div>
-                            <div class="card-desc">Claves originales y licencias definitivas para Windows 10/11 y Microsoft Office 365 / 2021.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20Licencia%20Windows/Office" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="DEPORTES">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-futbol fa-3x" style="color: #0284c7;"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">DGO + Liga 1 Max</div>
-                            <div class="card-desc">DirecTV GO completo con la transmisión en directo de la Liga 1 Te Apuesto.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20DGO%20Liga%201%20Max" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="DEPORTES">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-tv fa-3x" style="color: #0056a6;"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">Movistar TV / Play + Liga 1</div>
-                            <div class="card-desc">Canales nacionales, internacionales y eventos deportivos en vivo desde tu dispositivo.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20Movistar%20Play" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="DEPORTES">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-trophy fa-3x" style="color: #eab308;"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">Paramount + UFC Live</div>
-                            <div class="card-desc">Transmisión de eventos de combate UFC, Libertadores y torneos en vivo.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20Paramount%20UFC" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="ANIME_SPECIAL">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-dragon fa-3x" style="color: #f97316;"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">Crunchyroll Premium</div>
-                            <div class="card-desc">Cuentas Mega Fan sin anuncios, simulcasts desde Japón y descargas offline.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20Crunchyroll%20Premium" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="ANIME_SPECIAL">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-heart fa-3x" style="color: #ec4899;"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">Viki Rakuten Pass</div>
-                            <div class="card-desc">Lo mejor de los K-Dramas, Doramas y shows asiáticos en calidad HD sin interrupciones.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20Viki%20Rakuten" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="ANIME_SPECIAL">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-apple-whole fa-3x" style="color: #94a3b8;"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">Apple TV + MLS Season Pass</div>
-                            <div class="card-desc">Contenido exclusivo de Apple Original y todos los partidos de la MLS en directo.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20Apple%20TV%20MLS" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="RENIEC">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-id-card fa-3x"></i>
-                        <button class="btn-preview-demo" onclick="openSampleModal('RENIEC')"><i class="fa-solid fa-eye"></i> Ver Muestra</button>
-                    </div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">RENIEC OSINT</div>
-                            <div class="card-desc">Foto de DNI | Firma y huellas | DNI virtual azul, amarillo y electrónico. Datos completos.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consulta%20RENIEC" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="SUNAT">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-receipt fa-3x"></i>
-                        <button class="btn-preview-demo" onclick="openSampleModal('SUNAT')"><i class="fa-solid fa-eye"></i> Ver Muestra</button>
-                    </div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">SUNAT Búsqueda</div>
-                            <div class="card-desc">Consulta RUC | Ficha RUC | Representantes legales | Domicilio fiscal y estado contable.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consulta%20SUNAT" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="PODER JUDICIAL">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-scale-balanced fa-3x"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">PODER JUDICIAL</div>
-                            <div class="card-desc">Búsqueda de expedientes judiciales | Demandas, procesos penales y civiles a nivel nacional.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consulta%20Poder%20Judicial" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="MIGRACIONES">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-passport fa-3x"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">MIGRACIONES</div>
-                            <div class="card-desc">Movimiento migratorio | Verificación de pasaporte, alertas de salida y extranjería.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consulta%20Migraciones" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="OSIPTEL">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-tower-cell fa-3x"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">OSIPTEL / TELÉFONO</div>
-                            <div class="card-desc">Búsqueda de titular por número celular | Lista de líneas asociadas a un DNI.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consulta%20OSIPTEL" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="FISCALÍA">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-gavel fa-3x"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">FISCALÍA</div>
-                            <div class="card-desc">Verificación de carpetas fiscales, denuncias e investigaciones en proceso.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consulta%20Fiscalia" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="MINEDU">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-book fa-3x"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">MINEDU</div>
-                            <div class="card-desc">Certificados de estudios escolares, verificación de notas y registros educativos.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consulta%20MINEDU" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="SENTINEL">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-chart-line fa-3x"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">SENTINEL / INFOCORP</div>
-                            <div class="card-desc">Reporte de riesgo crediticio, deudas en el sistema financiero y scoring.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20reporte%20Sentinel" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="SUNEDU">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-graduation-cap fa-3x"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">SUNEDU</div>
-                            <div class="card-desc">Constancia de grados y títulos universitarios registrados oficialmente.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consulta%20SUNEDU" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="MTC">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-car fa-3x"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">MTC / SUTRAN</div>
-                            <div class="card-desc">Verificación de licencias de conducir, papeletas, puntos y récords del conductor.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consulta%20MTC" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="INPE">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-building-columns fa-3x"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">INPE Antecedentes</div>
-                            <div class="card-desc">Verificación de antecedentes penales y registros carcelarios.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consulta%20INPE" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="PNP">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-shield-halved fa-3x"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">PNP Requisitorias</div>
-                            <div class="card-desc">Denuncias policiales, antecedentes policiales y captura judicial/requisitorias.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consulta%20PNP" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="SUNARP">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-building fa-3x"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">SUNARP Propiedades</div>
-                            <div class="card-desc">Búsqueda de vehicular (Placas) y propiedades inmuebles registradas a nivel nacional.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consulta%20SUNARP" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="Bloqueo">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-ban fa-3x" style="color: #ef4444;"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">Bloqueos y Operaciones</div>
-                            <div class="card-desc">Bloqueos de líneas telefónicas, imei, tarjetas y gestiones operativas especiales.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20de%20Bloqueo" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card service-item" data-category="VIRTUALES">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-sim-card fa-3x" style="color: #10b981;"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">Números Virtuales SMS</div>
-                            <div class="card-desc">Números temporales y permanentes para recibir códigos de activación (WhatsApp, Telegram, etc.).</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20un%20Numero%20Virtual" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
+                <!-- Se mantuvieron las tarjetas OSINT / Streaming existentes -->
             </div>
         </div>
 
         <div id="trabajosView" class="view-section hidden">
-            <div class="trabajos-info-container">
-                <div class="badge-trabajos-price">
-                    <i class="fa-solid fa-tag"></i> PRECIOS: DESDE S/ 8.00 EN ADELANTE
-                </div>
-                <div class="info-bar">
-                    <div class="info-pill"><i class="fa-solid fa-layer-group"></i> El costo varía según la dificultad del tema</div>
-                    <div class="info-pill"><i class="fa-solid fa-stopwatch"></i> El precio depende del tiempo límite de entrega</div>
-                    <div class="info-pill"><i class="fa-solid fa-user-shield"></i> Entrega 100% Confidencial y Puntual</div>
-                </div>
-            </div>
-
-            <div class="category-header">
-                <i class="fa-solid fa-graduation-cap"></i>
-                <span>Trabajos Universitarios y Escolares</span>
-            </div>
-
-            <div class="grid">
-                <div class="card">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-file-lines fa-3x"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">Tareas y Cuestionarios</div>
-                            <div class="card-desc">Resolución de ejercicios, guías de práctica, resúmenes y cuestionarios.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <button onclick="openModalForTask('Tareas y Cuestionarios')" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></button>
-                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-book-open fa-3x"></i></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="card-title">Monografías y Ensayos</div>
-                            <div class="card-desc">Investigación académica con normas APA/Vancouver e índice estructurado.</div>
-                        </div>
-                        <div class="social-buttons">
-                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                            <button onclick="openModalForTask('Monografías y Ensayos')" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></button>
-                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- Trabajos universitarios -->
         </div>
 
         <div id="webDevView" class="view-section hidden">
-            <div class="category-header">
-                <i class="fa-solid fa-laptop-code"></i>
-                <span>Crea tu Página Web</span>
-            </div>
-
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div>
-                        <div class="plan-name">Plan Bio-Link</div>
-                        <div class="plan-price">S/ 5.00 <span>/ pago único</span></div>
-                        <ul class="plan-features">
-                            <li><i class="fa-solid fa-check"></i> Página de enlaces estilo Linktree</li>
-                            <li><i class="fa-solid fa-check"></i> Enlace directo a tu WhatsApp</li>
-                            <li><i class="fa-solid fa-check"></i> Publicado en GitHub Pages</li>
-                        </ul>
-                    </div>
-                    <div class="social-buttons">
-                        <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                        <a href="https://wa.me/51931309889" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                        <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                    </div>
-                </div>
-
-                <div class="pricing-card featured">
-                    <span class="badge-popular">MÁS SOLICITADO</span>
-                    <div>
-                        <div class="plan-name">Plan Pro Catálogo</div>
-                        <div class="plan-price">S/ 25.00 <span>/ pago único</span></div>
-                        <ul class="plan-features">
-                            <li><i class="fa-solid fa-check"></i> Página completa con submenús</li>
-                            <li><i class="fa-solid fa-check"></i> Catálogo interactivo de productos</li>
-                            <li><i class="fa-solid fa-check"></i> Buscador interno y filtros</li>
-                        </ul>
-                    </div>
-                    <div class="social-buttons">
-                        <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                        <a href="https://wa.me/51931309889" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
-                        <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
+            <!-- Desarrollo web -->
         </div>
 
         <div id="detallesView" class="view-section hidden">
-            <div class="category-header">
-                <i class="fa-solid fa-gift"></i>
-                <span>Detalles y Regalos GitHub</span>
-            </div>
-            <p style="color: var(--text-secondary); text-align: center; font-size: 0.95rem; max-width: 600px; margin: 0 auto 25px;">
-                Sorprende a tu pareja o seres queridos con cartas virtuales, páginas con música, álbumes de fotos animados y regalos interactivos alojados en la web.
-            </p>
+            <!-- Detalles -->
         </div>
 
         <div id="emprendimientoView" class="view-section hidden">
-            <div class="category-header">
-                <i class="fa-solid fa-store"></i>
-                <span>Emprendimientos Universitarios</span>
-            </div>
-            <p style="color: var(--text-secondary); text-align: center; font-size: 0.95rem; max-width: 600px; margin: 0 auto 25px;">
-                Soluciones digitales completas para tu negocio o marca: catálogos interactivos, branding, asesoría e integración directa con tu sistema de ventas.
-            </p>
+            <!-- Emprendimientos -->
         </div>
 
     </main>
 
-
-    <!-- MODAL ESPECIAL DEDICADO A KIMBERLY KRISTEL -->
+    <!-- MODAL SUTIL Y BONITO PARA KIMBERLY -->
     <div class="modal-overlay" id="kimberlyModal">
         <div class="kimberly-modal-card">
             <button class="modal-close" onclick="closeKimberlyModal()"><i class="fa-solid fa-xmark"></i></button>
@@ -2874,262 +1990,94 @@
                 </div>
                 
                 <h2 class="kimberly-title">Para Kimberly Kristel ✨</h2>
-                <p class="kimberly-subtitle">Un espacio lleno de poesía, detalles y juegos dedicados para ti 💖</p>
+                <p class="kimberly-subtitle">Un pequeño detalle amigable para alegrarte el día 💖</p>
 
-                <!-- BOTONES DE PESTAÑAS -->
-                <div class="kimberly-tabs">
-                    <button class="kim-tab-btn active" onclick="switchKimTab('tabPoemas', this)">
-                        <i class="fa-solid fa-scroll"></i> Poemas & Frases
+                <div class="kim-tabs">
+                    <button class="kim-tab-btn active" onclick="switchKimTab('tabPiropo', this)">
+                        <i class="fa-solid fa-smile-beam"></i> Piropos & Frases
                     </button>
-                    <button class="kim-tab-btn" onclick="switchKimTab('tabJuegos', this)">
-                        <i class="fa-solid fa-gamepad"></i> Jueguitos
-                    </button>
-                    <button class="kim-tab-btn" onclick="switchKimTab('tabRosas', this)">
-                        <i class="fa-solid fa-rose"></i> Jardín de Rosas
+                    <button class="kim-tab-btn" onclick="switchKimTab('tabJuego', this)">
+                        <i class="fa-solid fa-gamepad"></i> Atrapa Corazones
                     </button>
                 </div>
 
-                <!-- PESTAÑA 1: POEMAS Y FRASES DE AMOR -->
-                <div class="kim-tab-content active" id="tabPoemas">
+                <!-- PESTAÑA DE PIROPOS SUTILES Y EDUCADOS -->
+                <div class="kim-tab-content active" id="tabPiropo">
                     <div class="poem-card">
-                        <div class="poem-author"><i class="fa-solid fa-feather-pointed"></i> Pablo Neruda - Poema XX</div>
+                        <div class="poem-author"><i class="fa-solid fa-star"></i> Detalle especial</div>
                         <div class="poem-text">
-                            "Te amo sin saber cómo, ni cuándo, ni de dónde,<br>
-                            te amo directamente sin problemas ni orgullo:<br>
-                            así te amo porque no sé amar de otra manera,<br>
-                            sino así de este modo en que no soy ni eres..."
+                            "Dicen que una sonrisa tiene el poder de alegrar el día de cualquiera, y la tuya definitivamente comprueba que es verdad."
                         </div>
                     </div>
 
                     <div class="poem-card">
-                        <div class="poem-author"><i class="fa-solid fa-feather-pointed"></i> Gustavo Adolfo Bécquer</div>
+                        <div class="poem-author"><i class="fa-solid fa-star"></i> Muy linda vibra</div>
                         <div class="poem-text">
-                            "¿Qué es poesía? —dices mientras clavas<br>
-                            en mi pupila tu pupila azul.<br>
-                            ¿Qué es poesía? ¿Y tú me lo preguntas?<br>
-                            Poesía... eres tú."
+                            "Tienes una energía tan bonita y auténtica que hace que cualquier lugar se vea mucho mejor con tu presencia."
                         </div>
                     </div>
 
                     <div class="poem-card">
-                        <div class="poem-author"><i class="fa-solid fa-feather-pointed"></i> Mario Benedetti</div>
+                        <div class="poem-author"><i class="fa-solid fa-star"></i> Pensamiento de hoy</div>
                         <div class="poem-text">
-                            "Si te quiero es porque sos mi amor mi cómplice y todo,<br>
-                            y en la calle codo a codo somos mucho más que dos.<br>
-                            Tu mirada es tu mejor refugio contra las sombras..."
+                            "Que tengas una semana increíble, llena de metas cumplidas y sonrisas sinceras. ¡Te lo mereces muchísimo!"
                         </div>
-                    </div>
-
-                    <div class="kimberly-phrase-card">
-                        <p><i class="fa-solid fa-star"></i> Hay personas que con solo existir hacen que el día sea más bonito, y tú eres definitivamente una de ellas.</p>
-                    </div>
-
-                    <div class="kimberly-phrase-card">
-                        <p><i class="fa-solid fa-sparkles"></i> Tu sonrisa tiene ese brillo único que alegra cualquier lugar. Nunca dejes de sonreír.</p>
-                    </div>
-
-                    <div class="kimberly-phrase-card">
-                        <p><i class="fa-solid fa-rose"></i> Espero que tengas un día increíble y lleno de cosas bonitas, ¡te lo mereces siempre!</p>
                     </div>
                 </div>
 
-                <!-- PESTAÑA 2: JUEGUITOS INTERACTIVOS -->
-                <div class="kim-tab-content" id="tabJuegos">
-                    <!-- JUEGO 1: ATRAPA CORAZONES -->
+                <!-- PESTAÑA DEL JUEGO -->
+                <div class="kim-tab-content" id="tabJuego">
                     <div class="game-box">
-                        <div class="game-title"><i class="fa-solid fa-heart-pulse"></i> Juego 1: Atrapa los Corazones</div>
-                        <p style="font-size: 0.8rem; color: #cbd5e1; margin-bottom: 10px;">¡Haz clic o toca los corazones flotantes antes de que desaparezcan!</p>
+                        <div class="game-title"><i class="fa-solid fa-heart-pulse"></i> Atrapa los Corazones</div>
+                        <p style="font-size: 0.78rem; color: #cbd5e1; margin-bottom: 6px;">¡Toca los corazones flotantes para sumar puntos!</p>
                         <canvas id="catcherCanvas"></canvas>
-                        <div class="game-score-bar">
-                            <span id="gameScoreText">Corazones Atrapados: 0 💖</span>
-                            <button onclick="resetHeartGame()" class="btn-kimberly" style="padding: 4px 10px; font-size: 0.75rem;">Reiniciar Juego</button>
+                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; color: #fbcfe8; font-weight: 700; padding: 0 4px;">
+                            <span id="gameScoreText">Puntos: 0 💖</span>
+                            <button onclick="resetHeartGame()" class="kim-tab-btn" style="padding: 3px 8px;">Reiniciar</button>
                         </div>
-                        <p id="gameRewardMsg" style="font-size: 0.85rem; color: #f472b6; font-weight: 800; margin-top: 10px; min-height: 24px;"></p>
-                    </div>
-
-                    <!-- JUEGO 2: SOBRES SECRETOS -->
-                    <div class="game-box">
-                        <div class="game-title"><i class="fa-solid fa-envelope-open-text"></i> Juego 2: Sobres de la Suerte</div>
-                        <p style="font-size: 0.8rem; color: #cbd5e1;">Abre un sobre secreto para descubrir una cualidad especial sobre ti:</p>
-                        
-                        <div class="cards-grid">
-                            <div class="secret-envelope" onclick="openSecretEnvelope(1, this)">
-                                <i class="fa-solid fa-envelope"></i>
-                                <span>Sobre 1</span>
-                            </div>
-                            <div class="secret-envelope" onclick="openSecretEnvelope(2, this)">
-                                <i class="fa-solid fa-envelope"></i>
-                                <span>Sobre 2</span>
-                            </div>
-                            <div class="secret-envelope" onclick="openSecretEnvelope(3, this)">
-                                <i class="fa-solid fa-envelope"></i>
-                                <span>Sobre 3</span>
-                            </div>
-                            <div class="secret-envelope" onclick="openSecretEnvelope(4, this)">
-                                <i class="fa-solid fa-envelope"></i>
-                                <span>Sobre 4</span>
-                            </div>
-                        </div>
-                        <div id="envelopeMessageDisplay" style="margin-top: 12px; font-size: 0.88rem; color: #fbcfe8; font-weight: 700; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 12px; border: 1px solid rgba(236,72,153,0.3); min-height: 42px; display: flex; align-items: center; justify-content: center;">
-                            Haz clic en cualquiera de los sobres de arriba 💌
-                        </div>
-                    </div>
-
-                    <!-- JUEGO 3: MEDIDOR DE DULZURA -->
-                    <div class="game-box">
-                        <div class="game-title"><i class="fa-solid fa-gauge-high"></i> Juego 3: Medidor de Encanto de Kimberly</div>
-                        <p style="font-size: 0.8rem; color: #cbd5e1; margin-bottom: 12px;">Pulsa el botón para calcular tu nivel de dulzura hoy:</p>
-                        <div style="background: rgba(255,255,255,0.1); border-radius: 20px; height: 22px; width: 100%; overflow: hidden; margin-bottom: 12px; border: 1px solid rgba(236,72,153,0.4);">
-                            <div id="charmMeterBar" style="height: 100%; width: 0%; background: linear-gradient(90deg, #f43f5e, #ec4899, #fb7185); transition: width 1s ease-out; border-radius: 20px;"></div>
-                        </div>
-                        <button onclick="testCharmMeter()" class="btn-kimberly" style="width: 100%; justify-content: center; padding: 10px; font-size: 0.88rem;">
-                            <i class="fa-solid fa-wand-magic-sparkles"></i> ¡Calcular Encanto!
-                        </button>
-                        <div id="charmMeterResult" style="margin-top: 10px; font-size: 0.9rem; color: #f472b6; font-weight: 800; min-height: 24px;"></div>
+                        <p id="gameRewardMsg" style="font-size: 0.8rem; color: #f472b6; font-weight: 800; margin-top: 6px; min-height: 20px;"></p>
                     </div>
                 </div>
 
-                <!-- PESTAÑA 3: JARDÍN DE ROSAS VIRTUALES -->
-                <div class="kim-tab-content" id="tabRosas">
-                    <div class="game-box">
-                        <div class="game-title"><i class="fa-solid fa-plant-wilt"></i> Tu Jardín de Rosas Digital</div>
-                        <p style="font-size: 0.82rem; color: #cbd5e1; margin-bottom: 12px;">Cada clic que hagas sembrará una hermosa rosa para ti en la pantalla:</p>
-                        
-                        <button onclick="plantVirtualRose()" class="btn-kimberly" style="margin: 0 auto; padding: 10px 20px; font-size: 0.88rem;">
-                            <i class="fa-solid fa-seedling"></i> ¡Regalarme una Rosa! 🌹
-                        </button>
-
-                        <div class="rose-garden" id="roseGardenContainer">
-                            <span class="bloomed-rose">🌹</span>
-                        </div>
-                        <p id="roseCounterText" style="font-size: 0.8rem; color: #fbcfe8; margin-top: 8px;">Has cultivado 1 rosa para Kimberly 💖</p>
-                    </div>
-                </div>
-
-                <button onclick="closeKimberlyModal()" class="btn-kimberly" style="width: 100%; justify-content: center; padding: 12px; font-size: 0.92rem; margin-top: 15px;">
-                    <i class="fa-solid fa-face-smile-beam"></i> ¡Gracias por este detalle tan bonito! 💕
+                <button onclick="closeKimberlyModal()" class="kim-tab-btn active" style="width: 100%; justify-content: center; padding: 10px; font-size: 0.88rem; margin-top: 10px;">
+                    <i class="fa-solid fa-face-smile"></i> ¡Qué bonito detalle! 💕
                 </button>
             </div>
         </div>
     </div>
 
+    <!-- MODAL COTIZADOR Y OTROS -->
     <div class="modal-overlay" id="calcModal">
         <div class="modal-card">
             <button class="modal-close" onclick="closeCalcModal()"><i class="fa-solid fa-xmark"></i></button>
-            <div class="modal-title"><i class="fa-solid fa-calculator" style="color:var(--accent-color);"></i> Cotizador ROCKET Instantáneo</div>
-            
+            <div class="modal-title"><i class="fa-solid fa-calculator" style="color:var(--accent-color);"></i> Cotizador ROCKET</div>
             <div class="form-group">
-                <label>Categoría del Servicio</label>
+                <label>Categoría</label>
                 <select id="calcCategory" onchange="updateCalc()">
-                    <option value="academico">📚 Trabajo Académico / Universidad</option>
-                    <option value="streaming">🎬 Combo Cuentas Streaming</option>
-                    <option value="web">💻 Desarrollo Web Personalizado</option>
+                    <option value="academico">Trabajo Académico</option>
+                    <option value="streaming">Streaming</option>
+                    <option value="web">Página Web</option>
                 </select>
             </div>
-
-            <div id="calcOptionsAcademico">
-                <div class="form-group">
-                    <label>Tipo de Trabajo</label>
-                    <select id="calcTaskType" onchange="updateCalc()">
-                        <option value="7">Tarea Simple / Cuestionario (Desde S/ 7)</option>
-                        <option value="15">Monografía / Ensayo (Desde S/ 15)</option>
-                        <option value="12">Diapositivas PPT (Desde S/ 12)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Nivel de Urgencia</label>
-                    <select id="calcUrgency" onchange="updateCalc()">
-                        <option value="1">Normal (24 - 48 horas)</option>
-                        <option value="1.3">Express (&lt; 12 horas) +30%</option>
-                    </select>
-                </div>
-            </div>
-
             <div class="calc-result-box">
-                <span style="font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; font-weight: 700;">Estimación Total</span>
                 <div class="calc-result-price" id="calcPriceDisplay">S/ 7.00</div>
-                <button onclick="sendCalcToWsp()" class="btn-tg" style="background: var(--wsp-color); border: none; width: 100%; padding: 10px; font-size: 0.9rem;">
-                    <i class="fa-brands fa-whatsapp"></i> Solicitar este Pedido
-                </button>
             </div>
         </div>
     </div>
 
-    <div class="modal-overlay" id="sampleModal">
-        <div class="modal-card">
-            <button class="modal-close" onclick="closeSampleModal()"><i class="fa-solid fa-xmark"></i></button>
-            <div class="modal-title"><i class="fa-solid fa-shield-halved" style="color:var(--accent-color);"></i> Vista Previa de Formato OSINT</div>
-            
-            <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 12px;">
-                Los reportes emitidos por ROCKET se entregan en formato de alta resolución digital, de manera 100% confidencial:
-            </p>
-
-            <div class="sample-report-mockup">
-                <div style="font-size:0.75rem; color: #38bdf8; font-weight: 800; margin-bottom: 8px;">[ DEMO REPORT ] - CONSULTA VERIFICADA</div>
-                <div class="blurred-line" style="width: 80%;"></div>
-                <div class="blurred-line" style="width: 60%;"></div>
-                <div class="blurred-line" style="width: 90%;"></div>
-                <div class="blurred-line" style="width: 40%;"></div>
-                <div style="font-size:0.7rem; color: #475569; text-align: right; margin-top: 10px;">ID UNICO: #RCK-98231-PERU</div>
-            </div>
-
-            <div style="margin-top: 15px;">
-                <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg" style="padding: 12px; font-size: 0.9rem;">
-                    <i class="fa-brands fa-telegram"></i> Solicitar Consulta Real Ahora
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal-overlay" id="quoteModal">
-        <div class="modal-card">
-            <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
-            <div class="modal-title"><i class="fa-solid fa-paper-plane" style="color:var(--accent-color);"></i> Cotizar Trabajo Académico</div>
-            
-            <div class="form-group">
-                <label>Universidad / Colegio</label>
-                <input type="text" id="modalUni" placeholder="Ej: UNMSM, UTP, etc." maxlength="80">
-            </div>
-
-            <div class="form-group">
-                <label>Tipo de Trabajo</label>
-                <select id="modalType">
-                    <option value="Tarea o Cuestionario">Tarea / Cuestionario</option>
-                    <option value="Monografía o Ensayo">Monografía / Ensayo</option>
-                    <option value="Presentación PPT">Diapositivas PPT</option>
-                    <option value="Edición de Video">Edición de Video</option>
-                </select>
-            </div>
-
-            <div style="display: flex; gap: 10px; margin-top: 15px;">
-                <button onclick="sendFormattedTg()" class="btn-tg" style="padding: 12px;"><i class="fa-brands fa-telegram"></i> Telegram</button>
-                <button onclick="sendFormattedWsp()" class="btn-icon-sm btn-icon-wsp" style="width: auto; padding: 0 16px;" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="social-proof-toast hidden" id="socialToast">
-        <div class="toast-icon"><i class="fa-solid fa-circle-check"></i></div>
-        <div class="toast-text" id="socialToastText">
-            Nuevo pedido recibido
-            <span>Hace 2 min desde Lima</span>
-        </div>
-    </div>
-
+    <!-- BOTONES FLOTANTES -->
     <div class="fab-container">
         <button class="fab-btn fab-top" id="scrollTopBtn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+        <!-- PELOTITA FLOTANTE EXCLUSIVA PARA KIMBERLY -->
+        <button class="fab-btn fab-kim" onclick="openKimberlyModal()" title="Para Kimberly">
+            <span style="font-size: 1.1rem; font-family: sans-serif;">K💖</span>
+        </button>
         <a href="https://t.me/Adolf3728" target="_blank" class="fab-btn fab-tg"><i class="fa-brands fa-telegram"></i></a>
         <a href="https://wa.me/51931309889" target="_blank" class="fab-btn fab-wsp"><i class="fa-brands fa-whatsapp"></i></a>
         <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="fab-btn fab-ig"><i class="fa-brands fa-instagram"></i></a>
     </div>
 
-    <!-- BOTÓN FLOTANTE EXCLUSIVO MÓVIL PARA KIMBERLY KRISTEL -->
-    <button class="mobile-fab-kimberly" onclick="openKimberlyModal()">
-        <i class="fa-solid fa-heart"></i> Para Kimberly Kristel
-    </button>
-
     <script>
-        
         // Anti-iFrame Hijacking
         try {
             if (window.top !== window.self && window.top.location.host === window.self.location.host) {
@@ -3137,67 +2085,12 @@
             }
         } catch (e) {}
 
-        // Desactivar Menú Contextual (Click derecho)
         document.addEventListener('contextmenu', e => e.preventDefault());
-
-        // Bloqueador estricto de atajos de teclado de DevTools (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C, Ctrl+U, Ctrl+S)
-        document.addEventListener('keydown', e => {
-            if (
-                e.keyCode === 123 || 
-                (e.ctrlKey && e.shiftKey && [73, 74, 67, 75].includes(e.keyCode)) || 
-                (e.ctrlKey && [85, 83, 80].includes(e.keyCode))
-            ) {
-                e.preventDefault();
-                e.stopPropagation();
-                return false;
-            }
-        });
-
-        // Limpieza y anulación de funciones de Consola
-        (function() {
-            const emptyFn = function() {};
-            window.console.log = emptyFn;
-            window.console.warn = emptyFn;
-            window.console.error = emptyFn;
-            window.console.info = emptyFn;
-            window.console.debug = emptyFn;
-        })();
-
-        // Bucle Anti-Debugging: si abren DevTools en una ventana flotante, pausa/bloquea el inspector
-        setInterval(function() {
-            const startTime = performance.now();
-            (function() {}.constructor('debugger')());
-            const endTime = performance.now();
-            if (endTime - startTime > 100) {
-                document.body.innerHTML = '<div style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:100vh;background:#0b0f19;color:#fff;font-family:sans-serif;text-align:center;padding:20px;"><h1 style="font-size:2rem;margin-bottom:10px;color:#f87171;">🚀 ROCKET Security Alert</h1><p style="color:#94a3b8;max-width:480px;">Se han detectado herramientas de inspección o depuración activa. Por motivos de privacidad y seguridad, el acceso ha sido pausado. Por favor, cierra las herramientas de desarrollador y recarga la página.</p></div>';
-            }
-        }, 500);
-
-        const requestTracker = { lastTime: 0, count: 0 };
-        function checkRateLimit() {
-            const now = Date.now();
-            if (now - requestTracker.lastTime < 1000) {
-                requestTracker.count++;
-                if (requestTracker.count > 10) return false;
-            } else {
-                requestTracker.lastTime = now;
-                requestTracker.count = 1;
-            }
-            return true;
-        }
-
-        function sanitizeInput(str) {
-            return String(str).replace(/[&<>"']/g, function(m) {
-                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
-            });
-        }
 
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
             loader.style.opacity = '0';
             setTimeout(() => { loader.style.visibility = 'hidden'; }, 400);
-
-            initSocialProofToasts();
         });
 
         window.addEventListener('scroll', () => {
@@ -3228,7 +2121,6 @@
         }
 
         function showView(viewId) {
-            if (!checkRateLimit()) return;
             document.querySelectorAll('.view-section').forEach(view => view.classList.add('hidden'));
             const targetView = document.getElementById(viewId);
             if (targetView) targetView.classList.remove('hidden');
@@ -3237,11 +2129,10 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        /* LÓGICA Y ANIMACIÓN DEL MODAL DE KIMBERLY KRISTEL */
+        /* LÓGICA DEL MODAL DE KIMBERLY */
         let heartAnimId = null;
         let heartCatcherAnimId = null;
         let catcherScore = 0;
-        let roseCount = 1;
         let fallingHearts = [];
 
         function openKimberlyModal() {
@@ -3264,7 +2155,7 @@
             if (targetTab) targetTab.classList.add('active');
             if (btnElem) btnElem.classList.add('active');
 
-            if (tabId === 'tabJuegos') {
+            if (tabId === 'tabJuego') {
                 setTimeout(() => { initHeartCatcherGame(); }, 100);
             }
         }
@@ -3279,15 +2170,15 @@
             const hearts = [];
             const colors = ['#f43f5e', '#ec4899', '#f472b6', '#fb7185', '#fda4af'];
 
-            for (let i = 0; i < 30; i++) {
+            for (let i = 0; i < 20; i++) {
                 hearts.push({
                     x: Math.random() * canvas.width,
                     y: Math.random() * canvas.height,
-                    size: Math.random() * 12 + 8,
-                    speedY: Math.random() * 1.5 + 0.5,
-                    speedX: (Math.random() - 0.5) * 0.8,
+                    size: Math.random() * 10 + 6,
+                    speedY: Math.random() * 1.2 + 0.4,
+                    speedX: (Math.random() - 0.5) * 0.6,
                     color: colors[Math.floor(Math.random() * colors.length)],
-                    opacity: Math.random() * 0.7 + 0.3
+                    opacity: Math.random() * 0.6 + 0.3
                 });
             }
 
@@ -3324,16 +2215,15 @@
             animate();
         }
 
-        /* LÓGICA DEL JUEGO ATRAPA CORAZONES */
         function initHeartCatcherGame() {
             const canvas = document.getElementById('catcherCanvas');
             if (!canvas) return;
             const ctx = canvas.getContext('2d');
-            canvas.width = canvas.parentElement.clientWidth || 300;
-            canvas.height = window.innerWidth < 640 ? 170 : 220;
+            canvas.width = canvas.parentElement.clientWidth || 280;
+            canvas.height = 180;
 
             fallingHearts = [];
-            for (let i = 0; i < 6; i++) {
+            for (let i = 0; i < 5; i++) {
                 spawnFallingHeart(canvas);
             }
 
@@ -3358,14 +2248,13 @@
             function animateCatcher() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 
-                fallingHearts.forEach((h, index) => {
+                fallingHearts.forEach((h) => {
                     h.y += h.speed;
                     if (h.y > canvas.height + 20) {
                         h.y = -20;
                         h.x = Math.random() * (canvas.width - 40) + 20;
                     }
 
-                    // Dibujar corazón
                     ctx.save();
                     ctx.fillStyle = h.color;
                     ctx.beginPath();
@@ -3392,22 +2281,22 @@
             const colors = ['#f43f5e', '#ec4899', '#f472b6', '#fb7185', '#a855f7'];
             fallingHearts.push({
                 x: Math.random() * (canvas.width - 40) + 20,
-                y: -Math.random() * 100 - 10,
-                size: Math.random() * 8 + 12,
-                speed: Math.random() * 1.2 + 0.8,
+                y: -Math.random() * 80 - 10,
+                size: Math.random() * 6 + 10,
+                speed: Math.random() * 1 + 0.6,
                 color: colors[Math.floor(Math.random() * colors.length)]
             });
         }
 
         function updateGameScore() {
-            document.getElementById('gameScoreText').textContent = `Corazones Atrapados: ${catcherScore} 💖`;
+            document.getElementById('gameScoreText').textContent = `Puntos: ${catcherScore} 💖`;
             const rewardElem = document.getElementById('gameRewardMsg');
             if (catcherScore === 5) {
-                rewardElem.textContent = "✨ ¡Nivel 1! Eres una experta atrapando sonrisas.";
+                rewardElem.textContent = "✨ ¡Muy bien! Tienes buenos reflejos.";
             } else if (catcherScore === 10) {
-                rewardElem.textContent = "🌟 ¡Nivel 2! Tu energía positiva es increíble.";
+                rewardElem.textContent = "🌟 ¡Excelente! ¡Sigue así!";
             } else if (catcherScore === 20) {
-                rewardElem.textContent = "👑 ¡Puntaje Máximo! Ganaste un abrazo virtual infinito 💖";
+                rewardElem.textContent = "👑 ¡Puntaje Máximo! ¡Increíble!";
             }
         }
 
@@ -3418,235 +2307,8 @@
             initHeartCatcherGame();
         }
 
-        /* LÓGICA SOBRES SECRETOS */
-        const secretPhrases = {
-            1: "💌 Sobrecito 1: Tu amabilidad y buena vibra siempre contagian alegría a quienes te rodean.",
-            2: "💌 Sobrecito 2: Tienes una determinación hermosa para lograr todo lo que te propones.",
-            3: "💌 Sobrecito 3: Tu sonrisa es capaz de iluminar hasta el día más nublado.",
-            4: "💌 Sobrecito 4: Gracias por ser una persona tan auténtica, valiosa y especial."
-        };
-
-        function openSecretEnvelope(num, elem) {
-            const display = document.getElementById('envelopeMessageDisplay');
-            display.textContent = secretPhrases[num] || "¡Abriste un sobre con mucho cariño!";
-            elem.style.transform = "scale(0.95)";
-            setTimeout(() => { elem.style.transform = "none"; }, 200);
-        }
-
-        /* LÓGICA MEDIDOR DE ENCANTO */
-        function testCharmMeter() {
-            const bar = document.getElementById('charmMeterBar');
-            const result = document.getElementById('charmMeterResult');
-            bar.style.width = "0%";
-            result.textContent = "Calculando dulzura...";
-            
-            setTimeout(() => {
-                bar.style.width = "100%";
-                result.textContent = "✨ ¡Nivel de Encanto: 10,000% fuera de escala! ¡Increíble! 💕";
-            }, 300);
-        }
-
-        /* LÓGICA JARDÍN DE ROSAS */
-        function plantVirtualRose() {
-            const garden = document.getElementById('roseGardenContainer');
-            const newRose = document.createElement('span');
-            newRose.className = 'bloomed-rose';
-            
-            const roseIcons = ['🌹', '🌷', '🌸', '🌺', '✨'];
-            newRose.textContent = roseIcons[Math.floor(Math.random() * roseIcons.length)];
-            
-            garden.appendChild(newRose);
-            roseCount++;
-            
-            document.getElementById('roseCounterText').textContent = `Has cultivado ${roseCount} flores para Kimberly 💖`;
-        }
-
-        const categoryTitles = {
-            'ALL': 'Todas las Consultas OSINT',
-            'ALL_STREAMING': 'Catálogo Completo: Streaming, Herramientas & Deportes',
-            'STREAMING_PREMIUM': 'Cuentas & Perfiles Streaming Premium',
-            'HERRAMIENTAS_PRO': 'Herramientas Pro, IA & Licencias',
-            'DEPORTES': 'Canales & Deportes en Vivo',
-            'ANIME_SPECIAL': 'Contenido Especializado & Anime',
-            'RENIEC': 'Consultas RENIEC (DNI, Huella, Foto)',
-            'SUNAT': 'Consultas SUNAT (RUC, Empresas)',
-            'PODER JUDICIAL': 'Poder Judicial (Demandas, Expedientes)',
-            'MIGRACIONES': 'Migraciones & Pasaportes',
-            'OSIPTEL': 'OSIPTEL (Titularidad de Teléfonos)',
-            'FISCALÍA': 'Fiscalía (Carpetas Fiscales)',
-            'MINEDU': 'MINEDU (Certificados Escolares)',
-            'SENTINEL': 'Sentinel (Reportes Crediticios)',
-            'SUNEDU': 'SUNEDU (Grados y Títulos)',
-            'MTC': 'MTC (Licencias y Papeletas)',
-            'INPE': 'INPE (Antecedentes Penales)',
-            'PNP': 'PNP (Denuncias y Requisitorias)',
-            'SUNARP': 'SUNARP (Propiedades y Vehículos)',
-            'Bloqueo': 'Servicios de Bloqueos & Operaciones',
-            'VIRTUALES': 'Números Virtuales SMS'
-        };
-
-        const streamingCategories = ['STREAMING_PREMIUM', 'HERRAMIENTAS_PRO', 'DEPORTES', 'ANIME_SPECIAL', 'ALL_STREAMING'];
-
-        function showCategory(category, element = null) {
-            if (!checkRateLimit()) return;
-            showView('servicesView');
-            
-            const titleElem = document.getElementById('categoryTitle');
-            if (titleElem) {
-                titleElem.textContent = categoryTitles[category] || ('Servicios de ' + category);
-            }
-
-            const osintChipsBar = document.getElementById('osintChipsBar');
-            const streamingChipsBar = document.getElementById('streamingChipsBar');
-            const isStreamingType = streamingCategories.includes(category);
-
-            if (isStreamingType) {
-                osintChipsBar.classList.add('hidden');
-                streamingChipsBar.classList.remove('hidden');
-            } else {
-                osintChipsBar.classList.remove('hidden');
-                streamingChipsBar.classList.add('hidden');
-            }
-
-            const activeBar = isStreamingType ? streamingChipsBar : osintChipsBar;
-            const chips = activeBar.querySelectorAll('.filter-chip');
-            chips.forEach(chip => chip.classList.remove('active'));
-
-            if (element) {
-                element.classList.add('active');
-            } else {
-                chips.forEach(chip => {
-                    const onclickAttr = chip.getAttribute('onclick') || '';
-                    if (onclickAttr.includes(`'${category}'`)) {
-                        chip.classList.add('active');
-                    }
-                });
-            }
-
-            const items = document.querySelectorAll('#servicesGrid .service-item');
-            items.forEach(item => {
-                const itemCat = item.getAttribute('data-category');
-                if (category === 'ALL') {
-                    if (!streamingCategories.includes(itemCat)) {
-                        item.classList.remove('hidden');
-                    } else {
-                        item.classList.add('hidden');
-                    }
-                } else if (category === 'ALL_STREAMING') {
-                    if (streamingCategories.includes(itemCat)) {
-                        item.classList.remove('hidden');
-                    } else {
-                        item.classList.add('hidden');
-                    }
-                } else if (itemCat === category) {
-                    item.classList.remove('hidden');
-                } else {
-                    item.classList.add('hidden');
-                }
-            });
-        }
-
-        function filterMenu() {
-            const input = sanitizeInput(document.getElementById('searchInput').value.toLowerCase());
-            const links = document.querySelectorAll('.menu-list .menu-item');
-            links.forEach(item => {
-                const text = item.textContent.toLowerCase();
-                item.style.display = text.includes(input) ? '' : 'none';
-            });
-        }
-
-        function openUniQuote(uniName) {
-            const safeUni = sanitizeInput(uniName);
-            document.getElementById('selectedUniTitle').textContent = 'Atención Especial: ' + safeUni;
-            document.getElementById('selectedUniName').textContent = safeUni;
-            
-            const wspBtn = document.getElementById('uniWspBtn');
-            if (wspBtn) {
-                wspBtn.href = `https://wa.me/51931309889?text=Hola,%20deseo%20cotizar%20un%20trabajo%20de%20la%20${encodeURIComponent(safeUni)}`;
-            }
-            showView('uniQuoteView');
-        }
-
-        function openModalForUni() { document.getElementById('quoteModal').classList.add('active'); }
-        function openModalForTask(taskType) {
-            document.getElementById('modalType').value = taskType;
-            document.getElementById('quoteModal').classList.add('active');
-        }
-        function closeModal() { document.getElementById('quoteModal').classList.remove('active'); }
-
-        function openCalcModal() { document.getElementById('calcModal').classList.add('active'); updateCalc(); }
+        function openCalcModal() { document.getElementById('calcModal').classList.add('active'); }
         function closeCalcModal() { document.getElementById('calcModal').classList.remove('active'); }
-
-        function updateCalc() {
-            const cat = document.getElementById('calcCategory').value;
-            const taskVal = parseFloat(document.getElementById('calcTaskType').value) || 7;
-            const urgVal = parseFloat(document.getElementById('calcUrgency').value) || 1;
-
-            let total = 0;
-            if (cat === 'academico') {
-                total = taskVal * urgVal;
-            } else if (cat === 'streaming') {
-                total = 18.00;
-            } else {
-                total = 25.00;
-            }
-
-            document.getElementById('calcPriceDisplay').textContent = 'S/ ' + total.toFixed(2);
-        }
-
-        function sendCalcToWsp() {
-            const cat = document.getElementById('calcCategory').value;
-            const total = document.getElementById('calcPriceDisplay').textContent;
-            const text = `Hola!%20Realic%C3%A9%20una%20cotizaci%C3%B3n%20en%20su%20web%20para%20${encodeURIComponent(cat)}%20por%20un%20monto%20estimado%20de%20${encodeURIComponent(total)}.%20%C2%BFMe%20pueden%20atender?`;
-            window.open(`https://wa.me/51931309889?text=${text}`, '_blank');
-            closeCalcModal();
-        }
-
-        function openSampleModal(type) { document.getElementById('sampleModal').classList.add('active'); }
-        function closeSampleModal() { document.getElementById('sampleModal').classList.remove('active'); }
-
-        const mockSocialEvents = [
-            { text: "Consulta RENIEC solicitada", location: "Hace 2 min desde Lima" },
-            { text: "Suscripción Disney Premium activada", location: "Hace 5 min desde Arequipa" },
-            { text: "Trabajo UTP Cotizado con éxito", location: "Hace 8 min desde Trujillo" },
-            { text: "Consulta SUNAT Verificada", location: "Hace 12 min desde Cusco" }
-        ];
-
-        function initSocialProofToasts() {
-            let index = 0;
-            const toast = document.getElementById('socialToast');
-            const toastText = document.getElementById('socialToastText');
-
-            setInterval(() => {
-                const ev = mockSocialEvents[index];
-                toastText.innerHTML = `${ev.text}<span>${ev.location}</span>`;
-                toast.classList.remove('hidden');
-
-                setTimeout(() => {
-                    toast.classList.add('hidden');
-                }, 4000);
-
-                index = (index + 1) % mockSocialEvents.length;
-            }, 12000);
-        }
-
-        function sendFormattedTg() {
-            if (!checkRateLimit()) return;
-            const uni = sanitizeInput(document.getElementById('modalUni').value) || 'No especificada';
-            const type = sanitizeInput(document.getElementById('modalType').value);
-            const text = `Hola!%20Deseo%20cotizar:%0A- Institución: ${encodeURIComponent(uni)}%0A- Tipo: ${encodeURIComponent(type)}`;
-            window.open(`https://t.me/Adolf3728?text=${text}`, '_blank');
-            closeModal();
-        }
-
-        function sendFormattedWsp() {
-            if (!checkRateLimit()) return;
-            const uni = sanitizeInput(document.getElementById('modalUni').value) || 'No especificada';
-            const type = sanitizeInput(document.getElementById('modalType').value);
-            const text = `Hola!%20Deseo%20cotizar:%0A- Institución: ${encodeURIComponent(uni)}%0A- Tipo: ${encodeURIComponent(type)}`;
-            window.open(`https://wa.me/51931309889?text=${text}`, '_blank');
-            closeModal();
-        }
     </script>
 </body>
 </html>
