@@ -447,6 +447,7 @@
             text-shadow: 0 2px 5px rgba(0,0,0,0.8);
         }
 
+        /* ESTILO EMPRESARIAL / SERIO PARA ESTADÍSTICAS (MEJORADO) */
         .stats-counter-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -1458,26 +1459,718 @@
                 <div class="service-cover-card" onclick="showView('webDevView')">
                     <div class="service-cover-icon"><i class="fa-solid fa-laptop-code"></i></div>
                     <div class="service-cover-title">Crea tu Página Web</div>
-                    <div class="service-cover-desc">Desarrollo web a medida con variedad de precios y hosting en GitHub Pages.</div>
+                    <div class="service-cover-desc">Desarrollo web a medida desde S/ 8.00 con hosting en GitHub Pages, catálogo y soporte.</div>
                     <div class="service-cover-btn">Ver Planes Web <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+
+                <div class="service-cover-card disney-card" style="cursor: default;">
+                    <span class="badge-partner">Socio / Aliado</span>
+                    <div class="service-cover-icon" style="background: rgba(34, 158, 217, 0.2); color: #229ed9; border-color: rgba(34, 158, 217, 0.5); box-shadow: 0 0 15px rgba(34, 158, 217, 0.4);">
+                        <i class="fa-solid fa-tv"></i>
+                    </div>
+                    <div class="service-cover-title">🌀 DISNEY PREMIUM 🌀</div>
+                    <div class="service-cover-desc" style="text-align: left; font-size: 0.85rem;">
+                        • Perfil Privado con PIN personalizado<br>
+                        • Incluye <strong>7 ESPN</strong> + <strong>HULU</strong><br>
+                        • 30 Días | Renovable y Garantizado
+                    </div>
+                    <div class="social-buttons">
+                        <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                        <a href="https://wa.me/51932014788?text=Hola,%20deseo%20adquirir%20Disney%20Premium" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="service-cover-card" onclick="showCategory('STREAMING_PREMIUM')" style="cursor: pointer;">
+                    <div class="service-cover-icon" style="color: #ef4444; background: rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.4); box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);"><i class="fa-solid fa-film"></i></div>
+                    <div class="service-cover-title">🎬 Streaming Premium</div>
+                    <div class="service-cover-desc" style="text-align: left;">
+                        • Netflix Premium<br>
+                        • HBO Max / Max<br>
+                        • Prime Video<br>
+                        • Disney Premium (7 ESPN + Hulu)<br>
+                        • Paramount + UFC
+                    </div>
+                    <div class="service-cover-btn">Ver Cuentas de Streaming <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+
+                <div class="service-cover-card" onclick="showCategory('ANIME_SPECIAL')" style="cursor: pointer;">
+                    <div class="service-cover-icon" style="color: #10b981; background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.4); box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);"><i class="fa-solid fa-compact-disc"></i></div>
+                    <div class="service-cover-title">🎭 Entretenimiento & Anime</div>
+                    <div class="service-cover-desc" style="text-align: left;">
+                        • Apple TV + MLS (Android y Smart TV)<br>
+                        • Crunchyroll Premium<br>
+                        • Viki Rakuten<br>
+                        • Spotify Premium
+                    </div>
+                    <div class="service-cover-btn">Ver Contenido Especializado <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+
+                <div class="service-cover-card" onclick="showCategory('HERRAMIENTAS_PRO')" style="cursor: pointer;">
+                    <div class="service-cover-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <div class="service-cover-title">🛠 Herramientas Pro & Software</div>
+                    <div class="service-cover-desc" style="text-align: left;">
+                        • Autodesk (Licencias)<br>
+                        • Canva Pro<br>
+                        • CapCut Pro<br>
+                        • Windows 11 / ChatGPT Plus<br>
+                        • Office Microsoft / Gemini Pro
+                    </div>
+                    <div class="service-cover-btn">Ver Herramientas Pro <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+
+                <div class="service-cover-card" onclick="showCategory('DEPORTES')" style="cursor: pointer;">
+                    <div class="service-cover-icon" style="color: #38bdf8; background: rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.4); box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);"><i class="fa-solid fa-futbol"></i></div>
+                    <div class="service-cover-title">⚽ Deportes en Vivo</div>
+                    <div class="service-cover-desc" style="text-align: left;">
+                        • DGO + Liga 1 Max<br>
+                        • Movistar Play + Liga 1 Max<br>
+                        • Paramount + UFC Live<br>
+                        • Apple TV + MLS
+                    </div>
+                    <div class="service-cover-btn">Ver Canales de Deportes <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+
+            <div class="diagram-container">
+                <h2 class="diagram-title">RED DE CONSULTAS E INTEGRACIÓN OSINT</h2>
+                <div class="diagram-img-wrapper">
+                    <img src="rocket.jpg" alt="Red de Consultas e Integración OSINT - ROCKET" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fa-solid fa-network-wired fa-5x\' style=\'color: var(--accent-color); padding: 30px; filter: drop-shadow(0 0 20px var(--accent-glow));\'></i>';">
+                </div>
+            </div>
+
+            <div class="academic-section">
+                <div class="academic-header">
+                    <h2>🎓 TRABAJOS UNIVERSITARIOS DE TODAS LAS UNIVERSIDADES Y COLEGIOS DEL PERÚ</h2>
+                    <p>Haz clic en tu universidad para cotizar tus trabajos académicos al instante.</p>
+                </div>
+
+                <div class="uni-grid">
+                    <div class="uni-card" onclick="openUniQuote('UNMSM')">
+                        <div class="uni-badge"><img src="unmsm.png" alt="UNMSM" onerror="this.onerror=null; this.src='san marcos.jpg';"></div>
+                        <span class="uni-card-title">UNMSM</span>
+                    </div>
+                    <div class="uni-card" onclick="openUniQuote('UNI')">
+                        <div class="uni-badge"><img src="uni.png" alt="UNI" onerror="this.onerror=null; this.src='UNI.png';"></div>
+                        <span class="uni-card-title">UNI</span>
+                    </div>
+                    <div class="uni-card" onclick="openUniQuote('PUCP')">
+                        <div class="uni-badge"><img src="pucp.png" alt="PUCP" onerror="this.onerror=null; this.src='PUCP.webp';"></div>
+                        <span class="uni-card-title">PUCP</span>
+                    </div>
+                    <div class="uni-card" onclick="openUniQuote('U. DE LIMA')">
+                        <div class="uni-badge"><img src="ulima.png" alt="U. DE LIMA" onerror="this.onerror=null; this.src='U. lima.png';"></div>
+                        <span class="uni-card-title">U. DE LIMA</span>
+                    </div>
+                    <div class="uni-card" onclick="openUniQuote('UTP')">
+                        <div class="uni-badge"><img src="utp.png" alt="UTP" onerror="this.onerror=null; this.src='utp.jpg';"></div>
+                        <span class="uni-card-title">UTP</span>
+                    </div>
+                    <div class="uni-card" onclick="openUniQuote('UCV')">
+                        <div class="uni-badge"><img src="ucv.png" alt="UCV"></div>
+                        <span class="uni-card-title">UCV</span>
+                    </div>
+                    <div class="uni-card" onclick="openUniQuote('UPCH')">
+                        <div class="uni-badge"><img src="upch.png" alt="UPCH" onerror="this.onerror=null; this.src='upch.jpg';"></div>
+                        <span class="uni-card-title">UPCH</span>
+                    </div>
+                    <div class="uni-card" onclick="openUniQuote('CIENTÍFICA DEL SUR')">
+                        <div class="uni-badge"><img src="cientifica.png" alt="CIENTÍFICA DEL SUR" onerror="this.onerror=null; this.src='cientifica del sur.png';"></div>
+                        <span class="uni-card-title">CIENTÍFICA DEL SUR</span>
+                    </div>
+                    <div class="uni-card" onclick="openUniQuote('UPC')">
+                        <div class="uni-badge"><img src="upc.png" alt="UPC"></div>
+                        <span class="uni-card-title">UPC</span>
+                    </div>
+                    <div class="uni-card" onclick="openUniQuote('USMP')">
+                        <div class="uni-badge"><img src="usmp.png" alt="USMP" onerror="this.onerror=null; this.src='umsp.jpg';"></div>
+                        <span class="uni-card-title">USMP</span>
+                    </div>
+                    <div class="uni-card" onclick="openUniQuote('UPN')">
+                        <div class="uni-badge"><img src="upn.png" alt="UPN"></div>
+                        <span class="uni-card-title">UPN</span>
+                    </div>
+                    <div class="uni-card" onclick="openUniQuote('COLEGIOS DEL PERÚ')">
+                        <div class="uni-badge"><i class="fa-solid fa-school" style="font-size: 1.8rem; color: var(--accent-color); text-shadow: 0 0 8px var(--accent-glow);"></i></div>
+                        <span class="uni-card-title">COLEGIOS</span>
+                    </div>
                 </div>
             </div>
         </div>
 
+        <div id="uniQuoteView" class="view-section hidden">
+            <div class="category-header">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span id="selectedUniTitle">Atención Especial: UNMSM</span>
+            </div>
+
+            <div class="uni-quote-card">
+                <div style="font-size: 3.5rem; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(157, 78, 221, 0.6));">📚</div>
+                <h2 style="font-size: 1.8rem; color: #fff; margin-bottom: 12px; font-weight: 900; text-shadow: 0 0 10px var(--accent-glow);">
+                    ¡Hacemos tus trabajos de <span id="selectedUniName" style="color: #c77dff; text-shadow: 0 0 15px #c77dff;">tu Universidad</span>!
+                </h2>
+                <p style="color: var(--text-secondary); max-width: 580px; margin: 0 auto 25px; font-size: 1rem; line-height: 1.6; font-weight: 600;">
+                    Cuéntanos qué necesitas (tarea, guía de laboratorio, ensayo, monografía o presentación PPT) y te cotizamos al instante. Entrega 100% puntual y confidencial.
+                </p>
+
+                <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid #10b981; padding: 10px 25px; border-radius: 50px; font-size: 1.1rem; font-weight: 900; margin-bottom: 30px; box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);">
+                    <i class="fa-solid fa-tag"></i> Precio Base: Desde S/ 5.00
+                </div>
+
+                <div style="max-width: 420px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px;">
+                    <button onclick="openModalForUni()" class="btn-tg" style="padding: 16px; font-size: 1.05rem; background: var(--accent-color); box-shadow: 0 0 15px var(--accent-glow);">
+                        <i class="fa-solid fa-calculator"></i> Formulario de Cotización Guiada
+                    </button>
+                    <a id="uniTgBtn" href="https://t.me/Adolf3728" target="_blank" class="btn-tg" style="padding: 14px; font-size: 1rem;">
+                        <i class="fa-brands fa-telegram"></i> Chat directo en Telegram
+                    </a>
+                    <a id="uniWspBtn" href="#" target="_blank" class="btn-tg" style="background: rgba(37, 211, 102, 0.15); border: 1px solid #25d366; color: #4ade80; padding: 14px; font-size: 1rem; box-shadow: 0 0 10px rgba(37, 211, 102, 0.2);">
+                        <i class="fa-brands fa-whatsapp"></i> Chat directo de WhatsApp
+                    </a>
+                    <button onclick="showView('homeView')" style="margin-top: 15px; background: none; border: none; color: var(--text-secondary); cursor: pointer; font-size: 0.95rem; text-decoration: underline; display: block; width: 100%; font-weight: 700; transition: color 0.3s;">
+                        <i class="fa-solid fa-arrow-left"></i> Volver al inicio
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="servicesView" class="view-section hidden">
+            <div class="osint-info-container">
+                <div class="badge-confidential">
+                    <i class="fa-solid fa-lock"></i> 100% CONFIDENCIAL Y DISCRETO
+                </div>
+                <div class="info-bar">
+                    <div class="info-pill"><i class="fa-solid fa-tag"></i> Consulta OSINT: Desde S/ 2.00</div>
+                    <div class="info-pill"><i class="fa-solid fa-tv"></i> Streaming & Pro: Precios Garantizados</div>
+                    <div class="info-pill"><i class="fa-solid fa-clock"></i> Atención 24/7</div>
+                </div>
+            </div>
+
+            <div class="category-filter-bar" id="osintChipsBar">
+                <button class="filter-chip active" onclick="showCategory('ALL', this)">Todos OSINT</button>
+                <button class="filter-chip" onclick="showCategory('RENIEC', this)">RENIEC</button>
+                <button class="filter-chip" onclick="showCategory('SUNAT', this)">SUNAT</button>
+                <button class="filter-chip" onclick="showCategory('PODER JUDICIAL', this)">PODER JUDICIAL</button>
+                <button class="filter-chip" onclick="showCategory('MIGRACIONES', this)">MIGRACIONES</button>
+                <button class="filter-chip" onclick="showCategory('OSIPTEL', this)">OSIPTEL</button>
+                <button class="filter-chip" onclick="showCategory('FISCALÍA', this)">FISCALÍA</button>
+                <button class="filter-chip" onclick="showCategory('MINEDU', this)">MINEDU</button>
+                <button class="filter-chip" onclick="showCategory('SENTINEL', this)">SENTINEL</button>
+                <button class="filter-chip" onclick="showCategory('SUNEDU', this)">SUNEDU</button>
+                <button class="filter-chip" onclick="showCategory('MTC', this)">MTC</button>
+                <button class="filter-chip" onclick="showCategory('INPE', this)">INPE</button>
+                <button class="filter-chip" onclick="showCategory('PNP', this)">PNP</button>
+                <button class="filter-chip" onclick="showCategory('SUNARP', this)">SUNARP</button>
+                <button class="filter-chip" onclick="showCategory('Bloqueo', this)">Bloqueos</button>
+                <button class="filter-chip" onclick="showCategory('VIRTUALES', this)">Virtuales SMS</button>
+            </div>
+
+            <div class="category-filter-bar hidden" id="streamingChipsBar">
+                <button class="filter-chip active" onclick="showCategory('ALL_STREAMING', this)">Ver Todo Streaming & Pro</button>
+                <button class="filter-chip" onclick="showCategory('STREAMING_PREMIUM', this)">Streaming Premium</button>
+                <button class="filter-chip" onclick="showCategory('HERRAMIENTAS_PRO', this)">Herramientas Pro</button>
+                <button class="filter-chip" onclick="showCategory('DEPORTES', this)">Deportes en Vivo</button>
+                <button class="filter-chip" onclick="showCategory('ANIME_SPECIAL', this)">Anime & Especial</button>
+            </div>
+
+            <div class="category-header">
+                <i class="fa-solid fa-bars-staggered"></i>
+                <span id="categoryTitle">Todas las Consultas OSINT</span>
+            </div>
+
+            <div class="grid" id="servicesGrid">
+                <!-- Tarjetas Streaming / Pro -->
+                <div class="card service-item" data-category="STREAMING_PREMIUM">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-tv fa-3x" style="color: #ef4444; filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.8));"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Netflix Premium</div>
+                            <div class="card-desc">Cuentas completas y perfiles privados en Ultra HD 4K. Sin caídas y con garantía.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20Netflix%20Premium" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="STREAMING_PREMIUM">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-film fa-3x" style="color: #c77dff; filter: drop-shadow(0 0 10px rgba(199, 125, 255, 0.8));"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">HBO Max / Max</div>
+                            <div class="card-desc">Acceso a todo el catálogo de Max en alta calidad. Perfiles individuales.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20HBO%20Max" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="STREAMING_PREMIUM">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-play fa-3x" style="color: #38bdf8; filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.8));"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Prime Video</div>
+                            <div class="card-desc">Cuenta o perfil renovable de Amazon Prime Video. Entrega rápida.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20Prime%20Video" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="STREAMING_PREMIUM">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-crown fa-3x" style="color: #60a5fa; filter: drop-shadow(0 0 10px rgba(96, 165, 250, 0.8));"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Disney Premium (7 ESPN + Hulu)</div>
+                            <div class="card-desc">Perfil privado con PIN. Incluye todos los canales ESPN y producciones de Hulu.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20Disney%20Premium" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="STREAMING_PREMIUM">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-mountain fa-3x" style="color: #60a5fa; filter: drop-shadow(0 0 10px rgba(96, 165, 250, 0.8));"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Paramount+ UFC</div>
+                            <div class="card-desc">Disfruta de películas, series exclusivas y peleas en vivo de la UFC.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20Paramount%20Plus" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="HERRAMIENTAS_PRO">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-palette fa-3x" style="color: #2dd4bf; filter: drop-shadow(0 0 10px rgba(45, 212, 191, 0.8));"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Canva Pro</div>
+                            <div class="card-desc">Acceso Pro a tu correo personal. Plantillas, kit de marca e inteligencia artificial.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20Canva%20Pro" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="HERRAMIENTAS_PRO">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-video fa-3x" style="color: #f8fafc; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">CapCut Pro</div>
+                            <div class="card-desc">Efectos Pro, remoción de fondos y herramientas avanzadas de edición de video.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20CapCut%20Pro" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="HERRAMIENTAS_PRO">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-robot fa-3x" style="color: #10b981; filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.8));"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">ChatGPT Plus / Gemini Pro</div>
+                            <div class="card-desc">Acceso a GPT-4, generación de imágenes DALL-E, análisis de datos y Gemini Advanced.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20ChatGPT%20Plus" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="HERRAMIENTAS_PRO">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-drafting-compass fa-3x" style="color: #38bdf8; filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.8));"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Licencias Autodesk</div>
+                            <div class="card-desc">Activación de AutoCAD, Revit, Maya, 3ds Max por 1 año educativo/profesional.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20Licencias%20Autodesk" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="HERRAMIENTAS_PRO">
+                    <div class="card-img-placeholder"><i class="fa-brands fa-windows fa-3x" style="color: #60a5fa; filter: drop-shadow(0 0 10px rgba(96, 165, 250, 0.8));"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Windows 11 / Office Microsoft</div>
+                            <div class="card-desc">Claves originales y licencias definitivas para Windows 10/11 y Microsoft Office 365 / 2021.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20Licencia%20Windows/Office" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="DEPORTES">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-futbol fa-3x" style="color: #38bdf8; filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.8));"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">DGO + Liga 1 Max</div>
+                            <div class="card-desc">DirecTV GO completo con la transmisión en directo de la Liga 1 Te Apuesto.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20DGO%20Liga%201%20Max" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="DEPORTES">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-tv fa-3x" style="color: #60a5fa; filter: drop-shadow(0 0 10px rgba(96, 165, 250, 0.8));"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Movistar TV / Play + Liga 1</div>
+                            <div class="card-desc">Canales nacionales, internacionales y eventos deportivos en vivo desde tu dispositivo.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20Movistar%20Play" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="DEPORTES">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-trophy fa-3x" style="color: #fbbf24; filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.8));"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Paramount + UFC Live</div>
+                            <div class="card-desc">Transmisión de eventos de combate UFC, Libertadores y torneos en vivo.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20Paramount%20UFC" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="ANIME_SPECIAL">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-dragon fa-3x" style="color: #f97316; filter: drop-shadow(0 0 10px rgba(249, 115, 22, 0.8));"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Crunchyroll Premium</div>
+                            <div class="card-desc">Cuentas Mega Fan sin anuncios, simulcasts desde Japón y descargas offline.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20Crunchyroll%20Premium" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="ANIME_SPECIAL">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-heart fa-3x" style="color: #f472b6; filter: drop-shadow(0 0 10px rgba(244, 114, 182, 0.8));"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Viki Rakuten Pass</div>
+                            <div class="card-desc">Lo mejor de los K-Dramas, Doramas y shows asiáticos en calidad HD sin interrupciones.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20Viki%20Rakuten" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="ANIME_SPECIAL">
+                    <div class="card-img-placeholder"><i class="fa-brands fa-apple fa-3x" style="color: #cbd5e1; filter: drop-shadow(0 0 10px rgba(203, 213, 225, 0.8));"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Apple TV + MLS Season Pass</div>
+                            <div class="card-desc">Contenido exclusivo de Apple Original y todos los partidos de la MLS en directo.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/ghostfake07" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51932014788?text=Hola,%20deseo%20Apple%20TV%20MLS" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/bycriss_____?stkn=dTNiNm5hNXRub3Vy&utm_source=qr" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjetas OSINT -->
+                <div class="card service-item" data-category="RENIEC">
+                    <div class="card-img-placeholder">
+                        <i class="fa-solid fa-id-card fa-3x"></i>
+                        <button class="btn-preview-demo" onclick="openSampleModal('RENIEC')"><i class="fa-solid fa-eye"></i> Ver Muestra</button>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">RENIEC OSINT</div>
+                            <div class="card-desc">Foto de DNI | Firma y huellas | DNI virtual azul, amarillo y electrónico. Datos completos.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consulta%20RENIEC" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="SUNAT">
+                    <div class="card-img-placeholder">
+                        <i class="fa-solid fa-receipt fa-3x"></i>
+                        <button class="btn-preview-demo" onclick="openSampleModal('SUNAT')"><i class="fa-solid fa-eye"></i> Ver Muestra</button>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">SUNAT Búsqueda</div>
+                            <div class="card-desc">Consulta RUC | Ficha RUC | Representantes legales | Domicilio fiscal y estado contable.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consulta%20SUNAT" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="PODER JUDICIAL">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-scale-balanced fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">PODER JUDICIAL</div>
+                            <div class="card-desc">Búsqueda de expedientes judiciales | Demandas, procesos penales y civiles a nivel nacional.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consulta%20Poder%20Judicial" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="MIGRACIONES">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-passport fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">MIGRACIONES</div>
+                            <div class="card-desc">Movimiento migratorio | Verificación de pasaporte, alertas de salida y extranjería.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consulta%20Migraciones" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="OSIPTEL">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-tower-cell fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">OSIPTEL / TELÉFONO</div>
+                            <div class="card-desc">Búsqueda de titular por número celular | Lista de líneas asociadas a un DNI.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consulta%20OSIPTEL" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="FISCALÍA">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-gavel fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">FISCALÍA</div>
+                            <div class="card-desc">Verificación de carpetas fiscales, denuncias e investigaciones en proceso.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consulta%20Fiscalia" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="MINEDU">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-book fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">MINEDU</div>
+                            <div class="card-desc">Certificados de estudios escolares, verificación de notas y registros educativos.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consulta%20MINEDU" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="SENTINEL">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-chart-line fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">SENTINEL / INFOCORP</div>
+                            <div class="card-desc">Reporte de riesgo crediticio, deudas en el sistema financiero y scoring.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20reporte%20Sentinel" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="SUNEDU">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-graduation-cap fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">SUNEDU</div>
+                            <div class="card-desc">Constancia de grados y títulos universitarios registrados oficialmente.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consulta%20SUNEDU" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="MTC">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-car fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">MTC / SUTRAN</div>
+                            <div class="card-desc">Verificación de licencias de conducir, papeletas, puntos y récords del conductor.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consulta%20MTC" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="INPE">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-building-columns fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">INPE Antecedentes</div>
+                            <div class="card-desc">Verificación de antecedentes penales y registros carcelarios.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consulta%20INPE" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="PNP">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-shield-halved fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">PNP Requisitorias</div>
+                            <div class="card-desc">Denuncias policiales, antecedentes policiales y captura judicial/requisitorias.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consulta%20PNP" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="SUNARP">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-building fa-3x"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">SUNARP Propiedades</div>
+                            <div class="card-desc">Búsqueda de vehicular (Placas) y propiedades inmuebles registradas a nivel nacional.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20consulta%20SUNARP" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="Bloqueo">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-ban fa-3x" style="color: #ef4444; filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.8));"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Bloqueos y Operaciones</div>
+                            <div class="card-desc">Bloqueos de líneas telefónicas, imei, tarjetas y gestiones operativas especiales.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20servicio%20de%20Bloqueo" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card service-item" data-category="VIRTUALES">
+                    <div class="card-img-placeholder"><i class="fa-solid fa-sim-card fa-3x" style="color: #10b981; filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.8));"></i></div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Números Virtuales SMS</div>
+                            <div class="card-desc">Números temporales y permanentes para recibir códigos de activación (WhatsApp, Telegram, etc.).</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <a href="https://wa.me/51931309889?text=Hola,%20deseo%20un%20Numero%20Virtual" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/rocket.official.pe" target="_blank" class="btn-icon-sm btn-icon-ig"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- TRABAJOS UNIVERSITARIOS AMPLIADOS (DESDE S/ 5.00) -->
         <div id="trabajosView" class="view-section hidden">
             <div class="trabajos-info-container">
                 <div class="badge-trabajos-price">
                     <i class="fa-solid fa-tag"></i> PRECIOS RAZONABLES: DESDE S/ 5.00 EN ADELANTE
                 </div>
                 <div class="info-bar">
-                    <div class="info-pill"><i class="fa-solid fa-layer-group"></i> Catálogo ampliado para tareas, ensayos y más</div>
-                    <div class="info-pill"><i class="fa-solid fa-stopwatch"></i> El precio depende de la complejidad y tiempo</div>
+                    <div class="info-pill"><i class="fa-solid fa-layer-group"></i> Catálogo ampliado de tareas y soluciones</div>
+                    <div class="info-pill"><i class="fa-solid fa-stopwatch"></i> El costo varía según la dificultad y plazo</div>
+                    <div class="info-pill"><i class="fa-solid fa-user-shield"></i> Entrega 100% Confidencial y Puntual</div>
                 </div>
             </div>
 
             <div class="category-header">
                 <i class="fa-solid fa-graduation-cap"></i>
-                <span>Trabajos Universitarios y Escolares (Catálogo Ampliado)</span>
+                <span>Trabajos Universitarios y Escolares</span>
             </div>
 
             <div class="grid">
@@ -1486,7 +2179,7 @@
                     <div class="card-body">
                         <div>
                             <div class="card-title">Tareas y Cuestionarios</div>
-                            <div class="card-desc">Resolución rápida de ejercicios, guías de práctica y preguntas (Desde S/ 5.00).</div>
+                            <div class="card-desc">Resolución de ejercicios, guías de práctica y preguntas (Desde S/ 5.00).</div>
                         </div>
                         <div class="social-buttons">
                             <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
@@ -1500,7 +2193,7 @@
                     <div class="card-body">
                         <div>
                             <div class="card-title">Monografías y Ensayos</div>
-                            <div class="card-desc">Investigación académica estructurada con normas APA o Vancouver.</div>
+                            <div class="card-desc">Investigación académica con normas APA/Vancouver e índice estructurado.</div>
                         </div>
                         <div class="social-buttons">
                             <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
@@ -1514,7 +2207,7 @@
                     <div class="card-body">
                         <div>
                             <div class="card-title">Proyectos de Programación</div>
-                            <div class="card-desc">Desarrollo de códigos base, scripts y soporte en lenguajes universitarios.</div>
+                            <div class="card-desc">Desarrollo de scripts, códigos base y soporte académico técnico.</div>
                         </div>
                         <div class="social-buttons">
                             <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
@@ -1528,7 +2221,7 @@
                     <div class="card-body">
                         <div>
                             <div class="card-title">Diapositivas y Exposiciones</div>
-                            <div class="card-desc">Diseño de PPT profesionales, resúmenes y esquemas listos para exponer.</div>
+                            <div class="card-desc">Presentaciones visuales profesionales y esquemas listos para exponer.</div>
                         </div>
                         <div class="social-buttons">
                             <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
@@ -1539,10 +2232,11 @@
             </div>
         </div>
 
+        <!-- CREA TU PÁGINA WEB (8, 14, 20, 25 [Más pedido], 35, 45 + enlaces de ejemplo) -->
         <div id="webDevView" class="view-section hidden">
             <div class="category-header">
                 <i class="fa-solid fa-laptop-code"></i>
-                <span>Crea tu Página Web (Variedad de Precios)</span>
+                <span>Crea tu Página Web</span>
             </div>
 
             <div class="pricing-grid">
@@ -1566,7 +2260,7 @@
                         <div class="plan-name">Plan Estándar</div>
                         <div class="plan-price">S/ 14.00 <span>/ único</span></div>
                         <ul class="plan-features">
-                            <li><i class="fa-solid fa-check"></i> Diseño personalizado</li>
+                            <li><i class="fa-solid fa-check"></i> Diseño personalizado y adaptable</li>
                             <li><i class="fa-solid fa-check"></i> Botón de WhatsApp integrado</li>
                         </ul>
                     </div>
@@ -1581,8 +2275,8 @@
                         <div class="plan-name">Plan Avanzado</div>
                         <div class="plan-price">S/ 20.00 <span>/ único</span></div>
                         <ul class="plan-features">
-                            <li><i class="fa-solid fa-check"></i> Secciones múltiples</li>
-                            <li><i class="fa-solid fa-check"></i> Estilo moderno y adaptable</li>
+                            <li><i class="fa-solid fa-check"></i> Secciones múltiples y dinámicas</li>
+                            <li><i class="fa-solid fa-check"></i> Estilo moderno y optimizado</li>
                         </ul>
                     </div>
                     <div class="social-buttons">
@@ -1592,13 +2286,13 @@
                 </div>
 
                 <div class="pricing-card featured">
-                    <span class="badge-popular">MÁS PEDIDO</span>
+                    <span class="badge-popular">MÁS SOLICITADO</span>
                     <div>
                         <div class="plan-name">Plan Pro Catálogo</div>
                         <div class="plan-price">S/ 25.00 <span>/ único</span></div>
                         <ul class="plan-features">
-                            <li><i class="fa-solid fa-check"></i> Catálogo interactivo completo</li>
-                            <li><i class="fa-solid fa-check"></i> Buscador y filtros internos</li>
+                            <li><i class="fa-solid fa-check"></i> Catálogo interactivo de productos</li>
+                            <li><i class="fa-solid fa-check"></i> Buscador interno y filtros avanzados</li>
                         </ul>
                     </div>
                     <div class="social-buttons">
@@ -1612,8 +2306,8 @@
                         <div class="plan-name">Plan Empresarial</div>
                         <div class="plan-price">S/ 35.00 <span>/ único</span></div>
                         <ul class="plan-features">
-                            <li><i class="fa-solid fa-check"></i> Múltiples páginas o pestañas</li>
-                            <li><i class="fa-solid fa-check"></i> Animaciones y efectos avanzados</li>
+                            <li><i class="fa-solid fa-check"></i> Múltiples pestañas o submenús</li>
+                            <li><i class="fa-solid fa-check"></i> Animaciones y efectos profesionales</li>
                         </ul>
                     </div>
                     <div class="social-buttons">
@@ -1627,8 +2321,8 @@
                         <div class="plan-name">Plan Premium Total</div>
                         <div class="plan-price">S/ 45.00 <span>/ único</span></div>
                         <ul class="plan-features">
-                            <li><i class="fa-solid fa-check"></i> Desarrollo web personalizado pro</li>
-                            <li><i class="fa-solid fa-check"></i> Soporte y optimización total</li>
+                            <li><i class="fa-solid fa-check"></i> Desarrollo web pro a medida</li>
+                            <li><i class="fa-solid fa-check"></i> Soporte y optimización completa</li>
                         </ul>
                     </div>
                     <div class="social-buttons">
@@ -1639,13 +2333,14 @@
             </div>
         </div>
 
+        <!-- DETALLES Y REGALOS GITHUB (S/ 5.00 A S/ 10.00 CON EJEMPLO) -->
         <div id="detallesView" class="view-section hidden">
             <div class="category-header">
                 <i class="fa-solid fa-gift"></i>
                 <span>Detalles y Regalos GitHub (Desde S/ 5.00 a S/ 10.00)</span>
             </div>
             <p style="color: var(--text-secondary); text-align: center; font-size: 0.95rem; max-width: 600px; margin: 0 auto 25px;">
-                Sorprende a esa persona especial con detalles únicos alojados en la web. ¡Elige el tuyo!
+                Sorprende a tu pareja o seres queridos con cartas virtuales interactivas y regalos publicadas en la web.
             </p>
 
             <div class="pricing-grid">
@@ -1654,7 +2349,7 @@
                         <div class="plan-name">Carta Sorpresa Básica</div>
                         <div class="plan-price">S/ 5.00</div>
                         <ul class="plan-features">
-                            <li><i class="fa-solid fa-check"></i> Mensaje personalizado con fondo animado</li>
+                            <li><i class="fa-solid fa-check"></i> Mensaje personalizado con animación</li>
                         </ul>
                     </div>
                     <div class="social-buttons">
@@ -1706,7 +2401,7 @@
                         <div class="plan-name">Detalle Interactivo Pro</div>
                         <div class="plan-price">S/ 10.00</div>
                         <ul class="plan-features">
-                            <li><i class="fa-solid fa-check"></i> Juegos de preguntas, fotos, música y sorpresas</li>
+                            <li><i class="fa-solid fa-check"></i> Preguntas, fotos, música y sorpresas dinámicas</li>
                         </ul>
                     </div>
                     <div class="social-buttons">
@@ -1722,11 +2417,37 @@
                 <span>Emprendimientos Universitarios</span>
             </div>
             <p style="color: var(--text-secondary); text-align: center; font-size: 0.95rem; max-width: 600px; margin: 0 auto 25px;">
-                Soluciones digitales completas para tu negocio o marca universitaria.
+                Soluciones digitales completas para tu negocio o marca: catálogos interactivos, branding, asesoría e integración directa con tu sistema de ventas.
             </p>
         </div>
 
     </main>
+
+    <div class="modal-overlay" id="sampleModal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeSampleModal()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-title"><i class="fa-solid fa-shield-halved" style="color:var(--accent-color);"></i> Vista Previa de Formato OSINT</div>
+            
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 15px; font-weight: 600;">
+                Los reportes emitidos por ROCKET se entregan en formato de alta resolución digital, de manera 100% confidencial:
+            </p>
+
+            <div class="sample-report-mockup">
+                <div style="font-size:0.8rem; color: #c77dff; font-weight: 900; margin-bottom: 12px; text-shadow: 0 0 5px #c77dff;">[ DEMO REPORT ] - CONSULTA VERIFICADA</div>
+                <div class="blurred-line" style="width: 80%;"></div>
+                <div class="blurred-line" style="width: 60%;"></div>
+                <div class="blurred-line" style="width: 90%;"></div>
+                <div class="blurred-line" style="width: 40%;"></div>
+                <div style="font-size:0.75rem; color: #64748b; text-align: right; margin-top: 15px; font-weight: 800;">ID UNICO: #RCK-98231-PERU</div>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg" style="padding: 14px; font-size: 0.95rem; box-shadow: 0 0 15px rgba(34, 158, 217, 0.4);">
+                    <i class="fa-brands fa-telegram"></i> Solicitar Consulta Real Ahora
+                </a>
+            </div>
+        </div>
+    </div>
 
     <div class="modal-overlay" id="quoteModal">
         <div class="modal-card">
@@ -1755,6 +2476,14 @@
         </div>
     </div>
 
+    <div class="social-proof-toast hidden" id="socialToast">
+        <div class="toast-icon"><i class="fa-solid fa-circle-check"></i></div>
+        <div class="toast-text" id="socialToastText">
+            Nuevo pedido recibido
+            <span>Hace 2 min desde Lima</span>
+        </div>
+    </div>
+
     <div class="fab-container">
         <button class="fab-btn fab-top" id="scrollTopBtn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
         <a href="https://t.me/Adolf3728" target="_blank" class="fab-btn fab-tg"><i class="fa-brands fa-telegram"></i></a>
@@ -1763,7 +2492,90 @@
     </div>
 
     <script>
+        // Anti-iFrame Hijacking
+        try {
+            if (window.top !== window.self && window.top.location.host === window.self.location.host) {
+                window.top.location = window.self.location;
+            }
+        } catch (e) {}
+
+        // Desactivar Menú Contextual (Click derecho)
         document.addEventListener('contextmenu', e => e.preventDefault());
+
+        // Bloqueador estricto de atajos de teclado de DevTools
+        document.addEventListener('keydown', e => {
+            if (
+                e.keyCode === 123 || 
+                (e.ctrlKey && e.shiftKey && [73, 74, 67, 75].includes(e.keyCode)) || 
+                (e.ctrlKey && [85, 83, 80].includes(e.keyCode))
+            ) {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            }
+        });
+
+        // Limpieza y anulación de funciones de Consola
+        (function() {
+            const emptyFn = function() {};
+            window.console.log = emptyFn;
+            window.console.warn = emptyFn;
+            window.console.error = emptyFn;
+            window.console.info = emptyFn;
+            window.console.debug = emptyFn;
+        })();
+
+        // Bucle Anti-Debugging
+        setInterval(function() {
+            const startTime = performance.now();
+            (function() {}.constructor('debugger')());
+            const endTime = performance.now();
+            if (endTime - startTime > 100) {
+                document.body.innerHTML = '<div style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:100vh;background:#06020c;color:#fff;font-family:sans-serif;text-align:center;padding:20px;"><h1 style="font-size:2rem;margin-bottom:10px;color:#c77dff;">🚀 ROCKET Security Alert</h1><p style="color:#c4b5fd;max-width:480px;">Se han detectado herramientas de inspección o depuración activa. Por motivos de privacidad y seguridad, el acceso ha sido pausado. Por favor, cierra las herramientas de desarrollador y recarga la página.</p></div>';
+            }
+        }, 500);
+
+        const requestTracker = { lastTime: 0, count: 0 };
+        function checkRateLimit() {
+            const now = Date.now();
+            if (now - requestTracker.lastTime < 1000) {
+                requestTracker.count++;
+                if (requestTracker.count > 10) return false;
+            } else {
+                requestTracker.lastTime = now;
+                requestTracker.count = 1;
+            }
+            return true;
+        }
+
+        function sanitizeInput(str) {
+            return String(str).replace(/[&<>"']/g, function(m) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
+            });
+        }
+
+        // SOLUCIÓN DEFINITIVA DE PANTALLA DE CARGA (Con respaldo de seguridad)
+        function hideLoader() {
+            const loader = document.getElementById('loader');
+            if (loader) {
+                loader.style.opacity = '0';
+                setTimeout(() => { loader.style.visibility = 'hidden'; }, 400);
+            }
+        }
+
+        window.addEventListener('load', () => {
+            hideLoader();
+            initSocialProofToasts();
+        });
+
+        // Respaldo de seguridad en caso de que algún recurso falle
+        setTimeout(hideLoader, 1200);
+
+        window.addEventListener('scroll', () => {
+            document.getElementById('scrollTopBtn').style.display = window.scrollY > 300 ? 'flex' : 'none';
+        });
+
+        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
 
         function toggleTheme() {
             const html = document.documentElement;
@@ -1787,6 +2599,7 @@
         }
 
         function showView(viewId) {
+            if (!checkRateLimit()) return;
             document.querySelectorAll('.view-section').forEach(view => view.classList.add('hidden'));
             const targetView = document.getElementById(viewId);
             if (targetView) targetView.classList.remove('hidden');
@@ -1795,8 +2608,93 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        const categoryTitles = {
+            'ALL': 'Todas las Consultas OSINT',
+            'ALL_STREAMING': 'Catálogo Completo: Streaming, Herramientas & Deportes',
+            'STREAMING_PREMIUM': 'Cuentas & Perfiles Streaming Premium',
+            'HERRAMIENTAS_PRO': 'Herramientas Pro, IA & Licencias',
+            'DEPORTES': 'Canales & Deportes en Vivo',
+            'ANIME_SPECIAL': 'Contenido Especializado & Anime',
+            'RENIEC': 'Consultas RENIEC (DNI, Huella, Foto)',
+            'SUNAT': 'Consultas SUNAT (RUC, Empresas)',
+            'PODER JUDICIAL': 'Poder Judicial (Demandas, Expedientes)',
+            'MIGRACIONES': 'Migraciones & Pasaportes',
+            'OSIPTEL': 'OSIPTEL (Titularidad de Teléfonos)',
+            'FISCALÍA': 'Fiscalía (Carpetas Fiscales)',
+            'MINEDU': 'MINEDU (Certificados Escolares)',
+            'SENTINEL': 'Sentinel (Reportes Crediticios)',
+            'SUNEDU': 'SUNEDU (Grados y Títulos)',
+            'MTC': 'MTC (Licencias y Papeletas)',
+            'INPE': 'INPE (Antecedentes Penales)',
+            'PNP': 'PNP (Denuncias y Requisitorias)',
+            'SUNARP': 'SUNARP (Propiedades y Vehículos)',
+            'Bloqueo': 'Servicios de Bloqueos & Operaciones',
+            'VIRTUALES': 'Números Virtuales SMS'
+        };
+
+        const streamingCategories = ['STREAMING_PREMIUM', 'HERRAMIENTAS_PRO', 'DEPORTES', 'ANIME_SPECIAL', 'ALL_STREAMING'];
+
+        function showCategory(category, element = null) {
+            if (!checkRateLimit()) return;
+            showView('servicesView');
+            
+            const titleElem = document.getElementById('categoryTitle');
+            if (titleElem) {
+                titleElem.textContent = categoryTitles[category] || ('Servicios de ' + category);
+            }
+
+            const osintChipsBar = document.getElementById('osintChipsBar');
+            const streamingChipsBar = document.getElementById('streamingChipsBar');
+            const isStreamingType = streamingCategories.includes(category);
+
+            if (isStreamingType) {
+                osintChipsBar.classList.add('hidden');
+                streamingChipsBar.classList.remove('hidden');
+            } else {
+                osintChipsBar.classList.remove('hidden');
+                streamingChipsBar.classList.add('hidden');
+            }
+
+            const activeBar = isStreamingType ? streamingChipsBar : osintChipsBar;
+            const chips = activeBar.querySelectorAll('.filter-chip');
+            chips.forEach(chip => chip.classList.remove('active'));
+
+            if (element) {
+                element.classList.add('active');
+            } else {
+                chips.forEach(chip => {
+                    const onclickAttr = chip.getAttribute('onclick') || '';
+                    if (onclickAttr.includes(`'${category}'`)) {
+                        chip.classList.add('active');
+                    }
+                });
+            }
+
+            const items = document.querySelectorAll('#servicesGrid .service-item');
+            items.forEach(item => {
+                const itemCat = item.getAttribute('data-category');
+                if (category === 'ALL') {
+                    if (!streamingCategories.includes(itemCat)) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                } else if (category === 'ALL_STREAMING') {
+                    if (streamingCategories.includes(itemCat)) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                } else if (itemCat === category) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        }
+
         function filterMenu() {
-            const input = document.getElementById('searchInput').value.toLowerCase();
+            const input = sanitizeInput(document.getElementById('searchInput').value.toLowerCase());
             const links = document.querySelectorAll('.menu-list .menu-item');
             links.forEach(item => {
                 const text = item.textContent.toLowerCase();
@@ -1804,33 +2702,71 @@
             });
         }
 
+        function openUniQuote(uniName) {
+            const safeUni = sanitizeInput(uniName);
+            document.getElementById('selectedUniTitle').textContent = 'Atención Especial: ' + safeUni;
+            document.getElementById('selectedUniName').textContent = safeUni;
+            
+            const wspBtn = document.getElementById('uniWspBtn');
+            if (wspBtn) {
+                wspBtn.href = `https://wa.me/51931309889?text=Hola,%20deseo%20cotizar%20un%20trabajo%20de%20la%20${encodeURIComponent(safeUni)}`;
+            }
+            showView('uniQuoteView');
+        }
+
+        function openModalForUni() { document.getElementById('quoteModal').classList.add('active'); }
         function openModalForTask(taskType) {
             document.getElementById('modalType').value = taskType;
             document.getElementById('quoteModal').classList.add('active');
         }
         function closeModal() { document.getElementById('quoteModal').classList.remove('active'); }
 
+        function openSampleModal(type) { document.getElementById('sampleModal').classList.add('active'); }
+        function closeSampleModal() { document.getElementById('sampleModal').classList.remove('active'); }
+
+        const mockSocialEvents = [
+            { text: "Consulta RENIEC solicitada", location: "Hace 2 min desde Lima" },
+            { text: "Suscripción Disney Premium activada", location: "Hace 5 min desde Arequipa" },
+            { text: "Trabajo UTP Cotizado con éxito", location: "Hace 8 min desde Trujillo" },
+            { text: "Consulta SUNAT Verificada", location: "Hace 12 min desde Cusco" }
+        ];
+
+        function initSocialProofToasts() {
+            let index = 0;
+            const toast = document.getElementById('socialToast');
+            const toastText = document.getElementById('socialToastText');
+
+            setInterval(() => {
+                const ev = mockSocialEvents[index];
+                toastText.innerHTML = `${ev.text}<span>${ev.location}</span>`;
+                toast.classList.remove('hidden');
+
+                setTimeout(() => {
+                    toast.classList.add('hidden');
+                }, 4000);
+
+                index = (index + 1) % mockSocialEvents.length;
+            }, 12000);
+        }
+
         function sendFormattedTg() {
-            const uni = document.getElementById('modalUni').value || 'No especificada';
-            const type = document.getElementById('modalType').value;
+            if (!checkRateLimit()) return;
+            const uni = sanitizeInput(document.getElementById('modalUni').value) || 'No especificada';
+            const type = sanitizeInput(document.getElementById('modalType').value);
             const text = `Hola!%20Deseo%20cotizar:%0A- Institución: ${encodeURIComponent(uni)}%0A- Tipo: ${encodeURIComponent(type)}`;
             window.open(`https://t.me/Adolf3728?text=${text}`, '_blank');
             closeModal();
         }
 
         function sendFormattedWsp() {
-            const uni = document.getElementById('modalUni').value || 'No especificada';
-            const type = document.getElementById('modalType').value;
+            if (!checkRateLimit()) return;
+            const uni = sanitizeInput(document.getElementById('modalUni').value) || 'No especificada';
+            const type = sanitizeInput(document.getElementById('modalType').value);
             const text = `Hola!%20Deseo%20cotizar:%0A- Institución: ${encodeURIComponent(uni)}%0A- Tipo: ${encodeURIComponent(type)}`;
             window.open(`https://wa.me/51931309889?text=${text}`, '_blank');
             closeModal();
         }
 
-        window.addEventListener('scroll', () => {
-            document.getElementById('scrollTopBtn').style.display = window.scrollY > 300 ? 'flex' : 'none';
-        });
-
-        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
     </script>
 </body>
 </html>
