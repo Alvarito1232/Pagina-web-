@@ -839,6 +839,13 @@
             color: var(--text-secondary);
             border-bottom: 1px solid var(--border-color);
             position: relative;
+            overflow: hidden;
+        }
+
+        .card-img-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         [data-theme="light"] .card-img-placeholder {
@@ -860,6 +867,7 @@
             font-weight: 800;
             box-shadow: 0 0 10px var(--accent-glow);
             transition: all 0.3s ease;
+            z-index: 2;
         }
 
         .btn-preview-demo:hover {
@@ -1017,7 +1025,7 @@
             margin-top: 2px;
         }
 
-        /* ESTILOS NUEVOS PARA TARJETAS DE EMPRENDIMIENTOS */
+        /* ESTILOS PARA TARJETAS DE EMPRENDIMIENTOS */
         .emprendimiento-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -2251,7 +2259,7 @@
             </div>
         </div>
 
-        <!-- TRABAJOS UNIVERSITARIOS AMPLIADOS -->
+        <!-- TRABAJOS UNIVERSITARIOS AMPLIADOS CON FOTOS DE LAS CHICAS -->
         <div id="trabajosView" class="view-section hidden">
             <div class="trabajos-info-container">
                 <div class="badge-trabajos-price">
@@ -2271,7 +2279,9 @@
 
             <div class="grid">
                 <div class="card">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-file-lines fa-3x"></i></div>
+                    <div class="card-img-placeholder">
+                        <img src="bebe 2.jpg" alt="Tareas y Cuestionarios" onerror="this.onerror=null; this.src='FONDO 1 TOTAL.jpg';">
+                    </div>
                     <div class="card-body">
                         <div>
                             <div class="card-title">Tareas y Cuestionarios</div>
@@ -2285,7 +2295,9 @@
                 </div>
 
                 <div class="card">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-book-open fa-3x"></i></div>
+                    <div class="card-img-placeholder">
+                        <img src="gampy 12.jpg" alt="Monografías y Ensayos" onerror="this.onerror=null; this.src='FONDO 1 TOTAL.jpg';">
+                    </div>
                     <div class="card-body">
                         <div>
                             <div class="card-title">Monografías y Ensayos</div>
@@ -2299,7 +2311,9 @@
                 </div>
 
                 <div class="card">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-laptop-code fa-3x"></i></div>
+                    <div class="card-img-placeholder">
+                        <img src="casa 1.jpg" alt="Proyectos de Programación" onerror="this.onerror=null; this.src='FONDO 1 TOTAL.jpg';">
+                    </div>
                     <div class="card-body">
                         <div>
                             <div class="card-title">Proyectos de Programación</div>
@@ -2313,7 +2327,9 @@
                 </div>
 
                 <div class="card">
-                    <div class="card-img-placeholder"><i class="fa-solid fa-person-chalkboard fa-3x"></i></div>
+                    <div class="card-img-placeholder">
+                        <img src="bebe 2.jpg" alt="Diapositivas y Exposiciones" onerror="this.onerror=null; this.src='FONDO 1 TOTAL.jpg';">
+                    </div>
                     <div class="card-body">
                         <div>
                             <div class="card-title">Diapositivas y Exposiciones</div>
@@ -2325,10 +2341,42 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="card">
+                    <div class="card-img-placeholder">
+                        <img src="gampy 12.jpg" alt="Redacción de Tesis y Proyectos" onerror="this.onerror=null; this.src='FONDO 1 TOTAL.jpg';">
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Redacción de Tesis y Proyectos</div>
+                            <div class="card-desc">Asesoría metodológica, análisis de datos y estructura completa de tesis.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <button onclick="openModalForTask('Redacción de Tesis y Proyectos')" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-placeholder">
+                        <img src="casa 1.jpg" alt="Traducciones y Correcciones" onerror="this.onerror=null; this.src='FONDO 1 TOTAL.jpg';">
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Traducciones y Correcciones</div>
+                            <div class="card-desc">Traducción profesional de textos técnicos, científicos y corrección de estilo.</div>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                            <button onclick="openModalForTask('Traducciones y Correcciones')" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- CREA TU PÁGINA WEB (CON ENLACES DE EJEMPLO ACTUALIZADOS) -->
+        <!-- CREA TU PÁGINA WEB -->
         <div id="webDevView" class="view-section hidden">
             <div class="category-header">
                 <i class="fa-solid fa-laptop-code"></i>
@@ -2441,7 +2489,7 @@
             </div>
         </div>
 
-        <!-- DETALLES Y REGALOS GITHUB -->
+        <!-- DETALLES Y REGALOS GITHUB (CON LOS ENLACES ESPECÍFICOS EXCLUSIVOS) -->
         <div id="detallesView" class="view-section hidden">
             <div class="category-header">
                 <i class="fa-solid fa-gift"></i>
@@ -2461,7 +2509,7 @@
                         </ul>
                     </div>
                     <div class="social-buttons">
-                        <a href="https://alvarito1232.github.io/obh-metales/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
+                        <a href="https://alvarito1232.github.io/Flores-amarillas/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
                     </div>
                 </div>
 
@@ -2474,7 +2522,7 @@
                         </ul>
                     </div>
                     <div class="social-buttons">
-                        <a href="https://alvarito1232.github.io/candidato-ca-ete/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
+                        <a href="https://alvarito1232.github.io/Galaxia-base/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
                     </div>
                 </div>
 
@@ -2487,7 +2535,7 @@
                         </ul>
                     </div>
                     <div class="social-buttons">
-                        <a href="https://alvarito1232.github.io/obh-metales/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
+                        <a href="https://alvarito1232.github.io/KIMBERLY/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
                     </div>
                 </div>
 
@@ -2500,7 +2548,7 @@
                         </ul>
                     </div>
                     <div class="social-buttons">
-                        <a href="https://alvarito1232.github.io/candidato-ca-ete/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
+                        <a href="https://alvarito1232.github.io/Para-camila/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
                     </div>
                 </div>
 
@@ -2514,13 +2562,13 @@
                         </ul>
                     </div>
                     <div class="social-buttons">
-                        <a href="https://alvarito1232.github.io/obh-metales/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
+                        <a href="https://alvarito1232.github.io/Spotyfy-base/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SECCIÓN DE EMPRENDIMIENTOS UNIVERSITARIOS CON TARJETAS PLANTILLA HERMOSAS -->
+        <!-- EMPRENDIMIENTOS UNIVERSITARIOS CON FOTO DE LA CHICA EN LA TERCERA TARJETA -->
         <div id="emprendimientoView" class="view-section hidden">
             <div class="category-header">
                 <i class="fa-solid fa-store"></i>
@@ -2535,7 +2583,7 @@
                 <div class="emprendimiento-card">
                     <div class="emprendimiento-badge-uni"><i class="fa-solid fa-graduation-cap"></i> UNMSM • Lima</div>
                     <div class="emprendimiento-img-box">
-                        <img src="bebe 2.jpg" alt="Emprendimiento Ejemplo" onerror="this.onerror=null; this.src='FONDO 1 TOTAL.jpg';">
+                        <img src="bebe 2.jpg" alt="Innovación & Moda Store" onerror="this.onerror=null; this.src='FONDO 1 TOTAL.jpg';">
                     </div>
                     <div class="emprendimiento-body">
                         <div>
@@ -2554,7 +2602,7 @@
                 <div class="emprendimiento-card">
                     <div class="emprendimiento-badge-uni"><i class="fa-solid fa-graduation-cap"></i> UTP • Surquillo</div>
                     <div class="emprendimiento-img-box">
-                        <img src="gampy 12.jpg" alt="Emprendimiento Ejemplo" onerror="this.onerror=null; this.src='FONDO 1 TOTAL.jpg';">
+                        <img src="gampy 12.jpg" alt="Tech Solutions & Gadgets" onerror="this.onerror=null; this.src='FONDO 1 TOTAL.jpg';">
                     </div>
                     <div class="emprendimiento-body">
                         <div>
@@ -2569,11 +2617,11 @@
                     </div>
                 </div>
 
-                <!-- Tarjeta Plantilla 3 -->
+                <!-- Tarjeta Plantilla 3 (Actualizada con foto de la chica en lugar del paisaje) -->
                 <div class="emprendimiento-card">
                     <div class="emprendimiento-badge-uni"><i class="fa-solid fa-graduation-cap"></i> PUCP • San Miguel</div>
                     <div class="emprendimiento-img-box">
-                        <img src="casa 1.jpg" alt="Emprendimiento Ejemplo" onerror="this.onerror=null; this.src='FONDO 1 TOTAL.jpg';">
+                        <img src="casa 1.jpg" alt="Artesanías & Deco Home" onerror="this.onerror=null; this.src='FONDO 1 TOTAL.jpg';">
                     </div>
                     <div class="emprendimiento-body">
                         <div>
@@ -2635,6 +2683,8 @@
                     <option value="Monografía o Ensayo">Monografía / Ensayo</option>
                     <option value="Proyectos de Programación">Proyectos de Programación</option>
                     <option value="Diapositivas y Exposiciones">Diapositivas y Exposiciones</option>
+                    <option value="Redacción de Tesis y Proyectos">Redacción de Tesis y Proyectos</option>
+                    <option value="Traducciones y Correcciones">Traducciones y Correcciones</option>
                 </select>
             </div>
 
