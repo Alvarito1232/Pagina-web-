@@ -447,7 +447,7 @@
             text-shadow: 0 2px 5px rgba(0,0,0,0.8);
         }
 
-        /* ESTILO EMPRESARIAL / SERIO PARA ESTADÍSTICAS (MEJORADO) */
+        /* ESTILO EMPRESARIAL / SERIO PARA ESTADÍSTICAS */
         .stats-counter-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -1015,6 +1015,102 @@
             color: #10b981;
             text-shadow: 0 0 8px #10b981;
             margin-top: 2px;
+        }
+
+        /* ESTILOS NUEVOS PARA TARJETAS DE EMPRENDIMIENTOS */
+        .emprendimiento-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        .emprendimiento-card {
+            background: var(--card-bg-texture);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .emprendimiento-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent-color);
+            box-shadow: 0 0 30px rgba(157, 78, 221, 0.4), inset 0 0 20px rgba(157, 78, 221, 0.2);
+        }
+
+        .emprendimiento-img-box {
+            width: 100%;
+            height: 180px;
+            background: rgba(6, 2, 12, 0.9);
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .emprendimiento-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .emprendimiento-card:hover .emprendimiento-img-box img {
+            transform: scale(1.08);
+        }
+
+        .emprendimiento-badge-uni {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(13, 4, 26, 0.85);
+            border: 1px solid var(--accent-color);
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 0 10px var(--accent-glow);
+            z-index: 2;
+        }
+
+        .emprendimiento-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .emprendimiento-name {
+            font-size: 1.25rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 8px;
+            text-shadow: 0 0 8px var(--accent-glow);
+        }
+
+        .emprendimiento-sede {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 700;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .emprendimiento-sede i {
+            color: var(--accent-color);
         }
 
         .social-proof-toast {
@@ -2155,7 +2251,7 @@
             </div>
         </div>
 
-        <!-- TRABAJOS UNIVERSITARIOS AMPLIADOS (DESDE S/ 5.00) -->
+        <!-- TRABAJOS UNIVERSITARIOS AMPLIADOS -->
         <div id="trabajosView" class="view-section hidden">
             <div class="trabajos-info-container">
                 <div class="badge-trabajos-price">
@@ -2232,7 +2328,7 @@
             </div>
         </div>
 
-        <!-- CREA TU PÁGINA WEB (S/ 5.00 a S/ 15.00, incrementando de 3 en 3, con beneficios proporcionales y horarios) -->
+        <!-- CREA TU PÁGINA WEB (CON ENLACES DE EJEMPLO ACTUALIZADOS) -->
         <div id="webDevView" class="view-section hidden">
             <div class="category-header">
                 <i class="fa-solid fa-laptop-code"></i>
@@ -2252,7 +2348,7 @@
                         </ul>
                     </div>
                     <div class="social-buttons">
-                        <a href="https://alvarito1232.github.io/Spotyfy-base/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
+                        <a href="https://alvarito1232.github.io/obh-metales/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
                         <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i></a>
                     </div>
                 </div>
@@ -2269,7 +2365,7 @@
                         </ul>
                     </div>
                     <div class="social-buttons">
-                        <a href="https://alvarito1232.github.io/Flores-amarillas/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
+                        <a href="https://alvarito1232.github.io/candidato-ca-ete/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
                         <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i></a>
                     </div>
                 </div>
@@ -2282,11 +2378,11 @@
                         <ul class="plan-features">
                             <li><i class="fa-solid fa-check"></i> Secciones múltiples y dinámicas</li>
                             <li><i class="fa-solid fa-check"></i> Estilo moderno y optimizado</li>
-                            <li><i class="fa-solid fa-check"></i> Atención de 12 horas (de 9:00 a.m. a 9:00 p.m., de noche no respondo)</li>
+                            <li><i class="fa-solid fa-check"></i> Atención de 12 horas (de 9:00 a.m. a 9:00 p.m.)</li>
                         </ul>
                     </div>
                     <div class="social-buttons">
-                        <a href="https://alvarito1232.github.io/KIMBERLY/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
+                        <a href="https://alvarito1232.github.io/obh-metales/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
                         <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i></a>
                     </div>
                 </div>
@@ -2304,7 +2400,7 @@
                         </ul>
                     </div>
                     <div class="social-buttons">
-                        <a href="https://alvarito1232.github.io/Galaxia-base/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
+                        <a href="https://alvarito1232.github.io/candidato-ca-ete/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
                         <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i></a>
                     </div>
                 </div>
@@ -2317,11 +2413,11 @@
                         <ul class="plan-features">
                             <li><i class="fa-solid fa-check"></i> Múltiples pestañas o submenús</li>
                             <li><i class="fa-solid fa-check"></i> Animaciones y efectos profesionales</li>
-                            <li><i class="fa-solid fa-check"></i> Atención de 12 horas (de 9:00 a.m. a 9:00 p.m., de noche no respondo)</li>
+                            <li><i class="fa-solid fa-check"></i> Atención de 12 horas (de 9:00 a.m. a 9:00 p.m.)</li>
                         </ul>
                     </div>
                     <div class="social-buttons">
-                        <a href="https://alvarito1232.github.io/Para-camila/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
+                        <a href="https://alvarito1232.github.io/obh-metales/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
                         <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i></a>
                     </div>
                 </div>
@@ -2334,18 +2430,18 @@
                         <div class="plan-price">S/ 15.00 <span>/ único</span></div>
                         <ul class="plan-features">
                             <li><i class="fa-solid fa-check"></i> Desarrollo web pro 100% a medida</li>
-                            <li><i class="fa-solid fa-check"></i> Soporte y atención garantizada: <strong>estare 24 horas al dia ahi</strong></li>
+                            <li><i class="fa-solid fa-check"></i> Soporte y atención garantizada: <strong>24 horas al día</strong></li>
                         </ul>
                     </div>
                     <div class="social-buttons">
-                        <a href="https://alvarito1232.github.io/Para-camila/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
+                        <a href="https://alvarito1232.github.io/candidato-ca-ete/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
                         <a href="https://t.me/Adolf3728" target="_blank" class="btn-tg"><i class="fa-brands fa-telegram"></i></a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- DETALLES Y REGALOS GITHUB (S/ 5.00 A S/ 15.00 DE 3 EN 3 CON ENLACES DE EJEMPLO) -->
+        <!-- DETALLES Y REGALOS GITHUB -->
         <div id="detallesView" class="view-section hidden">
             <div class="category-header">
                 <i class="fa-solid fa-gift"></i>
@@ -2356,7 +2452,6 @@
             </p>
 
             <div class="pricing-grid">
-                <!-- S/ 5.00 -->
                 <div class="pricing-card">
                     <div>
                         <div class="plan-name">Carta Sorpresa Básica</div>
@@ -2366,11 +2461,10 @@
                         </ul>
                     </div>
                     <div class="social-buttons">
-                        <a href="https://alvarito1232.github.io/Spotyfy-base/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
+                        <a href="https://alvarito1232.github.io/obh-metales/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
                     </div>
                 </div>
 
-                <!-- S/ 8.00 -->
                 <div class="pricing-card">
                     <div>
                         <div class="plan-name">Carta con Música</div>
@@ -2380,11 +2474,10 @@
                         </ul>
                     </div>
                     <div class="social-buttons">
-                        <a href="https://alvarito1232.github.io/Flores-amarillas/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
+                        <a href="https://alvarito1232.github.io/candidato-ca-ete/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
                     </div>
                 </div>
 
-                <!-- S/ 11.00 -->
                 <div class="pricing-card">
                     <div>
                         <div class="plan-name">Mini Álbum de Fotos</div>
@@ -2394,11 +2487,10 @@
                         </ul>
                     </div>
                     <div class="social-buttons">
-                        <a href="https://alvarito1232.github.io/KIMBERLY/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
+                        <a href="https://alvarito1232.github.io/obh-metales/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
                     </div>
                 </div>
 
-                <!-- S/ 14.00 -->
                 <div class="pricing-card">
                     <div>
                         <div class="plan-name">San Valentín / Aniversario</div>
@@ -2408,11 +2500,10 @@
                         </ul>
                     </div>
                     <div class="social-buttons">
-                        <a href="https://alvarito1232.github.io/Galaxia-base/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
+                        <a href="https://alvarito1232.github.io/candidato-ca-ete/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
                     </div>
                 </div>
 
-                <!-- S/ 15.00 -->
                 <div class="pricing-card featured">
                     <span class="badge-popular">TOP PRO</span>
                     <div>
@@ -2423,20 +2514,80 @@
                         </ul>
                     </div>
                     <div class="social-buttons">
-                        <a href="https://alvarito1232.github.io/Para-camila/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
+                        <a href="https://alvarito1232.github.io/obh-metales/" target="_blank" class="btn-tg" style="background:#4ade80; color:#06020c;"><i class="fa-solid fa-eye"></i> Ver Ejemplo</a>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- SECCIÓN DE EMPRENDIMIENTOS UNIVERSITARIOS CON TARJETAS PLANTILLA HERMOSAS -->
         <div id="emprendimientoView" class="view-section hidden">
             <div class="category-header">
                 <i class="fa-solid fa-store"></i>
                 <span>Emprendimientos Universitarios</span>
             </div>
             <p style="color: var(--text-secondary); text-align: center; font-size: 0.95rem; max-width: 600px; margin: 0 auto 25px;">
-                Soluciones digitales completas para tu negocio o marca: catálogos interactivos, branding, asesoría e integración directa con tu sistema de ventas.
+                Conoce las marcas y proyectos creados por talentosos universitarios. Catálogos digitales, productos y servicios destacados.
             </p>
+
+            <div class="emprendimiento-grid" id="emprendimientoGrid">
+                <!-- Tarjeta Plantilla 1 -->
+                <div class="emprendimiento-card">
+                    <div class="emprendimiento-badge-uni"><i class="fa-solid fa-graduation-cap"></i> UNMSM • Lima</div>
+                    <div class="emprendimiento-img-box">
+                        <img src="bebe 2.jpg" alt="Emprendimiento Ejemplo" onerror="this.onerror=null; this.src='FONDO 1 TOTAL.jpg';">
+                    </div>
+                    <div class="emprendimiento-body">
+                        <div>
+                            <div class="emprendimiento-name">Innovación & Moda Store</div>
+                            <div class="emprendimiento-sede"><i class="fa-solid fa-location-dot"></i> Sede Central - Lima</div>
+                            <p class="card-desc">Venta de accesorios personalizados, ropa estética y detalles exclusivos para estudiantes.</p>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://alvarito1232.github.io/obh-metales/" target="_blank" class="btn-tg"><i class="fa-solid fa-globe"></i> Ver Catálogo</a>
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Plantilla 2 -->
+                <div class="emprendimiento-card">
+                    <div class="emprendimiento-badge-uni"><i class="fa-solid fa-graduation-cap"></i> UTP • Surquillo</div>
+                    <div class="emprendimiento-img-box">
+                        <img src="gampy 12.jpg" alt="Emprendimiento Ejemplo" onerror="this.onerror=null; this.src='FONDO 1 TOTAL.jpg';">
+                    </div>
+                    <div class="emprendimiento-body">
+                        <div>
+                            <div class="emprendimiento-name">Tech Solutions & Gadgets</div>
+                            <div class="emprendimiento-sede"><i class="fa-solid fa-location-dot"></i> Sede Lima Centro</div>
+                            <p class="card-desc">Accesorios tecnológicos, audífonos bluetooth, soportes para laptops y suministros gamer.</p>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://alvarito1232.github.io/candidato-ca-ete/" target="_blank" class="btn-tg"><i class="fa-solid fa-globe"></i> Ver Catálogo</a>
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Plantilla 3 -->
+                <div class="emprendimiento-card">
+                    <div class="emprendimiento-badge-uni"><i class="fa-solid fa-graduation-cap"></i> PUCP • San Miguel</div>
+                    <div class="emprendimiento-img-box">
+                        <img src="casa 1.jpg" alt="Emprendimiento Ejemplo" onerror="this.onerror=null; this.src='FONDO 1 TOTAL.jpg';">
+                    </div>
+                    <div class="emprendimiento-body">
+                        <div>
+                            <div class="emprendimiento-name">Artesanías & Deco Home</div>
+                            <div class="emprendimiento-sede"><i class="fa-solid fa-location-dot"></i> Sede Pando</div>
+                            <p class="card-desc">Detalles decorativos hechos a mano, agendas personalizadas y papelería creativa.</p>
+                        </div>
+                        <div class="social-buttons">
+                            <a href="https://alvarito1232.github.io/obh-metales/" target="_blank" class="btn-tg"><i class="fa-solid fa-globe"></i> Ver Catálogo</a>
+                            <a href="https://t.me/Adolf3728" target="_blank" class="btn-icon-sm btn-icon-wsp"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </main>
@@ -2572,7 +2723,6 @@
             });
         }
 
-        // SOLUCIÓN DEFINITIVA DE PANTALLA DE CARGA (Con respaldo de seguridad)
         function hideLoader() {
             const loader = document.getElementById('loader');
             if (loader) {
@@ -2586,7 +2736,6 @@
             initSocialProofToasts();
         });
 
-        // Respaldo de seguridad en caso de que algún recurso falle
         setTimeout(hideLoader, 1200);
 
         window.addEventListener('scroll', () => {
